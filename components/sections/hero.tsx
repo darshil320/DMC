@@ -10,7 +10,7 @@ export function HeroSection() {
     <section id="home" className="relative min-h-[90vh] flex flex-col justify-between pt-32 lg:pt-40 pb-10 px-6 md:px-12 lg:px-16 bg-transparent select-none">
       {/* Top right paragraph (as in the screenshot) */}
       <div className="absolute top-24 lg:top-32 right-6 md:right-12 lg:right-16 hidden lg:block max-w-[320px] z-50">
-        <div className="bg-bg-page/90 backdrop-blur-md p-4 border border-border-subtle brutalist-shadow-sm rounded-sm">
+        <div className="p-4">
           <p className="text-sm text-text-secondary leading-snug">
             We build custom websites for local businesses who have attention but need more footfall - 
             turning your traffic into a digital storefront that educates, qualifies, and converts local customers.
