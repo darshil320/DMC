@@ -1,0 +1,2169 @@
+[     327ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[     346ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[     474ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[     526ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <main>
+      <HeroSection>
+      <div>
+      <ProblemSection>
+      <div>
+      <ServicesSection>
+      <div>
+      <FeaturedOfferSection>
+        <section className="py-24 bg-d...">
+          <div className="max-w-[120...">
+            <motion.div>
+            <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} ...>
+              <div className="flex justi..." style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+                <TextRevealCard text="Your shop,..." revealText="Hover to s..." className="w-full max...">
+                  <div onMouseEnter={function mouseEnterHandler} onMouseLeave={function mouseLeaveHandler} ...>
+                    <TextRevealCardTitle>
+                    <TextRevealCardDescription>
+                    <ul>
+                    <a>
+                    <div className="h-40  rela...">
+                      <motion.div>
+                      <motion.div>
+                      <div className={" overflo..."}>
+                        <p>
+                        <Stars>
+                          <div className="absolute i...">
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "74.24451418105056%"
+-                                 top: "67.7981%"
++                                 left: "13.345508220185309%"
+-                                 left: "47.5642%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "0.7412120047204818%"
+-                                 top: "14.113%"
++                                 left: "64.36383994507828%"
+-                                 left: "8.74332%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "26.13203167333419%"
+-                                 top: "27.0473%"
++                                 left: "19.012399968028493%"
+-                                 left: "82.6551%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "88.04135227514801%"
+-                                 top: "73.2116%"
++                                 left: "79.2359729527458%"
+-                                 left: "65.1113%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "4.371436280526231%"
+-                                 top: "26.8213%"
++                                 left: "34.86347452331538%"
+-                                 left: "89.5964%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "71.92606437062705%"
+-                                 top: "71.6147%"
++                                 left: "72.18933238183914%"
+-                                 left: "41.9137%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "3.6430766260702407%"
+-                                 top: "61.4752%"
++                                 left: "74.09494239583209%"
+-                                 left: "69.2791%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "68.10512685106927%"
+-                                 top: "64.5038%"
++                                 left: "18.062067402189207%"
+-                                 left: "80.9594%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "3.621756650232544%"
+-                                 top: "51.8949%"
++                                 left: "99.05530568156863%"
+-                                 left: "8.16969%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "3.3287062245581533%"
+-                                 top: "74.2759%"
++                                 left: "8.917913204453477%"
+-                                 left: "64.3376%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "91.72795486071057%"
+-                                 top: "33.0518%"
++                                 left: "92.20168166327389%"
+-                                 left: "82.1075%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "93.60140816948376%"
+-                                 top: "98.3993%"
++                                 left: "8.178122439291634%"
+-                                 left: "31.4294%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "93.62962370247374%"
+-                                 top: "23.7435%"
++                                 left: "46.08487566019603%"
+-                                 left: "79.895%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "97.05460693715986%"
+-                                 top: "83.5529%"
++                                 left: "93.10829094789804%"
+-                                 left: "91.5968%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "78.0670984779091%"
+-                                 top: "91.5935%"
++                                 left: "53.648231820212935%"
+-                                 left: "34.2055%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "67.60270258416698%"
+-                                 top: "90.0128%"
++                                 left: "30.589863861549183%"
+-                                 left: "33.1364%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "42.22290732044055%"
+-                                 top: "27.6187%"
++                                 left: "26.90663645910002%"
+-                                 left: "2.91754%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "93.49941709806639%"
+-                                 top: "85.6196%"
++                                 left: "79.26657325086991%"
+-                                 left: "70.3599%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "56.959457677249134%"
+-                                 top: "28.086%"
++                                 left: "61.78370546323101%"
+-                                 left: "87.7322%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "55.55881872794406%"
+-                                 top: "66.9107%"
++                                 left: "92.95140523217835%"
+-                                 left: "24.7671%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "16.222150900805975%"
+-                                 top: "2.81001%"
++                                 left: "91.84197658267715%"
+-                                 left: "72.7644%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "17.737234560289885%"
+-                                 top: "81.3474%"
++                                 left: "47.50152916293009%"
+-                                 left: "95.0211%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "94.84125185451578%"
+-                                 top: "66.7469%"
++                                 left: "74.59406176023359%"
+-                                 left: "63.4548%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "68.86255630624551%"
+-                                 top: "69.9865%"
++                                 left: "64.6853369475647%"
+-                                 left: "95.708%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "96.62237538270503%"
+-                                 top: "33.0898%"
++                                 left: "90.81846780136074%"
+-                                 left: "67.6487%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "40.63320823225126%"
+-                                 top: "26.1299%"
++                                 left: "12.499675828497804%"
+-                                 left: "30.3597%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "79.17608007323994%"
+-                                 top: "71.9097%"
++                                 left: "69.75413974305962%"
+-                                 left: "50.9476%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "99.22085759590817%"
+-                                 top: "31.55%"
++                                 left: "24.556501263150064%"
+-                                 left: "34.5734%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "9.417235375217725%"
+-                                 top: "57.5406%"
++                                 left: "82.41750975500639%"
+-                                 left: "46.5221%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "26.641313002992874%"
+-                                 top: "25.7976%"
++                                 left: "42.04136061194913%"
+-                                 left: "50.6564%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "10.968526817484536%"
+-                                 top: "89.4021%"
++                                 left: "90.77624876866099%"
+-                                 left: "73.9727%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "11.805379227555424%"
+-                                 top: "15.6891%"
++                                 left: "29.631976067038558%"
+-                                 left: "16.4641%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "78.43134471235147%"
+-                                 top: "49.0784%"
++                                 left: "17.119654817028838%"
+-                                 left: "93.0669%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "69.75084045528658%"
+-                                 top: "74.839%"
++                                 left: "25.07506348641587%"
+-                                 left: "58.9852%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "68.3688574996037%"
+-                                 top: "94.4826%"
++                                 left: "40.00269316141063%"
+-                                 left: "91.826%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "69.27979393436807%"
+-                                 top: "41.785%"
++                                 left: "48.35800551762593%"
+-                                 left: "87.1553%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "10.38182889400171%"
+-                                 top: "87.3039%"
++                                 left: "76.6036537905875%"
+-                                 left: "20.8239%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "81.15986877695069%"
+-                                 top: "66.7865%"
++                                 left: "76.23562513137239%"
+-                                 left: "2.10016%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "69.59143621686066%"
+-                                 top: "87.315%"
++                                 left: "73.81396501185708%"
+-                                 left: "31.5157%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "94.10693179165821%"
+-                                 top: "87.883%"
++                                 left: "53.28371047638502%"
+-                                 left: "87.4685%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "33.56975931105863%"
+-                                 top: "10.6641%"
++                                 left: "42.533044299173575%"
+-                                 left: "13.4525%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "35.79072396366505%"
+-                                 top: "15.6782%"
++                                 left: "78.18879232704047%"
+-                                 left: "21.5523%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "28.295547938013854%"
+-                                 top: "73.3587%"
++                                 left: "21.855927561849565%"
+-                                 left: "6.78192%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "30.54336326202923%"
+-                                 top: "27.0839%"
++                                 left: "88.14710379827376%"
+-                                 left: "50.2894%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "96.75640827288048%"
+-                                 top: "67.038%"
++                                 left: "89.90300649474976%"
+-                                 left: "14.441%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "53.179341933513356%"
+-                                 top: "47.5134%"
++                                 left: "66.83306472017453%"
+-                                 left: "20.6157%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "52.22834687779978%"
+-                                 top: "6.08497%"
++                                 left: "35.88159254740182%"
+-                                 left: "82.0617%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "70.60835378495415%"
+-                                 top: "43.1466%"
++                                 left: "70.7584850900775%"
+-                                 left: "65.6216%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "12.433177577827148%"
+-                                 top: "96.267%"
++                                 left: "4.490061628648445%"
+-                                 left: "0.225275%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "36.15175518423456%"
+-                                 top: "22.0065%"
++                                 left: "71.79650760408691%"
+-                                 left: "26.9121%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "26.00940964021039%"
+-                                 top: "10.1314%"
++                                 left: "67.57809802611993%"
+-                                 left: "19.5628%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "5.499519778582062%"
+-                                 top: "52.2282%"
++                                 left: "3.0981424453812023%"
+-                                 left: "30.5991%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "54.423034059664644%"
+-                                 top: "18.3728%"
++                                 left: "18.802780605249612%"
+-                                 left: "69.8598%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "6.996560026020637%"
+-                                 top: "55.7974%"
++                                 left: "11.612574236052476%"
+-                                 left: "32.7714%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "10.976772720497852%"
+-                                 top: "81.1325%"
++                                 left: "69.18019059705483%"
+-                                 left: "63.0737%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "58.911826324159655%"
+-                                 top: "78.8073%"
++                                 left: "95.29953880922783%"
+-                                 left: "51.0819%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "7.986835489324784%"
+-                                 top: "39.1941%"
++                                 left: "30.443237384681254%"
+-                                 left: "74.0806%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "17.97951143565846%"
+-                                 top: "25.8934%"
++                                 left: "54.128469907511686%"
+-                                 left: "36.3129%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "15.123891641661425%"
+-                                 top: "31.4573%"
++                                 left: "50.93076340696251%"
+-                                 left: "90.8408%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "30.099493749452844%"
+-                                 top: "53.2091%"
++                                 left: "38.323981098739914%"
+-                                 left: "63.9846%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "42.19427161019564%"
+-                                 top: "6.12109%"
++                                 left: "4.051677523988239%"
+-                                 left: "19.5954%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "40.28838632003053%"
+-                                 top: "55.4447%"
++                                 left: "83.83560442537575%"
+-                                 left: "25.8641%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "11.565008619510253%"
+-                                 top: "74.8934%"
++                                 left: "72.46585510131558%"
+-                                 left: "21.4089%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "95.50464710150712%"
+-                                 top: "99.3462%"
++                                 left: "1.4133340443202247%"
+-                                 left: "10.6429%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "61.87295895229873%"
+-                                 top: "33.4374%"
++                                 left: "91.95007578900078%"
+-                                 left: "34.9077%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "31.40333655098929%"
+-                                 top: "65.6115%"
++                                 left: "81.61058835352193%"
+-                                 left: "86.3192%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "18.029739901448227%"
+-                                 top: "25.5915%"
++                                 left: "92.08255368661568%"
+-                                 left: "94.4285%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "42.64373781062785%"
+-                                 top: "83.2397%"
++                                 left: "19.587097721224733%"
+-                                 left: "22.8852%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "33.87504326904447%"
+-                                 top: "40.1693%"
++                                 left: "98.7301579538698%"
+-                                 left: "2.81513%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "85.37604636399921%"
+-                                 top: "66.2855%"
++                                 left: "96.29503275691837%"
+-                                 left: "66.1086%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "15.86799115898394%"
+-                                 top: "84.2326%"
++                                 left: "60.13653887509831%"
+-                                 left: "41.2159%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "71.71269554463258%"
+-                                 top: "44.817%"
++                                 left: "16.613547563944632%"
+-                                 left: "76.3709%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "94.20652016267219%"
+-                                 top: "26.8755%"
++                                 left: "81.38692572061254%"
+-                                 left: "53.1874%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "47.47309740365051%"
+-                                 top: "40.0867%"
++                                 left: "17.66563453456439%"
+-                                 left: "72.1949%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "39.805710672056485%"
+-                                 top: "48.1978%"
++                                 left: "68.25327737358725%"
+-                                 left: "83.4775%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "97.43499201642817%"
+-                                 top: "66.8832%"
++                                 left: "25.898019113187964%"
+-                                 left: "85.79%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "51.58538531777266%"
+-                                 top: "72.9681%"
++                                 left: "87.4028763389313%"
+-                                 left: "26.1467%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "74.86736527032943%"
+-                                 top: "51.777%"
++                                 left: "58.78244364333297%"
+-                                 left: "17.2655%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "8.666355325555376%"
+-                                 top: "34.6014%"
++                                 left: "26.56766063632202%"
+-                                 left: "62.671%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.span animate={{top:"calc(...", ...}} transition={{...}} style={{position:"...", ...}} ...>
+                              <span
+                                className="inline-block"
+                                style={{
++                                 position: "absolute"
+-                                 position: "absolute"
++                                 top: "45.21806995579052%"
+-                                 top: "78.1666%"
++                                 left: "74.50523306840249%"
+-                                 left: "44.107%"
++                                 width: "2px"
+-                                 width: "2px"
++                                 height: "2px"
+-                                 height: "2px"
++                                 backgroundColor: "white"
++                                 borderRadius: "50%"
++                                 zIndex: 1
+-                                 background-color: "white"
+-                                 border-top-left-radius: "50%"
+-                                 border-top-right-radius: "50%"
+-                                 border-bottom-right-radius: "50%"
+-                                 border-bottom-left-radius: "50%"
+-                                 z-index: "1"
+                                }}
+                                ref={function useMotionRef.useCallback}
+                              >
+      ...
+ @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[     607ms] [LOG] [Fast Refresh] done in 242ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1583136ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1583170ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1603922ms] [WARNING] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1604101ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 1604197ms] [LOG] [Fast Refresh] done in 198ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3174779ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3175059ms] [LOG] [Fast Refresh] done in 324ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3175166ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3175194ms] [LOG] [Fast Refresh] done in 129ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3186251ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3186301ms] [LOG] [Fast Refresh] done in 122ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3203423ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3203540ms] [LOG] [Fast Refresh] done in 206ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3234601ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3235279ms] [LOG] [Fast Refresh] done in 769ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3235380ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3235433ms] [LOG] [Fast Refresh] done in 153ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3235612ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3235643ms] [LOG] [Fast Refresh] done in 131ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3250339ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3250382ms] [LOG] [Fast Refresh] done in 88ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3271382ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3271513ms] [LOG] [Fast Refresh] done in 210ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3287302ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3287568ms] [LOG] [Fast Refresh] done in 164ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3303767ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3303819ms] [LOG] [Fast Refresh] done in 96ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3326037ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3326324ms] [LOG] [Fast Refresh] done in 203ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3353135ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3353178ms] [LOG] [Fast Refresh] done in 70ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3368539ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3368585ms] [LOG] [Fast Refresh] done in 93ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3385710ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3385895ms] [LOG] [Fast Refresh] done in 150ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3403539ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3403828ms] [LOG] [Fast Refresh] done in 390ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3403829ms] [WARNING] [HMR] Invalid message: {"isTrusted":true}
+TypeError: Cannot convert undefined or null to object
+    at Object.keys (<anonymous>)
+    at extractModulesFromTurbopackMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13654:39)
+    at TurbopackHmr.onTurbopackMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13601:32)
+    at processMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13959:30)
+    at WebSocket.handleMessage (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13358:52) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477

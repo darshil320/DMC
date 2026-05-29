@@ -1,0 +1,527 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "DMC •" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - text: DMC
+        - generic [ref=e5]: •
+      - navigation [ref=e6]:
+        - link "Services" [ref=e7] [cursor=pointer]:
+          - /url: "#services"
+        - link "Process" [ref=e8] [cursor=pointer]:
+          - /url: "#process"
+        - link "Pricing" [ref=e9] [cursor=pointer]:
+          - /url: "#pricing"
+        - link "Demo" [ref=e10] [cursor=pointer]:
+          - /url: "#demo"
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: "#contact"
+      - link "Get Free Consultation" [ref=e13] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: Trusted by 200+ local shops across India
+        - heading "Take your local business online." [level=1] [ref=e19]:
+          - text: Take your local business
+          - text: online.
+        - generic [ref=e20]:
+          - generic [ref=e21]: Built for
+          - generic [ref=e23]: Furniture Shops
+        - paragraph [ref=e25]: Websites, product catalogs, ecommerce stores, and WhatsApp enquiry systems — built and launched in 14 days.
+        - generic [ref=e26]:
+          - link "Get Free Consultation" [ref=e27] [cursor=pointer]:
+            - /url: "#contact"
+            - text: Get Free Consultation
+            - img [ref=e29]
+          - link "Chat on WhatsApp" [ref=e31] [cursor=pointer]:
+            - /url: https://wa.me/91XXXXXXXXXX
+            - img [ref=e32]
+            - text: Chat on WhatsApp
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - img [ref=e38]
+            - img [ref=e40]
+            - img [ref=e42]
+            - img [ref=e44]
+            - img [ref=e46]
+          - generic [ref=e48]: "4.9"
+          - generic [ref=e49]: · 200+ shops launched
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - generic [ref=e53]:
+            - generic [ref=e61]: urbanwoodfurniture.in
+            - generic [ref=e66]:
+              - generic [ref=e67]:
+                - generic [ref=e68]: UrbanWood
+                - generic [ref=e69]:
+                  - generic [ref=e70]: Sofas
+                  - generic [ref=e71]: Beds
+                  - generic [ref=e72]: Dining
+                  - generic [ref=e73]: About
+                - generic [ref=e74]: Enquire →
+              - generic [ref=e75]:
+                - generic [ref=e76]:
+                  - generic [ref=e77]: Ahmedabad · Est. 2012
+                  - generic [ref=e78]:
+                    - text: Premium Furniture
+                    - text: for Modern Homes
+                  - paragraph [ref=e79]: Handcrafted sofas, beds, and dining sets. Browse and enquire directly on WhatsApp.
+                  - generic [ref=e80]:
+                    - generic [ref=e81]: View Collection
+                    - generic [ref=e82]: WhatsApp Us
+                - generic [ref=e83]:
+                  - generic [ref=e86]:
+                    - paragraph [ref=e87]: Marlow Sofa
+                    - paragraph [ref=e88]: ₹42,000
+                  - generic [ref=e91]:
+                    - paragraph [ref=e92]: Oslo Bed
+                    - paragraph [ref=e93]: ₹38,000
+                  - generic [ref=e96]:
+                    - paragraph [ref=e97]: Hudson Dining
+                    - paragraph [ref=e98]: ₹62,000
+          - generic [ref=e99]:
+            - img [ref=e101]
+            - generic [ref=e103]:
+              - paragraph [ref=e104]: WhatsApp enquiries
+              - paragraph [ref=e105]: 24 today
+              - paragraph [ref=e106]: ↑ 3× this week
+          - generic [ref=e107]:
+            - img [ref=e109]
+            - generic [ref=e112]:
+              - paragraph [ref=e113]: Monthly revenue
+              - paragraph [ref=e114]: ₹2.4L+
+              - paragraph [ref=e115]: from online orders
+          - generic [ref=e116]:
+            - img [ref=e118]
+            - generic [ref=e122]:
+              - paragraph [ref=e123]: Products live
+              - paragraph [ref=e124]: 147 items
+              - paragraph [ref=e125]: updated today
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - img [ref=e129]
+            - text: 200+ shops launched
+          - generic [ref=e134]:
+            - img [ref=e136]
+            - text: WhatsApp integrated
+          - generic [ref=e138]:
+            - img [ref=e140]
+            - text: Live in 14 days
+          - generic [ref=e143]:
+            - img [ref=e145]
+            - text: Unlimited products
+    - generic [ref=e151]:
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - img [ref=e154]
+          - text: The problem
+        - heading "Most local businesses are invisible online — and it's costing them." [level=2] [ref=e157]:
+          - text: Most local businesses are invisible online —
+          - text: and it's costing them.
+        - paragraph [ref=e158]: Customers search before they visit. If they can't find your products, prices, location, or WhatsApp number, they go to your competitor instead.
+      - generic [ref=e159]:
+        - generic [ref=e160]:
+          - generic [ref=e161]:
+            - img [ref=e163]
+            - generic [ref=e168]: No One Can Find You
+            - paragraph [ref=e169]: Google searches for your shop show nothing relevant. Customers skip straight to your competitor before they even call you.
+          - generic [ref=e170]:
+            - img [ref=e172]
+            - generic [ref=e178]: Customers Can't See Products
+            - paragraph [ref=e179]: They want to browse before visiting, but you have no catalog online. So they go somewhere they can see prices and photos.
+          - generic [ref=e180]:
+            - img [ref=e182]
+            - generic [ref=e186]: WhatsApp Is Overwhelming
+            - paragraph [ref=e187]: The same questions repeat all day. Product prices, availability, location — nothing is organised or followed up properly.
+          - generic [ref=e188]:
+            - img [ref=e190]
+            - generic [ref=e198]: Competitors Look More Serious
+            - paragraph [ref=e199]: Your competitor has a website. Customers assume they are bigger, more reliable, and more professional — even if they're not.
+        - generic [ref=e200]:
+          - generic [ref=e201]:
+            - paragraph [ref=e202]: 76%
+            - paragraph [ref=e203]: of customers check online before visiting a store
+          - generic [ref=e204]:
+            - paragraph [ref=e205]: 3×
+            - paragraph [ref=e206]: more enquiries for shops with a product catalog
+          - generic [ref=e207]:
+            - paragraph [ref=e208]: 14 days
+            - paragraph [ref=e209]: average time from start to launch with DMC
+          - generic [ref=e210]:
+            - paragraph [ref=e211]: ₹0
+            - paragraph [ref=e212]: hidden fees — what you see is what you pay
+    - generic [ref=e215]:
+      - generic [ref=e216]:
+        - heading "Everything you need to run your business online" [level=2] [ref=e217]
+        - paragraph [ref=e218]: One agency, all the pieces — built for shops, not enterprises.
+      - generic [ref=e219]:
+        - generic [ref=e221]:
+          - img [ref=e223]
+          - heading "Business Websites" [level=3] [ref=e226]
+          - paragraph [ref=e227]: A clean, professional website that represents your shop online and builds instant trust.
+        - generic [ref=e229]:
+          - img [ref=e231]
+          - heading "Product Catalog Websites" [level=3] [ref=e236]
+          - paragraph [ref=e237]: Show all your products with prices, photos, and enquiry buttons. Customers browse before visiting.
+        - generic [ref=e239]:
+          - img [ref=e241]
+          - heading "Ecommerce Stores" [level=3] [ref=e245]
+          - paragraph [ref=e246]: Take orders, accept payments, and ship across India. Full online store with dashboard.
+        - generic [ref=e248]:
+          - img [ref=e250]
+          - heading "Mobile Apps" [level=3] [ref=e252]
+          - paragraph [ref=e253]: Custom Android and iOS apps for businesses that need a dedicated mobile presence.
+        - generic [ref=e255]:
+          - img [ref=e257]
+          - heading "WhatsApp Enquiry Systems" [level=3] [ref=e259]
+          - paragraph [ref=e260]: Auto-replies, quick links, organized chats. Stop answering the same questions all day.
+        - generic [ref=e262]:
+          - img [ref=e264]
+          - heading "Google Business Profile" [level=3] [ref=e267]
+          - paragraph [ref=e268]: Show up on Google Maps with your photos, reviews, and contact details. Be findable.
+        - generic [ref=e270]:
+          - img [ref=e272]
+          - heading "Landing Pages" [level=3] [ref=e275]
+          - paragraph [ref=e276]: High-converting pages for specific offers, campaigns, or seasonal promotions.
+        - generic [ref=e278]:
+          - img [ref=e280]
+          - heading "Maintenance & Support" [level=3] [ref=e282]
+          - paragraph [ref=e283]: Monthly updates, edits, and improvements. We keep your site current so you don't have to.
+    - generic [ref=e286]:
+      - generic [ref=e287]:
+        - generic [ref=e288]: Most Popular
+        - heading "Our most popular offer for retail shops" [level=2] [ref=e289]
+      - generic [ref=e293]:
+        - heading "Online Catalog for Local Shops" [level=3] [ref=e294]
+        - paragraph [ref=e295]: Your furniture, clothing, hardware, or retail store gets a beautiful online catalog. Customers browse products on their phone, see prices, and tap to enquire on WhatsApp — directly to your number. No new app to learn. No login. Just enquiries that come straight to you.
+        - list [ref=e296]:
+          - listitem [ref=e297]:
+            - img [ref=e298]
+            - generic [ref=e301]: Unlimited products and categories
+          - listitem [ref=e302]:
+            - img [ref=e303]
+            - generic [ref=e306]: Photos, prices, sizes, materials, custom fields
+          - listitem [ref=e307]:
+            - img [ref=e308]
+            - generic [ref=e311]: WhatsApp enquiry button on every product
+          - listitem [ref=e312]:
+            - img [ref=e313]
+            - generic [ref=e316]: Easy to update — you send us photos, we update the site
+        - link "See a Live Demo →" [ref=e317] [cursor=pointer]:
+          - /url: "#demo"
+    - generic [ref=e319]:
+      - generic [ref=e321]:
+        - heading "How we work — clear, simple, no surprises" [level=2] [ref=e322]
+        - paragraph [ref=e323]: From first call to launch, you know exactly what's happening at every stage.
+      - generic [ref=e325]:
+        - generic [ref=e326]:
+          - heading "Step 1" [level=3] [ref=e330]
+          - generic [ref=e332]:
+            - heading "Understand Your Business" [level=3] [ref=e333]
+            - paragraph [ref=e334]: 30-minute call. We learn your products, customers, and goals. No jargon. No pressure.
+        - generic [ref=e335]:
+          - heading "Step 2" [level=3] [ref=e339]
+          - generic [ref=e341]:
+            - heading "Create Your Website or Catalog" [level=3] [ref=e342]
+            - paragraph [ref=e343]: We design and build in 7–14 days. You review at each stage. We revise until it's exactly right.
+        - generic [ref=e344]:
+          - heading "Step 3" [level=3] [ref=e348]
+          - generic [ref=e350]:
+            - heading "Connect WhatsApp & Google" [level=3] [ref=e351]
+            - paragraph [ref=e352]: We set up your WhatsApp Business, Google Business Profile, and enquiry flow.
+        - generic [ref=e353]:
+          - heading "Step 4" [level=3] [ref=e357]
+          - generic [ref=e359]:
+            - heading "Launch Online" [level=3] [ref=e360]
+            - paragraph [ref=e361]: We publish on your domain, test on real phones, and train you to handle enquiries.
+        - generic [ref=e362]:
+          - heading "Step 5" [level=3] [ref=e366]
+          - generic [ref=e368]:
+            - heading "Maintain & Improve Monthly" [level=3] [ref=e369]
+            - paragraph [ref=e370]: Monthly updates, new products, performance reports, and small improvements.
+    - generic [ref=e373]:
+      - generic [ref=e374]:
+        - heading "See a real DMC catalog in action" [level=2] [ref=e375]
+        - paragraph [ref=e376]: This is UrbanWood Furniture — a demo of exactly what we build for furniture and retail shops.
+      - generic [ref=e377]:
+        - generic [ref=e378]:
+          - img "Marlow 3-Seater Linen Sofa" [ref=e380]
+          - generic [ref=e381]:
+            - generic [ref=e382]: Sofas
+            - heading "Marlow 3-Seater Linen Sofa" [level=3] [ref=e383]
+            - paragraph [ref=e384]: Solid Wood + Linen
+            - paragraph [ref=e385]: ₹42,000+
+            - link "Enquire on WhatsApp" [ref=e386] [cursor=pointer]:
+              - /url: https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in Marlow%203-Seater%20Linen%20Sofa
+              - img [ref=e387]
+              - text: Enquire on WhatsApp
+        - generic [ref=e389]:
+          - img "Oslo King Storage Bed" [ref=e391]
+          - generic [ref=e392]:
+            - generic [ref=e393]: Beds
+            - heading "Oslo King Storage Bed" [level=3] [ref=e394]
+            - paragraph [ref=e395]: Sheesham Wood
+            - paragraph [ref=e396]: ₹38,000+
+            - link "Enquire on WhatsApp" [ref=e397] [cursor=pointer]:
+              - /url: https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in Oslo%20King%20Storage%20Bed
+              - img [ref=e398]
+              - text: Enquire on WhatsApp
+        - generic [ref=e400]:
+          - img "Aspen 4-Door Wardrobe" [ref=e402]
+          - generic [ref=e403]:
+            - generic [ref=e404]: Wardrobes
+            - heading "Aspen 4-Door Wardrobe" [level=3] [ref=e405]
+            - paragraph [ref=e406]: MDF + Veneer Finish
+            - paragraph [ref=e407]: ₹54,000+
+            - link "Enquire on WhatsApp" [ref=e408] [cursor=pointer]:
+              - /url: https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in Aspen%204-Door%20Wardrobe
+              - img [ref=e409]
+              - text: Enquire on WhatsApp
+        - generic [ref=e411]:
+          - img "Hudson 6-Seater Dining Set" [ref=e413]
+          - generic [ref=e414]:
+            - generic [ref=e415]: Dining
+            - heading "Hudson 6-Seater Dining Set" [level=3] [ref=e416]
+            - paragraph [ref=e417]: Teak Wood + Fabric
+            - paragraph [ref=e418]: ₹62,000+
+            - link "Enquire on WhatsApp" [ref=e419] [cursor=pointer]:
+              - /url: https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in Hudson%206-Seater%20Dining%20Set
+              - img [ref=e420]
+              - text: Enquire on WhatsApp
+      - link "Visit the Full Demo" [ref=e423] [cursor=pointer]:
+        - /url: /demo/urbanwood
+        - text: Visit the Full Demo
+        - img
+    - generic [ref=e426]:
+      - generic [ref=e427]:
+        - heading "Honest pricing — pick what fits your business" [level=2] [ref=e428]
+        - paragraph [ref=e429]: All prices are starting points. Final quote depends on number of products and features.
+      - generic [ref=e430]:
+        - generic [ref=e432]:
+          - generic [ref=e433]:
+            - heading "Starter Website" [level=3] [ref=e434]
+            - generic [ref=e435]: ₹15,000+
+          - list [ref=e436]:
+            - listitem [ref=e437]:
+              - img [ref=e438]
+              - generic [ref=e441]: 5-page professional website
+            - listitem [ref=e442]:
+              - img [ref=e443]
+              - generic [ref=e446]: Mobile-responsive design
+            - listitem [ref=e447]:
+              - img [ref=e448]
+              - generic [ref=e451]: Contact form + WhatsApp button
+            - listitem [ref=e452]:
+              - img [ref=e453]
+              - generic [ref=e456]: Google Business Profile setup
+            - listitem [ref=e457]:
+              - img [ref=e458]
+              - generic [ref=e461]: 1 round of revisions
+          - generic [ref=e462]: "Best for: Clinics, salons, coaching, service businesses"
+          - link "Talk to DMC" [ref=e463] [cursor=pointer]:
+            - /url: https://wa.me/91XXXXXXXXXX
+        - generic [ref=e465]:
+          - generic [ref=e468]: Most Popular
+          - generic [ref=e469]:
+            - heading "Online Catalog" [level=3] [ref=e470]
+            - generic [ref=e471]: ₹25,000+
+          - list [ref=e472]:
+            - listitem [ref=e473]:
+              - img [ref=e474]
+              - generic [ref=e477]: Everything in Starter
+            - listitem [ref=e478]:
+              - img [ref=e479]
+              - generic [ref=e482]: Unlimited products & categories
+            - listitem [ref=e483]:
+              - img [ref=e484]
+              - generic [ref=e487]: WhatsApp enquiry on every product
+            - listitem [ref=e488]:
+              - img [ref=e489]
+              - generic [ref=e492]: Product photos & details management
+            - listitem [ref=e493]:
+              - img [ref=e494]
+              - generic [ref=e497]: 2 rounds of revisions
+          - generic [ref=e498]: "Best for: Furniture, clothing, hardware, retail shops"
+          - link "Talk to DMC" [ref=e499] [cursor=pointer]:
+            - /url: https://wa.me/91XXXXXXXXXX
+        - generic [ref=e501]:
+          - generic [ref=e502]:
+            - heading "Ecommerce Store" [level=3] [ref=e503]
+            - generic [ref=e504]: ₹50,000+
+          - list [ref=e505]:
+            - listitem [ref=e506]:
+              - img [ref=e507]
+              - generic [ref=e510]: Everything in Catalog
+            - listitem [ref=e511]:
+              - img [ref=e512]
+              - generic [ref=e515]: Online payments (Razorpay / UPI)
+            - listitem [ref=e516]:
+              - img [ref=e517]
+              - generic [ref=e520]: Order management dashboard
+            - listitem [ref=e521]:
+              - img [ref=e522]
+              - generic [ref=e525]: Shipping & tax setup
+            - listitem [ref=e526]:
+              - img [ref=e527]
+              - generic [ref=e530]: Customer accounts
+          - generic [ref=e531]: "Best for: Brands selling online across India"
+          - link "Talk to DMC" [ref=e532] [cursor=pointer]:
+            - /url: https://wa.me/91XXXXXXXXXX
+        - generic [ref=e534]:
+          - generic [ref=e535]:
+            - heading "Monthly Maintenance" [level=3] [ref=e536]
+            - generic [ref=e537]: ₹5,000/month+
+          - list [ref=e538]:
+            - listitem [ref=e539]:
+              - img [ref=e540]
+              - generic [ref=e543]: Product updates & new uploads
+            - listitem [ref=e544]:
+              - img [ref=e545]
+              - generic [ref=e548]: Performance monitoring
+            - listitem [ref=e549]:
+              - img [ref=e550]
+              - generic [ref=e553]: Small design tweaks
+            - listitem [ref=e554]:
+              - img [ref=e555]
+              - generic [ref=e558]: Monthly report
+            - listitem [ref=e559]:
+              - img [ref=e560]
+              - generic [ref=e563]: WhatsApp/email support
+          - generic [ref=e564]: "Best for: Any client after launch"
+          - link "Talk to DMC" [ref=e565] [cursor=pointer]:
+            - /url: https://wa.me/91XXXXXXXXXX
+    - generic [ref=e568]:
+      - generic [ref=e569]:
+        - heading "Why shops trust DMC" [level=2] [ref=e570]
+        - paragraph [ref=e571]: Quality you can see. Results you can measure.
+      - generic [ref=e572]:
+        - generic [ref=e573]:
+          - generic [ref=e574]: 200+
+          - generic [ref=e575]: Local shops launched
+          - generic [ref=e576]: across India
+        - generic [ref=e577]:
+          - generic [ref=e578]: "14"
+          - generic [ref=e579]: Days to go live
+          - generic [ref=e580]: start to launch
+        - generic [ref=e581]:
+          - generic [ref=e582]: 4.9★
+          - generic [ref=e583]: Customer rating
+          - generic [ref=e584]: from 120+ reviews
+        - generic [ref=e585]:
+          - generic [ref=e586]: ₹0
+          - generic [ref=e587]: Hidden fees
+          - generic [ref=e588]: what you see is what you pay
+      - generic [ref=e590]:
+        - generic [ref=e591]:
+          - img [ref=e593]
+          - generic [ref=e601]: Professional design
+          - paragraph [ref=e602]: Custom-designed to match your brand — not a generic template that looks like every other shop.
+        - generic [ref=e603]:
+          - img [ref=e605]
+          - generic [ref=e609]: Mobile-first
+          - paragraph [ref=e610]: Built perfectly for phones first. Over 80% of your customers will browse on mobile.
+        - generic [ref=e611]:
+          - img [ref=e613]
+          - generic [ref=e617]: Fast loading
+          - paragraph [ref=e618]: Under 2 seconds on mobile. Slow sites lose customers — ours don't.
+        - generic [ref=e619]:
+          - img [ref=e621]
+          - generic [ref=e625]: WhatsApp integrated
+          - paragraph [ref=e626]: Enquiries come straight to your WhatsApp. No new app, no new inbox to check.
+        - generic [ref=e627]:
+          - img [ref=e629]
+          - generic [ref=e634]: SEO-ready
+          - paragraph [ref=e635]: Google-optimised from day one. Your shop shows up when customers search locally.
+        - generic [ref=e636]:
+          - img [ref=e638]
+          - generic [ref=e642]: Easy to update
+          - paragraph [ref=e643]: Send us photos and descriptions — we update your catalog. No technical skill needed.
+    - generic [ref=e646]:
+      - generic [ref=e648]: Start today — no pressure
+      - heading "Ready to take your business online?" [level=2] [ref=e649]
+      - paragraph [ref=e650]: Talk to us on WhatsApp. We'll understand your business in 10 minutes and send you a clear, no-pressure proposal.
+      - link "Talk to DMC on WhatsApp" [ref=e652] [cursor=pointer]:
+        - /url: https://wa.me/91XXXXXXXXXX
+        - img
+        - text: Talk to DMC on WhatsApp
+      - paragraph [ref=e653]:
+        - text: Or email us at
+        - link "hello@dmcdigital.in" [ref=e654] [cursor=pointer]:
+          - /url: mailto:hello@dmcdigital.in
+  - contentinfo [ref=e655]:
+    - generic [ref=e656]:
+      - generic [ref=e657]:
+        - generic [ref=e658]:
+          - link "DMC •" [ref=e659] [cursor=pointer]:
+            - /url: /
+            - text: DMC
+            - generic [ref=e660]: •
+          - paragraph [ref=e661]: We take local businesses online.
+          - link "WhatsApp Us" [ref=e662] [cursor=pointer]:
+            - /url: https://wa.me/91XXXXXXXXXX
+            - img [ref=e663]
+            - text: WhatsApp Us
+        - generic [ref=e665]:
+          - heading "Services" [level=3] [ref=e666]
+          - list [ref=e667]:
+            - listitem [ref=e668]:
+              - link "Business Websites" [ref=e669] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e670]:
+              - link "Product Catalogs" [ref=e671] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e672]:
+              - link "Ecommerce Stores" [ref=e673] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e674]:
+              - link "Mobile Apps" [ref=e675] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e676]:
+              - link "WhatsApp Systems" [ref=e677] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e678]:
+              - link "Google Business Setup" [ref=e679] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e680]:
+              - link "Landing Pages" [ref=e681] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e682]:
+              - link "Maintenance & Support" [ref=e683] [cursor=pointer]:
+                - /url: "#services"
+        - generic [ref=e684]:
+          - heading "Company" [level=3] [ref=e685]
+          - list [ref=e686]:
+            - listitem [ref=e687]:
+              - link "Process" [ref=e688] [cursor=pointer]:
+                - /url: "#process"
+            - listitem [ref=e689]:
+              - link "Pricing" [ref=e690] [cursor=pointer]:
+                - /url: "#pricing"
+            - listitem [ref=e691]:
+              - link "Demo" [ref=e692] [cursor=pointer]:
+                - /url: "#demo"
+            - listitem [ref=e693]:
+              - link "Contact" [ref=e694] [cursor=pointer]:
+                - /url: "#contact"
+        - generic [ref=e695]:
+          - heading "Contact" [level=3] [ref=e696]
+          - list [ref=e697]:
+            - listitem [ref=e698]:
+              - link "hello@dmcdigital.in" [ref=e699] [cursor=pointer]:
+                - /url: mailto:hello@dmcdigital.in
+                - img [ref=e700]
+                - text: hello@dmcdigital.in
+            - listitem [ref=e703]:
+              - link "WhatsApp" [ref=e704] [cursor=pointer]:
+                - /url: https://wa.me/91XXXXXXXXXX
+                - img [ref=e705]
+                - text: WhatsApp
+            - listitem [ref=e707]:
+              - img [ref=e708]
+              - text: Ahmedabad, India
+      - generic [ref=e711]:
+        - generic [ref=e712]: © 2026 DMC — Digital Market Creators
+        - generic [ref=e713]: Made in India 🇮🇳
+  - button "Open Next.js Dev Tools" [ref=e719] [cursor=pointer]:
+    - img [ref=e720]

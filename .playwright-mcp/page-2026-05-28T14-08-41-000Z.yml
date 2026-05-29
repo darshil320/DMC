@@ -1,0 +1,256 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - button "Menu" [ref=e4]:
+        - generic [ref=e9]: Menu
+      - link "UrbanWood" [ref=e10] [cursor=pointer]:
+        - /url: /demo/urbanwood
+      - generic [ref=e11]:
+        - generic [ref=e12]: Cart (0)
+        - generic [ref=e13]: EN / JP
+    - main [ref=e14]:
+      - generic [ref=e16]:
+        - img "Upholstered linen sofa in a warm Scandinavian living space" [ref=e17]
+        - generic:
+          - heading "UrbanWood" [level=1]
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - paragraph [ref=e22]: Discover a smarter, more personal way to find the sofa that fits your style, space, and the way you live.
+          - paragraph [ref=e23]: With flexible designs and a range of fabrics, colours, and layouts, our collection lets you shape furniture that fits your space. Explore the guide to find the style, comfort, and material that suit you best.
+          - link "Learn More →" [ref=e24] [cursor=pointer]:
+            - /url: "#products"
+            - text: Learn More
+            - generic [ref=e25]: →
+          - generic [ref=e26]:
+            - img [ref=e27]
+            - img [ref=e29]
+        - img "Nordic accent armchair in natural beech wood" [ref=e36]
+      - generic [ref=e38]:
+        - img "Chill & Laid-back" [ref=e41]
+        - list [ref=e43]:
+          - listitem [ref=e44]:
+            - button "1Chill & Laid-back" [ref=e45]:
+              - generic [ref=e46]:
+                - superscript [ref=e47]: "1"
+                - text: Chill & Laid-back
+          - listitem [ref=e48]:
+            - button "2Bright & Bold" [ref=e49]:
+              - generic [ref=e50]:
+                - superscript [ref=e51]: "2"
+                - text: Bright & Bold
+          - listitem [ref=e52]:
+            - button "3Sleek & Calm" [ref=e53]:
+              - generic [ref=e54]:
+                - superscript [ref=e55]: "3"
+                - text: Sleek & Calm
+          - listitem [ref=e56]:
+            - button "4Everyday Relaxing" [ref=e57]:
+              - generic [ref=e58]:
+                - superscript [ref=e59]: "4"
+                - text: Everyday Relaxing
+          - listitem [ref=e60]:
+            - button "5Compact Living" [ref=e61]:
+              - generic [ref=e62]:
+                - superscript [ref=e63]: "5"
+                - text: Compact Living
+        - img "Sleek & Calm" [ref=e66]
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - generic [ref=e69]:
+            - img "Outline Sofa — lifestyle photography" [ref=e70]
+            - generic [ref=e71]: Outline Sofa
+          - generic [ref=e72]:
+            - paragraph [ref=e74]: Adds new perspectives to the classic Scandinavian design sofas of the 1960's. Generous proportions meet refined craftsmanship in every curve.
+            - generic [ref=e75]:
+              - paragraph [ref=e76]: "Colour : Cay 19"
+              - generic [ref=e77]:
+                - button "Select colour Cay 19" [ref=e78]
+                - button "Select colour Olive" [ref=e79]
+                - button "Select colour Slate" [ref=e80]
+                - button "Select colour Chalk" [ref=e81]
+                - button "Select colour Charcoal" [ref=e82]
+              - img "Outline Sofa" [ref=e86]
+            - link "View Details →" [ref=e88] [cursor=pointer]:
+              - /url: "#"
+              - text: View Details
+              - generic [ref=e89]: →
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - img "Oslo Bench — lifestyle photography" [ref=e92]
+            - generic [ref=e93]: Oslo Bench
+          - generic [ref=e94]:
+            - paragraph [ref=e96]: Blends Scandinavian simplicity with playful curves and a plush seat, perfect alone or in any lounge space.
+            - generic [ref=e97]:
+              - paragraph [ref=e98]: "Colour : Sand"
+              - generic [ref=e99]:
+                - button "Select colour Sand" [ref=e100]
+                - button "Select colour Terracotta" [ref=e101]
+                - button "Select colour Sage" [ref=e102]
+                - button "Select colour Pearl" [ref=e103]
+              - img "Oslo Bench" [ref=e107]
+            - generic [ref=e108]:
+              - paragraph [ref=e109]: 2-Seater · From ₹46,000
+              - link "Shop Now →" [ref=e110] [cursor=pointer]:
+                - /url: "#"
+                - text: Shop Now
+                - generic [ref=e111]: →
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - img "In Situ Modular Sofa — lifestyle photography" [ref=e114]
+            - generic [ref=e115]: In Situ Modular Sofa
+          - generic [ref=e116]:
+            - paragraph [ref=e118]: A grand, modular design with sculptural lines that can be tailored to your individual space and taste with its modular elements hidden through subtle detailing of its front profile.
+            - generic [ref=e119]:
+              - paragraph [ref=e120]: "Colour : Blush"
+              - generic [ref=e121]:
+                - button "Select colour Blush" [ref=e122]
+                - button "Select colour Mist" [ref=e123]
+                - button "Select colour Dune" [ref=e124]
+                - button "Select colour Stone" [ref=e125]
+              - img "In Situ Modular Sofa" [ref=e129]
+            - link "View Details →" [ref=e131] [cursor=pointer]:
+              - /url: "#"
+              - text: View Details
+              - generic [ref=e132]: →
+      - generic [ref=e133]:
+        - heading "Furniture That Fits Everywhere" [level=2] [ref=e134]
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - img [ref=e138]
+            - generic [ref=e144]: Tables
+          - generic [ref=e145]:
+            - img [ref=e147]
+            - generic [ref=e152]: Chairs
+          - generic [ref=e153]:
+            - img [ref=e155]
+            - generic [ref=e159]: Lighting
+          - generic [ref=e160]:
+            - img [ref=e162]
+            - generic [ref=e164]: Shelving
+        - generic [ref=e165]:
+          - link "See All Products →" [ref=e166] [cursor=pointer]:
+            - /url: "#"
+            - text: See All Products
+            - generic [ref=e167]: →
+          - paragraph [ref=e168]: Explore chairs, tables, lighting, and more, all designed with the same modern simplicity and comfort as our sofas.
+      - generic [ref=e170]:
+        - generic [ref=e171]:
+          - heading "Shaping the future of Scandinavian design" [level=2] [ref=e172]
+          - paragraph [ref=e173]: Explore the minds behind UrbanWood, a global collective of visionary designers redefining form, function, and modern living.
+          - list [ref=e174]:
+            - listitem [ref=e175]:
+              - generic [ref=e176]:
+                - generic [ref=e177]: Aiayu
+                - generic [ref=e178]: Cushion
+                - generic [ref=e179]: →
+            - listitem [ref=e180]:
+              - generic [ref=e181]:
+                - generic [ref=e182]: Aleksej Iskos
+                - generic [ref=e183]: Accessories
+                - generic [ref=e184]: →
+            - listitem [ref=e185]:
+              - generic [ref=e186]:
+                - generic [ref=e187]: Benjamin Hubert
+                - generic [ref=e188]: Lighting
+                - generic [ref=e189]: →
+            - listitem [ref=e190]:
+              - generic [ref=e191]:
+                - generic [ref=e192]: Dimitri Bähler
+                - generic [ref=e193]: Accessories
+                - generic [ref=e194]: →
+            - listitem [ref=e195]:
+              - generic [ref=e196]:
+                - generic [ref=e197]: Mattias Ståhlbom
+                - generic [ref=e198]: Lighting
+                - generic [ref=e199]: →
+          - link "All Designers →" [ref=e200] [cursor=pointer]:
+            - /url: "#"
+            - text: All Designers
+            - generic [ref=e201]: →
+        - img "UrbanWood designer — portrait" [ref=e204]
+    - contentinfo [ref=e205]:
+      - generic [ref=e206]:
+        - paragraph [ref=e208]: "\"Your home reflects who you are, your taste, lifestyle, and the way you choose to live.\""
+        - img [ref=e210]
+      - generic [ref=e214]:
+        - generic [ref=e215]:
+          - paragraph [ref=e216]: Product
+          - list [ref=e217]:
+            - listitem [ref=e218]:
+              - link "Seating" [ref=e219] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e220]:
+              - link "Sofas" [ref=e221] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e222]:
+              - link "Tables" [ref=e223] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e224]:
+              - link "Shelving & Storage" [ref=e225] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e226]:
+              - link "Lighting" [ref=e227] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e228]:
+              - link "Accessories" [ref=e229] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e230]:
+              - link "Outdoor" [ref=e231] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e232]:
+          - paragraph [ref=e233]: Information
+          - list [ref=e234]:
+            - listitem [ref=e235]:
+              - link "Press & Resources" [ref=e236] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e237]:
+              - link "About Us" [ref=e238] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e239]:
+              - link "Sustainability" [ref=e240] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e241]:
+              - link "Catalog" [ref=e242] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e243]:
+              - link "Materials" [ref=e244] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e245]:
+              - link "FAQ" [ref=e246] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e247]:
+              - link "Career" [ref=e248] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e249]:
+          - paragraph [ref=e250]: Find Us
+          - list [ref=e251]:
+            - listitem [ref=e252]:
+              - link "Showrooms" [ref=e253] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e254]:
+              - link "Online Stores" [ref=e255] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e256]:
+              - link "Store Locator" [ref=e257] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e258]:
+              - link "Contact" [ref=e259] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e260]:
+          - paragraph [ref=e261]: Newsletter
+          - paragraph [ref=e262]: Get new collections and design stories in your inbox.
+          - generic [ref=e264]:
+            - textbox "Your email" [ref=e265]
+            - button "Subscribe" [ref=e266]
+      - generic [ref=e267]:
+        - generic [ref=e268]:
+          - link "UrbanWood" [ref=e269] [cursor=pointer]:
+            - /url: /demo/urbanwood
+          - generic [ref=e270]: © 2026 URBANWOOD FURNITURE
+        - generic [ref=e271]:
+          - link "← Back to DMC" [ref=e272] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e273]: ·
+          - generic [ref=e274]: A DEMO BY DMC — DIGITAL MARKET CREATORS
+  - button "Open Next.js Dev Tools" [ref=e280] [cursor=pointer]:
+    - img [ref=e281]

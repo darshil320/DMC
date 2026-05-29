@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/* ─── Brutalist NVRMND Aesthetic Tokens ─── */
+:root {
+  /* Brutalist Colors */
+  --bg-page: #D9D9D9;
+  --bg-card: #E5E5E5;
+  --bg-dark: #0000FF; /* Dark sections are now true blue */
+  
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-muted: #666666;
+  --text-inverse: #FFFFFF;
+  
+  --border-subtle: rgba(0, 0, 0, 0.1);
+  --border-harsh: #000000;
+  
+  --accent: #0000FF; /* True Blue */
+  --accent-lime: #CCFF00; /* Neon Lime */
+
+  /* DMC Brand (Mapped to brutalist context) */
+  --dmc-whatsapp: #25D366; /* Keep standard whatsapp green for trust */
+}
+
+/* ─── Tailwind v4 Theme Registration ─── */
+@theme inline {
+  --color-bg-page: var(--bg-page);
+  --color-bg-card: var(--bg-card);
+  --color-bg-dark: var(--bg-dark);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-harsh: var(--border-harsh);
+  --color-accent: var(--accent);
+  --color-accent-lime: var(--accent-lime);
+  --color-dmc-whatsapp: var(--dmc-whatsapp);
+  
+  --font-display: var(--font-dot), monospace;
+  --font-body: var(--font-inter), sans-serif;
+}
+
+/* ─── Base Styles ─── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.4;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Brutalist heading defaults */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+*, *::before, *::after {
+  /* Brutalist UI often skips animations or uses instant transitions */
+  transition-timing-function: cubic-bezier(0, 0, 0, 1);
+}
+
+/* ─── Brutalist Utilities ─── */
+
+
+/* No rounded corners anywhere */
+* {
+  border-radius: 0 !important;
+}
+
+/* Custom Cursor Hide */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button {
+    cursor: none !important;
+  }
+}
+
+
+/* Sharp box shadow for cards */
+.brutalist-shadow {
+  box-shadow: 4px 4px 0px var(--border-harsh);
+}
+.brutalist-shadow-blue {
+  box-shadow: 4px 4px 0px var(--accent);
+}
+
+::selection {
+  background-color: var(--accent-lime);
+  color: var(--accent);
+}
+
+/* Secondary Text Override */
+.text-text-secondary {
+  font-family: "SF Pro Display", Arial, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
