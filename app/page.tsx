@@ -3,6 +3,8 @@ import { HeroSection } from "@/components/sections/hero";
 import { GridOverlay } from "@/components/layout/GridOverlay";
 import dynamic from "next/dynamic";
 
+import { BrutalistLoader } from "@/components/ui/brutalist-loader";
+
 const Footer = dynamic(() => import("@/components/layout/footer").then(m => m.Footer));
 const AboutUsSection = dynamic(() => import("@/components/sections/about").then(m => m.AboutUsSection));
 const OurWorkSection = dynamic(() => import("@/components/sections/our-work").then(m => m.OurWorkSection));
@@ -18,6 +20,7 @@ const FinalCtaSection = dynamic(() => import("@/components/sections/final-cta").
 export default function Home() {
   return (
     <div className="bg-bg-page min-h-screen relative overflow-hidden">
+      <BrutalistLoader />
       <GridOverlay />
       
       <div className="relative z-10 border-x border-border-harsh max-w-[1440px] mx-auto min-h-screen">

@@ -122,8 +122,11 @@ export function Navbar() {
 
           {/* Right - Status & Menu Button */}
           <div className="flex items-center gap-6">
-            <div className="hidden md:flex items-center gap-2 text-[10px] font-bold text-accent uppercase tracking-widest">
-              <span className="size-2 bg-accent-lime border border-accent" />
+            <div className={cn(
+              "hidden md:flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest transition-colors",
+              isMenuOpen ? "text-accent-lime" : "text-accent"
+            )}>
+              <span className={cn("size-2 border", isMenuOpen ? "bg-accent-lime border-accent-lime" : "bg-accent-lime border-accent")} />
               SLOTS OPEN - AUG &apos;26
             </div>
             
