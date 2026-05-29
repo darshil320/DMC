@@ -2,70 +2,85 @@
 
 import React from "react";
 import { MessageCircle, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { URBANWOOD } from "@/lib/dmc-config";
 
 const PRODUCTS = [
-  { name: "Marlow 3-Seater Linen Sofa", category: "Sofas", material: "Solid Wood + Linen", price: "₹42,000+", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80" },
-  { name: "Oslo King Storage Bed", category: "Beds", material: "Sheesham Wood", price: "₹38,000+", image: "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=400&q=80" },
-  { name: "Aspen 4-Door Wardrobe", category: "Wardrobes", material: "MDF + Veneer Finish", price: "₹54,000+", image: "https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=400&q=80" },
-  { name: "Hudson 6-Seater Dining Set", category: "Dining", material: "Teak Wood + Fabric", price: "₹62,000+", image: "https://images.unsplash.com/photo-1449247709967-d4461a6a6103?w=400&q=80" },
+  { name: "Marlow 3-Seater Linen Sofa", category: "Sofas", material: "Solid Wood + Linen", price: "₹42,000+", image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&q=80" },
+  { name: "Oslo King Storage Bed", category: "Beds", material: "Sheesham Wood", price: "₹38,000+", image: "https://images.pexels.com/photos/18470980/pexels-photo-18470980.jpeg" },
+  { name: "Aspen 4-Door Wardrobe", category: "Wardrobes", material: "MDF + Veneer Finish", price: "₹54,000+", image: "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?w=800&q=80" },
+  { name: "Hudson 6-Seater Dining Set", category: "Dining", material: "Teak Wood + Fabric", price: "₹62,000+", image: "https://images.pexels.com/photos/31258060/pexels-photo-31258060.jpeg" },
 ];
 
 export function DemoPreviewSection() {
   return (
-    <section id="demo" className="py-24 px-6 md:px-12 lg:px-16 w-full select-none bg-bg-page relative z-10 border-t border-border-harsh">
+    <section id="demo" className="py-32 px-6 md:px-12 lg:px-16 w-full select-none bg-bg-page relative z-10 border-t border-border-subtle">
       <div className="max-w-[1440px] mx-auto w-full">
         
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div>
-            <div className="bg-accent text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">
-              LIVE DEMO
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-8 h-px bg-accent" />
+              <span className="text-[10px] font-sans text-accent uppercase tracking-[0.2em]">Live Demo</span>
             </div>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-text-primary uppercase max-w-[800px]">
-              SEE A CATALOG IN ACTION.
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium tracking-tight text-text-primary leading-[1.1] max-w-[800px]">
+              See a catalog <br />
+              <span className="italic text-text-secondary">in action.</span>
             </h2>
           </div>
-          <p className="text-text-secondary text-sm md:text-base font-medium max-w-[320px]">
-            UrbanWood Furniture — a demo of exactly what we build. Designed for mobile, built for WhatsApp.
+          <p className="text-text-secondary text-sm md:text-base font-sans font-light leading-relaxed max-w-[320px]">
+            UrbanWood Furniture — a demo of exactly what we build. Designed for mobile, optimized for direct WhatsApp conversions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-harsh bg-bg-page mb-16">
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {PRODUCTS.map((product) => (
-            <div key={product.name} className="group border-b border-r border-border-harsh bg-bg-card p-4 flex flex-col hover:bg-white transition-colors">
-              <div className="aspect-[4/3] overflow-hidden bg-bg-page border border-border-harsh mb-4 relative">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+            <div key={product.name} className="group rounded-2xl border border-border-subtle bg-bg-card/50 p-4 flex flex-col hover:border-border-harsh transition-colors duration-500">
+              {/* Product Image */}
+              <div className="aspect-[4/3] overflow-hidden rounded-xl bg-bg-page mb-6 relative">
+                <Image 
+                  src={product.image} 
+                  alt={product.name} 
+                  fill
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105" 
+                />
               </div>
               
-              <div className="flex justify-between items-start mb-2">
-                <span className="text-[9px] font-bold tracking-widest uppercase bg-border-subtle text-text-primary px-2 py-1">
+              {/* Meta */}
+              <div className="flex justify-between items-start mb-3">
+                <span className="text-[9px] font-sans text-text-muted uppercase tracking-[0.2em]">
                   {product.category}
                 </span>
-                <span className="text-accent font-display font-bold text-sm">
+                <span className="text-text-primary font-sans font-medium text-sm">
                   {product.price}
                 </span>
               </div>
               
-              <h3 className="text-text-primary font-bold text-sm mb-1">{product.name}</h3>
-              <p className="text-text-muted text-[10px] uppercase tracking-wider mb-6 font-semibold">{product.material}</p>
+              {/* Details */}
+              <h3 className="text-text-primary font-display text-lg mb-1">{product.name}</h3>
+              <p className="text-text-muted text-[10px] font-sans uppercase tracking-[0.1em] mb-8">{product.material}</p>
               
+              {/* Elegant WhatsApp Button */}
               <a
                 href={`${URBANWOOD.whatsappLink}?text=Hi, I'm interested in ${encodeURIComponent(product.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] text-white text-xs font-bold uppercase tracking-widest border border-border-harsh brutalist-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+                className="mt-auto flex items-center justify-center gap-3 w-full py-3.5 bg-transparent text-text-primary text-xs font-sans tracking-[0.2em] uppercase rounded-full border border-border-subtle hover:border-[#25D366] hover:text-[#25D366] transition-all duration-300"
               >
                 <MessageCircle className="size-4" />
-                ENQUIRE
+                Enquire
               </a>
             </div>
           ))}
         </div>
 
+        {/* View All Button */}
         <div className="flex justify-center">
           <a
             href="/demo/urbanwood"
-            className="group flex items-center gap-2 bg-bg-page border-2 border-accent text-accent px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-white transition-colors"
+            className="group flex items-center gap-3 bg-transparent border border-border-harsh text-text-primary px-8 py-4 text-xs font-sans tracking-[0.2em] uppercase rounded-full hover:bg-bg-card transition-colors duration-300"
           >
             Visit the Full Demo
             <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />

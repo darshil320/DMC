@@ -4,71 +4,77 @@ import React from "react";
 import { DMC } from "@/lib/dmc-config";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
+import { CanvasText } from "@/components/ui/canvas-text";
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative min-h-[90vh] flex flex-col justify-between pt-32 lg:pt-40 pb-10 px-6 md:px-12 lg:px-16 bg-transparent select-none">
-      {/* Top right paragraph (as in the screenshot) */}
-      <div className="absolute top-24 lg:top-32 right-6 md:right-12 lg:right-16 hidden lg:block max-w-[320px] z-50">
-        <div className="bg-bg-page/90 backdrop-blur-md p-4 border border-border-subtle brutalist-shadow-sm rounded-sm">
-          <p className="text-sm text-text-secondary leading-snug">
-            We build custom websites for local businesses who have attention but need more footfall - 
-            turning your traffic into a digital storefront that educates, qualifies, and converts local customers.
-          </p>
-        </div>
-      </div>
+    <section id="home" className="relative min-h-[95vh] flex flex-col justify-center pt-32 pb-10 px-6 md:px-12 lg:px-16 overflow-hidden select-none">
+      {/* Background Soft Glows */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="flex-1 flex flex-col items-center justify-center w-full max-w-[1440px] mx-auto mt-20 md:mt-32 z-10">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-16 md:gap-8 mt-12 md:mt-0">
         
-        {/* Massive Headline */}
-        <AnimatedReveal className="text-center w-full relative">
-          <h1 
-            className="text-text-primary uppercase tracking-tighter leading-[0.9] font-medium w-full"
-            style={{ fontSize: "clamp(48px, 11vw, 150px)" }}
-          >
-            <div className="block">Take Your</div>
-            <div className="block">
-              Local Business <span className="inline-block text-accent font-bold">Online.</span>
-            </div>
-          </h1>
-        </AnimatedReveal>
+        {/* Left Side: Elegant Headline */}
+        <div className="flex-1 flex flex-col items-start w-full">
+          <AnimatedReveal>
+            <h1 className="text-text-primary font-display tracking-tight leading-[1.1] text-5xl sm:text-6xl md:text-7xl lg:text-[100px] font-medium flex flex-col items-start">
+              <span>Take Your</span>
+              <span className="italic text-text-secondary">Local Business</span>
+              <CanvasText
+                text="Online."
+                colors={[
+                  "rgba(125, 211, 252, 1)",
+                  "rgba(125, 211, 252, 0.8)",
+                  "rgba(125, 211, 252, 0.6)",
+                  "rgba(125, 211, 252, 0.4)",
+                  "rgba(125, 211, 252, 0.2)",
+                  "rgba(125, 211, 252, 0.1)",
+                ]}
+                lineGap={2}
+                animationDuration={25}
+              />
+            </h1>
+          </AnimatedReveal>
 
-        {/* Brutalist Button Group */}
-        <AnimatedReveal delay={0.2} className="mt-16 flex items-center justify-center relative z-20">
-          <img 
-            src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/691df85560dcfc6a761612b1_Finger%20Point%20Right.svg" 
-            loading="lazy" 
-            alt="Point" 
-            className="absolute -left-16 md:-left-20 top-1/2 -translate-y-1/2 w-10 md:w-14 h-auto hidden md:block" 
-            style={{ transform: "rotate(9.7deg)" }} 
-          />
-          <a
-            href="#contact"
-            className="bg-accent text-white px-8 py-4 text-xs md:text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-accent border-2 border-accent transition-colors flex items-center h-12 md:h-14"
-          >
-            Let's Build Yours
-          </a>
-          <a
-            href="#contact"
-            className="flex items-center justify-center h-12 md:h-14 w-12 md:w-14 border-2 border-l-0 border-accent text-accent hover:bg-accent hover:text-white transition-colors"
-          >
-            <ThinArrowUpRight className="size-5" />
-          </a>
-        </AnimatedReveal>
+          <AnimatedReveal delay={0.2} className="mt-12 flex items-center gap-4">
+            <a
+              href="#contact"
+              className="bg-accent text-bg-page px-8 py-4 text-sm font-sans tracking-[0.2em] uppercase rounded-full hover:bg-white hover:text-bg-page transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+            >
+              Let's Build Yours
+            </a>
+            <a
+              href="#contact"
+              className="flex items-center justify-center size-14 rounded-full border border-border-harsh text-text-primary hover:border-accent hover:text-accent transition-all duration-300"
+            >
+              <ThinArrowUpRight className="size-5" />
+            </a>
+          </AnimatedReveal>
+        </div>
+
+        {/* Right Side: Editorial Paragraph */}
+        <div className="md:w-1/3 flex flex-col justify-center items-start md:items-end text-left md:text-right">
+          <AnimatedReveal delay={0.3}>
+            <p className="text-lg md:text-xl text-text-secondary font-sans font-light leading-relaxed max-w-[400px]">
+              We build custom websites for local businesses who have attention but need more footfall—turning your traffic into a digital storefront that <strong className="text-text-primary font-normal">educates, qualifies, and converts</strong> local customers.
+            </p>
+          </AnimatedReveal>
+        </div>
       </div>
 
       {/* Bottom Anchor Links */}
-      <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 mt-20 text-[10px] md:text-xs font-medium uppercase text-text-primary z-10 relative bg-bg-page/50 py-2">
-        <div className="flex items-center gap-2">
-          <a href="#" className="hover:text-accent">INSTAGRAM</a>,
-          <a href="#" className="hover:text-accent">LINKEDIN</a>
+      <div className="absolute bottom-8 left-6 md:left-12 lg:left-16 right-6 md:right-12 lg:right-16 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] md:text-xs font-sans uppercase tracking-[0.2em] text-text-muted z-10">
+        <div className="flex items-center gap-6">
+          <a href="#" className="hover:text-accent transition-colors">Instagram</a>
+          <a href="#" className="hover:text-accent transition-colors">LinkedIn</a>
         </div>
         
-        <a href="#services" className="text-accent font-bold hover:text-text-primary flex items-center gap-2">
-          ↓ SCROLL DOWN
+        <a href="#services" className="text-accent hover:text-text-primary transition-colors flex items-center gap-2">
+          ↓ Scroll to Explore
         </a>
 
-        <a href={`mailto:${DMC.email}`} className="hover:text-accent uppercase">
+        <a href={`mailto:${DMC.email}`} className="hover:text-accent transition-colors">
           {DMC.email}
         </a>
       </div>

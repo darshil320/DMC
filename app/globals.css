@@ -1,25 +1,41 @@
 @import "tailwindcss";
 
-/* ─── Brutalist NVRMND Aesthetic Tokens ─── */
+/* ─── Premium Dark Aesthetic Tokens ─── */
 :root {
-  /* Brutalist Colors */
-  --bg-page: #D9D9D9;
-  --bg-card: #E5E5E5;
-  --bg-dark: #0000FF; /* Dark sections are now true blue */
-  
-  --text-primary: #000000;
-  --text-secondary: #333333;
-  --text-muted: #666666;
-  --text-inverse: #FFFFFF;
-  
-  --border-subtle: rgba(0, 0, 0, 0.1);
-  --border-harsh: #000000;
-  
-  --accent: #0000FF; /* True Blue */
-  --accent-lime: #CCFF00; /* Neon Lime */
+  /* Graphite Platinum */
+  --bg-page: #101114;
+  --bg-card: #191B20;
+  --bg-dark: #06070A;
 
-  /* DMC Brand (Mapped to brutalist context) */
-  --dmc-whatsapp: #25D366; /* Keep standard whatsapp green for trust */
+  --text-primary: #F4F7FB;
+  --text-secondary: #BFC7D5;
+  --text-muted: #7A8494;
+  --text-inverse: #101114;
+
+  --border-subtle: rgba(244, 247, 251, 0.08);
+  --border-harsh: rgba(244, 247, 251, 0.18);
+
+  --accent: #7DD3FC;
+  /* Platinum Blue */
+  --accent-lime: #F4F7FB;
+
+  --dmc-whatsapp: #25D366;
+
+  /* ─── UrbanWood Demo Tokens (Light/Airy Theme) ─── */
+  /* UrbanWood Premium Warm */
+  --uw-bg-page: #FAF7F0;
+  --uw-bg-card: #F1ECE2;
+
+  --uw-text-primary: #1F1A16;
+  --uw-text-secondary: #5F554B;
+  --uw-text-muted: #A89F94;
+
+  --uw-border-subtle: #E6DED2;
+  --uw-border-harsh: #D5C8B8;
+
+  --uw-accent: #5A3825; /* Walnut Brown */
+  --uw-accent-soft: #B8895B; /* Warm Wood */
+  --uw-accent-gold: #C6A15B; /* Muted Brass */
 }
 
 /* ─── Tailwind v4 Theme Registration ─── */
@@ -36,7 +52,16 @@
   --color-accent: var(--accent);
   --color-accent-lime: var(--accent-lime);
   --color-dmc-whatsapp: var(--dmc-whatsapp);
-  
+
+  --color-uw-bg-page: var(--uw-bg-page);
+  --color-uw-bg-card: var(--uw-bg-card);
+  --color-uw-text-primary: var(--uw-text-primary);
+  --color-uw-text-secondary: var(--uw-text-secondary);
+  --color-uw-text-muted: var(--uw-text-muted);
+  --color-uw-border-subtle: var(--uw-border-subtle);
+  --color-uw-border-harsh: var(--uw-border-harsh);
+  --color-uw-accent: var(--uw-accent);
+
   --font-display: var(--font-dot), monospace;
   --font-body: var(--font-inter), sans-serif;
 }
@@ -59,12 +84,19 @@ body {
 }
 
 /* Brutalist heading defaults */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   letter-spacing: -0.04em;
   font-weight: 500;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   /* Brutalist UI often skips animations or uses instant transitions */
   transition-timing-function: cubic-bezier(0, 0, 0, 1);
 }
@@ -72,35 +104,31 @@ h1, h2, h3, h4, h5, h6 {
 /* ─── Brutalist Utilities ─── */
 
 
-/* No rounded corners anywhere */
-* {
-  border-radius: 0 !important;
-}
 
 /* Custom Cursor Hide */
 @media (hover: hover) and (pointer: fine) {
-  body, a, button {
+
+  body,
+  a,
+  button {
     cursor: none !important;
   }
 }
 
 
-/* Sharp box shadow for cards */
+/* Soft premium shadow for cards */
 .brutalist-shadow {
-  box-shadow: 4px 4px 0px var(--border-harsh);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
 }
+
 .brutalist-shadow-blue {
-  box-shadow: 4px 4px 0px var(--accent);
+  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15);
+  /* Soft gold glow */
+  border-radius: 8px;
 }
 
 ::selection {
-  background-color: var(--accent-lime);
-  color: var(--accent);
-}
-
-/* Secondary Text Override */
-.text-text-secondary {
-  font-family: "SF Pro Display", Arial, sans-serif !important;
-  font-size: 16px !important;
-  line-height: 1.5 !important;
+  background-color: var(--accent);
+  color: var(--text-inverse);
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, DotGothic16 } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
 import { CustomCursor } from "@/components/ui/CustomCursor";
@@ -12,15 +12,14 @@ const inter = Inter({
   display: "swap",
 });
 
-const dotGothic = DotGothic16({
+const playfair = Playfair_Display({
   variable: "--font-dot",
-  weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "DMC — Digital Market Creators | Brutalist Concept",
+  title: "DMC — Digital Market Creators | Premium Concept",
   description:
     "DMC helps local shops and service businesses build modern websites.",
   metadataBase: new URL("https://dmcdigital.in"),
@@ -34,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${dotGothic.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         <AuthProvider>

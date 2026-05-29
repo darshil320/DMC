@@ -37,10 +37,10 @@ export function ProblemSection() {
         
         {/* Header */}
         <div className="p-6 md:p-12 lg:p-16 border-b border-white/20">
-          <div className="bg-accent-lime text-accent border border-accent px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6 inline-block brutalist-shadow">
+          <div className="bg-white text-accent border border-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6 inline-block brutalist-shadow">
             THE REALITY
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter uppercase max-w-[800px]">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter uppercase max-w-[800px] text-white">
             RELYING ON JUST WORD OF MOUTH IS A LEAKY BUCKET.
           </h2>
         </div>
@@ -50,26 +50,26 @@ export function ProblemSection() {
           {PROBLEMS.map((item, idx) => (
             <div 
               key={item.num} 
-              className={`p-6 md:p-8 flex flex-col items-start border-b lg:border-b-0 border-white/20 hover:bg-white hover:text-accent transition-colors group ${
+              className={`p-6 md:p-8 flex flex-col items-start border-b lg:border-b-0 border-white/20 hover:bg-white hover:text-bg-page transition-colors group ${
                 idx !== PROBLEMS.length - 1 ? 'lg:border-r' : ''
               }`}
             >
-              <span className="font-display font-bold text-sm text-accent-lime group-hover:text-accent mb-6">
+              <span className="font-display font-bold text-sm text-white/70 group-hover:text-accent mb-6 transition-colors">
                 [{item.num}]
               </span>
               
-              <h3 className="text-xl font-bold tracking-tight mb-2 uppercase line-through opacity-70">
+              <h3 className="text-xl font-bold tracking-tight mb-2 uppercase line-through opacity-70 group-hover:opacity-100 group-hover:text-bg-page transition-all">
                 {item.issue}
               </h3>
               
               <div className="flex items-start gap-2 mb-8">
-                <ArrowRight className="size-5 shrink-0 mt-0.5 text-accent-lime group-hover:text-accent" />
-                <p className="text-sm font-bold uppercase tracking-tight">
+                <ArrowRight className="size-5 shrink-0 mt-0.5 text-white/70 group-hover:text-accent transition-colors" />
+                <p className="text-sm font-bold uppercase tracking-tight group-hover:text-bg-page transition-colors">
                   {item.solution}
                 </p>
               </div>
 
-              <div className="mt-auto pt-6 border-t border-white/20 group-hover:border-accent/20 w-full text-xs font-medium opacity-80">
+              <div className="mt-auto pt-6 border-t border-white/20 group-hover:border-border-harsh w-full text-xs font-medium opacity-80 group-hover:opacity-100 group-hover:text-text-muted transition-all">
                 {item.stats}
               </div>
             </div>

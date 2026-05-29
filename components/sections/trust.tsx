@@ -16,12 +16,12 @@ export function TrustSection() {
         {STATS.map((stat, idx) => (
           <div 
             key={stat.label} 
-            className={`flex flex-col items-center justify-center p-8 md:p-12 text-center border-b border-r border-border-harsh bg-bg-page hover:bg-accent-lime transition-colors group`}
+            className={`flex flex-col items-center justify-center p-8 md:p-12 text-center border-b border-r border-border-harsh bg-bg-page hover:bg-white transition-colors group`}
           >
-            <span className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-accent tracking-tighter mb-2 group-hover:text-text-primary">
+            <span className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-accent tracking-tighter mb-2 group-hover:text-bg-page transition-colors">
               {stat.value}
             </span>
-            <span className="text-[10px] font-bold text-text-primary uppercase tracking-widest text-balance">
+            <span className="text-[10px] font-bold text-text-primary uppercase tracking-widest text-balance group-hover:text-bg-page transition-colors">
               {stat.label}
             </span>
           </div>

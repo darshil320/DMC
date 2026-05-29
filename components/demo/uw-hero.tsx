@@ -38,7 +38,7 @@ export function UWHero() {
           {/* Brand badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-uw-brown/20 bg-uw-brown/8 mb-8">
             <span className="text-xs text-uw-brown font-medium uppercase tracking-wider">
-              UrbanWood Furniture • Ahmedabad
+              Furniture Concepts 2.0 • Surat
             </span>
           </div>
 

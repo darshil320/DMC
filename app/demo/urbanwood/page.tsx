@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 };
 
 export default function UrbanWoodDemo() {
+  // Force Tailwind v4 and Next.js to recompile the page to pick up the restored CSS variables
   return (
     <div
       className="bg-uw-bg-page min-h-screen"
