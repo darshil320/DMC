@@ -20,7 +20,7 @@ function MenuLink({ item, closeMenu }: { item: typeof NAV_LINKS[0]; closeMenu: (
       onClick={closeMenu}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative flex flex-col font-display text-white w-fit px-8 py-4 transition-colors duration-200"
+      className="group relative flex flex-col font-display text-white w-fit px-6 py-2 md:px-8 md:py-4 transition-colors duration-200"
     >
       {/* Corner Crop Marks on Hover */}
       {isHovered && (
@@ -39,7 +39,7 @@ function MenuLink({ item, closeMenu }: { item: typeof NAV_LINKS[0]; closeMenu: (
         {item.num}
       </span>
       <span className={cn(
-        "text-5xl md:text-7xl lg:text-[90px] leading-none tracking-tight transition-all duration-200 uppercase",
+        "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[90px] leading-none tracking-tight transition-all duration-200 uppercase",
         isHovered ? "text-white font-bold" : "text-white/60"
       )}>
         {item.label}
@@ -153,7 +153,7 @@ export function Navbar() {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[90] bg-accent flex flex-col justify-between px-6 py-24 select-none"
+            className="fixed inset-0 z-[90] bg-accent flex flex-col justify-between px-6 pt-24 pb-6 md:pb-12 select-none"
           >
             {/* Vertical grid lines overlay in menu background */}
             <div className="absolute inset-0 pointer-events-none flex justify-between px-6 md:px-12 lg:px-16 max-w-[1440px] mx-auto w-full z-0 opacity-10">
@@ -163,7 +163,7 @@ export function Navbar() {
               <div className="w-px h-full bg-white" />
             </div>
 
-            <div className="max-w-[1440px] mx-auto w-full h-full grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 overflow-y-auto z-10 relative">
+            <div className="max-w-[1440px] mx-auto w-full flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-6 md:mt-12 overflow-y-auto z-10 relative">
               {/* Left: Huge Dotted Navigation */}
               <motion.nav 
                 variants={{
@@ -178,7 +178,7 @@ export function Navbar() {
                 }}
                 initial="hidden"
                 animate="show"
-                className="flex flex-col gap-6 md:gap-8 relative border-l border-white/20 pl-8 h-fit"
+                className="flex flex-col gap-2 md:gap-4 relative border-l border-white/20 pl-6 md:pl-8 h-fit pb-8 md:pb-0"
               >
                 {/* Minimal crop marks */}
                 <div className="absolute top-0 -left-[5px] w-2.5 h-px bg-white/40" />
@@ -208,7 +208,7 @@ export function Navbar() {
               >
                 <div className="flex flex-col gap-12">
                   {/* Socials */}
-                  <div className="flex flex-col gap-4">
+                  {/* <div className="flex flex-col gap-4">
                     <span className="text-[10px] font-bold text-accent-lime uppercase tracking-widest">Socials</span>
                     <div className="flex flex-col gap-3">
                       <a href="#" className="text-sm font-medium text-white hover:text-accent-lime flex items-center gap-2 w-fit">
@@ -218,7 +218,7 @@ export function Navbar() {
                         <span className="border border-white/40 px-1 py-0.5 text-[9px] font-bold">IN</span> LINKEDIN
                       </a>
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Email */}
                   <div className="flex flex-col gap-2">

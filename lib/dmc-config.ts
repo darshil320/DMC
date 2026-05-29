@@ -3,8 +3,8 @@ export const DMC = {
   fullName: "Digital Market Creators",
   tagline: "We take local businesses online.",
   email: "hello@dmcdigital.in",
-  whatsappNumber: "91XXXXXXXXXX",
-  whatsappLink: "https://wa.me/91XXXXXXXXXX",
+  whatsappNumber: "+91 94265 29230",
+  whatsappLink: "https://wa.me/919426529230",
   domain: "dmcdigital.in",
   location: "Ahmedabad, India",
   pricing: {
@@ -19,5 +19,5 @@ export const URBANWOOD = {
   name: "UrbanWood Furniture",
   tagline: "Premium Furniture for Modern Homes",
   location: "Ahmedabad",
-  whatsappLink: "https://wa.me/91XXXXXXXXXX",
+  whatsappLink: "https://wa.me/919426529230",
 } as const;
