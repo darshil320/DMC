@@ -125,8 +125,8 @@ export function UWBestsellersV2() {
                 className="object-cover opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100 scale-105 group-hover:scale-100"
               />
               
-              {/* Quick Add Button Overlay */}
-              <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+              {/* Quick Add Button Overlay (Desktop Only) */}
+              <div className="hidden md:block absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
                 <button 
                   onClick={(e) => {
                     e.stopPropagation();
@@ -154,7 +154,26 @@ export function UWBestsellersV2() {
                 </span>
                 <h3 className="text-[18px] font-serif text-[#2C2A26] mb-2">{product.name}</h3>
               </div>
-              <p className="text-[14px] text-[#2C2A26]/70 mt-2">{product.price}</p>
+              <div className="flex items-center justify-between mt-2">
+                <p className="text-[14px] text-[#2C2A26]/70">{product.price}</p>
+                {/* Mobile Add to Cart */}
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const priceNum = parseInt(product.price.replace(/[^0-9]/g, ""), 10);
+                    addItem({
+                      id: product.id,
+                      productId: product.id,
+                      name: product.name,
+                      price: priceNum,
+                      image: product.image,
+                    });
+                  }}
+                  className="md:hidden text-[10px] uppercase tracking-[0.15em] font-medium border-b border-[#2C2A26] pb-0.5 hover:text-black transition-colors"
+                >
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         ))}

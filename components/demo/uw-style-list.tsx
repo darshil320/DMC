@@ -31,7 +31,7 @@ export function UWStyleList() {
 
   return (
     <section
-      className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32 border-t border-uw-border-subtle"
+      className="hidden md:visible max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32 border-t border-uw-border-subtle"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}

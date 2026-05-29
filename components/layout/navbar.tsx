@@ -111,11 +111,11 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[90] bg-bg-page/95 backdrop-blur-xl flex flex-col justify-center px-6 md:px-12"
+            className="fixed inset-0 z-[90] bg-bg-page/95 backdrop-blur-xl flex flex-col justify-center px-6 md:px-12 pt-20 pb-10"
           >
-            <div className="max-w-[1440px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 relative">
+            <div className="max-w-[1440px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 relative h-full md:h-auto overflow-y-auto">
               {/* Left: Navigation */}
-              <nav className="flex flex-col gap-2">
+              <nav className="flex flex-col gap-1 md:gap-2 justify-center">
                 {NAV_LINKS.map((item, i) => (
                   <motion.div 
                     key={item.label}
@@ -133,22 +133,22 @@ export function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
-                className="flex flex-col justify-end gap-12 pb-8 md:pb-0"
+                className="flex flex-col justify-start md:justify-end gap-12 pb-8 md:pb-0 border-t border-border-subtle md:border-t-0 pt-8 md:pt-0"
               >
-                <div className="flex flex-col gap-8 font-sans">
-                  <div className="flex flex-col gap-2">
-                    <span className="text-[10px] text-text-muted uppercase tracking-[0.2em]">Contact</span>
-                    <a href="mailto:hello@dmcdigital.in" className="text-sm text-text-primary hover:text-accent transition-colors">
+                <div className="flex flex-col sm:flex-row md:flex-col gap-8 md:gap-12 font-sans w-full justify-between sm:justify-start">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-[10px] text-text-muted uppercase tracking-[0.2em] font-medium">Contact</span>
+                    <a href="mailto:hello@dmcdigital.in" className="text-sm md:text-base text-text-primary hover:text-accent transition-colors font-medium">
                       hello@dmcdigital.in
                     </a>
                   </div>
 
-                  <div className="flex flex-col gap-2">
-                    <span className="text-[10px] text-text-muted uppercase tracking-[0.2em]">Social</span>
-                    <div className="flex gap-6">
-                      <a href="#" className="text-sm text-text-primary hover:text-accent transition-colors">Instagram</a>
-                      <a href="#" className="text-sm text-text-primary hover:text-accent transition-colors">LinkedIn</a>
-                      <a href="#" className="text-sm text-text-primary hover:text-accent transition-colors">Twitter</a>
+                  <div className="flex flex-col gap-3">
+                    <span className="text-[10px] text-text-muted uppercase tracking-[0.2em] font-medium">Social</span>
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                      <a href="#" className="text-sm md:text-base text-text-primary hover:text-accent transition-colors font-medium">Instagram</a>
+                      <a href="#" className="text-sm md:text-base text-text-primary hover:text-accent transition-colors font-medium">LinkedIn</a>
+                      <a href="#" className="text-sm md:text-base text-text-primary hover:text-accent transition-colors font-medium">Twitter</a>
                     </div>
                   </div>
                 </div>

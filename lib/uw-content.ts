@@ -56,7 +56,7 @@ export const PRODUCTS = [
     price: "S$1,290.00",
     variantsText: "1 Finish",
     colors: [
-      { name: "Teak", hex: "#A0816C", image: "https://images.unsplash.com/photo-1533090481728-8bbf9425c056?w=800&q=80" },
+      { name: "Teak", hex: "#A0816C", image: "https://images.pexels.com/photos/17739892/pexels-photo-17739892.jpeg" },
     ],
   },
   {

@@ -144,10 +144,18 @@ export function UWStoreProductGrid() {
               </button>
             </div>
             
-            <div className="flex justify-between items-start gap-4">
-              <div>
+            <div className="flex justify-between items-start gap-4 w-full">
+              <div className="w-full">
                 <h3 className="text-[15px] font-bold text-uw-text-primary mb-1">{product.name}</h3>
-                <p className="text-[13px] text-uw-text-secondary mb-2">{product.price}</p>
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-[13px] text-uw-text-secondary">{product.price}</p>
+                  <button 
+                    onClick={(e) => handleAddToCart(e, product)}
+                    className="md:hidden text-[10px] uppercase tracking-[0.15em] font-medium border-b border-uw-text-primary pb-0.5 hover:text-black transition-colors"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
                 <p className="text-[12px] text-uw-text-muted">{product.variantsText}</p>
               </div>
             </div>

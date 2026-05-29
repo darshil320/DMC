@@ -8,15 +8,15 @@ import { CanvasText } from "@/components/ui/canvas-text";
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative min-h-[95vh] flex flex-col justify-center pt-32 pb-10 px-6 md:px-12 lg:px-16 overflow-hidden select-none">
+    <section id="home" className="relative min-h-[95vh] flex flex-col pt-32 pb-8 px-6 md:px-12 lg:px-16 overflow-hidden select-none">
       {/* Background Soft Glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-16 md:gap-8 mt-12 md:mt-0">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-16 md:gap-8 mt-4 md:mt-0 flex-1">
         
         {/* Left Side: Elegant Headline */}
-        <div className="flex-1 flex flex-col items-start w-full">
+        <div className="flex-1 flex flex-col items-start w-full justify-center">
           <AnimatedReveal>
             <h1 className="text-text-primary font-display tracking-tight leading-[1.1] text-5xl sm:text-6xl md:text-7xl lg:text-[100px] font-medium flex flex-col items-start">
               <span>Take Your</span>
@@ -64,7 +64,7 @@ export function HeroSection() {
       </div>
 
       {/* Bottom Anchor Links */}
-      <div className="absolute bottom-8 left-6 md:left-12 lg:left-16 right-6 md:right-12 lg:right-16 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] md:text-xs font-sans uppercase tracking-[0.2em] text-text-muted z-10">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto mt-auto pt-16 md:pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-[10px] md:text-xs font-sans uppercase tracking-[0.2em] text-text-muted">
         <div className="flex items-center gap-6">
           <a href="#" className="hover:text-accent transition-colors">Instagram</a>
           <a href="#" className="hover:text-accent transition-colors">LinkedIn</a>
