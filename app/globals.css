@@ -132,3 +132,36 @@ h6 {
   background-color: var(--accent);
   color: var(--text-inverse);
 }
+
+/* ─── Performance: Skip rendering off-screen sections ─── */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
+/* ─── Performance: GPU acceleration for animated elements ─── */
+.fixed,
+[class*="animate-"],
+canvas {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ─── Performance: Respect reduced motion preferences ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Performance: Optimize image rendering ─── */
+img,
+video {
+  content-visibility: auto;
+}
