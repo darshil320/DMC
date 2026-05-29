@@ -11,7 +11,7 @@ export function FinalCtaSection() {
         
         {/* Left - Massive Typo */}
         <div className="p-6 md:p-12 lg:p-20 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/20">
-          <div className="bg-accent-lime text-accent border border-accent px-3 py-1 text-[10px] font-bold uppercase tracking-widest self-start mb-8 brutalist-shadow">
+          <div className="bg-accent-lime text-accent border border-accent px-3 py-1 font-pixel font-bold uppercase tracking-widest self-start mb-8 brutalist-shadow">
             START YOUR PROJECT
           </div>
           
@@ -30,7 +30,7 @@ export function FinalCtaSection() {
           
           {/* WhatsApp CTA */}
           <div className="flex flex-col gap-4">
-            <span className="text-[10px] font-bold text-white uppercase tracking-widest">
+            <span className="font-pixel font-bold text-white uppercase tracking-widest">
               Primary Contact
             </span>
             <a
@@ -49,7 +49,7 @@ export function FinalCtaSection() {
 
           {/* Email CTA */}
           <div className="flex flex-col gap-4">
-            <span className="text-[10px] font-bold text-white uppercase tracking-widest">
+            <span className="font-pixel font-bold text-white uppercase tracking-widest">
               Or E-mail Us
             </span>
             <a

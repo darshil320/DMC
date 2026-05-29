@@ -18,7 +18,7 @@ export function DemoPreviewSection() {
         
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <div className="bg-accent text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">
+            <div className="bg-accent text-white px-3 py-1 font-pixel font-bold uppercase tracking-widest mb-6 inline-block">
               LIVE DEMO
             </div>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-text-primary uppercase max-w-[800px]">
@@ -47,7 +47,7 @@ export function DemoPreviewSection() {
               </div>
               
               <h3 className="text-text-primary font-bold text-sm mb-1">{product.name}</h3>
-              <p className="text-text-muted text-[10px] uppercase tracking-wider mb-6 font-semibold">{product.material}</p>
+              <p className="text-text-muted font-pixel uppercase tracking-wider mb-6 font-semibold">{product.material}</p>
               
               <a
                 href={`${URBANWOOD.whatsappLink}?text=Hi, I'm interested in ${encodeURIComponent(product.name)}`}

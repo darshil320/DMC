@@ -82,6 +82,17 @@ h6 {
 
 /* ─── Brutalist Utilities ─── */
 
+.font-pixel {
+  font-family: 'Offbittrial 101', Arial, sans-serif !important;
+}
+
+.text-pixel-base {
+  font-size: 14px !important;
+}
+
+.text-pixel-sm {
+  font-size: 10px !important;
+}
 
 /* No rounded corners anywhere */
 * {

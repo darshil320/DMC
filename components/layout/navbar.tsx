@@ -123,7 +123,7 @@ export function Navbar() {
           {/* Right - Status & Menu Button */}
           <div className="flex items-center gap-6">
             <div className={cn(
-              "hidden md:flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest transition-colors",
+              "hidden md:flex items-center gap-2 font-pixel text-[12px] uppercase tracking-widest transition-colors",
               isMenuOpen ? "text-accent-lime" : "text-accent"
             )}>
               <span className={cn("size-2 border", isMenuOpen ? "bg-accent-lime border-accent-lime" : "bg-accent-lime border-accent")} />
@@ -133,7 +133,7 @@ export function Navbar() {
             <button
               onClick={toggleMenu}
               className={cn(
-                "px-6 py-3 text-[11px] font-bold tracking-widest border transition-colors cursor-pointer",
+                "px-6 py-3 font-pixel text-[12px] tracking-widest border transition-colors cursor-pointer",
                 isMenuOpen
                   ? "bg-accent-lime text-accent border-accent hover:bg-white hover:text-accent"
                   : "bg-accent text-white border-accent hover:bg-white hover:text-accent"
@@ -222,7 +222,7 @@ export function Navbar() {
 
                   {/* Email */}
                   <div className="flex flex-col gap-2">
-                    <span className="text-[10px] font-bold text-accent-lime uppercase tracking-widest">E-Mail</span>
+                    <span className="font-pixel font-bold text-accent-lime uppercase tracking-widest">E-Mail</span>
                     <a href="mailto:hello@dmcdigital.in" className="text-sm font-medium text-white hover:text-accent-lime uppercase tracking-widest w-fit">
                       [ HELLO@DMCDIGITAL.IN ]
                     </a>
@@ -245,7 +245,7 @@ export function Navbar() {
                         <circle cx="50" cy="50" r="5" className="fill-accent-lime animate-pulse" />
                       </svg>
                     </motion.div>
-                    <span className="text-[10px] font-bold text-white/50 tracking-wider uppercase leading-snug">
+                    <span className="font-pixel font-bold text-white/50 tracking-wider uppercase leading-snug">
                       ESTD 2026 // <br/>
                       DMC DIGITAL
                     </span>
@@ -255,7 +255,7 @@ export function Navbar() {
                 <div className="flex flex-col gap-4">
                   {/* Newsletter Box (Lime Green Focus) */}
                   <div className="flex flex-col gap-3 max-w-[320px]">
-                    <div className="bg-accent-lime text-accent text-[10px] font-bold px-3 py-1 self-start border border-accent brutalist-shadow">
+                    <div className="bg-accent-lime text-accent font-pixel font-bold px-3 py-1 self-start border border-accent brutalist-shadow">
                       JOIN THE ARCHIVE
                     </div>
                     <input

@@ -55,7 +55,7 @@ export function AboutUsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-24">
           {/* Blue Badge (Col 1-2) */}
           <div className="lg:col-span-2">
-            <div className="bg-accent text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest inline-block">
+            <div className="bg-accent text-white px-3 py-1 font-pixel font-bold uppercase tracking-widest inline-block">
               ABOUT US
             </div>
           </div>

@@ -21,7 +21,7 @@ export function TrustSection() {
             <span className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-accent tracking-tighter mb-2 group-hover:text-text-primary">
               {stat.value}
             </span>
-            <span className="text-[10px] font-bold text-text-primary uppercase tracking-widest text-balance">
+            <span className="font-pixel font-bold text-text-primary uppercase tracking-widest text-balance">
               {stat.label}
             </span>
           </div>

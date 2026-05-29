@@ -11,7 +11,7 @@ export function FeaturedOfferSection() {
         
         {/* Left Side - Typography */}
         <div className="p-6 md:p-12 lg:p-20 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/20">
-          <div className="bg-accent-lime text-accent border border-accent px-3 py-1 text-[10px] font-bold uppercase tracking-widest self-start mb-8 brutalist-shadow">
+          <div className="bg-accent-lime text-accent border border-accent px-3 py-1 font-pixel font-bold uppercase tracking-widest self-start mb-8 brutalist-shadow">
             FEATURED PACKAGE
           </div>
           
@@ -27,7 +27,7 @@ export function FeaturedOfferSection() {
           <div className="font-display text-5xl md:text-6xl text-accent-lime font-bold mb-2">
             ₹25,000<span className="text-xl text-white/50">+</span>
           </div>
-          <span className="text-white text-[10px] font-bold tracking-widest uppercase">One-time setup fee</span>
+          <span className="text-white font-pixel font-bold tracking-widest uppercase">One-time setup fee</span>
         </div>
 
         {/* Right Side - Checklist */}

@@ -119,7 +119,7 @@ export function ProcessSection() {
               </div>
 
               {/* Description */}
-              <p className="text-text-secondary text-sm font-sans font-light leading-relaxed mt-auto max-w-[280px]">
+              <p className="text-text-secondary text-sm font-sans font-light leading-relaxed mt-auto ">
                 {step.desc}
               </p>
             </AnimatedReveal>

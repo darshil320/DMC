@@ -16,7 +16,7 @@ export function OurWorkSection() {
           {/* Left Column - Typography */}
           <div className="lg:col-span-4 flex flex-col justify-between h-full min-h-[500px]">
             <div>
-              <div className="bg-accent text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6 inline-block brutalist-shadow">
+              <div className="bg-accent text-white px-3 py-1 font-pixel font-bold uppercase tracking-widest mb-6 inline-block brutalist-shadow">
                 OUR WORK
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-text-primary uppercase leading-[0.9]">
@@ -36,7 +36,7 @@ export function OurWorkSection() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-bold text-text-primary text-sm tracking-tight">Furniture Concept 2.0</span>
-                  <span className="text-[10px] uppercase tracking-widest text-text-muted">October 2024</span>
+                  <span className="font-pixel uppercase tracking-widest text-text-muted">October 2024</span>
                 </div>
               </div>
             </div>
@@ -48,7 +48,7 @@ export function OurWorkSection() {
             
             <a 
               href="/demo/urbanwood" 
-              className="absolute top-12 left-12 z-20 bg-accent-lime text-accent px-4 py-2 text-[10px] font-bold uppercase tracking-widest brutalist-shadow border border-accent flex items-center gap-2 group-hover:bg-white group-hover:text-black transition-colors"
+              className="absolute top-12 left-12 z-20 bg-accent-lime text-accent px-4 py-2 font-pixel font-bold uppercase tracking-widest brutalist-shadow border border-accent flex items-center gap-2 group-hover:bg-white group-hover:text-black transition-colors"
             >
               VIEW LIVE DEMO <ThinArrowUpRight />
             </a>
