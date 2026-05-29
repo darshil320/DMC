@@ -68,42 +68,47 @@ export function UWHeaderV2() {
         }}
         animate={visible ? "visible" : "hidden"}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-[100] px-6 md:px-12 py-5 flex items-center justify-between ${
+        className={`fixed top-0 left-0 right-0 z-[100] px-5 sm:px-8 md:px-12 py-4 md:py-6 grid grid-cols-3 items-center ${
           scrolled
             ? "bg-uw-bg-page border-b border-uw-border-subtle shadow-sm"
             : "bg-transparent"
         }`}
       >
-        <button
-          onClick={() => setMenuOpen(true)}
-          className={`flex items-center gap-2 hover:opacity-60 transition-opacity ${
-            scrolled ? "text-uw-text-primary" : "text-white"
-          }`}
-        >
-          <span className="flex flex-col gap-[5px]">
-            <span className={`block w-5 h-[1px] ${scrolled ? "bg-uw-text-primary" : "bg-white"}`} />
-            <span className={`block w-5 h-[1px] ${scrolled ? "bg-uw-text-primary" : "bg-white"}`} />
-            <span className={`block w-3 h-[1px] ${scrolled ? "bg-uw-text-primary" : "bg-white"}`} />
-          </span>
-          <span className="text-[11px] font-medium tracking-[0.15em] uppercase">
-            Menu
-          </span>
-        </button>
+        <div className="justify-self-start">
+          <button
+            onClick={() => setMenuOpen(true)}
+            className={`flex items-center gap-2 md:gap-3 hover:opacity-60 transition-opacity ${
+              scrolled ? "text-uw-text-primary" : "text-white"
+            }`}
+          >
+            <span className="flex flex-col gap-[4px] md:gap-[5px]">
+              <span className={`block w-4 md:w-5 h-[1px] ${scrolled ? "bg-uw-text-primary" : "bg-white"}`} />
+              <span className={`block w-4 md:w-5 h-[1px] ${scrolled ? "bg-uw-text-primary" : "bg-white"}`} />
+              <span className={`block w-2 md:w-3 h-[1px] ${scrolled ? "bg-uw-text-primary" : "bg-white"}`} />
+            </span>
+            <span className="text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase mt-0.5">
+              Menu
+            </span>
+          </button>
+        </div>
 
-        <Link
-          href="/demo/urbanwood"
-          className={`text-[14px] font-medium tracking-[0.15em] uppercase absolute left-1/2 -translate-x-1/2 text-center transition-colors ${
-            scrolled ? "text-uw-text-primary" : "text-white"
-          }`}
-        >
-          Furniture Concept 2.0
-        </Link>
+        <div className="justify-self-center text-center">
+          <Link
+            href="/demo/urbanwood"
+            className={`flex flex-col sm:block text-[11px] sm:text-[12px] md:text-[14px] font-medium tracking-[0.2em] sm:tracking-[0.15em] uppercase transition-colors ${
+              scrolled ? "text-uw-text-primary" : "text-white"
+            }`}
+          >
+            <span>FURNITURE CONCEPT</span>
+            <span className="sm:ml-2 text-[9px] sm:text-[12px] md:text-[14px] opacity-70 sm:opacity-100 mt-0.5 sm:mt-0">2.0</span>
+          </Link>
+        </div>
 
-        <div className="flex items-center gap-4">
+        <div className="justify-self-end flex items-center gap-4">
           {session ? (
             <button
               onClick={() => signOut()}
-              className={`text-[11px] font-medium tracking-[0.12em] uppercase transition-colors hidden sm:block ${
+              className={`text-[10px] md:text-[11px] font-medium tracking-[0.12em] uppercase transition-colors hidden sm:block ${
                 scrolled ? "text-uw-text-secondary hover:text-uw-text-primary" : "text-white/80 hover:text-white"
               }`}
             >
@@ -112,7 +117,7 @@ export function UWHeaderV2() {
           ) : (
             <button
               onClick={() => signIn()}
-              className={`text-[11px] font-medium tracking-[0.12em] uppercase transition-colors hidden sm:block ${
+              className={`text-[10px] md:text-[11px] font-medium tracking-[0.12em] uppercase transition-colors hidden sm:block ${
                 scrolled ? "text-uw-text-secondary hover:text-uw-text-primary" : "text-white/80 hover:text-white"
               }`}
             >
@@ -122,7 +127,7 @@ export function UWHeaderV2() {
 
           <button 
             onClick={() => setCartOpen(true)}
-            className={`text-[11px] font-medium tracking-[0.12em] uppercase transition-colors ${
+            className={`text-[10px] md:text-[11px] font-medium tracking-[0.12em] uppercase transition-colors mt-0.5 ${
               scrolled ? "text-uw-text-secondary hover:text-uw-text-primary" : "text-white/80 hover:text-white"
             }`}
           >
