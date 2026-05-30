@@ -2,6 +2,10 @@
 
 /* ─── Premium Dark Aesthetic Tokens ─── */
 :root {
+
+  /* Graphite Platinum */
+  /* Premium Dark Navy */
+
   /* Graphite Platinum */
   --bg-page: #101114;
   --bg-card: #191B20;
@@ -21,6 +25,8 @@
 
   --dmc-whatsapp: #25D366;
 
+
+
   /* ─── UrbanWood Demo Tokens (Light/Airy Theme) ─── */
   /* UrbanWood Premium Warm */
   --uw-bg-page: #FAF7F0;
@@ -33,9 +39,12 @@
   --uw-border-subtle: #E6DED2;
   --uw-border-harsh: #D5C8B8;
 
-  --uw-accent: #5A3825; /* Walnut Brown */
-  --uw-accent-soft: #B8895B; /* Warm Wood */
-  --uw-accent-gold: #C6A15B; /* Muted Brass */
+  --uw-accent: #5A3825;
+  /* Walnut Brown */
+  --uw-accent-soft: #B8895B;
+  /* Warm Wood */
+  --uw-accent-gold: #C6A15B;
+  /* Muted Brass */
 }
 
 /* ─── Tailwind v4 Theme Registration ─── */
@@ -150,6 +159,7 @@ canvas {
 
 /* ─── Performance: Respect reduced motion preferences ─── */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

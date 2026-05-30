@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 export function UWLegacy() {
   return (
-    <section className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 md:py-32 border-t border-uw-border-subtle">
+    <section className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-32 pb-12 md:pt-32 md:pb-2 border-t border-uw-border-subtle">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

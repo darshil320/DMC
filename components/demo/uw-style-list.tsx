@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "motion/react";
 import { STYLES } from "@/lib/uw-content";
 
 const STYLE_IMAGES = [
-  "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300&q=80",
-  "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=300&q=80",
-  "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=300&q=80",
-  "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=300&q=80",
-  "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=300&q=80",
+  "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=240&auto=format&fit=crop&q=60",
+  "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=240&auto=format&fit=crop&q=60",
+  "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=240&auto=format&fit=crop&q=60",
+  "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=240&auto=format&fit=crop&q=60",
+  "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=240&auto=format&fit=crop&q=60",
 ];
 
 const SIDE_OFFSETS = [0, -20, 10, -30, 15];
@@ -31,7 +31,7 @@ export function UWStyleList() {
 
   return (
     <section
-      className="hidden md:visible max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32 border-t border-uw-border-subtle"
+      className="hidden md:block max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32 border-t border-uw-border-subtle"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}

@@ -29,7 +29,7 @@ export function UWStoreHero() {
       {/* Right Image Column */}
         <div className="w-full md:w-[65%] lg:w-[60%] relative h-[40vh] md:h-[60vh] rounded-sm overflow-hidden">
           <Image
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" // Modern outdoor patio/lounge
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000&auto=format&fit=crop&q=60" // Modern outdoor patio/lounge
           alt="Outdoor Lounge Furniture"
           fill
           priority

@@ -97,7 +97,7 @@ export function UWIntroV2() {
                 With ergonomic designs and a range of modular workstations, our collection lets you shape an office that inspires. Explore comfort and functionality that perfectly suit your ambition.
               </p>
               
-              <div className="flex flex-wrap items-center gap-8">
+              <div className="flex items-center justify-start items-start flex-col gap-8">
                 <a
                   href="#products"
                   className="inline-flex items-center gap-2 text-[12px] font-medium uppercase tracking-widest text-uw-text-primary border-b border-uw-text-primary pb-1 hover:opacity-50 transition-opacity group"
@@ -105,7 +105,6 @@ export function UWIntroV2() {
                   Explore Collection
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </a>
-                
                 <div className="flex gap-4">
                   <Hover3DIcon><ExecutiveChair /></Hover3DIcon>
                   <Hover3DIcon><LoungeSofa /></Hover3DIcon>
@@ -128,7 +127,7 @@ export function UWIntroV2() {
                 style={{ y: yImage, scale: scaleImage }}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=100"
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&auto=format&fit=crop&q=60"
                   alt="Modern clean minimalist office workspace setup"
                   fill
                   priority

@@ -21,7 +21,7 @@ export function UWHero() {
       {/* Editorial hero image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1400&q=80"
+          src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1200&auto=format&fit=crop&q=60"
           alt="Premium furniture showroom"
           className="w-full h-full object-cover opacity-15"
         />

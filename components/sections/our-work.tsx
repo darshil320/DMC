@@ -78,7 +78,7 @@ export function OurWorkSection() {
                 </div>
                 <div className="flex-1 w-full relative flex items-center justify-center overflow-hidden bg-[#2C2A26]">
                   <Image 
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80" 
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop&q=60" 
                     fill 
                     sizes="(max-width: 1024px) 100vw, 800px"
                     className="object-cover opacity-40 mix-blend-luminosity" 

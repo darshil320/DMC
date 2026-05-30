@@ -6,32 +6,32 @@ import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 const CATEGORIES = [
   {
     title: "Sofas",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=480&auto=format&fit=crop&q=60",
     className: "md:col-span-2",
   },
   {
     title: "Beds",
-    image: "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=480&auto=format&fit=crop&q=60",
     className: "",
   },
   {
     title: "Wardrobes",
-    image: "https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=480&auto=format&fit=crop&q=60",
     className: "",
   },
   {
     title: "Dining Tables",
-    image: "https://images.unsplash.com/photo-1449247709967-d4461a6a6103?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1449247709967-d4461a6a6103?w=480&auto=format&fit=crop&q=60",
     className: "md:col-span-2",
   },
   {
     title: "Office Chairs",
-    image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=480&auto=format&fit=crop&q=60",
     className: "",
   },
   {
     title: "Custom Furniture",
-    image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=480&auto=format&fit=crop&q=60",
     className: "",
   },
 ];

@@ -14,8 +14,8 @@ export const PRODUCTS = [
     price: "From S$1,290.00",
     variantsText: "3 Base Colors | 2 Sizes",
     colors: [
-      { name: "Graphite", hex: "#3A3A3A", image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=800&q=80" },
-      { name: "Cloud White", hex: "#E8E4DC", image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80" },
+      { name: "Graphite", hex: "#3A3A3A", image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=600&auto=format&fit=crop&q=60" },
+      { name: "Cloud White", hex: "#E8E4DC", image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&auto=format&fit=crop&q=60" },
     ],
   },
   {
@@ -25,7 +25,7 @@ export const PRODUCTS = [
     price: "From S$3,800.00",
     variantsText: "2 Wood Finishes",
     colors: [
-      { name: "Walnut", hex: "#5C4033", image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80" },
+      { name: "Walnut", hex: "#5C4033", image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&auto=format&fit=crop&q=60" },
     ],
     showShopLink: true,
   },
@@ -36,7 +36,7 @@ export const PRODUCTS = [
     price: "From S$2,490.00",
     variantsText: "2 Fabric Colours | 2 Sizes",
     colors: [
-      { name: "Sand", hex: "#D8D2C4", image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&q=80" },
+      { name: "Sand", hex: "#D8D2C4", image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&auto=format&fit=crop&q=60" },
     ],
   },
   {
@@ -46,49 +46,9 @@ export const PRODUCTS = [
     price: "From S$2,710.00",
     variantsText: "1 Colour | 2 Sizes",
     colors: [
-      { name: "Cream", hex: "#F4F1EB", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" },
+      { name: "Cream", hex: "#F4F1EB", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop&q=60" },
     ],
-  },
-  {
-    id: "nottos-coffee-table",
-    name: "Nottos Outdoor Coffee Table",
-    description: "The perfect centerpiece for your outdoor seating arrangement. Solid teak wood top.",
-    price: "S$1,290.00",
-    variantsText: "1 Finish",
-    colors: [
-      { name: "Teak", hex: "#A0816C", image: "https://images.pexels.com/photos/17739892/pexels-photo-17739892.jpeg" },
-    ],
-  },
-  {
-    id: "nottos-lounge-chair",
-    name: "Nottos Outdoor Lounge Chair",
-    description: "Lean back and breathe. Ergonomic design built to withstand the elements.",
-    price: "S$1,205.00",
-    variantsText: "2 Colors",
-    colors: [
-      { name: "Charcoal", hex: "#3A3A3A", image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80" },
-    ],
-  },
-  {
-    id: "travertine-dining",
-    name: "Travertine Round Dining Table",
-    description: "A masterpiece of natural stone. Each table is completely unique.",
-    price: "From S$4,200.00",
-    variantsText: "1 Material | 3 Sizes",
-    colors: [
-      { name: "Natural Stone", hex: "#E8E4DC", image: "https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?w=800&q=80" },
-    ],
-  },
-  {
-    id: "luna-dining-chair",
-    name: "Luna Dining Chair",
-    description: "Minimalist Scandinavian design with exceptional comfort.",
-    price: "S$450.00",
-    variantsText: "4 Fabric Colours",
-    colors: [
-      { name: "Oatmeal", hex: "#D8D2C4", image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=800&q=80" },
-    ],
-  },
+  }
 ] as const;
 
 export const DESIGNERS = [

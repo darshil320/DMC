@@ -14,7 +14,7 @@ export const work = [
     year: "2026",
     description:
       "A strategic website system for an education consultancy helping international students understand options, build trust, and book qualified calls.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&auto=format&fit=crop&q=60",
   },
   {
     id: "rebel-copy-co",
@@ -23,7 +23,7 @@ export const work = [
     year: "2026",
     description:
       "A bold editorial website for a personal-brand copy studio built to showcase authority, process, results, and premium positioning.",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=900&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=900&auto=format&fit=crop&q=60",
   },
   {
     id: "forma-creative",
@@ -32,7 +32,7 @@ export const work = [
     year: "2025",
     description:
       "A portfolio-led digital presence with stronger case-study storytelling, clearer service architecture, and conversion-focused inquiry paths.",
-    image: "https://images.unsplash.com/photo-1542744094-3a31f103e35f?w=900&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1542744094-3a31f103e35f?w=900&auto=format&fit=crop&q=60",
   },
 ] as const;
 

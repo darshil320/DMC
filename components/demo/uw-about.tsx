@@ -55,17 +55,17 @@ export function UWAbout() {
             className="grid grid-cols-2 gap-4"
           >
             <img
-              src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=300&q=80"
+              src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=240&auto=format&fit=crop&q=60"
               alt="Showroom interior"
               className="rounded-2xl object-cover w-full h-56"
             />
             <img
-              src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=300&q=80"
+              src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=240&auto=format&fit=crop&q=60"
               alt="Furniture craftsmanship"
               className="rounded-2xl object-cover w-full h-56 mt-8"
             />
             <img
-              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=480&auto=format&fit=crop&q=60"
               alt="Woodworking workshop"
               className="rounded-2xl object-cover w-full h-40 col-span-2"
             />

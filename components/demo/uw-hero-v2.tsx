@@ -39,34 +39,9 @@ export function UWHeroV2() {
         delay: 0.5
       });
 
-      // Parallax scroll
+      // Parallax scroll on image only (content stays visible)
       gsap.to(imageRef.current, {
         yPercent: 15,
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true
-        }
-      });
-      
-      gsap.to(contentRef.current, {
-        yPercent: -50,
-        opacity: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true
-        }
-      });
-      
-      // The huge text translates slower to create depth
-      gsap.to(wordmarkRef.current, {
-        yPercent: 10,
-        opacity: 0.8,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -85,7 +60,7 @@ export function UWHeroV2() {
       {/* Premium Warm Interior Image */}
       <Image
         ref={imageRef}
-        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1980&q=100" 
+        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&auto=format&fit=crop&q=60" 
         alt="Premium Furniture Collection"
         fill
         priority

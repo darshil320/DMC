@@ -10,7 +10,7 @@ const PRODUCTS: UWProduct[] = [
     material: "Solid Sheesham Wood + Linen Upholstery",
     size: "210 × 90 × 85 cm",
     priceRange: "₹42,000 – ₹48,000",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&auto=format&fit=crop&q=60",
   },
   {
     name: "Oslo King Storage Bed",
@@ -18,7 +18,7 @@ const PRODUCTS: UWProduct[] = [
     material: "Solid Sheesham Wood",
     size: "200 × 180 × 120 cm",
     priceRange: "₹38,000 – ₹44,000",
-    image: "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?w=400&auto=format&fit=crop&q=60",
   },
   {
     name: "Aspen 4-Door Wardrobe",
@@ -26,7 +26,7 @@ const PRODUCTS: UWProduct[] = [
     material: "MDF + Walnut Veneer Finish",
     size: "200 × 60 × 220 cm",
     priceRange: "₹54,000 – ₹62,000",
-    image: "https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=400&auto=format&fit=crop&q=60",
   },
   {
     name: "Hudson 6-Seater Dining Set",
@@ -34,7 +34,7 @@ const PRODUCTS: UWProduct[] = [
     material: "Teak Wood + Fabric Chairs",
     size: "180 × 90 cm (table)",
     priceRange: "₹62,000 – ₹72,000",
-    image: "https://images.unsplash.com/photo-1449247709967-d4461a6a6103?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1449247709967-d4461a6a6103?w=400&auto=format&fit=crop&q=60",
   },
   {
     name: "Nordic Accent Chair",
@@ -42,7 +42,7 @@ const PRODUCTS: UWProduct[] = [
     material: "Beechwood + Velvet Upholstery",
     size: "65 × 70 × 85 cm",
     priceRange: "₹18,000 – ₹22,000",
-    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&auto=format&fit=crop&q=60",
   },
   {
     name: "Alpine L-Shaped Sofa",
@@ -50,7 +50,7 @@ const PRODUCTS: UWProduct[] = [
     material: "Solid Wood + Premium Fabric",
     size: "280 × 160 × 85 cm",
     priceRange: "₹68,000 – ₹78,000",
-    image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=400&auto=format&fit=crop&q=60",
   },
   {
     name: "Zen Queen Platform Bed",
@@ -58,7 +58,7 @@ const PRODUCTS: UWProduct[] = [
     material: "Teak Wood + Leather Headboard",
     size: "160 × 200 × 100 cm",
     priceRange: "₹44,000 – ₹52,000",
-    image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=400&auto=format&fit=crop&q=60",
   },
   {
     name: "Walnut Study Desk",
@@ -66,7 +66,7 @@ const PRODUCTS: UWProduct[] = [
     material: "Solid Walnut Wood",
     size: "140 × 65 × 76 cm",
     priceRange: "₹24,000 – ₹28,000",
-    image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&auto=format&fit=crop&q=60",
   },
 ];
 

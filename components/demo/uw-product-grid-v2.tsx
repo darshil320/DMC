@@ -10,12 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 const CATEGORIES = [
   {
     label: "Desks",
-    image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&auto=format&fit=crop&q=60",
     span: "col-span-1 md:col-span-2 row-span-2 aspect-[4/3] md:aspect-auto",
   },
   {
     label: "Seating",
-    image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=600&auto=format&fit=crop&q=60",
     span: "col-span-1 md:col-span-1 aspect-square",
   },
   {
@@ -25,7 +25,7 @@ const CATEGORIES = [
   },
   {
     label: "Acoustics",
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&auto=format&fit=crop&q=60",
     span: "col-span-1 md:col-span-2 aspect-[21/9]",
   },
 ];

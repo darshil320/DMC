@@ -23,13 +23,13 @@ const MEGA_MENU_IMAGES = [
     title: "DINING CHAIRS FOR EVERY HOME",
     subtitle: "Designed for spaces where good taste is always on the menu.",
     linkText: "SHOP DINING CHAIRS",
-    image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=600&auto=format&fit=crop&q=60",
   },
   {
     title: "TRAVERTINE DINING TABLES",
     subtitle: "A true centrepiece for gatherings, big moments, and everyday rituals alike.",
     linkText: "SHOP TRAVERTINE DINING TABLES",
-    image: "https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?w=600&auto=format&fit=crop&q=60",
   }
 ];
 

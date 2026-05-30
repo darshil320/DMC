@@ -16,7 +16,7 @@ export function UWShowroom() {
           className="relative aspect-[4/5] md:aspect-[3/4] w-full rounded-sm overflow-hidden"
         >
           <Image
-            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&q=80"
+            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1000&auto=format&fit=crop&q=60"
             alt="Furniture Concept 2.0 Showroom in Surat"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"

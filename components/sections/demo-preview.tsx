@@ -6,9 +6,9 @@ import Image from "next/image";
 import { URBANWOOD } from "@/lib/dmc-config";
 
 const PRODUCTS = [
-  { name: "Marlow 3-Seater Linen Sofa", category: "Sofas", material: "Solid Wood + Linen", price: "₹42,000+", image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&q=80" },
+  { name: "Marlow 3-Seater Linen Sofa", category: "Sofas", material: "Solid Wood + Linen", price: "₹42,000+", image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&auto=format&fit=crop&q=60" },
   { name: "Oslo King Storage Bed", category: "Beds", material: "Sheesham Wood", price: "₹38,000+", image: "https://images.pexels.com/photos/18470980/pexels-photo-18470980.jpeg" },
-  { name: "Aspen 4-Door Wardrobe", category: "Wardrobes", material: "MDF + Veneer Finish", price: "₹54,000+", image: "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?w=800&q=80" },
+  { name: "Aspen 4-Door Wardrobe", category: "Wardrobes", material: "MDF + Veneer Finish", price: "₹54,000+", image: "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?w=600&auto=format&fit=crop&q=60" },
   { name: "Hudson 6-Seater Dining Set", category: "Dining", material: "Teak Wood + Fabric", price: "₹62,000+", image: "https://images.pexels.com/photos/31258060/pexels-photo-31258060.jpeg" },
 ];
 

@@ -36,13 +36,13 @@ const PARTNERS = [
 
 export function UWPartners() {
   return (
-    <section className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-20 border-t border-uw-border-subtle">
+    <section className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-12 pb-12 md:pb-20 md:pt-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="mb-12 md:mb-16"
+        className="mb-8 md:mb-16"
       >
         <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-uw-text-muted mb-4 block">
           Official Channel Partners
@@ -57,7 +57,7 @@ export function UWPartners() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className="group flex flex-col py-8 border-t border-uw-border-subtle hover:border-uw-text-primary/30 transition-colors cursor-default"
+            className="group flex flex-col py-8 transition-colors cursor-default"
           >
             <div className="mb-6 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
               {partner.logo}
