@@ -16,7 +16,7 @@ export function OurWorkSection() {
           {/* Left Column - Typography */}
           <div className="lg:col-span-4 flex flex-col justify-between h-full min-h-[500px]">
             <div>
-              <div className="bg-accent text-white px-3 py-1 font-pixel font-bold uppercase tracking-widest mb-6 inline-block brutalist-shadow">
+              <div className="section-tag">
                 OUR WORK
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-text-primary uppercase leading-[0.9]">

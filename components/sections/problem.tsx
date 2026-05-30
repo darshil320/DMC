@@ -37,7 +37,7 @@ export function ProblemSection() {
         
         {/* Header */}
         <div className="p-6 md:p-12 lg:p-16 border-b border-white/20">
-          <div className="bg-accent-lime text-accent border border-accent px-3 py-1 font-pixel font-bold uppercase tracking-widest mb-6 inline-block brutalist-shadow">
+          <div className="section-tag">
             THE REALITY
           </div>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter uppercase max-w-[800px]">

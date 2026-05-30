@@ -74,9 +74,8 @@ export function ProcessSection() {
         
         {/* Header Column (Col 1) */}
         <div className="p-6 md:p-12 lg:p-10 flex flex-col items-start bg-bg-page lg:border-r border-border-subtle relative">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="w-8 h-px bg-accent" />
-            <span className="text-[10px] font-sans text-accent uppercase tracking-[0.2em]">Process</span>
+          <div className="section-tag mb-6">
+            Process
           </div>
           <h2 className="text-4xl md:text-5xl font-display font-medium tracking-tight text-text-primary mb-6">
             How It Works

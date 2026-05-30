@@ -23,7 +23,7 @@ export function ServicesSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <div className="bg-accent-lime text-accent border border-accent px-3 py-1 font-pixel font-bold uppercase tracking-widest mb-6 inline-block brutalist-shadow">
+            <div className="section-tag">
               CAPABILITIES
             </div>
             <h2 className="text-3xl md:text-5xl font-medium tracking-tighter text-text-primary uppercase max-w-[600px]">

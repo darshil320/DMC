@@ -18,7 +18,7 @@ export function DemoPreviewSection() {
         
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <div className="bg-accent text-white px-3 py-1 font-pixel font-bold uppercase tracking-widest mb-6 inline-block">
+            <div className="section-tag">
               LIVE DEMO
             </div>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-text-primary uppercase max-w-[800px]">

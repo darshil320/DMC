@@ -65,7 +65,7 @@ export function PricingSection() {
       <div className="max-w-[1440px] mx-auto w-full flex flex-col items-center">
         
         {/* Header (Screenshot 4) */}
-        <div className="bg-accent text-white px-3 py-1 font-pixel font-bold uppercase tracking-widest mb-6">
+        <div className="section-tag">
           OUR SERVICES
         </div>
         <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium text-text-primary tracking-tighter text-center max-w-[800px] mb-20">
