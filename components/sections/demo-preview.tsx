@@ -16,7 +16,7 @@ export function DemoPreviewSection() {
     <section id="demo" className="py-24 px-6 md:px-12 lg:px-16 w-full select-none bg-bg-page relative z-10 border-t border-border-harsh">
       <div className="max-w-[1440px] mx-auto w-full">
         
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 px-4 lg:px-6">
           <div>
             <div className="section-tag">
               LIVE DEMO
@@ -30,12 +30,14 @@ export function DemoPreviewSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-harsh bg-bg-page mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-border-harsh bg-bg-page mb-16">
           {PRODUCTS.map((product) => (
-            <div key={product.name} className="group border-b border-r border-border-harsh bg-bg-card p-4 flex flex-col hover:bg-white transition-colors">
-              <div className="aspect-[4/3] overflow-hidden bg-bg-page border border-border-harsh mb-4 relative">
+            <div key={product.name} className="group border-b border-l border-border-harsh bg-bg-card flex flex-col hover:bg-white transition-colors">
+              <div className="aspect-[4/3] overflow-hidden bg-bg-page border-b border-border-harsh relative">
                 <img src={product.image} alt={product.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
               </div>
+              
+              <div className="p-5 flex-1 flex flex-col">
               
               <div className="flex justify-between items-start mb-2">
                 <span className="text-[9px] font-bold tracking-widest uppercase bg-border-subtle text-text-primary px-2 py-1">
@@ -49,11 +51,13 @@ export function DemoPreviewSection() {
               <h3 className="text-text-primary font-bold text-sm mb-1">{product.name}</h3>
               <p className="text-text-muted font-pixel uppercase tracking-wider mb-6 font-semibold">{product.material}</p>
               
+              </div>
+              
               <a
                 href={`${URBANWOOD.whatsappLink}?text=Hi, I'm interested in ${encodeURIComponent(product.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] text-white text-xs font-bold uppercase tracking-widest border border-border-harsh brutalist-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+                className="mt-auto flex items-center justify-center gap-2 w-full py-4 bg-[#0000FF] text-white text-xs font-bold uppercase tracking-widest border-t border-border-harsh hover:bg-accent-lime hover:text-accent transition-colors"
               >
                 <MessageCircle className="size-4" />
                 ENQUIRE

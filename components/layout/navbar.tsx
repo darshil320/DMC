@@ -39,7 +39,7 @@ function MenuLink({ item, closeMenu }: { item: typeof NAV_LINKS[0]; closeMenu: (
         {item.num}
       </span>
       <span className={cn(
-        "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[90px] leading-none tracking-tight transition-all duration-200 uppercase",
+        "text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight transition-all duration-200 uppercase",
         isHovered ? "text-white font-bold" : "text-white/60"
       )}>
         {item.label}
@@ -153,7 +153,7 @@ export function Navbar() {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[90] bg-accent flex flex-col justify-between px-6 pt-24 pb-6 md:pb-12 select-none"
+            className="fixed inset-0 z-[90] bg-accent flex flex-col justify-between px-6 pt-24 pb-6 md:pb-8 select-none overflow-y-auto"
           >
             {/* Vertical grid lines overlay in menu background */}
             <div className="absolute inset-0 pointer-events-none flex justify-between px-6 md:px-12 lg:px-16 max-w-[1440px] mx-auto w-full z-0 opacity-10">

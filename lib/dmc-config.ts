@@ -9,7 +9,7 @@ export const DMC = {
   location: "Ahmedabad, India",
   pricing: {
     starter: 15000,
-    catalog: 25000,
+    catalog: 45000,
     ecommerce: 50000,
     maintenance: 5000,
   },

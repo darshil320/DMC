@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { DMC } from "@/lib/dmc-config";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
+import { EncryptedText } from "@/components/ui/encrypted-text";
 
 const HEADING_STYLE = {
   fontSize: "clamp(48px, 11vw, 150px)",
@@ -11,6 +12,7 @@ const HEADING_STYLE = {
 } as const;
 
 export function HeroSection() {
+  const [hoverKey, setHoverKey] = useState(0);
   return (
     <section id="home" className="relative min-h-[100svh] flex flex-col justify-between pt-28 lg:pt-32 pb-6 px-6 md:px-12 lg:px-16 bg-transparent select-none overflow-visible">
 
@@ -62,20 +64,38 @@ export function HeroSection() {
         </div>
 
         {/* ── CTA Button ── */}
-        <AnimatedReveal delay={0.15} className="mt-10 md:mt-14 flex items-center justify-center relative z-20">
+        <AnimatedReveal delay={0.15} className="mt-10 md:mt-12 flex items-center justify-center relative z-20">
           <a
             href="#contact"
-            className="border border-accent text-accent bg-transparent px-5 py-2.5 text-[10px] font-medium tracking-[0.15em] uppercase hover:bg-accent hover:text-white transition-colors flex items-center h-[40px]"
+            className="group flex items-center gap-2 cursor-pointer"
+            onMouseEnter={() => setHoverKey(prev => prev + 1)}
           >
-            Let&apos;s Build Yours
-          </a>
-          <a
-            href="#contact"
-            className="flex items-center justify-center h-[40px] w-[40px] border border-l-0 border-accent bg-accent text-white hover:bg-accent-lime hover:text-accent transition-colors"
-          >
-            <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor">
-              <path d="M200 64v104a8 8 0 0 1-16 0V83.31L69.66 197.66a8 8 0 0 1-11.32-11.32L172.69 72H88a8 8 0 0 1 0-16h104a8 8 0 0 1 8 8" />
-            </svg>
+            <div className="border border-accent text-accent bg-transparent px-5 md:px-6 py-2 md:py-2.5 text-[11px] md:text-xs tracking-widest uppercase transition-colors group-hover:bg-accent group-hover:text-white flex items-center justify-center h-[40px] md:h-[44px] min-w-[180px] rounded-md">
+              <div className="hidden group-hover:block w-full text-center">
+                <EncryptedText 
+                  key={hoverKey}
+                  text="LET'S BUILD YOURS"
+                  revealDelayMs={30}
+                  flipDelayMs={30}
+                />
+              </div>
+              <div className="block group-hover:hidden w-full text-center">
+                LET'S BUILD YOURS
+              </div>
+            </div>
+            
+            <div className="flex items-center justify-center h-[40px] w-[40px] md:h-[44px] md:w-[44px] border border-accent bg-accent text-white transition-all group-hover:bg-transparent group-hover:text-accent rounded-md">
+              {/* Default Arrow (Diagonal) */}
+              <svg className="block group-hover:hidden size-5" viewBox="0 0 256 256" fill="none" stroke="currentColor" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="64" y1="192" x2="192" y2="64"></line>
+                <polyline points="88 64 192 64 192 168"></polyline>
+              </svg>
+              {/* Hover Arrow (Right) */}
+              <svg className="hidden group-hover:block size-5" viewBox="0 0 256 256" fill="none" stroke="currentColor" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="40" y1="128" x2="216" y2="128"></line>
+                <polyline points="144 56 216 128 144 200"></polyline>
+              </svg>
+            </div>
           </a>
         </AnimatedReveal>
       </div>

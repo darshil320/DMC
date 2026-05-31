@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/layout/navbar";
 import { HeroSection } from "@/components/sections/hero";
-import { GridOverlay } from "@/components/layout/GridOverlay";
 import dynamic from "next/dynamic";
 
 import { BrutalistLoader } from "@/components/ui/brutalist-loader";
@@ -17,13 +16,30 @@ const PricingSection = dynamic(() => import("@/components/sections/pricing").the
 const TrustSection = dynamic(() => import("@/components/sections/trust").then(m => m.TrustSection));
 const FinalCtaSection = dynamic(() => import("@/components/sections/final-cta").then(m => m.FinalCtaSection));
 
+function InlineGridOverlay() {
+  return (
+    <div className="absolute inset-0 pointer-events-none z-[50]">
+      <div className="w-full h-full flex justify-between px-6 md:px-12 lg:px-16">
+        <div className="w-px h-full bg-border-harsh/5" />
+        <div className="w-px h-full bg-border-harsh/5 hidden lg:block" />
+        <div className="w-px h-full bg-border-harsh/5" />
+        <div className="w-px h-full bg-border-harsh/5 hidden lg:block" />
+        <div className="w-px h-full bg-border-harsh/5" />
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
-    <div className="bg-bg-page min-h-screen relative overflow-hidden">
+    <div className="bg-bg-page min-h-screen relative">
       <BrutalistLoader />
-      <GridOverlay />
       
-      <div className="relative z-10 border-x border-border-harsh max-w-[1440px] mx-auto min-h-screen">
+      {/* Main content — scrolls OVER the footer */}
+      <div className="relative z-10 max-w-[1440px] mx-auto min-h-screen bg-bg-page">
+        {/* Grid overlay — lives INSIDE main content so it never bleeds into footer */}
+        <InlineGridOverlay />
+        
         <Navbar />
         <main>
           <HeroSection />
@@ -38,6 +54,10 @@ export default function Home() {
           <TrustSection />
           <FinalCtaSection />
         </main>
+      </div>
+
+      {/* Footer — sticky at bottom, revealed as main content scrolls away */}
+      <div className="sticky bottom-0 z-0">
         <Footer />
       </div>
     </div>

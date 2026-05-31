@@ -32,11 +32,12 @@ const PROBLEMS = [
 
 export function ProblemSection() {
   return (
-    <section id="problem" className="w-full bg-accent text-white select-none relative z-10 border-y border-border-harsh">
-      <div className="max-w-[1440px] mx-auto w-full">
+    <section id="problem" className="w-full bg-accent text-white select-none relative z-10">
+      {/* Same padding as GridOverlay for alignment */}
+      <div className="max-w-[1440px] mx-auto w-full px-6 md:px-12 lg:px-16">
         
         {/* Header */}
-        <div className="p-6 md:p-12 lg:p-16 border-b border-white/20">
+        <div className="py-12 lg:py-16">
           <div className="section-tag">
             THE REALITY
           </div>
@@ -45,14 +46,12 @@ export function ProblemSection() {
           </h2>
         </div>
 
-        {/* Grid of Problems */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-accent">
-          {PROBLEMS.map((item, idx) => (
+        {/* Grid of Problems — 4 cols aligned with overlay */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-white/20 pb-12">
+          {PROBLEMS.map((item) => (
             <div 
               key={item.num} 
-              className={`p-6 md:p-8 flex flex-col items-start border-b lg:border-b-0 border-white/20 hover:bg-white hover:text-accent transition-colors group ${
-                idx !== PROBLEMS.length - 1 ? 'lg:border-r' : ''
-              }`}
+              className="py-8 px-4 lg:px-5 flex flex-col items-start border-b md:border-b-0 border-white/10 hover:bg-white hover:text-accent transition-colors group"
             >
               <span className="font-display font-bold text-sm text-accent-lime group-hover:text-accent mb-6">
                 [{item.num}]

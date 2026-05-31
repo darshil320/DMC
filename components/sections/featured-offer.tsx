@@ -25,7 +25,7 @@ export function FeaturedOfferSection() {
           </p>
 
           <div className="font-display text-5xl md:text-6xl text-accent-lime font-bold mb-2">
-            ₹25,000<span className="text-xl text-white/50">+</span>
+            ₹45,000<span className="text-xl text-white/50">+</span>
           </div>
           <span className="text-white font-pixel font-bold tracking-widest uppercase">One-time setup fee</span>
         </div>

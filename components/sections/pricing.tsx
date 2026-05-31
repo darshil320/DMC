@@ -80,7 +80,7 @@ export function PricingSection() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 {/* Number & Title (Cols 1-4) */}
-                <div className="lg:col-span-4 flex gap-3">
+                <div className="lg:col-span-4 flex gap-3 px-4 lg:px-6">
                   <span className="font-display font-bold text-xs mt-1.5">{opt.num}</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl tracking-tighter font-medium text-text-primary">
                     {opt.title}
@@ -88,7 +88,7 @@ export function PricingSection() {
                 </div>
 
                 {/* Description & Tags (Cols 5-9) */}
-                <div className="lg:col-span-5 flex flex-col gap-6 pt-2 lg:pl-8 border-l-0 lg:border-l border-border-harsh/30 h-full">
+                <div className="lg:col-span-5 flex flex-col gap-6 pt-2 px-4 lg:px-8 border-l-0 lg:border-l border-border-harsh/30 h-full">
                   <p className="text-text-secondary text-sm md:text-base leading-relaxed">
                     {opt.desc}
                   </p>
@@ -102,7 +102,7 @@ export function PricingSection() {
                 </div>
 
                 {/* Time & Graphic (Cols 10-12) */}
-                <div className="lg:col-span-3 flex flex-col items-end gap-6 pt-2">
+                <div className="lg:col-span-3 flex flex-col items-end gap-6 pt-2 px-4 lg:px-6">
                   <div className="flex items-center gap-2 text-text-primary font-medium text-sm">
                     <Clock className="size-4" />
                     {opt.time}

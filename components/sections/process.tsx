@@ -69,11 +69,11 @@ export function ProcessSection() {
   const rotateFast = useTransform(scrollYProgress, [0, 1], [0, 270]);
 
   return (
-    <section ref={containerRef} id="process" className="w-full bg-bg-page select-none relative z-10 py-24">
+    <section ref={containerRef} id="process" className="w-full bg-bg-page select-none relative z-10 py-24 px-6 md:px-12 lg:px-16">
       <div className="max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-0">
         
         {/* Header Column (Col 1) */}
-        <div className="p-6 md:p-12 lg:p-10 flex flex-col items-start bg-bg-page lg:border-r border-border-subtle relative">
+        <div className="p-6 md:p-12 lg:p-10 flex flex-col items-start bg-bg-page relative">
           <div className="section-tag mb-6">
             Process
           </div>
@@ -95,9 +95,7 @@ export function ProcessSection() {
             <AnimatedReveal
               key={step.num}
               delay={idx * 0.1}
-              className={`group p-6 md:p-12 lg:p-10 flex flex-col items-center text-center bg-bg-page
-                ${idx !== STEPS.length - 1 ? 'lg:border-r border-border-subtle' : ''}
-              `}
+              className="group p-6 md:p-12 lg:p-10 flex flex-col items-center text-center bg-bg-page"
             >
               {/* Step Header */}
               <div className="flex flex-col items-center gap-2 mb-12">

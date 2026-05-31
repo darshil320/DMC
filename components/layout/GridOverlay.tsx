@@ -2,7 +2,7 @@ import React from "react";
 
 export function GridOverlay() {
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 flex justify-center w-full h-full">
+    <div className="fixed inset-0 pointer-events-none z-[50] flex justify-center w-full h-full">
       {/* 
         This max-w-[1440px] exactly matches the width of the main content wrapper.
         We draw 5 lines to create 4 equal columns.

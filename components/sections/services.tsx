@@ -17,11 +17,11 @@ const SERVICES = [
 
 export function ServicesSection() {
   return (
-    <section id="features" className="py-24 px-6 md:px-12 lg:px-16 w-full select-none bg-bg-page border-y border-border-harsh relative z-10">
+    <section id="services" className="py-24 px-6 md:px-12 lg:px-16 w-full select-none bg-bg-page border-y border-border-harsh relative z-10">
       <div className="max-w-[1440px] mx-auto w-full">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 px-4 lg:px-6">
           <div>
             <div className="section-tag">
               CAPABILITIES

@@ -52,7 +52,7 @@ export function AboutUsSection() {
     <section id="about" className="py-24 px-6 md:px-12 lg:px-16 w-full select-none relative z-10 border-t border-border-harsh bg-bg-page">
       <div className="max-w-[1440px] mx-auto w-full">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-24 px-4 lg:px-6">
           {/* Blue Badge (Col 1-2) */}
           <div className="lg:col-span-2">
             <div className="section-tag">
@@ -75,7 +75,7 @@ export function AboutUsSection() {
         </div>
 
         {/* Bottom Description */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start px-4 lg:px-6">
           <div className="lg:col-span-3 lg:col-start-3">
             <img 
               src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/691df85560dcfc6a761612b1_Finger%20Point%20Right.svg" 
