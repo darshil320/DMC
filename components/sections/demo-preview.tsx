@@ -68,7 +68,7 @@ export function DemoPreviewSection() {
 
         <div className="flex justify-center">
           <a
-            href="/demo/furnitureconcepts2.0"
+            href="/demo/furniture-concept-2.0"
             className="group flex items-center gap-2 bg-bg-page border-2 border-accent text-accent px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-white transition-colors"
           >
             Visit the Full Demo

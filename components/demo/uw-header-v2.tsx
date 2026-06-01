@@ -94,7 +94,7 @@ export function UWHeaderV2() {
 
         <div className="justify-self-center text-center">
           <Link
-            href="/demo/urbanwood"
+            href="/demo/furniture-concept-2.0"
             className={`flex flex-col sm:block text-[11px] sm:text-[12px] md:text-[14px] font-medium tracking-[0.2em] sm:tracking-[0.15em] uppercase transition-colors ${
               scrolled ? "text-uw-text-primary" : "text-white"
             }`}

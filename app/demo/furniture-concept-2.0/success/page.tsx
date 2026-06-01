@@ -23,7 +23,7 @@ export default function SuccessPage() {
           Thank you for your purchase. We've sent a confirmation email with your order details and tracking information.
         </p>
         <Link 
-          href="/demo/urbanwood"
+          href="/demo/furniture-concept-2.0"
           className="inline-flex items-center justify-center bg-[#2C2A26] text-[#F4F1ED] px-8 py-4 text-[12px] uppercase tracking-widest font-medium hover:bg-black transition-colors"
         >
           Return to Store

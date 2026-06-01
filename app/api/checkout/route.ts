@@ -24,14 +24,14 @@ export async function POST(request: Request) {
         quantity: item.quantity,
       })),
       mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_URL}/demo/urbanwood/success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_URL}/demo/urbanwood/cart`,
+      success_url: `${process.env.NEXT_PUBLIC_URL}/demo/furniture-concept-2.0/success`,
+      cancel_url: `${process.env.NEXT_PUBLIC_URL}/demo/furniture-concept-2.0/cart`,
     });
     return NextResponse.json({ url: session.url });
     */
 
     // For this demo, we simulate a successful API call and return a mock success URL
-    const mockSuccessUrl = "/demo/urbanwood/success";
+    const mockSuccessUrl = "/demo/furniture-concept-2.0/success";
     
     // Simulate network delay
     await new Promise((resolve) => setTimeout(resolve, 1000));

@@ -101,7 +101,7 @@ export function UWFooterDark() {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 pb-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-[#F4F1ED]/10">
         <div className="flex items-center gap-6">
           <Link
-            href="/demo/urbanwood"
+            href="/demo/furniture-concept-2.0"
             className="text-[14px] font-medium tracking-[0.15em] uppercase text-[#F4F1ED]"
           >
             Furniture Concept 2.0

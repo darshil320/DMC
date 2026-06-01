@@ -47,13 +47,13 @@ export function OurWorkSection() {
             <div className="absolute inset-0 bg-neutral-200" />
             
             <a 
-              href="/demo/urbanwood" 
+              href="/demo/furniture-concept-2.0" 
               className="absolute top-12 left-12 z-20 bg-accent-lime text-accent px-4 py-2 font-pixel font-bold uppercase tracking-widest brutalist-shadow border border-accent flex items-center gap-2 group-hover:bg-white group-hover:text-black transition-colors"
             >
               VIEW LIVE DEMO <ThinArrowUpRight />
             </a>
 
-            <a href="/demo/urbanwood" className="absolute bottom-6 right-6 z-20 text-text-primary hover:text-accent p-2">
+            <a href="/demo/furniture-concept-2.0" className="absolute bottom-6 right-6 z-20 text-text-primary hover:text-accent p-2">
               <ThinArrowUpRight className="size-6" />
             </a>
 
