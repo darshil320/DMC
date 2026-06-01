@@ -70,7 +70,7 @@ export function HeroSection() {
             className="group flex items-center gap-2 cursor-pointer"
             onMouseEnter={() => setHoverKey(prev => prev + 1)}
           >
-            <div className="border border-accent text-accent bg-transparent px-5 md:px-6 py-2 md:py-2.5 text-[11px] md:text-xs tracking-widest uppercase transition-colors group-hover:bg-accent group-hover:text-white flex items-center justify-center h-[40px] md:h-[44px] min-w-[180px] rounded-md">
+            <div className="border border-accent text-accent bg-transparent text-[11px] md:text-xs tracking-widest uppercase transition-colors group-hover:bg-accent group-hover:text-white flex items-center justify-center h-[40px] md:h-[44px] w-[180px] md:w-[200px] rounded-md">
               <div className="hidden group-hover:block w-full text-center">
                 <EncryptedText 
                   key={hoverKey}
