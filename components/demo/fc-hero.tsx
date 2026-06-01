@@ -4,12 +4,12 @@ import { motion } from "motion/react";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { buttonVariants } from "@/components/ui/button";
 import { MessageCircle, ChevronDown } from "lucide-react";
-import { URBANWOOD } from "@/lib/dmc-config";
+import { FURNITURE_CONCEPTS } from "@/lib/dmc-config";
 import { cn } from "@/lib/utils";
 
-export function UWHero() {
+export function FCHero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-uw-cream flex items-center">
+    <section className="relative min-h-screen overflow-hidden bg-fc-cream flex items-center">
       {/* Subtle dot texture — matches HeroHighlight light theme but on cream */}
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
@@ -25,7 +25,7 @@ export function UWHero() {
           alt="Premium furniture showroom"
           className="w-full h-full object-cover opacity-15"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-uw-cream via-uw-cream/95 to-uw-cream/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-fc-cream via-fc-cream/95 to-fc-cream/40" />
       </div>
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 py-32 w-full">
@@ -36,20 +36,20 @@ export function UWHero() {
           className="max-w-2xl"
         >
           {/* Brand badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-uw-brown/20 bg-uw-brown/8 mb-8">
-            <span className="text-xs text-uw-brown font-medium uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-fc-brown/20 bg-fc-brown/8 mb-8">
+            <span className="text-xs text-fc-brown font-medium uppercase tracking-wider">
               Furniture Concepts 2.0 • Surat
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display text-uw-brown leading-tight mb-6">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display text-fc-brown leading-tight mb-6">
             Premium Furniture for{" "}
-            <Highlight className="text-uw-brown bg-gradient-to-r from-amber-200 to-yellow-100 dark:from-amber-300 dark:to-yellow-200">
+            <Highlight className="text-fc-brown bg-gradient-to-r from-amber-200 to-yellow-100 dark:from-amber-300 dark:to-yellow-200">
               Modern Homes
             </Highlight>
           </h1>
 
-          <p className="text-uw-brown/70 text-lg leading-relaxed mb-10 max-w-xl">
+          <p className="text-fc-brown/70 text-lg leading-relaxed mb-10 max-w-xl">
             Explore sofas, beds, wardrobes, dining sets, and custom furniture
             from our showroom in Ahmedabad. Browse online and enquire directly
             on WhatsApp.
@@ -60,13 +60,13 @@ export function UWHero() {
               href="#products"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "bg-uw-brown text-uw-cream font-bold text-base px-8 py-4 h-auto hover:bg-uw-brown/90"
+                "bg-fc-brown text-fc-cream font-bold text-base px-8 py-4 h-auto hover:bg-fc-brown/90"
               )}
             >
               View Collection
             </a>
             <a
-              href={URBANWOOD.whatsappLink}
+              href={FURNITURE_CONCEPTS.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
@@ -85,7 +85,7 @@ export function UWHero() {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-uw-brown/40"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-fc-brown/40"
       >
         <ChevronDown className="size-6" />
       </motion.div>

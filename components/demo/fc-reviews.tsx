@@ -8,7 +8,7 @@ const REVIEWS = [
     name: "Priya Sharma",
     city: "Ahmedabad",
     quote:
-      "The sofa is exactly what we wanted. Quality is outstanding and delivery was on time. Highly recommend UrbanWood.",
+      "The sofa is exactly what we wanted. Quality is outstanding and delivery was on time. Highly recommend Furniture Concepts 2.0.",
     rating: 5,
   },
   {
@@ -22,7 +22,7 @@ const REVIEWS = [
     name: "Meera Joshi",
     city: "Vadodara",
     quote:
-      "We furnished our entire living room from UrbanWood. Every piece is solid, well-built, and looks beautiful.",
+      "We furnished our entire living room from Furniture Concepts 2.0. Every piece is solid, well-built, and looks beautiful.",
     rating: 5,
   },
   {
@@ -50,9 +50,9 @@ const REVIEWS = [
 
 const REVIEWS_DOUBLE = [...REVIEWS, ...REVIEWS];
 
-export function UWReviews() {
+export function FCReviews() {
   return (
-    <section className="py-20 bg-uw-cream overflow-hidden">
+    <section className="py-20 bg-fc-cream overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,10 +60,10 @@ export function UWReviews() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-uw-brown mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-fc-brown mb-3">
             What our customers say
           </h2>
-          <p className="text-uw-brown/60 text-lg">
+          <p className="text-fc-brown/60 text-lg">
             Real families, real homes, real experiences.
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ export function UWReviews() {
           {REVIEWS_DOUBLE.map((review, idx) => (
             <div
               key={idx}
-              className="inline-block shrink-0 w-72 rounded-2xl bg-white border border-uw-brown/10 p-5"
+              className="inline-block shrink-0 w-72 rounded-2xl bg-white border border-fc-brown/10 p-5"
             >
               <div className="flex gap-0.5 mb-3">
                 {Array.from({ length: review.rating }).map((_, i) => (
@@ -85,14 +85,14 @@ export function UWReviews() {
                   />
                 ))}
               </div>
-              <p className="text-uw-brown/80 text-sm leading-relaxed mb-4 whitespace-normal">
+              <p className="text-fc-brown/80 text-sm leading-relaxed mb-4 whitespace-normal">
                 "{review.quote}"
               </p>
               <div>
-                <p className="text-uw-brown font-semibold text-sm">
+                <p className="text-fc-brown font-semibold text-sm">
                   {review.name}
                 </p>
-                <p className="text-uw-brown/50 text-xs">{review.city}</p>
+                <p className="text-fc-brown/50 text-xs">{review.city}</p>
               </div>
             </div>
           ))}

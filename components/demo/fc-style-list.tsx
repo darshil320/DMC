@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { STYLES } from "@/lib/uw-content";
+import { STYLES } from "@/lib/fc-content";
 
 const STYLE_IMAGES = [
   "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=240&auto=format&fit=crop&q=60",
@@ -14,7 +14,7 @@ const STYLE_IMAGES = [
 
 const SIDE_OFFSETS = [0, -20, 10, -30, 15];
 
-export function UWStyleList() {
+export function FCStyleList() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -31,7 +31,7 @@ export function UWStyleList() {
 
   return (
     <section
-      className="hidden md:block max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32 border-t border-uw-border-subtle"
+      className="hidden md:block max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32 border-t border-[#E6DED2]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
@@ -71,10 +71,10 @@ export function UWStyleList() {
                   aria-current={idx === active ? "true" : undefined}
                 >
                   <span
-                    className="block font-medium text-uw-text-primary leading-tight"
+                    className="block font-medium text-[#1F1A16] leading-tight"
                     style={{ fontSize: "clamp(28px, 4vw, 46px)" }}
                   >
-                    <sup className="text-[12px] font-normal mr-1.5 align-top mt-2 text-uw-text-muted">
+                    <sup className="text-[12px] font-normal mr-1.5 align-top mt-2 text-[#A89F94]">
                       {idx + 1}
                     </sup>
                     {style}

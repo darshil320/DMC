@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/lib/store/useCart";
 
-export function UWCartDrawer() {
+export function FCCartDrawer() {
   const { items, isOpen, setIsOpen, removeItem, updateQuantity, cartTotal, clearCart } = useCart();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
 

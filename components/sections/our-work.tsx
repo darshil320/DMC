@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
-import { URBANWOOD } from "@/lib/dmc-config";
+import { FURNITURE_CONCEPTS } from "@/lib/dmc-config";
 
 export function OurWorkSection() {
   return (
@@ -49,13 +49,13 @@ export function OurWorkSection() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/10 via-bg-page to-bg-page opacity-50" />
             
             <a 
-              href="/demo/urbanwood" 
+              href="/demo/furniture-concept-2.0" 
               className="absolute top-8 left-8 z-20 bg-bg-page text-text-primary px-6 py-3 text-[10px] font-sans font-bold uppercase tracking-[0.2em] rounded-full border border-border-harsh flex items-center gap-3 group-hover:border-accent group-hover:text-accent transition-all duration-300 shadow-xl"
             >
               View Live Demo <ThinArrowUpRight />
             </a>
 
-            <a href="/demo/urbanwood" className="absolute bottom-6 right-6 z-20 text-text-muted hover:text-accent p-2 transition-colors duration-300">
+            <a href="/demo/furniture-concept-2.0" className="absolute bottom-6 right-6 z-20 text-text-muted hover:text-accent p-2 transition-colors duration-300">
               <ThinArrowUpRight className="size-6" />
             </a>
 

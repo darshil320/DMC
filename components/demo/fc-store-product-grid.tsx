@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { PRODUCTS } from "@/lib/uw-content";
+import { PRODUCTS } from "@/lib/fc-content";
 import { motion, AnimatePresence } from "motion/react";
 import { useCart } from "@/lib/store/useCart";
 
@@ -25,7 +25,7 @@ const FILTERS = [
   },
 ];
 
-export function UWStoreProductGrid() {
+export function FCStoreProductGrid() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [expandedFilter, setExpandedFilter] = useState<string>("Category");
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
@@ -67,9 +67,9 @@ export function UWStoreProductGrid() {
   };
 
   return (
-    <div className="relative w-full bg-uw-bg-page min-h-screen">
+    <div className="relative w-full bg-[#FAF7F0] min-h-screen">
       {/* Toolbar */}
-      <div className="sticky top-[80px] md:top-[100px] z-40 bg-uw-bg-page border-b border-uw-border-subtle px-6 md:px-12 py-4 flex justify-between items-center text-[12px] md:text-[14px]">
+      <div className="sticky top-[80px] md:top-[100px] z-40 bg-[#FAF7F0] border-b border-[#E6DED2] px-6 md:px-12 py-4 flex justify-between items-center text-[12px] md:text-[14px]">
         <div className="flex items-center gap-6">
           <button 
             onClick={() => setIsFilterOpen(true)}
@@ -85,16 +85,16 @@ export function UWStoreProductGrid() {
               </span>
             )}
           </button>
-          <span className="text-uw-text-secondary">{filteredProducts.length} Results</span>
+          <span className="text-[#5F554B]">{filteredProducts.length} Results</span>
         </div>
 
         <div className="hidden md:flex items-center gap-8">
-          <div className="flex items-center gap-4 text-uw-text-secondary">
-            <button className="hover:text-uw-text-primary flex items-center gap-1">
+          <div className="flex items-center gap-4 text-[#5F554B]">
+            <button className="hover:text-[#1F1A16] flex items-center gap-1">
               <span className="w-3 h-4 border border-current opacity-50" />
               Large
             </button>
-            <button className="text-uw-text-primary flex items-center gap-1">
+            <button className="text-[#1F1A16] flex items-center gap-1">
               <span className="w-4 h-4 grid grid-cols-2 gap-[2px]">
                 <span className="bg-current rounded-[1px]" />
                 <span className="bg-current rounded-[1px]" />
@@ -105,7 +105,7 @@ export function UWStoreProductGrid() {
             </button>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-uw-text-secondary">Sort</span>
+            <span className="text-[#5F554B]">Sort</span>
             <select className="bg-transparent font-medium focus:outline-none appearance-none cursor-pointer pr-4">
               <option>Bestselling</option>
               <option>Price: Low to High</option>
@@ -120,7 +120,7 @@ export function UWStoreProductGrid() {
       <div className="px-6 md:px-12 py-12 md:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-16">
         {filteredProducts.map((product) => (
           <div key={product.id} className="group cursor-pointer flex flex-col">
-            <div className="relative aspect-[4/5] bg-uw-bg-card mb-4 overflow-hidden rounded-sm">
+            <div className="relative aspect-[4/5] bg-[#F1ECE2] mb-4 overflow-hidden rounded-sm">
               <Image
                 src={product.colors[0].image}
                 alt={product.name}
@@ -137,7 +137,7 @@ export function UWStoreProductGrid() {
                 </button>
               </div>
               {/* Wishlist Button */}
-              <button className="absolute top-4 right-4 text-uw-text-primary hover:scale-110 transition-transform">
+              <button className="absolute top-4 right-4 text-[#1F1A16] hover:scale-110 transition-transform">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" strokeLinejoin="round"/>
                 </svg>
@@ -146,23 +146,23 @@ export function UWStoreProductGrid() {
             
             <div className="flex justify-between items-start gap-4 w-full">
               <div className="w-full">
-                <h3 className="text-[15px] font-bold text-uw-text-primary mb-1">{product.name}</h3>
+                <h3 className="text-[15px] font-bold text-[#1F1A16] mb-1">{product.name}</h3>
                 <div className="flex items-center justify-between mb-2">
-                  <p className="text-[13px] text-uw-text-secondary">{product.price}</p>
+                  <p className="text-[13px] text-[#5F554B]">{product.price}</p>
                   <button 
                     onClick={(e) => handleAddToCart(e, product)}
-                    className="md:hidden text-[10px] uppercase tracking-[0.15em] font-medium border-b border-uw-text-primary pb-0.5 hover:text-black transition-colors"
+                    className="md:hidden text-[10px] uppercase tracking-[0.15em] font-medium border-b border-fc-text-primary pb-0.5 hover:text-black transition-colors"
                   >
                     Add to Cart
                   </button>
                 </div>
-                <p className="text-[12px] text-uw-text-muted">{product.variantsText}</p>
+                <p className="text-[12px] text-[#A89F94]">{product.variantsText}</p>
               </div>
             </div>
           </div>
         ))}
         {filteredProducts.length === 0 && (
-          <div className="col-span-full py-20 text-center text-uw-text-secondary">
+          <div className="col-span-full py-20 text-center text-[#5F554B]">
             No products match your selected filters. Try removing some options.
           </div>
         )}

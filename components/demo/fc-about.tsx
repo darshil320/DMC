@@ -2,9 +2,9 @@
 
 import { motion } from "motion/react";
 
-export function UWAbout() {
+export function FCAbout() {
   return (
-    <section className="py-20 bg-uw-cream">
+    <section className="py-20 bg-fc-cream">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -13,19 +13,19 @@ export function UWAbout() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold font-display text-uw-brown mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold font-display text-fc-brown mb-6">
               Crafted with care, built to last
             </h2>
-            <p className="text-uw-brown/70 text-base leading-relaxed mb-4">
-              UrbanWood began in 2012 as a small workshop in Ahmedabad, with one
+            <p className="text-fc-brown/70 text-base leading-relaxed mb-4">
+              Furniture Concepts 2.0 began in 2012 as a small workshop in Ahmedabad, with one
               belief: furniture should tell a story. Every sofa, bed, and dining
               table we make carries the skill of our craftsmen who have spent
               decades learning their trade.
             </p>
-            <p className="text-uw-brown/70 text-base leading-relaxed">
+            <p className="text-fc-brown/70 text-base leading-relaxed">
               We source our wood from sustainable forests, work with natural
               finishes, and build every piece to last a lifetime. When you buy
-              from UrbanWood, you are not buying mass-produced furniture — you
+              from Furniture Concepts 2.0, you are not buying mass-produced furniture — you
               are buying something made specifically for your home.
             </p>
 
@@ -36,10 +36,10 @@ export function UWAbout() {
                 { number: "10 yr", label: "Warranty on all pieces" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-3xl font-bold font-display text-uw-brown">
+                  <p className="text-3xl font-bold font-display text-fc-brown">
                     {stat.number}
                   </p>
-                  <p className="text-uw-brown/60 text-xs mt-1 leading-snug">
+                  <p className="text-fc-brown/60 text-xs mt-1 leading-snug">
                     {stat.label}
                   </p>
                 </div>

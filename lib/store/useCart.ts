@@ -71,7 +71,7 @@ export const useCart = create<CartStore>()(
       },
     }),
     {
-      name: "uw-cart-storage",
+      name: "fc-cart-storage",
     }
   )
 );

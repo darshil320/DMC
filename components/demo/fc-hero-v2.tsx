@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function UWHeroV2() {
+export function FCHeroV2() {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -81,7 +81,7 @@ export function UWHeroV2() {
             Return to form with our curated essentials
           </p>
           <Link
-            href="/demo/urbanwood/store" 
+            href="/demo/furniture-concept-2.0/store" 
             className="bg-white text-[#111] px-10 py-[14px] text-[11px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#111] hover:text-white transition-colors duration-300 pointer-events-auto"
           >
             Explore
@@ -90,15 +90,15 @@ export function UWHeroV2() {
       </div>
       
       {/* Massive Brand Wordmark anchored to the bottom */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden flex justify-center items-end pointer-events-none pb-0">
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden flex justify-center items-end pointer-events-none pb-4 md:pb-6">
         <h1
           ref={wordmarkRef}
-          className="text-white font-sans font-black tracking-tighter leading-[0.75] select-none text-center w-full"
+          className="text-white font-sans font-black tracking-tighter leading-none select-none text-center w-full whitespace-nowrap"
           style={{
-            fontSize: "14.5vw", // Precisely scaled to span the full width for 'URBANWOOD'
+            fontSize: "clamp(40px, 7.5vw, 120px)",
           }}
         >
-          URBANWOOD
+          FURNITURE CONCEPTS 2.0
         </h1>
       </div>
     </div>

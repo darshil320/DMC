@@ -3,7 +3,7 @@
 import React from "react";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { URBANWOOD } from "@/lib/dmc-config";
+import { FURNITURE_CONCEPTS } from "@/lib/dmc-config";
 
 const PRODUCTS = [
   { name: "Marlow 3-Seater Linen Sofa", category: "Sofas", material: "Solid Wood + Linen", price: "₹42,000+", image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&auto=format&fit=crop&q=60" },
@@ -30,7 +30,7 @@ export function DemoPreviewSection() {
             </h2>
           </div>
           <p className="text-text-secondary text-sm md:text-base font-sans font-light leading-relaxed max-w-[320px]">
-            UrbanWood Furniture — a demo of exactly what we build. Designed for mobile, optimized for direct WhatsApp conversions.
+            Furniture Concepts 2.0 — a demo of exactly what we build. Designed for mobile, optimized for direct WhatsApp conversions.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export function DemoPreviewSection() {
               
               {/* Elegant WhatsApp Button */}
               <a
-                href={`${URBANWOOD.whatsappLink}?text=Hi, I'm interested in ${encodeURIComponent(product.name)}`}
+                href={`${FURNITURE_CONCEPTS.whatsappLink}?text=Hi, I'm interested in ${encodeURIComponent(product.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-auto flex items-center justify-center gap-3 w-full py-3.5 bg-transparent text-text-primary text-xs font-sans tracking-[0.2em] uppercase rounded-full border border-border-subtle hover:border-[#25D366] hover:text-[#25D366] transition-all duration-300"
@@ -79,7 +79,7 @@ export function DemoPreviewSection() {
         {/* View All Button */}
         <div className="flex justify-center">
           <a
-            href="/demo/urbanwood"
+            href="/demo/furniture-concept-2.0"
             className="group flex items-center gap-3 bg-transparent border border-border-harsh text-text-primary px-8 py-4 text-xs font-sans tracking-[0.2em] uppercase rounded-full hover:bg-bg-card transition-colors duration-300"
           >
             Visit the Full Demo

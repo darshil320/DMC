@@ -3,9 +3,9 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 
-export function UWShowroom() {
+export function FCShowroom() {
   return (
-    <section className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 md:py-32 border-t border-uw-border-subtle">
+    <section className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 md:py-32 border-t border-[#E6DED2]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
         {/* Left — image */}
         <motion.div
@@ -31,19 +31,19 @@ export function UWShowroom() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-uw-text-muted mb-6 block">
+          <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#A89F94] mb-6 block">
             Visit Our Showroom
           </span>
-          <h2 className="text-[32px] md:text-[48px] font-serif text-uw-text-primary leading-[1.1] mb-12">
+          <h2 className="text-[32px] md:text-[48px] font-serif text-[#1F1A16] leading-[1.1] mb-12">
             Experience comfort<br />in person.
           </h2>
 
           <div className="space-y-10">
             <div>
-              <h3 className="text-[11px] font-medium tracking-[0.15em] uppercase text-uw-text-muted mb-3">
+              <h3 className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#A89F94] mb-3">
                 Location
               </h3>
-              <p className="text-[16px] leading-[1.6] text-uw-text-primary max-w-sm">
+              <p className="text-[16px] leading-[1.6] text-[#1F1A16] max-w-sm">
                 G-2, Shree Arc 2, Opposite Shanidev Temple,<br />
                 Sosyo Circle to Udhna Magdalla Road,<br />
                 Udhna, Surat, Gujarat 395002
@@ -51,19 +51,19 @@ export function UWShowroom() {
             </div>
 
             <div>
-              <h3 className="text-[11px] font-medium tracking-[0.15em] uppercase text-uw-text-muted mb-3">
+              <h3 className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#A89F94] mb-3">
                 Business Hours
               </h3>
-              <p className="text-[16px] leading-[1.6] text-uw-text-primary">
+              <p className="text-[16px] leading-[1.6] text-[#1F1A16]">
                 Open Daily from 10:00 AM to 8:00 PM
               </p>
             </div>
 
             <div>
-              <h3 className="text-[11px] font-medium tracking-[0.15em] uppercase text-uw-text-muted mb-3">
+              <h3 className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#A89F94] mb-3">
                 Contact
               </h3>
-              <p className="text-[16px] leading-[1.6] text-uw-text-primary mb-6">
+              <p className="text-[16px] leading-[1.6] text-[#1F1A16] mb-6">
                 +91-9081129000
               </p>
             </div>

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-export function UWPreloader() {
+export function FCPreloader() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export function UWPreloader() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="text-[10px] uppercase tracking-[0.4em] text-uw-text-muted/80 font-sans font-bold"
+              className="text-[10px] uppercase tracking-[0.4em] text-[#A89F94]/80 font-sans font-bold"
             >
               Initiating
             </motion.span>
@@ -44,19 +44,19 @@ export function UWPreloader() {
               initial={{ y: "110%", opacity: 0, filter: "blur(8px)" }}
               animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-sans font-black tracking-tighter text-uw-text-primary text-center leading-none"
+              className="text-4xl md:text-5xl lg:text-6xl font-sans font-black tracking-tighter text-[#1F1A16] text-center leading-none"
             >
-              URBANWOOD
+              FURNITURE CONCEPTS 2.0
             </motion.h1>
           </div>
           
           {/* Futuristic precise progress line */}
-          <div className="w-[200px] md:w-[300px] h-[2px] bg-uw-border-subtle relative overflow-hidden rounded-full">
+          <div className="w-[200px] md:w-[300px] h-[2px] bg-fc-border-subtle relative overflow-hidden rounded-full">
             <motion.div
               initial={{ x: "-100%" }}
               animate={{ x: "0%" }}
               transition={{ duration: 2.2, ease: [0.76, 0, 0.24, 1], delay: 0.5 }}
-              className="absolute inset-0 bg-uw-accent shadow-[0_0_15px_rgba(90,56,37,0.6)]"
+              className="absolute inset-0 bg-[#5A3825] shadow-[0_0_15px_rgba(90,56,37,0.6)]"
             />
           </div>
         </motion.div>

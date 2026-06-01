@@ -18,7 +18,7 @@ interface ProductFeatureProps {
   reverse?: boolean;
 }
 
-export function UWProductFeatureV2({
+export function FCProductFeatureV2({
   name,
   description,
   colors,
@@ -34,7 +34,7 @@ export function UWProductFeatureV2({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-      className="grid grid-cols-1 md:grid-cols-12 border-t border-uw-border-subtle"
+      className="grid grid-cols-1 md:grid-cols-12 border-t border-[#E6DED2]"
     >
       {/* ── Lifestyle photo with crossfade ─────────────────── */}
       <div
@@ -104,7 +104,7 @@ export function UWProductFeatureV2({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -4 }}
               transition={{ duration: 0.25 }}
-              className="text-[11px] uppercase tracking-[0.16em] text-uw-text-muted"
+              className="text-[11px] uppercase tracking-[0.16em] text-[#A89F94]"
             >
               Colour : {colors[selected].name}
             </motion.p>
@@ -120,8 +120,8 @@ export function UWProductFeatureV2({
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                className={`size-[28px] rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-uw-text-primary relative ${
-                  idx === selected ? "ring-2 ring-offset-[3px] ring-uw-text-primary ring-offset-uw-bg-page" : ""
+                className={`size-[28px] rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-fc-text-primary relative ${
+                  idx === selected ? "ring-2 ring-offset-[3px] ring-fc-text-primary ring-offset-fc-bg-page" : ""
                 }`}
                 style={{
                   backgroundColor: color.hex,
@@ -136,7 +136,7 @@ export function UWProductFeatureV2({
           {/* Preview card — colour band + photo */}
           <motion.div
             layout
-            className="w-[170px] rounded-md overflow-hidden border border-uw-border-subtle shadow-sm"
+            className="w-[170px] rounded-md overflow-hidden border border-[#E6DED2] shadow-sm"
           >
             {/* Solid colour band */}
             <motion.div
@@ -166,9 +166,9 @@ export function UWProductFeatureV2({
         {/* Footer: price + link */}
         <div className="space-y-3">
           {price && (
-            <p className="text-[13px] text-uw-text-secondary leading-relaxed">
+            <p className="text-[13px] text-[#5F554B] leading-relaxed">
               2-Seater · From{" "}
-              <span className="font-semibold text-uw-text-primary">{price}</span>
+              <span className="font-semibold text-[#1F1A16]">{price}</span>
             </p>
           )}
           <motion.a
@@ -177,8 +177,8 @@ export function UWProductFeatureV2({
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className={`inline-flex items-center gap-2 text-[13px] font-medium pb-0.5 group ${
               showShopLink
-                ? "text-uw-text-primary border-b border-uw-text-primary"
-                : "text-uw-text-muted hover:text-uw-text-primary transition-colors"
+                ? "text-[#1F1A16] border-b border-fc-text-primary"
+                : "text-[#A89F94] hover:text-[#1F1A16] transition-colors"
             }`}
           >
             {showShopLink ? "Shop Now" : "View Details"}

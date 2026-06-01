@@ -15,8 +15,8 @@ export const DMC = {
   },
 } as const;
 
-export const URBANWOOD = {
-  name: "UrbanWood Furniture",
+export const FURNITURE_CONCEPTS = {
+  name: "Furniture Concepts 2.0",
   tagline: "Premium Furniture for Modern Homes",
   location: "Ahmedabad",
   whatsappLink: "https://wa.me/91XXXXXXXXXX",

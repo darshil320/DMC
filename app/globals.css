@@ -29,21 +29,21 @@
 
   /* ─── UrbanWood Demo Tokens (Light/Airy Theme) ─── */
   /* UrbanWood Premium Warm */
-  --uw-bg-page: #FAF7F0;
-  --uw-bg-card: #F1ECE2;
+  --fc-bg-page: #FAF7F0;
+  --fc-bg-card: #F1ECE2;
 
-  --uw-text-primary: #1F1A16;
-  --uw-text-secondary: #5F554B;
-  --uw-text-muted: #A89F94;
+  --fc-text-primary: #1F1A16;
+  --fc-text-secondary: #5F554B;
+  --fc-text-muted: #A89F94;
 
-  --uw-border-subtle: #E6DED2;
-  --uw-border-harsh: #D5C8B8;
+  --fc-border-subtle: #E6DED2;
+  --fc-border-harsh: #D5C8B8;
 
-  --uw-accent: #5A3825;
+  --fc-accent: #5A3825;
   /* Walnut Brown */
-  --uw-accent-soft: #B8895B;
+  --fc-accent-soft: #B8895B;
   /* Warm Wood */
-  --uw-accent-gold: #C6A15B;
+  --fc-accent-gold: #C6A15B;
   /* Muted Brass */
 }
 
@@ -62,14 +62,14 @@
   --color-accent-lime: var(--accent-lime);
   --color-dmc-whatsapp: var(--dmc-whatsapp);
 
-  --color-uw-bg-page: var(--uw-bg-page);
-  --color-uw-bg-card: var(--uw-bg-card);
-  --color-uw-text-primary: var(--uw-text-primary);
-  --color-uw-text-secondary: var(--uw-text-secondary);
-  --color-uw-text-muted: var(--uw-text-muted);
-  --color-uw-border-subtle: var(--uw-border-subtle);
-  --color-uw-border-harsh: var(--uw-border-harsh);
-  --color-uw-accent: var(--uw-accent);
+  --color-fc-bg-page: #FAF7F0;
+  --color-fc-bg-card: #F1ECE2;
+  --color-fc-text-primary: #1F1A16;
+  --color-fc-text-secondary: #5F554B;
+  --color-fc-text-muted: #A89F94;
+  --color-fc-border-subtle: #E6DED2;
+  --color-fc-border-harsh: #D5C8B8;
+  --color-fc-accent: #5A3825;
 
   --font-display: var(--font-dot), monospace;
   --font-body: var(--font-inter), sans-serif;

@@ -64,7 +64,7 @@ const LoungeSofa = () => (
   </svg>
 );
 
-export function UWIntroV2() {
+export function FCIntroV2() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -75,7 +75,7 @@ export function UWIntroV2() {
   const scaleImage = useTransform(scrollYProgress, [0, 1], [1.05, 1.15]);
 
   return (
-    <section ref={containerRef} className="relative w-full py-20 md:py-32 overflow-hidden bg-uw-bg-page">
+    <section ref={containerRef} className="relative w-full py-20 md:py-32 overflow-hidden bg-[#FAF7F0]">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           
@@ -87,20 +87,20 @@ export function UWIntroV2() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-uw-text-muted mb-6 block">
+              <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#A89F94] mb-6 block">
                 The Concept
               </span>
-              <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-serif text-uw-text-primary leading-[1.1] mb-6 max-w-xl">
+              <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-serif text-[#1F1A16] leading-[1.1] mb-6 max-w-xl">
                 Discover a smarter, more productive way to find your workspace.
               </h2>
-              <p className="text-[16px] leading-[1.8] text-uw-text-secondary mb-10 max-w-md">
+              <p className="text-[16px] leading-[1.8] text-[#5F554B] mb-10 max-w-md">
                 With ergonomic designs and a range of modular workstations, our collection lets you shape an office that inspires. Explore comfort and functionality that perfectly suit your ambition.
               </p>
               
               <div className="flex items-center justify-start items-start flex-col gap-8">
                 <a
                   href="#products"
-                  className="inline-flex items-center gap-2 text-[12px] font-medium uppercase tracking-widest text-uw-text-primary border-b border-uw-text-primary pb-1 hover:opacity-50 transition-opacity group"
+                  className="inline-flex items-center gap-2 text-[12px] font-medium uppercase tracking-widest text-[#1F1A16] border-b border-fc-text-primary pb-1 hover:opacity-50 transition-opacity group"
                 >
                   Explore Collection
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -146,7 +146,7 @@ export function UWIntroV2() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 w-24 h-24 md:w-40 md:h-40 rounded-full border border-uw-text-primary/10 -z-10"
+              className="absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 w-24 h-24 md:w-40 md:h-40 rounded-full border border-fc-text-primary/10 -z-10"
             />
           </div>
           

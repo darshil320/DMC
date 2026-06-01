@@ -33,7 +33,7 @@ const MEGA_MENU_IMAGES = [
   }
 ];
 
-export function UWHeaderV2() {
+export function FCHeaderV2() {
   const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -54,14 +54,14 @@ export function UWHeaderV2() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isStorePage = pathname === "/demo/urbanwood/store";
+  const isStorePage = pathname === "/demo/furniture-concept-2.0/store";
   const isDarkBg = !scrolled && !activeMenu && !cartOpen && !isStorePage;
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-[100] transition-colors duration-300 ${
-          isDarkBg ? "bg-transparent text-white" : "bg-white text-uw-text-primary border-b border-gray-200"
+          isDarkBg ? "bg-transparent text-white" : "bg-white text-[#1F1A16] border-b border-gray-200"
         }`}
         onMouseLeave={() => setActiveMenu(null)}
       >
@@ -85,14 +85,14 @@ export function UWHeaderV2() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
             className="md:hidden flex flex-col gap-1.5 z-[110] relative p-2 -ml-2"
           >
-            <span className={`block w-5 h-[1.5px] transition-transform ${mobileMenuOpen ? "rotate-45 translate-y-[3px] bg-black" : isDarkBg ? "bg-white" : "bg-uw-text-primary"}`} />
-            <span className={`block w-5 h-[1.5px] transition-transform ${mobileMenuOpen ? "-rotate-45 -translate-y-[4.5px] bg-black" : isDarkBg ? "bg-white" : "bg-uw-text-primary"}`} />
+            <span className={`block w-5 h-[1.5px] transition-transform ${mobileMenuOpen ? "rotate-45 translate-y-[3px] bg-black" : isDarkBg ? "bg-white" : "bg-fc-text-primary"}`} />
+            <span className={`block w-5 h-[1.5px] transition-transform ${mobileMenuOpen ? "-rotate-45 -translate-y-[4.5px] bg-black" : isDarkBg ? "bg-white" : "bg-fc-text-primary"}`} />
           </button>
 
           <nav className="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-[0.15em] uppercase">
             {NAV_LINKS.slice(0, 2).map((link) => (
               <Link
-                href="/demo/urbanwood/store"
+                href="/demo/furniture-concept-2.0/store"
                 key={link}
                 onMouseEnter={() => setActiveMenu(link)}
                 className="hover:opacity-70 transition-opacity"
@@ -104,18 +104,18 @@ export function UWHeaderV2() {
 
           {/* Logo */}
           <Link
-            href="/demo/urbanwood"
-            className={`text-[20px] md:text-[28px] font-black tracking-tighter uppercase absolute left-1/2 -translate-x-1/2 text-center font-sans z-[110] ${mobileMenuOpen ? 'text-black' : ''}`}
+            href="/demo/furniture-concept-2.0"
+            className={`text-[16px] md:text-[22px] font-black tracking-tight uppercase absolute left-1/2 -translate-x-1/2 text-center font-sans z-[110] whitespace-nowrap ${mobileMenuOpen ? 'text-black' : ''}`}
             onMouseEnter={() => setActiveMenu(null)}
           >
-            URBANWOOD
+            FURNITURE CONCEPTS 2.0
           </Link>
 
           {/* Right Nav Links & Cart */}
           <nav className="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-[0.15em] uppercase">
             {NAV_LINKS.slice(2).map((link) => (
               <Link
-                href="/demo/urbanwood/store"
+                href="/demo/furniture-concept-2.0/store"
                 key={link}
                 onMouseEnter={() => setActiveMenu(link)}
                 className="hover:opacity-70 transition-opacity"
@@ -149,7 +149,7 @@ export function UWHeaderV2() {
                 {NAV_LINKS.map(link => (
                   <Link 
                     key={link} 
-                    href="/demo/urbanwood/store"
+                    href="/demo/furniture-concept-2.0/store"
                     onClick={() => setMobileMenuOpen(false)}
                     className="border-b border-gray-100 pb-4"
                   >
@@ -177,7 +177,7 @@ export function UWHeaderV2() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute top-full left-0 w-full bg-white text-uw-text-primary border-b border-gray-200 overflow-hidden shadow-2xl"
+              className="absolute top-full left-0 w-full bg-white text-[#1F1A16] border-b border-gray-200 overflow-hidden shadow-2xl"
             >
               <div className="max-w-[1600px] mx-auto px-6 md:px-12 py-12 flex gap-16">
                 
@@ -185,11 +185,11 @@ export function UWHeaderV2() {
                 <div className="flex gap-20 w-1/3">
                   <div className="flex flex-col gap-4">
                     {MEGA_MENU_CATEGORIES.map(cat => (
-                      <Link key={cat} href="/demo/urbanwood/store" className="text-[14px] font-medium hover:underline decoration-1 underline-offset-4">
+                      <Link key={cat} href="/demo/furniture-concept-2.0/store" className="text-[14px] font-medium hover:underline decoration-1 underline-offset-4">
                         {cat}
                       </Link>
                     ))}
-                    <Link href="/demo/urbanwood/store" className="text-[11px] font-bold tracking-widest uppercase mt-8 border-b border-black pb-1 w-max">
+                    <Link href="/demo/furniture-concept-2.0/store" className="text-[11px] font-bold tracking-widest uppercase mt-8 border-b border-black pb-1 w-max">
                       View All {activeMenu}
                     </Link>
                   </div>
@@ -197,7 +197,7 @@ export function UWHeaderV2() {
                   <div className="flex flex-col gap-4">
                     <span className="text-[12px] font-bold mb-2">By Collection</span>
                     {MEGA_MENU_COLLECTIONS.map(cat => (
-                      <Link key={cat} href="/demo/urbanwood/store" className="text-[14px] text-gray-600 hover:text-black transition-colors">
+                      <Link key={cat} href="/demo/furniture-concept-2.0/store" className="text-[14px] text-gray-600 hover:text-black transition-colors">
                         {cat}
                       </Link>
                     ))}
@@ -207,7 +207,7 @@ export function UWHeaderV2() {
                 {/* Right Image Grid Column */}
                 <div className="w-2/3 grid grid-cols-2 gap-6">
                   {MEGA_MENU_IMAGES.map((item, i) => (
-                    <Link href="/demo/urbanwood/store" key={i} className="relative aspect-[4/5] group overflow-hidden cursor-pointer block">
+                    <Link href="/demo/furniture-concept-2.0/store" key={i} className="relative aspect-[4/5] group overflow-hidden cursor-pointer block">
                       <Image
                         src={item.image}
                         alt={item.title}

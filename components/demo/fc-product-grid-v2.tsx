@@ -30,7 +30,7 @@ const CATEGORIES = [
   },
 ];
 
-export function UWProductGridV2() {
+export function FCProductGridV2() {
   const containerRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);

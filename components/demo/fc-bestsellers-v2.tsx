@@ -43,7 +43,7 @@ const BESTSELLERS = [
   },
 ];
 
-export function UWBestsellersV2() {
+export function FCBestsellersV2() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);

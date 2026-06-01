@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { UWHeaderV2 } from "@/components/demo/uw-header-v2";
-import { UWFooterDark } from "@/components/demo/uw-footer-dark";
+import { FCHeaderV2 } from "@/components/demo/fc-header-v2";
+import { FCFooterDark } from "@/components/demo/fc-footer-dark";
 
 export default function SuccessPage() {
   return (
@@ -8,7 +8,7 @@ export default function SuccessPage() {
       className="bg-[#F4F1ED] min-h-screen flex flex-col"
       style={{ fontFamily: "var(--font-inter, sans-serif)", color: "#2C2A26" }}
     >
-      <UWHeaderV2 />
+      <FCHeaderV2 />
 
       <main className="flex-1 flex flex-col items-center justify-center p-6 md:p-12 text-center pt-32">
         <div className="w-16 h-16 rounded-full bg-green-900/10 flex items-center justify-center mb-8 mx-auto">
@@ -23,14 +23,14 @@ export default function SuccessPage() {
           Thank you for your purchase. We've sent a confirmation email with your order details and tracking information.
         </p>
         <Link 
-          href="/demo/urbanwood"
+          href="/demo/furniture-concept-2.0"
           className="inline-flex items-center justify-center bg-[#2C2A26] text-[#F4F1ED] px-8 py-4 text-[12px] uppercase tracking-widest font-medium hover:bg-black transition-colors"
         >
           Return to Store
         </Link>
       </main>
 
-      <UWFooterDark />
+      <FCFooterDark />
     </div>
   );
 }

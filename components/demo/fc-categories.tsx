@@ -36,9 +36,9 @@ const CATEGORIES = [
   },
 ];
 
-export function UWCategories() {
+export function FCCategories() {
   return (
-    <section className="py-20 bg-uw-cream">
+    <section className="py-20 bg-fc-cream">
       <div className="max-w-[1200px] mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,10 +47,10 @@ export function UWCategories() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-uw-brown mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-fc-brown mb-3">
             Browse by Category
           </h2>
-          <p className="text-uw-brown/60 text-lg">
+          <p className="text-fc-brown/60 text-lg">
             Every piece crafted for your home.
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ export function UWCategories() {
                     />
                   </div>
                 }
-                className={`bg-white border-uw-brown/10 hover:border-uw-brown/30 ${cat.className}`}
+                className={`bg-white border-fc-brown/10 hover:border-fc-brown/30 ${cat.className}`}
               />
             </motion.div>
           ))}

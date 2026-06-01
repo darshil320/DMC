@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
-import { UWProductCard, type UWProduct } from "./uw-product-card";
+import { FCProductCard, type FCProduct } from "./fc-product-card";
 
-const PRODUCTS: UWProduct[] = [
+const PRODUCTS: FCProduct[] = [
   {
     name: "Marlow 3-Seater Linen Sofa",
     category: "Sofas",
@@ -70,7 +70,7 @@ const PRODUCTS: UWProduct[] = [
   },
 ];
 
-export function UWProducts() {
+export function FCProducts() {
   return (
     <section id="products" className="py-20 bg-white">
       <div className="max-w-[1200px] mx-auto px-6">
@@ -81,10 +81,10 @@ export function UWProducts() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-uw-brown mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-fc-brown mb-3">
             Featured Products
           </h2>
-          <p className="text-uw-brown/60 text-lg">
+          <p className="text-fc-brown/60 text-lg">
             Handcrafted for modern Indian homes.
           </p>
         </motion.div>
@@ -98,7 +98,7 @@ export function UWProducts() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
             >
-              <UWProductCard product={product} />
+              <FCProductCard product={product} />
             </motion.div>
           ))}
         </div>
