@@ -8,6 +8,7 @@ const Footer = dynamic(() => import("@/components/layout/footer").then(m => m.Fo
 const AboutUsSection = dynamic(() => import("@/components/sections/about").then(m => m.AboutUsSection));
 const OurWorkSection = dynamic(() => import("@/components/sections/our-work").then(m => m.OurWorkSection));
 const DemoPreviewSection = dynamic(() => import("@/components/sections/demo-preview").then(m => m.DemoPreviewSection));
+const AIVisualizerFeatureSection = dynamic(() => import("@/components/sections/ai-visualizer-feature").then(m => m.AIVisualizerFeatureSection));
 const ProblemSection = dynamic(() => import("@/components/sections/problem").then(m => m.ProblemSection));
 const ServicesSection = dynamic(() => import("@/components/sections/services").then(m => m.ServicesSection));
 const FeaturedOfferSection = dynamic(() => import("@/components/sections/featured-offer").then(m => m.FeaturedOfferSection));
@@ -46,6 +47,7 @@ export default function Home() {
           <AboutUsSection />
           <OurWorkSection />
           <DemoPreviewSection />
+          <AIVisualizerFeatureSection />
           <ServicesSection />
           <FeaturedOfferSection />
           <ProcessSection />

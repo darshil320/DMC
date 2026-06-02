@@ -226,10 +226,10 @@ export function Hero() {
       <div className="max-w-[1440px] mx-auto w-full pt-8 border-t border-border-subtle flex flex-col md:flex-row items-center justify-between gap-6 mt-12 text-xs font-bold uppercase tracking-widest text-text-secondary select-none">
         {/* Email */}
         <a
-          href="mailto:hello@youragency.com"
+          href="mailto:lashkaridarshil@gmail.com"
           className="hover:text-accent transition-colors"
         >
-          hello@youragency.com
+          lashkaridarshil@gmail.com
         </a>
 
         {/* Socials */}

@@ -2,7 +2,7 @@ export const DMC = {
   name: "DMC",
   fullName: "Digital Market Creators",
   tagline: "We take local businesses online.",
-  email: "hello@dmcdigital.in",
+  email: "lashkaridarshil@gmail.com",
   whatsappNumber: "+91 94265 29230",
   whatsappLink: "https://wa.me/919426529230",
   domain: "dmcdigital.in",

@@ -93,10 +93,10 @@ export function Footer() {
               </span>
               <nav className="flex flex-col gap-3 text-xs font-semibold text-neutral-400">
                 <a
-                  href="mailto:hello@youragency.com"
+                  href="mailto:lashkaridarshil@gmail.com"
                   className="hover:text-white transition-colors break-all"
                 >
-                  hello@youragency.com
+                  lashkaridarshil@gmail.com
                 </a>
                 <a href="#" className="hover:text-white transition-colors">
                   Instagram

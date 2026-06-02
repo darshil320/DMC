@@ -2,6 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    formats: ["image/avif", "image/webp"],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [96, 128, 256, 384],
+    minimumCacheTTL: 60 * 60 * 24 * 30,
+    qualities: [60, 75, 85, 90],
     remotePatterns: [
       {
         protocol: "https",
@@ -25,7 +30,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "pbxt.replicate.delivery",
+        hostname: "**.replicate.delivery",
       },
     ],
   },

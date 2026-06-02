@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { type ReactNode, useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import Link from "next/link";
+import Image from "next/image";
 import { useLenis } from "lenis/react";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -147,7 +147,7 @@ function useLenisResize(dep: unknown) {
 }
 
 // ─── Component ───────────────────────────────────────────────────────────────
-export default function AIVisualizerClient() {
+export default function AIVisualizerClient({ intro }: { intro: ReactNode }) {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -170,7 +170,6 @@ export default function AIVisualizerClient() {
   // ─── Loading animation ────────────────────────────────────────────────────
   useEffect(() => {
     if (step !== "loading") return;
-    setLoadingProgress(0);
     let current = 0;
     const timer = setInterval(() => {
       current = Math.min(95, current + (95 / 25_000) * 200);
@@ -178,6 +177,12 @@ export default function AIVisualizerClient() {
     }, 200);
     return () => clearInterval(timer);
   }, [step]);
+
+  useEffect(() => {
+    return () => {
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+    };
+  }, [previewUrl]);
 
   useEffect(() => {
     if (step !== "loading") return;
@@ -228,8 +233,11 @@ export default function AIVisualizerClient() {
   // ─── Generate ─────────────────────────────────────────────────────────────
   const handleGenerate = async () => {
     if (!uploadedFile || !selectedProduct) return;
-    setStep("loading");
+    setErrorMsg(null);
+    setResultUrl(null);
+    setLoadingProgress(0);
     setStatusMsgIdx(0);
+    setStep("loading");
     try {
       const base64 = await resizeImage(uploadedFile);
       const res = await fetch("/api/visualize", {
@@ -239,6 +247,7 @@ export default function AIVisualizerClient() {
           roomImageBase64: base64,
           productName: selectedProduct.name,
           productDescription: selectedProduct.description,
+          productImageUrl: selectedProduct.image,
         }),
       });
       const json = await res.json();
@@ -272,9 +281,13 @@ export default function AIVisualizerClient() {
   const handleReset = () => { setStep("idle"); setResultUrl(null); setErrorMsg(null); setLoadingProgress(0); };
   const handleFullReset = () => { handleReset(); setUploadedFile(null); setPreviewUrl(null); setSelectedProduct(null); };
 
-  const filteredProducts = activeCategory === "all"
-    ? PRODUCTS
-    : PRODUCTS.filter((p) => p.category === activeCategory);
+  const filteredProducts = useMemo(
+    () =>
+      activeCategory === "all"
+        ? PRODUCTS
+        : PRODUCTS.filter((p) => p.category === activeCategory),
+    [activeCategory]
+  );
 
   const canGenerate = !!uploadedFile && !!selectedProduct;
   const waText = encodeURIComponent(
@@ -284,24 +297,6 @@ export default function AIVisualizerClient() {
   return (
     <>
       <style>{`.vis-circle { border-radius: 50% !important; }`}</style>
-
-      <div className="bg-[#F4F1ED]" style={{ fontFamily: "var(--font-inter, sans-serif)", color: "#2C2A26" }}>
-
-        {/* ── Header ────────────────────────────────────────────────────────── */}
-        <header className="px-6 md:px-12 lg:px-16 py-5 flex items-center justify-between border-b border-[#2C2A26]/10">
-          <Link
-            href="/demo/furniture-concept-2.0"
-            className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#2C2A26]/40 hover:text-[#2C2A26] transition-colors duration-200"
-          >
-            ← Furniture Concept 2.0
-          </Link>
-          <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#2C2A26]">
-            AI Room Visualizer
-          </span>
-          <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#2C2A26]/30 hidden sm:block">
-            by DMC Digital
-          </span>
-        </header>
 
         {/* ════════════════ LOADING ════════════════ */}
         {step === "loading" && (
@@ -484,75 +479,7 @@ export default function AIVisualizerClient() {
         {/* ════════════════ MAIN UI ════════════════ */}
         {(step === "idle" || step === "error") && (
           <>
-            {/* Hero */}
-            <section className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-16 md:pt-24 pb-16 border-b border-[#2C2A26]/10">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <p className="text-[10px] font-medium tracking-[0.25em] uppercase text-[#2C2A26]/40 mb-7">
-                  Powered by AI · Demo by DMC Digital
-                </p>
-                <h1
-                  className="text-[clamp(2.2rem,6.5vw,5rem)] font-normal leading-[1.05] text-[#2C2A26] mb-6 max-w-3xl"
-                  style={{ fontFamily: SERIF }}
-                >
-                  See it in your home.
-                  <br />
-                  <span className="text-[#2C2A26]/35">Before you buy.</span>
-                </h1>
-                <p className="text-[15px] md:text-[16px] leading-[1.85] text-[#2C2A26]/55 max-w-lg">
-                  Upload a photo of your room. Pick a piece of furniture. See it placed in your space — instantly.
-                </p>
-              </motion.div>
-            </section>
-
-            {/* ── Proof bar ──────────────────────────────────────────────────── */}
-            <section className="border-b border-[#2C2A26]/10">
-              <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
-                <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#2C2A26]/10">
-                  {[
-                    {
-                      stat: "3×",
-                      label: "More likely to purchase",
-                      detail: "Shoppers who visualize furniture in their own space convert at 3× the rate of those who don't.",
-                      source: "Shopify AR Commerce Report",
-                    },
-                    {
-                      stat: "35%",
-                      label: "Fewer product returns",
-                      detail: "AI visualization sets accurate expectations — customers receive exactly what they pictured.",
-                      source: "IKEA Place AR Study",
-                    },
-                    {
-                      stat: "11×",
-                      label: "More time on product page",
-                      detail: "When customers can see a piece in their room, they spend dramatically longer evaluating it.",
-                      source: "Houzz 2023 Data",
-                    },
-                  ].map((item) => (
-                    <div key={item.stat} className="py-10 md:py-14 px-0 md:px-10 first:pl-0 last:pr-0">
-                      <p
-                        className="text-[44px] md:text-[52px] font-normal text-[#2C2A26] leading-none mb-2"
-                        style={{ fontFamily: SERIF }}
-                      >
-                        {item.stat}
-                      </p>
-                      <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#2C2A26] mb-3">
-                        {item.label}
-                      </p>
-                      <p className="text-[13px] leading-[1.7] text-[#2C2A26]/50 mb-3 max-w-xs">
-                        {item.detail}
-                      </p>
-                      <p className="text-[9px] tracking-[0.2em] uppercase text-[#2C2A26]/25 font-medium">
-                        {item.source}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
+            {intro}
 
             <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
 
@@ -661,14 +588,14 @@ export default function AIVisualizerClient() {
                             isSelected
                               ? "outline outline-[1.5px] outline-[#C9A84C] outline-offset-0"
                               : "outline outline-[1px] outline-[#2C2A26]/8 hover:outline-[#2C2A26]/20"
-                          }`}
+                          } aspect-[4/3]`}
                         >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
+                          <Image
                             src={product.image}
                             alt={product.name}
-                            className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                            loading="lazy"
+                            fill
+                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 420px"
+                            className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                           />
 
                           {/* Dark gradient + category label at top */}
@@ -739,202 +666,6 @@ export default function AIVisualizerClient() {
           </>
         )}
 
-        {/* ════════════════ PITCH SECTION ════════════════ */}
-        <section className="bg-[#1C1A17] text-[#F4F1ED]">
-          {/* Top: headline + CTA */}
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-20 md:pt-28 pb-16 border-b border-[#F4F1ED]/8">
-            <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10">
-              <div className="max-w-2xl">
-                <p className="text-[10px] tracking-[0.3em] uppercase text-[#C9A84C] mb-6 font-medium">
-                  For furniture store owners
-                </p>
-                <h2
-                  className="text-[clamp(2rem,5.5vw,4rem)] font-normal leading-[1.08] text-[#F4F1ED] mb-6"
-                  style={{ fontFamily: SERIF }}
-                >
-                  Your customers deserve
-                  <br />
-                  <span className="text-[#F4F1ED]/40">this experience.</span>
-                </h2>
-                <p className="text-[15px] leading-[1.85] text-[#F4F1ED]/50 max-w-lg">
-                  DMC Digital builds AI-powered websites for furniture stores across Surat and Gujarat.
-                  This visualizer — along with your full product catalogue, WhatsApp integration, and a premium brand experience — can be live on your domain in weeks.
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 shrink-0">
-                <a
-                  href="https://wa.me/919426529230?text=Hi%20DMC%20Digital%2C%20I%20saw%20the%20AI%20Room%20Visualizer%20demo%20and%20I%27m%20interested%20in%20getting%20this%20for%20my%20furniture%20store.%20Can%20we%20talk%3F"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 bg-[#C9A84C] text-[#1C1A17] text-[10px] font-bold tracking-[0.22em] uppercase px-8 py-4 hover:bg-[#d4af5a] transition-colors duration-200"
-                >
-                  <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                  </svg>
-                  Get this for my store
-                </a>
-                <Link
-                  href="/demo/furniture-concept-2.0"
-                  className="inline-flex items-center justify-center gap-2 border border-[#F4F1ED]/15 text-[#F4F1ED]/60 text-[10px] font-medium tracking-[0.18em] uppercase px-8 py-4 hover:border-[#F4F1ED]/35 hover:text-[#F4F1ED]/90 transition-colors duration-200"
-                >
-                  See full website demo
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Feature grid */}
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-16 md:py-20">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-[#F4F1ED]/30 mb-12 font-medium">
-              What's built into your website
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#F4F1ED]/6">
-              {[
-                {
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-                    </svg>
-                  ),
-                  title: "AI Room Placement",
-                  body: "FLUX Kontext Pro places each product with accurate perspective, scale, and lighting — indistinguishable from a real photograph.",
-                },
-                {
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 8.25h3m-3 3.75h3m-3 3.75h3" />
-                    </svg>
-                  ),
-                  title: "Mobile-First, No App",
-                  body: "Works instantly from any phone browser — your customer taps, uploads their room, and sees your sofa in their living room in 30 seconds.",
-                },
-                {
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
-                    </svg>
-                  ),
-                  title: "WhatsApp Enquiry Loop",
-                  body: "Every visualization ends with a pre-filled WhatsApp message — name of the product, your store number. Enquiries arrive instantly.",
-                },
-                {
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                    </svg>
-                  ),
-                  title: "Your Full Product Catalogue",
-                  body: "We add every product from your store — sofas, beds, wardrobes, dining sets, kitchen pieces — each with its own AI visualization.",
-                },
-                {
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-                    </svg>
-                  ),
-                  title: "Conversion-Optimised Design",
-                  body: "The website is designed to sell — not just look good. Every element, from hero to CTA, is built around reducing hesitation and closing the sale.",
-                },
-                {
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                    </svg>
-                  ),
-                  title: "Secure, Scalable, Fast",
-                  body: "Hosted on Vercel's global edge network. Sub-second page loads. Images served from Cloudinary CDN. Your site will never be slow or down.",
-                },
-              ].map((feat) => (
-                <div key={feat.title} className="bg-[#1C1A17] p-8 md:p-10 group hover:bg-[#242220] transition-colors duration-200">
-                  <div className="w-9 h-9 border border-[#F4F1ED]/12 flex items-center justify-center mb-6 text-[#C9A84C] group-hover:border-[#C9A84C]/30 transition-colors duration-200">
-                    {feat.icon}
-                  </div>
-                  <p
-                    className="text-[15px] font-normal text-[#F4F1ED]/90 mb-3 leading-snug"
-                    style={{ fontFamily: SERIF }}
-                  >
-                    {feat.title}
-                  </p>
-                  <p className="text-[12px] leading-[1.75] text-[#F4F1ED]/38">
-                    {feat.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Tech stack credibility bar */}
-            <div className="mt-14 pt-10 border-t border-[#F4F1ED]/8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-              <p className="text-[10px] tracking-[0.25em] uppercase text-[#F4F1ED]/25 font-medium">
-                Built with
-              </p>
-              <div className="flex flex-wrap gap-x-8 gap-y-3">
-                {["FLUX Kontext Pro AI", "Cloudinary CDN", "Vercel Edge Network", "Next.js 16", "WhatsApp Business API"].map((tech) => (
-                  <span key={tech} className="text-[10px] tracking-[0.18em] uppercase text-[#F4F1ED]/30 font-medium">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Final CTA strip */}
-          <div className="border-t border-[#F4F1ED]/8">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <p className="text-[18px] md:text-[22px] font-normal text-[#F4F1ED]/80 mb-1" style={{ fontFamily: SERIF }}>
-                  Ready to offer this to your customers?
-                </p>
-                <p className="text-[12px] text-[#F4F1ED]/35 tracking-wide">
-                  We build, host, and maintain it. You just sell furniture.
-                </p>
-              </div>
-              <a
-                href="https://wa.me/919426529230?text=Hi%20DMC%20Digital%2C%20I%20saw%20the%20AI%20Room%20Visualizer%20demo%20and%20I%27m%20interested%20in%20getting%20this%20for%20my%20furniture%20store.%20Can%20we%20talk%3F"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center gap-2.5 bg-[#C9A84C] text-[#1C1A17] text-[10px] font-bold tracking-[0.22em] uppercase px-8 py-4 hover:bg-[#d4af5a] transition-colors duration-200"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                </svg>
-                Talk to DMC Digital →
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ════════════════ FOOTER ════════════════ */}
-        <footer className="bg-[#1C1A17] text-[#F4F1ED]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 border-b border-[#F4F1ED]/8">
-            <p
-              className="text-[20px] md:text-[26px] font-normal italic text-[#F4F1ED]/70 max-w-sm leading-relaxed"
-              style={{ fontFamily: SERIF }}
-            >
-              "See every piece in your space before it arrives."
-            </p>
-            <div className="text-right">
-              <p className="text-[9px] tracking-[0.25em] uppercase text-[#F4F1ED]/30 mb-2">A demo by</p>
-              <a
-                href="https://dmcdigital.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[13px] font-medium tracking-[0.18em] uppercase text-[#F4F1ED] hover:text-[#C9A84C] transition-colors duration-200"
-              >
-                DMC Digital
-              </a>
-            </div>
-          </div>
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-7 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span className="text-[10px] text-[#F4F1ED]/20 tracking-widest uppercase">© 2026 DMC Digital — AI Room Visualizer</span>
-            <Link
-              href="/demo/furniture-concept-2.0"
-              className="text-[10px] text-[#F4F1ED]/25 tracking-[0.18em] uppercase hover:text-[#F4F1ED]/50 transition-colors duration-200"
-            >
-              ← Back to Furniture Concept 2.0
-            </Link>
-          </div>
-        </footer>
-      </div>
     </>
   );
 }

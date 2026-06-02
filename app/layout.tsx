@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, DotGothic16 } from "next/font/google";
 import "./globals.css";
-import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
-import { CustomCursor } from "@/components/ui/CustomCursor";
-import { SpinningRound } from "@/components/ui/SpinningRound";
-import { AuthProvider } from "@/components/providers/auth-provider";
+import { ClientChrome } from "@/components/layout/ClientChrome";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,13 +34,7 @@ export default function RootLayout({
       className={`${inter.variable} ${dotGothic.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        <AuthProvider>
-          <SmoothScrollProvider>
-            <CustomCursor />
-            <SpinningRound />
-            {children}
-          </SmoothScrollProvider>
-        </AuthProvider>
+        <ClientChrome>{children}</ClientChrome>
       </body>
     </html>
   );

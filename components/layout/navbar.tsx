@@ -204,9 +204,9 @@ export function Navbar() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.5 }}
-                className="flex grid grid-cols-1 sm:grid-cols-2 gap-12 md:pl-20 mt-12 md:mt-0 h-fit"
+                className="grid grid-cols-1 xl:grid-cols-2 gap-12 md:pl-20 mt-12 md:mt-0 h-fit min-w-0"
               >
-                <div className="flex flex-col gap-12">
+                <div className="flex min-w-0 flex-col gap-12">
                   {/* Socials */}
                   {/* <div className="flex flex-col gap-4">
                     <span className="text-[10px] font-bold text-accent-lime uppercase tracking-widest">Socials</span>
@@ -221,10 +221,10 @@ export function Navbar() {
                   </div> */}
 
                   {/* Email */}
-                  <div className="flex flex-col gap-2">
+                  <div className="flex min-w-0 flex-col gap-2">
                     <span className="font-pixel font-bold text-accent-lime uppercase tracking-widest">E-Mail</span>
-                    <a href="mailto:hello@dmcdigital.in" className="text-sm font-medium text-white hover:text-accent-lime uppercase tracking-widest w-fit">
-                      [ HELLO@DMCDIGITAL.IN ]
+                    <a href="mailto:lashkaridarshil@gmail.com" className="inline-block w-max max-w-full whitespace-nowrap text-[clamp(10px,0.78vw,12px)] font-medium leading-none text-white hover:text-accent-lime uppercase tracking-[0.08em]">
+                      [LASHKARIDARSHIL@GMAIL.COM]
                     </a>
                   </div>
 

@@ -149,10 +149,10 @@ export function Header() {
               Get in Touch
             </span>
             <a
-              href="mailto:hello@youragency.com"
+              href="mailto:lashkaridarshil@gmail.com"
               className="text-lg font-bold text-text-primary hover:text-accent transition-colors"
             >
-              hello@youragency.com
+              lashkaridarshil@gmail.com
             </a>
           </div>
 
