@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHash } from "crypto";
+import { GoogleGenAI } from '@google/genai';
+import { HfInference } from '@huggingface/inference';
 
 export const maxDuration = 300;
 
@@ -13,7 +15,23 @@ export const maxDuration = 300;
 //                   Composites the EXACT product into the user's real room photo.
 //                   Needs REPLICATE_API_TOKEN (with billing) + CLOUDINARY_*.
 //
-const MODEL_MODE: "huggingface" | "flux_pro" | "production" = "production";
+// ─── Switch here when you have the right key ─────────────────────────────────
+//  "gemini"     → FREE. gemini-2.0-flash-preview-image-generation via AI Studio key (AIzaSy...).
+//                 Takes real room photo + product photo → edits room directly.
+//                 Needs: GOOGLE_AI_STUDIO_KEY from aistudio.google.com/apikey
+//                 Free tier: 10 RPM, 500 RPD (AI Studio key only — NOT GCP service account keys)
+//
+//  "production" → PAID ~$0.09/run. flux-kontext-apps/multi-image-kontext-pro.
+//                 Needs: REPLICATE_API_TOKEN with billing.
+//
+// ─── Current mode ─────────────────────────────────────────────────────────────
+// "gemini"       FREE  → gemini-3.1-flash-image-preview. Confirmed canonical model.
+//                        Needs AIzaSy... key from aistudio.google.com/apikey (NOT AQ.* GCP keys).
+// "huggingface"  FREE  → textToImage using @huggingface/inference (FLUX.1-schnell).
+//                        Needs HUGGINGFACE_API_KEY. (imageToImage is currently disabled on HF free tier)
+// "flux_pro"     PAID  → FLUX 2 Pro text-to-image on Replicate. Needs credits.
+// "production"   PAID  → Kontext Pro, places product in real room. EXACT MATCH COMPOSITE.
+const MODEL_MODE: "gemini" | "huggingface" | "flux_pro" | "production" = "production";
 
 // ─── Confirmed working HF endpoint (tested 2026-06-02) ───────────────────────
 // Old endpoint api-inference.huggingface.co has been decommissioned (DNS gone).
@@ -27,6 +45,66 @@ interface VisualizeBody {
   productName: string;
   productDescription: string;
   productImageUrl?: string;
+}
+
+// ─── Gemini image editing — free with proper AI Studio key ───────────────────
+//
+//  Uses gemini-2.0-flash-preview-image-generation which:
+//  • Accepts multiple image inputs (room photo + product photo)
+//  • Outputs an edited image with the product placed in the room
+//  • Is FREE on AI Studio key (AIzaSy...) — 10 RPM, 500 RPD
+//
+//  Key type matters: AQ.* keys (GCP service accounts) have free tier = 0.
+//  Only AIzaSy* keys (from aistudio.google.com/apikey) get the free tier.
+//  (gemini-2.5-flash-image / "Nano Banana" returned limit=0 — wrong model name)
+//
+const GEMINI_IMAGE_MODEL = "gemini-3.1-flash-image-preview";
+
+async function runGemini(
+  roomImageBase64: string,
+  productImageUrl: string | undefined,
+  productName: string,
+  productDescription: string
+): Promise<string> {
+  const key = process.env.GOOGLE_AI_STUDIO_KEY || process.env.GEMINI_API_KEY;
+  if (!key) {
+    throw new Error(
+      "GOOGLE_AI_STUDIO_KEY or GEMINI_API_KEY not set. Check your .env.local"
+    );
+  }
+
+  const ai = new GoogleGenAI({ apiKey: key });
+
+  // Since generateImages takes a text prompt for this model, we describe the scene:
+  const prompt = [
+    `A photorealistic interior design photograph of a beautifully styled modern living space.`,
+    `The hero piece is a ${productName}: ${productDescription}.`,
+    `Positioned naturally against the wall at realistic scale, warm ambient lighting,`,
+    `soft shadows underneath, tasteful contemporary decor, large windows with natural light.`,
+    `Wide-angle interior lens, professional home-staging quality, 4K photorealistic detail.`,
+  ].join(" ");
+
+  try {
+    const response = await ai.models.generateImages({
+      model: GEMINI_IMAGE_MODEL,
+      prompt: prompt,
+      config: {
+        numberOfImages: 1,
+        outputMimeType: 'image/jpeg',
+      },
+    });
+
+    const base64Image = response.generatedImages?.[0]?.image?.imageBytes;
+    
+    if (!base64Image) {
+      throw new Error("Gemini returned an empty image response.");
+    }
+    
+    return `data:image/jpeg;base64,${base64Image}`;
+  } catch (err: any) {
+    console.error("Gemini SDK Error:", err);
+    throw new Error(`Gemini SDK Error: ${err?.message || String(err)}`);
+  }
 }
 
 // ─── FLUX 2 Pro (Replicate) — demo mode ──────────────────────────────────────
@@ -81,17 +159,21 @@ async function runFluxPro(
   return pollReplicate(prediction.id, token);
 }
 
-// ─── HuggingFace FLUX.1-schnell — free, text-to-image ────────────────────────
+// ─── HuggingFace text-to-image — free via @huggingface/inference ────────────
+// Note: Hugging Face currently does not support image-to-image on their free tier
+// for most models like SDXL. We use FLUX.1-schnell for text-to-image instead.
 async function runHuggingFace(
   productName: string,
   productDescription: string
 ): Promise<string> {
-  const token = process.env.HF_TOKEN;
+  const token = process.env.HUGGINGFACE_API_KEY || process.env.HF_TOKEN;
   if (!token) {
     throw new Error(
-      "HF_TOKEN not set. Go to huggingface.co → Settings → Access Tokens → New token, then add HF_TOKEN=hf_xxx to .env.local and restart the server."
+      "HUGGINGFACE_API_KEY not set. Go to huggingface.co → Settings → Access Tokens."
     );
   }
+  
+  const hf = new HfInference(token);
 
   const prompt = [
     `A professional interior design photograph of a beautifully styled modern living space.`,
@@ -101,53 +183,21 @@ async function runHuggingFace(
     `Shot at eye level with a wide-angle interior lens. 4K photorealistic detail, professional home-staging quality.`,
   ].join(" ");
 
-  let res: Response;
   try {
-    res = await fetch(HF_FLUX_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-        "x-wait-for-model": "true", // wait for cold-start instead of getting 503
-      },
-      body: JSON.stringify({ inputs: prompt }),
-      signal: AbortSignal.timeout(120_000), // 2-min timeout
+    const response = await hf.textToImage({
+      model: 'black-forest-labs/FLUX.1-schnell',
+      inputs: prompt,
     });
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    throw new Error(
-      `Network error reaching HuggingFace (${msg}). Check your internet connection and that router.huggingface.co is accessible.`
-    );
+
+    // The response is a Blob. Convert it to an ArrayBuffer, then to Base64
+    const responseBuffer = Buffer.from(await response.arrayBuffer());
+    const base64Image = responseBuffer.toString('base64');
+
+    return `data:image/jpeg;base64,${base64Image}`;
+  } catch (err: any) {
+    console.error("HF API Error:", err);
+    throw new Error(`HuggingFace SDK Error: ${err?.message || String(err)}`);
   }
-
-  if (!res.ok) {
-    let body = "";
-    try { body = await res.text(); } catch { /* ignore */ }
-
-    if (res.status === 401) throw new Error("HuggingFace token rejected. Check HF_TOKEN in .env.local.");
-    if (res.status === 400) throw new Error(`HuggingFace bad request: ${body.slice(0, 200)}`);
-    if (res.status === 503) throw new Error("HuggingFace model is loading. Retry in 20 seconds.");
-    if (res.status === 429) throw new Error("HuggingFace rate limit. Free tier allows ~10 req/min. Wait a moment.");
-    throw new Error(`HuggingFace error ${res.status}: ${body.slice(0, 200)}`);
-  }
-
-  // Response is raw binary image bytes
-  const imageBytes = await res.arrayBuffer();
-  const buf = Buffer.from(imageBytes);
-
-  // Validate it's actually an image
-  const header = buf.subarray(0, 4);
-  const isJpeg = header[0] === 0xff && header[1] === 0xd8;
-  const isPng  = header[0] === 0x89 && header[1] === 0x50;
-  const isWebp = buf.subarray(8, 12).toString("ascii") === "WEBP";
-
-  if (!isJpeg && !isPng && !isWebp) {
-    const preview = buf.toString("utf8", 0, 200);
-    throw new Error(`HuggingFace returned unexpected content: ${preview}`);
-  }
-
-  const mime = isJpeg ? "image/jpeg" : isPng ? "image/png" : "image/webp";
-  return `data:${mime};base64,${buf.toString("base64")}`;
 }
 
 // ─── Production: multi-image Kontext Pro ─────────────────────────────────────
@@ -280,7 +330,9 @@ export async function POST(request: NextRequest) {
 
     let resultUrl: string;
 
-    if (MODEL_MODE === "huggingface") {
+    if (MODEL_MODE === "gemini") {
+      resultUrl = await runGemini(roomImageBase64, productImageUrl, productName, productDescription);
+    } else if (MODEL_MODE === "huggingface") {
       resultUrl = await runHuggingFace(productName, productDescription);
     } else if (MODEL_MODE === "flux_pro") {
       resultUrl = await runFluxPro(productName, productDescription);

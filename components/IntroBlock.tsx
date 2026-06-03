@@ -34,7 +34,7 @@ export function IntroBlock() {
               a brochure and starts working like a sales system.
             </p>
 
-            <LinkArrow href="#contact" className="font-extrabold">
+            <LinkArrow href="/contact" className="font-extrabold">
               Start With Strategy
             </LinkArrow>
 

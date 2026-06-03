@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { DMC } from "@/lib/dmc-config";
 
 export function Footer() {
@@ -12,13 +13,13 @@ export function Footer() {
           <div className="flex flex-col gap-1">
             <span className="text-[11px] text-text-secondary uppercase tracking-widest mb-1">Quick Links</span>
             <div className="flex flex-wrap gap-x-2 gap-y-1 text-sm font-medium uppercase tracking-wide">
-              <a href="#home" className="hover:text-accent transition-colors">HOME</a>
+              <Link href="/#home" className="hover:text-accent transition-colors">HOME</Link>
               <span className="text-text-primary/30">,</span>
-              <a href="#about" className="hover:text-accent transition-colors">ABOUT</a>
+              <Link href="/#about" className="hover:text-accent transition-colors">ABOUT</Link>
               <span className="text-text-primary/30">,</span>
-              <a href="#work" className="hover:text-accent transition-colors">WORK</a>
+              <Link href="/#work" className="hover:text-accent transition-colors">WORK</Link>
               <span className="text-text-primary/30">,</span>
-              <a href="#contact" className="hover:text-accent transition-colors">CONTACT</a>
+              <Link href="/contact" className="hover:text-accent transition-colors">CONTACT</Link>
             </div>
           </div>
 

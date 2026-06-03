@@ -106,7 +106,7 @@ export function Hero() {
             variants={fadeUpVariants}
             className="flex flex-wrap items-center gap-6"
           >
-            <Button href="#contact" variant="accent" size="lg">
+            <Button href="/contact" variant="accent" size="lg">
               Let’s Build Yours
             </Button>
             <LinkArrow href="#work" className="text-text-primary font-bold">

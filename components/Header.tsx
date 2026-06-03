@@ -80,7 +80,7 @@ export function Header() {
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               Now booking Q3
             </span>
-            <Button href="#contact" variant="primary" size="sm">
+            <Button href="/contact" variant="primary" size="sm">
               Let’s Build Yours
             </Button>
           </div>
@@ -168,7 +168,7 @@ export function Header() {
             ))}
           </div>
 
-          <Button href="#contact" variant="primary" size="md" className="w-full mt-2" onClick={closeMenu}>
+          <Button href="/contact" variant="primary" size="md" className="w-full mt-2" onClick={closeMenu}>
             Let’s Build Yours
           </Button>
         </div>

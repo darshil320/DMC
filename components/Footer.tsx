@@ -35,7 +35,7 @@ export function Footer() {
                 <Link href="#process" className="hover:text-white transition-colors">
                   Process
                 </Link>
-                <Link href="#contact" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-white transition-colors">
                   Contact
                 </Link>
               </nav>
@@ -71,10 +71,10 @@ export function Footer() {
                 Resources
               </span>
               <nav className="flex flex-col gap-3 text-xs font-semibold text-neutral-400">
-                <a href="#contact" className="hover:text-white transition-colors">
+                <a href="/contact" className="hover:text-white transition-colors">
                   Clarity Guide
                 </a>
-                <Link href="#contact" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-white transition-colors">
                   Build Notes
                 </Link>
                 <Link href="#work" className="hover:text-white transition-colors">

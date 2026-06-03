@@ -131,7 +131,7 @@ export function ServicesSection() {
 
                 {/* Footer Button CTA */}
                 <Button
-                  href="#contact"
+                  href="/contact"
                   variant={isCardDark ? "accent" : "primary"}
                   size="md"
                   className="w-full mt-4 flex items-center justify-center gap-1.5"

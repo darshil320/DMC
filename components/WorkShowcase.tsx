@@ -66,7 +66,7 @@ export function WorkShowcase() {
                     {project.description}
                   </p>
 
-                  <LinkArrow href="#contact" className="font-extrabold mt-2">
+                  <LinkArrow href="/contact" className="font-extrabold mt-2">
                     View Case Study
                   </LinkArrow>
                 </div>

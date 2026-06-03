@@ -122,16 +122,16 @@ function BeforeAfterSlider() {
 export function AIVisualizerFeatureSection() {
   return (
     <section
-      id="ai-visualizer"
-      className="w-full bg-bg-page border-y border-border-harsh relative select-none"
+      id="ai"
+      className="w-full bg-bg-page border-y border-border-harsh relative select-none lg:h-screen flex flex-col"
     >
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-[1440px] mx-auto w-full h-full flex flex-col">
 
         {/* ── Top: headline | stats + slider ───────────────────────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-black/20">
+        <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-2 border-b border-black/20">
 
           {/* Left: copy + CTA */}
-          <AnimatedReveal className="p-8 md:p-12 lg:p-20 border-b lg:border-b-0 lg:border-r border-black/20 flex flex-col justify-between gap-10">
+          <AnimatedReveal className="p-8 md:p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-black/20 flex flex-col justify-between gap-6 lg:gap-10 h-full overflow-y-auto">
             <div>
               <div className="inline-flex items-center gap-2 bg-accent px-3 py-1.5 mb-8">
                 <Sparkles className="size-3 text-accent-lime" />
@@ -168,7 +168,7 @@ export function AIVisualizerFeatureSection() {
           </AnimatedReveal>
 
           {/* Right: stats + interactive slider */}
-          <AnimatedReveal delay={0.1} className="flex flex-col">
+          <AnimatedReveal delay={0.1} className="flex flex-col h-full min-h-0">
             {/* Stats */}
             <div className="grid grid-cols-3 border-b border-black/20 shrink-0">
               {STATS.map((s, i) => (
@@ -187,19 +187,21 @@ export function AIVisualizerFeatureSection() {
             </div>
 
             {/* Slider */}
-            <div className="flex-1 min-h-[240px] md:min-h-[340px]">
-              <BeforeAfterSlider />
+            <div className="flex-1 min-h-[240px] lg:min-h-0 relative">
+              <div className="absolute inset-0">
+                <BeforeAfterSlider />
+              </div>
             </div>
           </AnimatedReveal>
         </div>
 
         {/* ── Bottom: 4-step feature strip ─────────────────────────────────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-black/20">
+        <div className="shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-black/20">
           {FEATURES.map((f, i) => (
             <AnimatedReveal
               key={f.label}
               delay={i * 0.05}
-              className={`group p-8 md:p-10 bg-bg-page hover:bg-accent transition-colors duration-0
+              className={`group p-6 md:p-8 lg:p-10 bg-bg-page hover:bg-accent transition-colors duration-0
                 ${i < 4 ? "border-b sm:border-b-0 border-black/20" : ""}
                 ${i < 3 ? "lg:border-r border-black/20" : ""}
                 ${i % 2 === 1 ? "sm:border-l border-black/20" : ""}

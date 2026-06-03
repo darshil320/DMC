@@ -7,6 +7,10 @@ export function BrutalistLoader() {
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(true);
 
+  const signalLoaderComplete = () => {
+    window.dispatchEvent(new Event("dmc:loader-complete"));
+  };
+
   useEffect(() => {
     // Disable scroll while loading
     document.body.style.overflow = "hidden";
@@ -33,9 +37,10 @@ export function BrutalistLoader() {
   }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={signalLoaderComplete}>
       {loading && (
         <motion.div
+          data-brutalist-loader
           key="loader"
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}

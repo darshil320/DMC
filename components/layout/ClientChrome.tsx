@@ -1,9 +1,12 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import { SessionProvider } from "next-auth/react";
 import { ReactLenis, useLenis } from "lenis/react";
 import React, { useEffect, useState } from "react";
+import { ThemeProvider } from "@/lib/theme";
+import { SiteMotion } from "@/components/layout/SiteMotion";
 
 const CustomCursor = dynamic(
   () => import("@/components/ui/CustomCursor").then((mod) => mod.CustomCursor),
@@ -61,19 +64,20 @@ function useDesktopDecorations() {
 
 export function ClientChrome({ children }: { children: React.ReactNode }) {
   const showDecorations = useDesktopDecorations();
+  const pathname = usePathname();
+  const showSpinningRound = showDecorations && pathname !== "/contact";
 
   return (
-    <SessionProvider>
-      <ReactLenis root options={{ lerp: 0.08, duration: 1.2, smoothWheel: true }}>
-        <LenisResizer />
-        {showDecorations && (
-          <>
-            <CustomCursor />
-            <SpinningRound />
-          </>
-        )}
-        {children}
-      </ReactLenis>
-    </SessionProvider>
+    <ThemeProvider>
+      <SessionProvider>
+        <ReactLenis root options={{ lerp: 0.08, duration: 1.2, smoothWheel: true }}>
+          <LenisResizer />
+          <SiteMotion />
+          {showDecorations && <CustomCursor />}
+          {showSpinningRound && <SpinningRound />}
+          {children}
+        </ReactLenis>
+      </SessionProvider>
+    </ThemeProvider>
   );
 }

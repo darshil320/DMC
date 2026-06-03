@@ -4,12 +4,15 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "motion/react";
+import { Menu, Moon, Sun, X } from "lucide-react";
+import { useTheme } from "@/lib/theme";
 
 const NAV_LINKS = [
-  { num: "01", label: "HOME", href: "#home" },
-  { num: "02", label: "SERVICES", href: "#services" },
-  { num: "03", label: "WORK", href: "#work" },
-  { num: "04", label: "CONTACT", href: "#contact" },
+  { num: "01", label: "HOME", href: "/" },
+  { num: "02", label: "SERVICES", href: "/#services" },
+  { num: "03", label: "WORK", href: "/#work" },
+  { num: "04", label: "AI STUDIO", href: "/#ai" },
+  { num: "05", label: "CONTACT", href: "/contact" },
 ];
 
 function MenuLink({ item, closeMenu }: { item: typeof NAV_LINKS[0]; closeMenu: () => void }) {
@@ -20,7 +23,7 @@ function MenuLink({ item, closeMenu }: { item: typeof NAV_LINKS[0]; closeMenu: (
       onClick={closeMenu}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative flex flex-col font-display text-white w-fit px-6 py-2 md:px-8 md:py-4 transition-colors duration-200"
+      className="group relative flex flex-col font-display text-white w-fit px-6 py-1 md:px-8 md:py-2 transition-colors duration-200"
     >
       {/* Corner Crop Marks on Hover */}
       {isHovered && (
@@ -33,13 +36,13 @@ function MenuLink({ item, closeMenu }: { item: typeof NAV_LINKS[0]; closeMenu: (
       )}
 
       <span className={cn(
-        "text-xs tracking-widest mb-1 self-end transition-colors duration-200",
+        "text-xs tracking-widest self-end transition-colors duration-200",
         isHovered ? "text-accent-lime" : "text-white/40"
       )}>
         {item.num}
       </span>
       <span className={cn(
-        "text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight transition-all duration-200 uppercase",
+        "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-none tracking-tight transition-all duration-200 uppercase",
         isHovered ? "text-white font-bold" : "text-white/60"
       )}>
         {item.label}
@@ -49,6 +52,8 @@ function MenuLink({ item, closeMenu }: { item: typeof NAV_LINKS[0]; closeMenu: (
 }
 
 export function Navbar() {
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -102,13 +107,14 @@ export function Navbar() {
   return (
     <>
       <motion.header
+        data-hero-nav
         variants={{
           visible: { y: 0, opacity: 1 },
           hidden: { y: "-100%", opacity: 0 }
         }}
         animate={visible ? "visible" : "hidden"}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 left-0 right-0 z-[100] w-full px-6 py-6 pointer-events-none"
+        className="fixed top-0 left-0 right-0 z-[100] box-border w-full px-6 py-6 pointer-events-none"
       >
         <div className="max-w-[1440px] mx-auto flex items-start justify-between pointer-events-auto">
           {/* Left - Logo (Lime green box, dotted text) */}
@@ -120,8 +126,8 @@ export function Navbar() {
             <span className="font-display text-2xl tracking-widest text-accent font-bold">DMC</span>
           </Link>
 
-          {/* Right - Status & Menu Button */}
-          <div className="flex items-center gap-6">
+          {/* Right - Status, Dark Mode Toggle & Menu Button */}
+          <div className="flex -translate-x-10 flex-row-reverse items-center gap-2 sm:translate-x-0 sm:flex-row sm:gap-4">
             <div className={cn(
               "hidden md:flex items-center gap-2 font-pixel text-[12px] uppercase tracking-widest transition-colors",
               isMenuOpen ? "text-accent-lime" : "text-accent"
@@ -129,17 +135,28 @@ export function Navbar() {
               <span className={cn("size-2 border", isMenuOpen ? "bg-accent-lime border-accent-lime" : "bg-accent-lime border-accent")} />
               SLOTS OPEN - AUG &apos;26
             </div>
-            
+
+            {/* Dark / light toggle */}
+            <button
+              onClick={toggleTheme}
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              className="size-[42px] flex items-center justify-center border border-accent text-accent cursor-pointer hover:bg-accent hover:text-white transition-colors"
+            >
+              {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+            </button>
+
             <button
               onClick={toggleMenu}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               className={cn(
-                "px-6 py-3 font-pixel text-[12px] tracking-widest border transition-colors cursor-pointer",
+                "flex h-[42px] items-center justify-center gap-2 border px-3 font-pixel text-[12px] tracking-widest transition-colors cursor-pointer sm:px-6",
                 isMenuOpen
                   ? "bg-accent-lime text-accent border-accent hover:bg-white hover:text-accent"
                   : "bg-accent text-white border-accent hover:bg-white hover:text-accent"
               )}
             >
-              {isMenuOpen ? "✕ MENU" : "+ MENU"}
+              {isMenuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+              <span className="hidden sm:inline">MENU</span>
             </button>
           </div>
         </div>
@@ -163,7 +180,7 @@ export function Navbar() {
               <div className="w-px h-full bg-white" />
             </div>
 
-            <div className="max-w-[1440px] mx-auto w-full flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-6 md:mt-12 overflow-y-auto z-10 relative">
+            <div className="max-w-[1440px] mx-auto w-full flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-4 md:mt-8 overflow-y-auto z-10 relative">
               {/* Left: Huge Dotted Navigation */}
               <motion.nav 
                 variants={{
@@ -178,7 +195,7 @@ export function Navbar() {
                 }}
                 initial="hidden"
                 animate="show"
-                className="flex flex-col gap-2 md:gap-4 relative border-l border-white/20 pl-6 md:pl-8 h-fit pb-8 md:pb-0"
+                className="flex flex-col gap-1 md:gap-2 relative border-l border-white/20 pl-6 md:pl-8 h-fit pb-8 md:pb-0"
               >
                 {/* Minimal crop marks */}
                 <div className="absolute top-0 -left-[5px] w-2.5 h-px bg-white/40" />

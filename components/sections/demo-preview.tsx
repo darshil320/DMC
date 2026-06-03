@@ -32,7 +32,7 @@ export function DemoPreviewSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-border-harsh bg-bg-page mb-16">
           {PRODUCTS.map((product) => (
-            <div key={product.name} className="group border-b border-l border-border-harsh bg-bg-card flex flex-col hover:bg-white transition-colors">
+            <div key={product.name} className="group border-b border-l border-border-harsh bg-bg-card flex flex-col hover:bg-white dark:hover:bg-[#1E1A16] transition-colors">
               <div className="aspect-[4/3] overflow-hidden bg-bg-page border-b border-border-harsh relative">
                 <img src={product.image} alt={product.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
               </div>
@@ -57,7 +57,7 @@ export function DemoPreviewSection() {
                 href={`${URBANWOOD.whatsappLink}?text=Hi, I'm interested in ${encodeURIComponent(product.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto flex items-center justify-center gap-2 w-full py-4 bg-[#0000FF] text-white text-xs font-bold uppercase tracking-widest border-t border-border-harsh hover:bg-accent-lime hover:text-accent transition-colors"
+                className="mt-auto flex items-center justify-center gap-2 w-full py-4 bg-accent text-white text-xs font-bold uppercase tracking-widest border-t border-border-harsh hover:bg-accent-lime hover:text-accent transition-colors"
               >
                 <MessageCircle className="size-4" />
                 ENQUIRE

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Globe, LayoutGrid, ShoppingCart, Smartphone, MessageCircle, MapPin, Megaphone, Wrench, Sparkles } from "lucide-react";
+import { Globe, LayoutGrid, ShoppingCart, MessageCircle, MapPin, Megaphone, Wrench, Sparkles } from "lucide-react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 
 const SERVICES = [
@@ -10,7 +10,6 @@ const SERVICES = [
   { icon: Globe, title: "Business Websites", description: "Clean, professional websites that represent your shop online." },
   { icon: LayoutGrid, title: "Product Catalogs", description: "Show all products with prices, photos, and enquiry buttons." },
   { icon: ShoppingCart, title: "Ecommerce Stores", description: "Take orders, accept payments, and ship across India." },
-  { icon: Smartphone, title: "Mobile Apps", description: "Custom Android and iOS apps for dedicated mobile presence." },
   { icon: MessageCircle, title: "WhatsApp Systems", description: "Auto-replies, quick links, and organized chat flows." },
   { icon: MapPin, title: "Google Business", description: "Show up on Maps with photos, reviews, and contact info." },
   { icon: Megaphone, title: "Landing Pages", description: "High-converting pages for specific offers or campaigns." },
@@ -38,7 +37,7 @@ export function ServicesSection() {
         </div>
 
         {/* Brutalist Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-border-harsh bg-bg-page">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-harsh bg-bg-page">
           {SERVICES.map((service, idx) => {
             const Icon = service.icon;
             const inner = (
