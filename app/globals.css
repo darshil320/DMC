@@ -202,12 +202,6 @@ h6 {
     will-change: opacity, filter, transform;
   }
 
-  [data-premium-motion="reveal"][data-motion-visible="true"] {
-    opacity: 1;
-    filter: blur(0);
-    transform: translate3d(0, 0, 0);
-  }
-
   [data-premium-motion="reveal"][data-motion-kind="tag"] {
     transform: translate3d(0, 8px, 0) scaleX(0.92);
     transform-origin: left center;
@@ -219,6 +213,12 @@ h6 {
 
   [data-premium-motion="reveal"][data-motion-kind="row"] {
     transform: translate3d(0, 12px, 0);
+  }
+
+  [data-premium-motion="reveal"][data-motion-visible="true"] {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
   }
 
   [data-premium-interaction="true"] {

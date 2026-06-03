@@ -174,6 +174,7 @@ export function AIVisualizerFeatureSection() {
               {STATS.map((s, i) => (
                 <div
                   key={s.num}
+                  data-premium-card="false"
                   className={`p-6 md:p-8 bg-bg-card flex flex-col gap-1 ${i < 2 ? "border-r border-black/20" : ""}`}
                 >
                   <span className="text-3xl md:text-4xl font-black text-accent tracking-tighter leading-none font-display">

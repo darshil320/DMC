@@ -190,7 +190,7 @@ async function runHuggingFace(
     });
 
     // The response is a Blob. Convert it to an ArrayBuffer, then to Base64
-    const responseBuffer = Buffer.from(await response.arrayBuffer());
+    const responseBuffer = Buffer.from(await (response as unknown as Blob).arrayBuffer());
     const base64Image = responseBuffer.toString('base64');
 
     return `data:image/jpeg;base64,${base64Image}`;

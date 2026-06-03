@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 
 const STEPS = [
   {
@@ -18,7 +18,7 @@ const STEPS = [
           src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/6974cbc80c8fcd560c92026c_map.svg" 
           fill 
           alt="Map Strategy" 
-          className="object-contain transition-all duration-500 [filter:brightness(0)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
+          className="object-contain transition-all duration-500 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
         />
       </div>
     ),
@@ -34,7 +34,7 @@ const STEPS = [
           src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/6974cbc8861fbf07e229e1cb_make.svg" 
           fill 
           alt="Make Design" 
-          className="object-contain transition-all duration-500 [filter:brightness(0)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
+          className="object-contain transition-all duration-500 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
         />
       </div>
     ),
@@ -50,7 +50,7 @@ const STEPS = [
           src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/6974cbc8367ce36cd627e7cf_move.svg" 
           fill 
           alt="Move Develop" 
-          className="object-contain transition-all duration-500 [filter:brightness(0)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
+          className="object-contain transition-all duration-500 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
         />
       </div>
     ),

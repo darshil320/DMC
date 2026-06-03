@@ -3,36 +3,51 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
+function signalLoaderComplete() {
+  window.dispatchEvent(new Event("dmc:loader-complete"));
+}
+
 export function BrutalistLoader() {
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  const signalLoaderComplete = () => {
-    window.dispatchEvent(new Event("dmc:loader-complete"));
-  };
-
   useEffect(() => {
-    // Disable scroll while loading
+    // Skip entirely for reduced-motion — fire complete immediately
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setLoading(false);
+      signalLoaderComplete();
+      return;
+    }
+
     document.body.style.overflow = "hidden";
-    
-    // Fast counter animation
-    let count = 0;
+
+    // Cap total to ~750ms: ~600ms counting + 150ms hold
+    const TARGET_MS = 600;
+    const HOLD_MS = 150;
+    const TICK_MS = 30;
+    const totalSteps = Math.ceil(TARGET_MS / TICK_MS);
+    let stepIndex = 0;
+
     const interval = setInterval(() => {
-      count += Math.floor(Math.random() * 10) + 5;
+      stepIndex++;
+      const count = Math.min(100, Math.round((stepIndex / totalSteps) * 100) + Math.floor(Math.random() * 4));
+
       if (count >= 100) {
-        count = 100;
         clearInterval(interval);
+        setProgress(100);
         setTimeout(() => {
           setLoading(false);
-          document.body.style.overflow = "unset";
-        }, 500); // Wait a bit at 100%
+          document.body.style.overflow = "";
+        }, HOLD_MS);
+        return;
       }
+
       setProgress(count);
-    }, 50);
+    }, TICK_MS);
 
     return () => {
       clearInterval(interval);
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
     };
   }, []);
 
@@ -56,13 +71,12 @@ export function BrutalistLoader() {
           {/* Center Huge Counter */}
           <div className="flex-1 flex items-center justify-center relative">
             <div className="relative">
-              {/* Crop marks */}
               <div className="absolute -top-4 -left-4 w-4 h-4 border-t-2 border-l-2 border-white/20" />
               <div className="absolute -top-4 -right-4 w-4 h-4 border-t-2 border-r-2 border-white/20" />
               <div className="absolute -bottom-4 -left-4 w-4 h-4 border-b-2 border-l-2 border-white/20" />
               <div className="absolute -bottom-4 -right-4 w-4 h-4 border-b-2 border-r-2 border-white/20" />
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-[120px] md:text-[200px] lg:text-[280px] font-black leading-none tracking-tighter tabular-nums flex items-end"
@@ -78,10 +92,8 @@ export function BrutalistLoader() {
             <div className="text-[10px] font-bold tracking-widest uppercase max-w-[200px] text-white/50">
               BUILDING DIGITAL ARCHITECTURES FOR TOMORROW
             </div>
-            
-            {/* Progress Bar Container */}
             <div className="w-1/2 md:w-1/3 h-1 bg-white/20 relative overflow-hidden">
-              <motion.div 
+              <motion.div
                 className="absolute top-0 left-0 h-full bg-accent-lime"
                 initial={{ width: "0%" }}
                 animate={{ width: `${progress}%` }}

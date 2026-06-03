@@ -87,7 +87,7 @@ export function SiteMotion() {
       });
 
       document.querySelectorAll<HTMLElement>(CARD_SELECTOR).forEach((element) => {
-        if (element.dataset.premiumCard === "true") return;
+        if (element.hasAttribute("data-premium-card")) return;
         element.dataset.premiumCard = "true";
       });
 

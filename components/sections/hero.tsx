@@ -195,7 +195,7 @@ export function HeroSection() {
     const loader = document.querySelector("[data-brutalist-loader]");
     if (loader) {
       window.addEventListener("dmc:loader-complete", startIntro, { once: true });
-      fallbackTimer = window.setTimeout(startIntro, 4200);
+      fallbackTimer = window.setTimeout(startIntro, 1200);
     } else {
       fallbackTimer = window.setTimeout(startIntro, 320);
     }

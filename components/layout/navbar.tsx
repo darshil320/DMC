@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/lib/theme";
 
@@ -16,35 +16,22 @@ const NAV_LINKS = [
 ];
 
 function MenuLink({ item, closeMenu }: { item: typeof NAV_LINKS[0]; closeMenu: () => void }) {
-  const [isHovered, setIsHovered] = useState(false);
   return (
     <a
       href={item.href}
       onClick={closeMenu}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       className="group relative flex flex-col font-display text-white w-fit px-6 py-1 md:px-8 md:py-2 transition-colors duration-200"
     >
-      {/* Corner Crop Marks on Hover */}
-      {isHovered && (
-        <>
-          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-white" />
-          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-white" />
-          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-white" />
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-white" />
-        </>
-      )}
+      {/* Corner crop marks — always in DOM, toggled by CSS (no React re-render on hover) */}
+      <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+      <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+      <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+      <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
-      <span className={cn(
-        "text-xs tracking-widest self-end transition-colors duration-200",
-        isHovered ? "text-accent-lime" : "text-white/40"
-      )}>
+      <span className="text-xs tracking-widest self-end transition-colors duration-200 text-white/40 group-hover:text-accent-lime">
         {item.num}
       </span>
-      <span className={cn(
-        "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-none tracking-tight transition-all duration-200 uppercase",
-        isHovered ? "text-white font-bold" : "text-white/60"
-      )}>
+      <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] leading-none tracking-tight transition-all duration-200 uppercase text-white/60 group-hover:text-white group-hover:font-bold">
         {item.label}
       </span>
     </a>
@@ -54,6 +41,7 @@ function MenuLink({ item, closeMenu }: { item: typeof NAV_LINKS[0]; closeMenu: (
 export function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
+  const prefersReducedMotion = useReducedMotion();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -248,8 +236,8 @@ export function Navbar() {
                   {/* Rotating stamp badge */}
                   <div className="mt-4 flex items-center justify-start gap-4">
                     <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
+                      animate={prefersReducedMotion ? {} : { rotate: 360 }}
+                      transition={prefersReducedMotion ? {} : { repeat: Infinity, duration: 12, ease: "linear" }}
                       className="size-20"
                     >
                       <svg viewBox="0 0 100 100" className="size-full">

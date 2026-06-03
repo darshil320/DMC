@@ -32,7 +32,7 @@ export function DemoPreviewSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-border-harsh bg-bg-page mb-16">
           {PRODUCTS.map((product) => (
-            <div key={product.name} className="group border-b border-l border-border-harsh bg-bg-card flex flex-col hover:bg-white dark:hover:bg-[#1E1A16] transition-colors">
+            <div key={product.name} data-premium-card="false" className="group border-b border-l border-border-harsh bg-bg-card flex flex-col hover:bg-white dark:hover:bg-[#1E1A16] transition-colors">
               <div className="aspect-[4/3] overflow-hidden bg-bg-page border-b border-border-harsh relative">
                 <img src={product.image} alt={product.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
               </div>
