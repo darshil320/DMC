@@ -115,7 +115,7 @@ export function Navbar() {
           </Link>
 
           {/* Right - Status, Dark Mode Toggle & Menu Button */}
-          <div className="flex -translate-x-10 flex-row-reverse items-center gap-2 sm:translate-x-0 sm:flex-row sm:gap-4">
+          <div className="flex flex-row-reverse items-center gap-2 sm:translate-x-0 sm:flex-row sm:gap-4">
             <div className={cn(
               "hidden md:flex items-center gap-2 font-pixel text-[12px] uppercase tracking-widest transition-colors",
               isMenuOpen ? "text-accent-lime" : "text-accent"
