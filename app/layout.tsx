@@ -52,10 +52,10 @@ export default function RootLayout({
       className={`${inter.variable} ${dotGothic.variable} ${instrumentSerif.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <head>
+      <head suppressHydrationWarning>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         <ClientChrome>{children}</ClientChrome>
       </body>
     </html>
