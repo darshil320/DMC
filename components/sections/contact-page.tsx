@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail, MessageCircle, Send, Sparkles } from "lucide-react";
 import { DMC } from "@/lib/dmc-config";
-import { cn } from "@/lib/utils";
 
 const CONTACT_ASSET = "/assets/contact-union.webp";
 
@@ -39,13 +38,13 @@ function ContactMarquee() {
             {items.map((item) => (
               <div key={`${set}-${item}`} className="flex shrink-0 items-center">
                 <span
-                  className="text-[56px] italic leading-none text-white md:text-[86px] lg:text-[124px]"
+                  className="text-[56px] italic leading-none text-white md:text-[86px] lg:text-[144px]"
                   style={{ fontFamily: "var(--font-instrument-serif), Georgia, serif" }}
                 >
                   Contact us
                 </span>
                 <span
-                  className="mx-4 text-[56px] leading-none text-white md:mx-7 md:text-[86px] lg:text-[124px]"
+                  className="mx-4 text-[56px] leading-none text-white md:mx-7 md:text-[86px] lg:text-[144px]"
                   style={{ fontFamily: "var(--font-instrument-serif), Georgia, serif" }}
                 >
                   /
@@ -59,60 +58,18 @@ function ContactMarquee() {
   );
 }
 
-function FallbackArtwork({ hidden }: { hidden: boolean }) {
+function ContactArtwork() {
   return (
-    <div
-      aria-hidden="true"
-      className={cn(
-        "absolute inset-0 transition-opacity duration-500",
-        hidden ? "opacity-0" : "opacity-100"
-      )}
-    >
-      <div className="absolute left-[2%] top-[20%] h-[38%] w-[38%] bg-[#4f7389]" />
-      <div className="absolute left-[27%] top-[12%] h-[27%] w-[48%] bg-[#6e8aa2]" />
-      <div className="absolute bottom-[1%] left-[21%] h-[31%] w-[70%] bg-[#6f91a3]" />
-      <div className="absolute bottom-0 left-[16%] h-[16%] w-[75%] bg-[linear-gradient(90deg,#b84161_0_8%,#e6ad56_8%_18%,#d94767_18%_31%,#f3c26f_31%_43%,#7fbe8a_43%_58%,#cc4562_58%_72%,#edc66f_72%_86%,#8ac495_86%_100%)] opacity-90" />
-
-      <div className="absolute left-[32%] top-[7%] h-[78%] w-[38%]">
-        <div className="absolute left-[34%] top-[2%] h-[11%] w-[70%] rotate-[-7deg] border-[10px] border-[#f4d37c]" />
-        <div className="absolute left-[24%] top-[6%] h-[23%] w-[46%] border-[10px] border-[#d7bf98] bg-[#e4d1ad] shadow-[10px_10px_0_rgba(0,0,0,0.45)]">
-          <div className="absolute left-[14%] top-[18%] h-[46%] w-[68%] bg-[#2b2925]" />
-          <div className="absolute bottom-[13%] left-[20%] h-[6%] w-[52%] bg-[#8d7b65]" />
-        </div>
-        <div className="absolute bottom-[8%] left-[36%] h-[62%] w-[34%] skew-x-[-8deg] bg-[linear-gradient(120deg,#f5e4c9_0%,#7f9fb1_28%,#e8d2af_42%,#6e8493_58%,#f3e3cb_73%,#9aa8b1_100%)]" />
-        <div className="absolute bottom-[4%] left-[55%] h-[44%] w-[19%] skew-x-[10deg] bg-[linear-gradient(120deg,#d7eef6,#658ca1_38%,#f1d8b7_64%,#3e6174)]" />
-        <div className="absolute bottom-[3%] left-[15%] h-[47%] w-[20%] skew-x-[-12deg] bg-[linear-gradient(120deg,#f1d7b3,#7896a6_42%,#e8f3f6_55%,#4f7180)]" />
-      </div>
-
-      <div className="absolute left-[24%] top-[37%] h-[29%] w-[44%] border-[26px] border-black" />
-      <div className="absolute left-[44%] top-[57%] h-[22%] w-[36%] border-[22px] border-black border-l-0" />
-    </div>
-  );
-}
-
-function ContactArtwork({ hasAsset }: { hasAsset: boolean }) {
-  const [assetLoaded, setAssetLoaded] = useState(false);
-
-  return (
-    <div className="relative mx-auto h-[430px] w-full max-w-[720px] overflow-hidden sm:h-[560px] lg:h-[680px]">
-      <FallbackArtwork hidden={assetLoaded} />
-
-      {hasAsset && (
-        <Image
-          src={CONTACT_ASSET}
-          alt="DMC contact artwork"
-          fill
-          priority
-          unoptimized
-          sizes="(max-width: 1024px) 90vw, 720px"
-          onLoad={() => setAssetLoaded(true)}
-          onError={() => setAssetLoaded(false)}
-          className={cn(
-            "object-contain object-left-bottom transition-opacity duration-700",
-            assetLoaded ? "opacity-100" : "opacity-0"
-          )}
-        />
-      )}
+    <div className="relative mx-auto h-[430px] w-full max-w-[672px] overflow-hidden sm:h-[500px] lg:h-[672px]">
+      <Image
+        src={CONTACT_ASSET}
+        alt="DMC contact artwork"
+        fill
+        priority
+        unoptimized
+        sizes="(max-width: 1024px) 90vw, 672px"
+        className="object-contain object-center"
+      />
     </div>
   );
 }
@@ -131,7 +88,7 @@ function composeMessage(form: ContactFormState) {
   ].join("\n");
 }
 
-export function ContactPageExperience({ hasContactAsset }: { hasContactAsset: boolean }) {
+export function ContactPageExperience() {
   const [form, setForm] = useState<ContactFormState>(initialFormState);
 
   const message = useMemo(() => composeMessage(form), [form]);
@@ -158,25 +115,25 @@ export function ContactPageExperience({ hasContactAsset }: { hasContactAsset: bo
         <div className="pointer-events-none absolute left-0 right-0 top-[184px] hidden h-px bg-white/12 lg:block" />
         <div className="pointer-events-none absolute bottom-[19%] left-0 right-0 hidden h-px bg-white/12 lg:block" />
 
-        <div className="relative z-20 -mx-6 mb-6 md:-mx-12 lg:absolute lg:left-0 lg:right-0 lg:top-[220px] lg:mx-0 lg:mb-0">
+        <div className="relative z-40 -mx-6 mb-6 pointer-events-none mix-blend-difference md:-mx-12 lg:absolute lg:left-0 lg:right-0 lg:top-[228px] lg:mx-0 lg:mb-0">
           <ContactMarquee />
         </div>
 
-        <div className="relative mx-auto grid min-h-[calc(100svh-7rem)] w-full max-w-[1440px] grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end lg:pt-[250px]">
-          <div className="relative z-10 lg:col-span-6">
-            <ContactArtwork hasAsset={hasContactAsset} />
-          </div>
+        <div className="relative z-30 -mx-2 pointer-events-none md:mx-0 lg:absolute lg:left-14 lg:top-[245px] lg:mx-0 lg:w-[672px]">
+          <ContactArtwork />
+        </div>
 
-          <div className="relative z-30 lg:col-span-5 lg:col-start-8 lg:pb-[5vh]">
-            <div className="bg-[#123f36] px-6 py-8 shadow-[14px_14px_0_rgba(0,0,0,0.55)] md:p-10 lg:p-12">
-              <div className="mb-10 flex items-start justify-between gap-6">
+        <div className="relative mx-auto grid min-h-[calc(100svh-7rem)] w-full max-w-[1440px] grid-cols-1 gap-10 lg:grid-cols-12 lg:pt-24">
+          <div className="relative z-30 lg:col-span-5 lg:col-start-7 xl:col-span-5 xl:col-start-8 lg:mt-[260px] lg:pb-12">
+            <div className="bg-emerald-950 px-6 py-8 md:p-8 lg:p-12">
+              <div className="mb-10 flex items-start justify-between gap-4">
                 <h1
-                  className="max-w-[520px] text-[40px] uppercase leading-[0.95] text-white md:text-[56px] lg:text-[64px]"
+                  className="max-w-[480px] text-[44px] uppercase leading-[0.95] text-white md:text-[56px] lg:text-[56px]"
                   style={{ fontFamily: "var(--font-instrument-serif), Georgia, serif" }}
                 >
                   Leave us a message
                 </h1>
-                <Sparkles className="mt-2 size-9 shrink-0 text-[#f2e4d0] md:size-11" aria-hidden="true" />
+                <Sparkles className="mt-2 size-9 shrink-0 text-white/80 md:size-11" aria-hidden="true" strokeWidth={1} />
               </div>
 
               <form className="space-y-7" onSubmit={handleSubmit}>
@@ -186,7 +143,7 @@ export function ContactPageExperience({ hasContactAsset }: { hasContactAsset: bo
                     required
                     value={form.name}
                     onChange={updateField("name")}
-                    className="mt-3 w-full bg-transparent text-base text-white outline-none placeholder:text-white/28 focus:text-[#f2e4d0]"
+                    className="mt-3 w-full bg-transparent text-base text-white outline-none placeholder:text-white/28 focus:text-emerald-100"
                     placeholder="Darshil Lashkari"
                   />
                 </label>
@@ -198,7 +155,7 @@ export function ContactPageExperience({ hasContactAsset }: { hasContactAsset: bo
                     type="email"
                     value={form.email}
                     onChange={updateField("email")}
-                    className="mt-3 w-full bg-transparent text-base text-white outline-none placeholder:text-white/28 focus:text-[#f2e4d0]"
+                    className="mt-3 w-full bg-transparent text-base text-white outline-none placeholder:text-white/28 focus:text-emerald-100"
                     placeholder="name@example.com"
                   />
                 </label>
@@ -208,7 +165,7 @@ export function ContactPageExperience({ hasContactAsset }: { hasContactAsset: bo
                   <input
                     value={form.company}
                     onChange={updateField("company")}
-                    className="mt-3 w-full bg-transparent text-base text-white outline-none placeholder:text-white/28 focus:text-[#f2e4d0]"
+                    className="mt-3 w-full bg-transparent text-base text-white outline-none placeholder:text-white/28 focus:text-emerald-100"
                     placeholder="Your shop or company"
                   />
                 </label>
@@ -218,7 +175,7 @@ export function ContactPageExperience({ hasContactAsset }: { hasContactAsset: bo
                   <select
                     value={form.budget}
                     onChange={updateField("budget")}
-                    className="mt-3 w-full bg-transparent text-base text-white outline-none focus:text-[#f2e4d0] [&>option]:bg-[#123f36]"
+                    className="mt-3 w-full bg-transparent text-base text-white outline-none focus:text-emerald-100 [&>option]:bg-emerald-950"
                   >
                     <option>Starter website</option>
                     <option>Product catalog</option>

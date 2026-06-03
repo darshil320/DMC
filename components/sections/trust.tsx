@@ -20,10 +20,10 @@ export function TrustSection() {
               key={stat.label} 
               className="flex flex-col items-center justify-center py-10 md:py-14 px-4 text-center bg-bg-page hover:bg-accent-lime transition-colors group"
             >
-              <span className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-accent tracking-tighter mb-2 group-hover:text-text-primary">
+              <span className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-accent tracking-tighter mb-2 group-hover:text-black transition-colors">
                 {stat.value}
               </span>
-              <span className="font-pixel font-bold text-text-primary uppercase tracking-widest text-balance">
+              <span className="font-pixel font-bold text-text-primary uppercase tracking-widest text-balance group-hover:text-black transition-colors">
                 {stat.label}
               </span>
             </div>

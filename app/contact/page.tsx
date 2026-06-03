@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import { Navbar } from "@/components/layout/navbar";
 import { ContactPageExperience } from "@/components/sections/contact-page";
 
@@ -27,13 +25,11 @@ function ContactGridOverlay() {
 }
 
 export default function ContactPage() {
-  const hasContactAsset = existsSync(join(process.cwd(), "public/assets/contact-union.webp"));
-
   return (
     <div className="relative min-h-screen bg-black">
       <ContactGridOverlay />
       <Navbar />
-      <ContactPageExperience hasContactAsset={hasContactAsset} />
+      <ContactPageExperience />
     </div>
   );
 }

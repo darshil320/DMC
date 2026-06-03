@@ -199,7 +199,6 @@ h6 {
       filter 720ms cubic-bezier(0.16, 1, 0.3, 1),
       transform 720ms cubic-bezier(0.16, 1, 0.3, 1);
     transition-delay: var(--motion-delay, 0ms);
-    will-change: opacity, filter, transform;
   }
 
   [data-premium-motion="reveal"][data-motion-kind="tag"] {
@@ -254,7 +253,6 @@ h6 {
     }
 
     [data-premium-card="true"]:hover {
-      transform: translate3d(0, -4px, 0);
       box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
     }
 

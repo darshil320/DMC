@@ -27,13 +27,21 @@ function LenisResizer() {
     const resize = () => lenis.resize();
     const t1 = setTimeout(resize, 100);
     const t2 = setTimeout(resize, 600);
+    const t3 = setTimeout(resize, 2500);
 
     window.addEventListener("load", resize);
+
+    const observer = new ResizeObserver(() => {
+      resize();
+    });
+    observer.observe(document.body);
 
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
+      clearTimeout(t3);
       window.removeEventListener("load", resize);
+      observer.disconnect();
     };
   }, [lenis]);
 
