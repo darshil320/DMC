@@ -141,7 +141,7 @@ export function AIVisualizerFeatureSection() {
               </div>
 
               <h2
-                className="text-text-primary font-black uppercase tracking-tighter leading-[0.92] mb-6"
+                className="text-text-primary font-black uppercase tracking-tighter leading-10 mb-6"
                 style={{ fontSize: "clamp(2.2rem, 5.5vw, 4.5rem)" }}
               >
                 See furniture

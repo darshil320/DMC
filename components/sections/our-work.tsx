@@ -14,7 +14,7 @@ export function OurWorkSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start h-full">
           
           {/* Left Column - Typography */}
-          <div className="lg:col-span-4 flex flex-col justify-between h-full min-h-[500px] px-4 lg:px-6">
+          <div className="lg:col-span-4 flex flex-col justify-between h-full lg:min-h-[500px] px-4 lg:px-6">
             <div>
               <div className="section-tag">
                 OUR WORK

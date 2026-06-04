@@ -11,7 +11,7 @@ const HEADING_STYLE = {
   fontFamily: "var(--font-body)",
 } as const;
 
-const HEADING_CLASSNAME = "text-text-primary uppercase leading-[0.9] font-black";
+const HEADING_CLASSNAME = "text-text-primary uppercase leading-[1.05] md:leading-[0.9] font-black";
 
 export function HeroSection() {
   const [hoverKey, setHoverKey] = useState(0);
@@ -236,7 +236,7 @@ export function HeroSection() {
             </div>
 
             {/* Line 3: ONLINE. in border box */}
-            <div data-hero-line data-hero-highlight className="inline-block relative mt-[-0.05em]">
+            <div data-hero-line data-hero-highlight className="inline-block relative mt-2 md:mt-[-0.05em]">
               <div className="relative px-[0.2em] py-[0.08em]">
                 <div className="relative">
                   <h1 data-hero-base className={`${HEADING_CLASSNAME} relative z-10`} style={HEADING_STYLE}>
