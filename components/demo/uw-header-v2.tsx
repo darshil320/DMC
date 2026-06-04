@@ -147,10 +147,10 @@ export function UWHeaderV2() {
             className="fixed inset-0 z-[200] bg-[#F4F1ED] flex flex-col p-8 md:p-16"
           >
             <div className="flex justify-between items-center mb-16">
-              <span className="text-[14px] font-medium tracking-[0.15em] uppercase text-uw-text-primary">Furniture Concept 2.0</span>
+              <span className="text-[14px] font-medium tracking-[0.15em] uppercase text-[#2C2A26]">Furniture Concept 2.0</span>
               <button
                 onClick={() => setMenuOpen(false)}
-                className="text-[11px] font-medium tracking-[0.15em] uppercase text-uw-text-secondary hover:text-uw-text-primary"
+                className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#68625A] hover:text-[#2C2A26]"
               >
                 Close ✕
               </button>
@@ -171,7 +171,7 @@ export function UWHeaderV2() {
                 </motion.a>
               ))}
             </nav>
-            <div className="mt-auto text-[11px] text-uw-text-muted tracking-wider uppercase text-center">
+            <div className="mt-auto text-[11px] text-[#9E978F] tracking-wider uppercase text-center">
               <Link href="/" className="hover:underline">← Back to DMC Portfolio</Link>
             </div>
           </motion.div>

@@ -22,6 +22,14 @@
   --accent-lime: #CCFF00;
 
   --dmc-whatsapp: #25D366;
+
+  /* Furniture Concept 2.0 Demo Theme */
+  --uw-bg-page: #F4F1ED;
+  --uw-bg-card: #FFFFFF;
+  --uw-text-primary: #2C2A26;
+  --uw-text-secondary: #68625A;
+  --uw-text-muted: #9E978F;
+  --uw-border-subtle: rgba(44, 42, 38, 0.1);
 }
 
 /* ─── Warm Espresso Dark Mode ─── */
@@ -62,6 +70,14 @@
   --color-accent: var(--accent);
   --color-accent-lime: var(--accent-lime);
   --color-dmc-whatsapp: var(--dmc-whatsapp);
+
+  /* Furniture Concept Demo Colors */
+  --color-uw-bg-page: #F4F1ED;
+  --color-uw-bg-card: #FFFFFF;
+  --color-uw-text-primary: #2C2A26;
+  --color-uw-text-secondary: #68625A;
+  --color-uw-text-muted: #9E978F;
+  --color-uw-border-subtle: rgba(44, 42, 38, 0.1);
 
   --font-display: var(--font-dot), monospace;
   --font-body: var(--font-inter), sans-serif;
