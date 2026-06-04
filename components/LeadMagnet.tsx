@@ -10,7 +10,9 @@ export function LeadMagnet() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
@@ -25,9 +27,24 @@ export function LeadMagnet() {
       return;
     }
 
-    // Success simulation
-    setSuccess(true);
-    setEmail("");
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbwRxB1lfQw1_kdsDGoThSqQl4aYtl5NfRaj58PPwEH-_wrjSWHAEfYYwsnhAVVVWFiPtA/exec", {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify({ email, source: "Lead Magnet" }),
+      });
+      
+      setSuccess(true);
+      setEmail("");
+    } catch (error) {
+      console.error(error);
+      setError("Failed to subscribe. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -71,8 +88,8 @@ export function LeadMagnet() {
                       </span>
                     )}
                   </div>
-                  <Button type="submit" variant="accent" className="shrink-0 h-[48px] sm:h-auto">
-                    Get the Free Guide
+                  <Button type="submit" variant="accent" className="shrink-0 h-[48px] sm:h-auto" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Get the Free Guide"}
                   </Button>
                 </div>
                 <div className="text-[10px] text-neutral-500 mt-6 tracking-wide font-medium">

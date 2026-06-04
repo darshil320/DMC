@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { ContactPageExperience } from "@/components/sections/contact-page";
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import("@/components/layout/footer").then(m => m.Footer));
 
 export const metadata: Metadata = {
   title: "Contact DMC - Digital Market Creators",
@@ -26,10 +29,16 @@ function ContactGridOverlay() {
 
 export default function ContactPage() {
   return (
-    <div className="relative min-h-screen bg-black">
-      <ContactGridOverlay />
-      <Navbar />
-      <ContactPageExperience />
+    <div className="bg-bg-page min-h-screen relative">
+      <div className="relative z-10 min-h-screen bg-bg-page">
+        <ContactGridOverlay />
+        <Navbar />
+        <ContactPageExperience />
+      </div>
+
+      <div className="sticky bottom-0 z-0">
+        <Footer />
+      </div>
     </div>
   );
 }

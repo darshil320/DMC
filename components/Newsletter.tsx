@@ -10,7 +10,9 @@ export function Newsletter() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
@@ -25,8 +27,24 @@ export function Newsletter() {
       return;
     }
 
-    setSuccess(true);
-    setEmail("");
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbwRxB1lfQw1_kdsDGoThSqQl4aYtl5NfRaj58PPwEH-_wrjSWHAEfYYwsnhAVVVWFiPtA/exec", {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify({ email, source: "Newsletter" }),
+      });
+      
+      setSuccess(true);
+      setEmail("");
+    } catch (error) {
+      console.error(error);
+      setError("Failed to subscribe. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -90,8 +108,8 @@ export function Newsletter() {
                       </span>
                     )}
                   </div>
-                  <Button type="submit" variant="primary" className="w-full h-[52px]">
-                    Join the Notes
+                  <Button type="submit" variant="primary" className="w-full h-[52px]" disabled={isSubmitting}>
+                    {isSubmitting ? "Subscribing..." : "Join the Notes"}
                   </Button>
                 </div>
                 <p className="text-xs text-text-muted mt-6 leading-relaxed font-semibold">

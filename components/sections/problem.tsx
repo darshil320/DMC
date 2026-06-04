@@ -68,7 +68,7 @@ export function ProblemSection() {
                 </p>
               </div>
 
-              <div className="mt-auto pt-6 border-t border-white/20 group-hover:border-accent/20 w-full text-xs font-medium opacity-80">
+              <div className="mt-auto pt-6 border-t border-white/20 w-full text-xs font-medium opacity-80">
                 {item.stats}
               </div>
             </div>
