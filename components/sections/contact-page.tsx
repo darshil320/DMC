@@ -6,6 +6,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ArrowUpRight, Mail, MessageCircle, Send, Sparkles } from "lucide-react";
 import { DMC } from "@/lib/dmc-config";
+import { analytics } from "@/lib/analytics";
 
 const CONTACT_ASSET = "/assets/contact-union.webp";
 
@@ -212,6 +213,7 @@ export function ContactPageExperience() {
         body: JSON.stringify({ ...form, source: "Contact Page" }),
       });
       
+      analytics.contactFormSubmit();
       setIsSuccess(true);
       setForm(initialFormState);
       
@@ -327,6 +329,7 @@ export function ContactPageExperience() {
                     href={whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => analytics.whatsappClick()}
                     className="inline-flex h-12 items-center justify-center gap-3 border border-white/30 px-5 text-sm font-black uppercase tracking-[0.16em] text-white transition-colors hover:border-[#f2e4d0] hover:text-[#f2e4d0]"
                   >
                     <MessageCircle className="size-4" />

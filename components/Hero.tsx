@@ -4,6 +4,7 @@ import React from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { Button } from "./ui/button";
 import { LinkArrow } from "./ui/LinkArrow";
+import { SOCIAL_LINKS } from "@/lib/dmc-config";
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -232,20 +233,6 @@ export function Hero() {
           hey@dmctech.in
         </a>
 
-        {/* Social links hidden until official accounts are ready.
-        <div className="flex items-center gap-6">
-          <a href="#" className="hover:text-accent transition-colors">
-            Instagram
-          </a>
-          <a href="#" className="hover:text-accent transition-colors">
-            LinkedIn
-          </a>
-          <a href="#" className="hover:text-accent transition-colors">
-            X
-          </a>
-        </div>
-        */}
-
         {/* Scroll down indicator */}
         <div className="justify-self-center flex items-center gap-2 text-text-muted">
           <span>Scroll to explore</span>
@@ -264,7 +251,19 @@ export function Hero() {
           </svg>
         </div>
 
-        <div className="hidden md:block" aria-hidden />
+        <div className="justify-self-center md:justify-self-end flex items-center gap-6">
+          {SOCIAL_LINKS.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              {social.label}
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DMC } from "@/lib/dmc-config";
+import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
 
 export const SITE_URL = "https://www.dmctech.in";
 export const SITE_NAME = "DMC Tech";
@@ -119,6 +119,7 @@ export function organizationJsonLd() {
     name: SITE_NAME,
     alternateName: [DMC.name, DMC.fullName],
     url: SITE_URL,
+    sameAs: SOCIAL_LINKS.map((social) => social.href),
     logo: absoluteUrl("/icon.png"),
     image: absoluteUrl(OG_IMAGE_PATH),
     description: SITE_DESCRIPTION,

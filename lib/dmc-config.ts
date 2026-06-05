@@ -15,6 +15,19 @@ export const DMC = {
   },
 } as const;
 
+export const SOCIAL_LINKS = [
+  {
+    label: "Instagram",
+    shortLabel: "IG",
+    href: "https://www.instagram.com/dmclabs.ai?igsh=MW02OG91OWdmZWcxaQ%3D%3D&utm_source=qr",
+  },
+  {
+    label: "X",
+    shortLabel: "X",
+    href: "https://x.com/__dmc__l?s=11",
+  },
+] as const;
+
 export const URBANWOOD = {
   name: "UrbanWood Furniture",
   tagline: "Premium Furniture for Modern Homes",

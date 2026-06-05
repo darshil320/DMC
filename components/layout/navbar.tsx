@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/lib/theme";
+import { analytics } from "@/lib/analytics";
+import { SOCIAL_LINKS } from "@/lib/dmc-config";
 
 const NAV_LINKS = [
   { num: "01", label: "HOME", href: "/" },
@@ -19,7 +21,7 @@ function MenuLink({ item, closeMenu }: { item: typeof NAV_LINKS[0]; closeMenu: (
   return (
     <a
       href={item.href}
-      onClick={closeMenu}
+      onClick={() => { analytics.navLinkClick(item.label); closeMenu(); }}
       className="group relative flex flex-col font-display text-white w-fit px-6 py-1 md:px-8 md:py-2 transition-colors duration-200"
     >
       {/* Corner crop marks — always in DOM, toggled by CSS (no React re-render on hover) */}
@@ -213,17 +215,23 @@ export function Navbar() {
               >
                 <div className="flex min-w-0 flex-col gap-12">
                   {/* Socials */}
-                  {/* <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-4">
                     <span className="text-[10px] font-bold text-accent-lime uppercase tracking-widest">Socials</span>
                     <div className="flex flex-col gap-3">
-                      <a href="#" className="text-sm font-medium text-white hover:text-accent-lime flex items-center gap-2 w-fit">
-                        <span className="border border-white/40 px-1 py-0.5 text-[9px] font-bold">IG</span> INSTAGRAM
-                      </a>
-                      <a href="#" className="text-sm font-medium text-white hover:text-accent-lime flex items-center gap-2 w-fit">
-                        <span className="border border-white/40 px-1 py-0.5 text-[9px] font-bold">IN</span> LINKEDIN
-                      </a>
+                      {SOCIAL_LINKS.map((social) => (
+                        <a
+                          key={social.label}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-medium text-white hover:text-accent-lime flex items-center gap-2 w-fit"
+                        >
+                          <span className="border border-white/40 px-1 py-0.5 text-[9px] font-bold">{social.shortLabel}</span>
+                          {social.label.toUpperCase()}
+                        </a>
+                      ))}
                     </div>
-                  </div> */}
+                  </div>
 
                   {/* Email */}
                   <div className="flex min-w-0 flex-col gap-2">

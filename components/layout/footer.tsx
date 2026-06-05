@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { DMC } from "@/lib/dmc-config";
+import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
 
 export function Footer() {
   return (
@@ -25,13 +25,21 @@ export function Footer() {
 
           {/* Email */}
           <div className="flex flex-col gap-1 md:items-end">
-            {/* Social links hidden until official accounts are ready.
             <div className="flex gap-2 text-sm font-medium uppercase tracking-wide">
-              <a href="#" className="hover:text-accent transition-colors">INSTAGRAM</a>
-              <span className="text-text-primary/30">,</span>
-              <a href="#" className="hover:text-accent transition-colors">LINKEDIN</a>
+              {SOCIAL_LINKS.map((social, index) => (
+                <React.Fragment key={social.label}>
+                  {index > 0 && <span className="text-text-primary/30">,</span>}
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-accent transition-colors"
+                  >
+                    {social.label.toUpperCase()}
+                  </a>
+                </React.Fragment>
+              ))}
             </div>
-            */}
             <a href={`mailto:${DMC.email}`} className="text-sm font-medium text-accent uppercase tracking-wide hover:text-text-primary transition-colors">
               [ {DMC.email} ]
             </a>

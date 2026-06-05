@@ -5,6 +5,7 @@ import Link from "next/link";
 import { navItems } from "@/lib/content";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+import { SOCIAL_LINKS } from "@/lib/dmc-config";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -156,19 +157,19 @@ export function Header() {
             </a>
           </div>
 
-          {/* Social links hidden until official accounts are ready.
           <div className="flex items-center gap-6">
-            {["Instagram", "LinkedIn", "X"].map((soc) => (
+            {SOCIAL_LINKS.map((social) => (
               <a
-                key={soc}
-                href="#"
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-xs uppercase tracking-wider font-semibold text-text-secondary hover:text-accent transition-colors"
               >
-                {soc}
+                {social.label}
               </a>
             ))}
           </div>
-          */}
 
           <Button href="/contact" variant="primary" size="md" className="w-full mt-2" onClick={closeMenu}>
             Let’s Build Yours

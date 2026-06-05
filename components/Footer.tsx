@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { SOCIAL_LINKS } from "@/lib/dmc-config";
 
 export function Footer() {
   return (
@@ -98,17 +99,17 @@ export function Footer() {
                 >
                   hey@dmctech.in
                 </a>
-                {/* Social links hidden until official accounts are ready.
-                <a href="#" className="hover:text-white transition-colors">
-                  Instagram
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  LinkedIn
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  X / Twitter
-                </a>
-                */}
+                {SOCIAL_LINKS.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    {social.label}
+                  </a>
+                ))}
               </nav>
             </div>
           </div>

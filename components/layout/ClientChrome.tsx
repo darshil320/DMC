@@ -7,6 +7,7 @@ import { ReactLenis, useLenis } from "lenis/react";
 import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "@/lib/theme";
 import { SiteMotion } from "@/components/layout/SiteMotion";
+import { RouteAnalytics } from "@/components/analytics/RouteAnalytics";
 
 const CustomCursor = dynamic(
   () => import("@/components/ui/CustomCursor").then((mod) => mod.CustomCursor),
@@ -81,6 +82,7 @@ export function ClientChrome({ children }: { children: React.ReactNode }) {
         <ReactLenis root options={{ lerp: 0.08, duration: 1.2, smoothWheel: true }}>
           <LenisResizer />
           <SiteMotion />
+          <RouteAnalytics />
           {showDecorations && <CustomCursor />}
           {showSpinningRound && <SpinningRound />}
           {children}

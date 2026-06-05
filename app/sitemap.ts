@@ -11,11 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
       images: [
-        absoluteUrl("/full-hero.jpeg"),
-        absoluteUrl("/section-services.jpeg"),
-        absoluteUrl("/section-featured.jpeg"),
-        absoluteUrl("/section-pricing.jpeg"),
         absoluteUrl("/assets/after.png"),
+        absoluteUrl("/assets/before.jpeg"),
+        absoluteUrl("/assets/contact-union.webp"),
       ],
     },
     {
@@ -23,6 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly",
       priority: 0.85,
+      images: [
+        absoluteUrl("/assets/contact-union.webp"),
+      ],
     },
     {
       url: absoluteUrl("/demo/ai-visualizer"),

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, DotGothic16, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { ClientChrome } from "@/components/layout/ClientChrome";
+import { GTMScript, GTMNoScript } from "@/components/analytics/GoogleTagManager";
+import { WebVitalsReporter } from "@/components/analytics/WebVitals";
 import {
   DEFAULT_ROBOTS,
   OG_IMAGE_PATH,
@@ -102,8 +104,11 @@ export default function RootLayout({
     >
       <head suppressHydrationWarning>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <GTMScript />
       </head>
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
+        <GTMNoScript />
+        <WebVitalsReporter />
         <ClientChrome>{children}</ClientChrome>
       </body>
     </html>

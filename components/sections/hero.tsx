@@ -2,7 +2,7 @@
 
 import React, { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { DMC } from "@/lib/dmc-config";
+import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
 import { EncryptedText } from "@/components/ui/encrypted-text";
 
 const HEADING_STYLE = {
@@ -306,14 +306,21 @@ export function HeroSection() {
 
       {/* ── Bottom bar ── */}
       <div data-hero-bottom className="w-full max-w-[1440px] mx-auto grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-4 text-[10px] md:text-[11px] font-medium uppercase tracking-[0.12em] text-text-primary z-10 relative">
-        <div className="hidden sm:block" aria-hidden />
-
-        {/* Social links hidden until official accounts are ready.
-        <div className="flex items-center gap-1">
-          <a href="#" className="hover:text-accent transition-colors">INSTAGRAM,</a>
-          <a href="#" className="hover:text-accent transition-colors ml-1">LINKEDIN,</a>
+        <div className="justify-self-center sm:justify-self-start flex items-center gap-1">
+          {SOCIAL_LINKS.map((social, index) => (
+            <React.Fragment key={social.label}>
+              {index > 0 && <span className="text-text-primary/40">,</span>}
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors"
+              >
+                {social.label.toUpperCase()}
+              </a>
+            </React.Fragment>
+          ))}
         </div>
-        */}
         
         <a href="#services" className="justify-self-center text-accent hover:text-text-primary transition-colors flex items-center gap-2 font-bold lowercase">
           <svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" className="shrink-0">
