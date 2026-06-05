@@ -86,7 +86,7 @@ export function PricingSection() {
         {/* Options List */}
         <div className="w-full flex flex-col">
           {OPTIONS.map((opt, idx) => (
-            <AnimatedReveal key={opt.num} delay={idx * 0.1} className="w-full relative border-t border-border-harsh pt-6 pb-20 group">
+            <AnimatedReveal key={opt.num} delay={idx * 0.1} className="w-full relative border-t border-border-harsh pt-6 pb-20">
               
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
@@ -105,7 +105,7 @@ export function PricingSection() {
                   </p>
                   <div className="flex flex-col gap-1">
                     {opt.tags.map((tag) => (
-                      <span key={tag} className="text-accent text-sm tracking-tight font-medium hover:underline cursor-default">
+                      <span key={tag} className="text-accent text-sm tracking-tight font-medium cursor-default">
                         {tag}
                       </span>
                     ))}

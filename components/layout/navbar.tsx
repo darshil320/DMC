@@ -17,6 +17,9 @@ const NAV_LINKS = [
   { num: "05", label: "CONTACT", href: "/contact" },
 ];
 
+const ARCHIVE_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbwRxB1lfQw1_kdsDGoThSqQl4aYtl5NfRaj58PPwEH-_wrjSWHAEfYYwsnhAVVVWFiPtA/exec";
+
 function MenuLink({ item, closeMenu }: { item: typeof NAV_LINKS[0]; closeMenu: () => void }) {
   return (
     <a
@@ -47,6 +50,11 @@ export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [archiveName, setArchiveName] = useState("");
+  const [archiveEmail, setArchiveEmail] = useState("");
+  const [archiveError, setArchiveError] = useState("");
+  const [archiveSuccess, setArchiveSuccess] = useState(false);
+  const [isArchiveSubmitting, setIsArchiveSubmitting] = useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -93,6 +101,51 @@ export function Navbar() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+
+  const handleArchiveSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (isArchiveSubmitting) return;
+
+    const name = archiveName.trim();
+    const email = archiveEmail.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    setArchiveError("");
+    setArchiveSuccess(false);
+
+    if (!name) {
+      setArchiveError("Name is required");
+      return;
+    }
+
+    if (!emailRegex.test(email)) {
+      setArchiveError("Enter a valid email");
+      return;
+    }
+
+    setIsArchiveSubmitting(true);
+
+    try {
+      await fetch(ARCHIVE_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify({
+          name,
+          email,
+          source: "Menu Archive",
+        }),
+      });
+
+      setArchiveName("");
+      setArchiveEmail("");
+      setArchiveSuccess(true);
+    } catch (error) {
+      console.error("Archive subscription failed:", error);
+      setArchiveError("Could not subscribe. Try again.");
+    } finally {
+      setIsArchiveSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -267,24 +320,52 @@ export function Navbar() {
 
                 <div className="flex flex-col gap-4">
                   {/* Newsletter Box (Lime Green Focus) */}
-                  <div className="flex flex-col gap-3 max-w-[320px]">
+                  <form onSubmit={handleArchiveSubmit} className="flex flex-col gap-3 max-w-[320px]">
                     <div className="bg-accent-lime text-accent font-pixel font-bold px-3 py-1 self-start border border-accent brutalist-shadow">
                       JOIN THE ARCHIVE
                     </div>
                     <input
                       type="text"
+                      value={archiveName}
+                      onChange={(event) => {
+                        setArchiveName(event.target.value);
+                        setArchiveError("");
+                        setArchiveSuccess(false);
+                      }}
                       placeholder="Your Name"
+                      autoComplete="name"
                       className="bg-transparent border border-accent-lime text-white placeholder-white/50 px-4 py-3 text-sm focus:outline-none focus:bg-accent-lime focus:text-accent transition-colors duration-200"
                     />
                     <input
                       type="email"
+                      value={archiveEmail}
+                      onChange={(event) => {
+                        setArchiveEmail(event.target.value);
+                        setArchiveError("");
+                        setArchiveSuccess(false);
+                      }}
                       placeholder="name@example.com"
+                      autoComplete="email"
                       className="bg-transparent border border-accent-lime text-white placeholder-white/50 px-4 py-3 text-sm focus:outline-none focus:bg-accent-lime focus:text-accent transition-colors duration-200"
                     />
-                    <button className="bg-accent-lime text-accent border border-accent font-bold text-xs uppercase tracking-widest px-6 py-3 mt-2 hover:bg-white hover:border-black hover:text-black transition-colors self-start cursor-pointer">
-                      Subscribe
+                    {archiveError && (
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-accent-lime">
+                        {archiveError}
+                      </p>
+                    )}
+                    {archiveSuccess && (
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-white">
+                        Subscribed. Check your inbox.
+                      </p>
+                    )}
+                    <button
+                      type="submit"
+                      disabled={isArchiveSubmitting}
+                      className="bg-accent-lime text-accent border border-accent font-bold text-xs uppercase tracking-widest px-6 py-3 mt-2 hover:bg-white hover:border-black hover:text-black transition-colors self-start cursor-pointer disabled:cursor-not-allowed disabled:opacity-70"
+                    >
+                      {isArchiveSubmitting ? "Subscribing..." : "Subscribe"}
                     </button>
-                  </div>
+                  </form>
                 </div>
               </motion.div>
             </div>
