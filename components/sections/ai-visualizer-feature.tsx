@@ -141,7 +141,7 @@ export function AIVisualizerFeatureSection() {
               </div>
 
               <h2
-                className="text-text-primary font-black uppercase tracking-tighter leading-10 mb-6"
+                className="text-text-primary font-black uppercase tracking-tighter leading-[1.12] lg:leading-[1.16] mb-6"
                 style={{ fontSize: "clamp(2.2rem, 5.5vw, 4.5rem)" }}
               >
                 See furniture
@@ -188,7 +188,7 @@ export function AIVisualizerFeatureSection() {
             </div>
 
             {/* Slider */}
-            <div className="flex-1 min-h-[240px] lg:min-h-0 relative">
+            <div className="flex-1 min-h-[340px] lg:min-h-0 relative">
               <div className="absolute inset-0">
                 <BeforeAfterSlider />
               </div>

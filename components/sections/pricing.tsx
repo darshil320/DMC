@@ -5,11 +5,20 @@ import { Clock } from "lucide-react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { DMC } from "@/lib/dmc-config";
 
+const formatPrice = (num: number) => {
+  return new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    maximumFractionDigits: 0,
+  }).format(num);
+};
+
 const OPTIONS = [
   {
     num: "01",
     title: "Starter Website",
     time: "1 - 2 Weeks",
+    price: formatPrice(DMC.pricing.starter) + "+",
     desc: "A streamlined single-page site that tells your complete story, showcases your best work, and guides visitors straight to booking. Perfect for focused offers or launching fast.",
     tags: ["5-Page Setup", "Mobile Responsive", "Contact Form", "Google Business"],
     graphic: (
@@ -28,6 +37,7 @@ const OPTIONS = [
     num: "02",
     title: "Online Catalog",
     time: "2 - 3 Weeks",
+    price: formatPrice(DMC.pricing.catalog) + "+",
     desc: "Multi-page custom build with strategic structure. Your complete brand experience - portfolio, process, services, and story - all connected to convert traffic into qualified leads.",
     tags: ["Unlimited Products", "WhatsApp Enquiry", "Product Photos", "2 Revisions"],
     graphic: (
@@ -45,6 +55,7 @@ const OPTIONS = [
     num: "03",
     title: "Ecommerce Store",
     time: "3 - 5 Weeks",
+    price: formatPrice(DMC.pricing.ecommerce) + "+",
     desc: "A fully functional online store. Accept payments, manage orders, and ship products directly to customers. Built for shops ready to scale their digital footprint.",
     tags: ["Online Payments", "Order Dashboard", "Shipping Setup", "Customer Accounts"],
     graphic: (
@@ -103,9 +114,14 @@ export function PricingSection() {
 
                 {/* Time & Graphic (Cols 10-12) */}
                 <div className="lg:col-span-3 flex flex-col items-end gap-6 pt-2 px-4 lg:px-6">
-                  <div className="flex items-center gap-2 text-text-primary font-medium text-sm">
-                    <Clock className="size-4" />
-                    {opt.time}
+                  <div className="flex flex-col items-end gap-2 text-right">
+                    {/* <span className="font-serif text-2xl lg:text-3xl text-text-primary tracking-tight font-medium">
+                      {opt.price}
+                    </span> */}
+                    <div className="flex items-center gap-2 text-text-primary/60 font-medium text-sm">
+                      <Clock className="size-4" />
+                      {opt.time}
+                    </div>
                   </div>
                   <div className="w-[140px] h-[100px] mt-4">
                     {opt.graphic}

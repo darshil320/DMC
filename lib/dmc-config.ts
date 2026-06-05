@@ -8,10 +8,10 @@ export const DMC = {
   domain: "dmcdigital.in",
   location: "Ahmedabad, India",
   pricing: {
-    starter: 15000,
-    catalog: 45000,
-    ecommerce: 50000,
-    maintenance: 5000,
+    starter: 90000,
+    catalog: 150000,
+    ecommerce: 300000,
+    maintenance: 15000,
   },
 } as const;
 
