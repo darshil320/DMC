@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="bg-bg-page relative select-none">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
         
-        {/* Top Info Row — Quick Links left, Socials right */}
+        {/* Top Info Row — Quick Links left, email right */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 py-10">
           {/* Quick Links */}
           <div className="flex flex-col gap-1">
@@ -23,13 +23,15 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Socials & Email */}
+          {/* Email */}
           <div className="flex flex-col gap-1 md:items-end">
+            {/* Social links hidden until official accounts are ready.
             <div className="flex gap-2 text-sm font-medium uppercase tracking-wide">
               <a href="#" className="hover:text-accent transition-colors">INSTAGRAM</a>
               <span className="text-text-primary/30">,</span>
               <a href="#" className="hover:text-accent transition-colors">LINKEDIN</a>
             </div>
+            */}
             <a href={`mailto:${DMC.email}`} className="text-sm font-medium text-accent uppercase tracking-wide hover:text-text-primary transition-colors">
               [ {DMC.email} ]
             </a>

@@ -223,16 +223,16 @@ export function Hero() {
       </div>
 
       {/* Bottom Row - Contacts, Socials, Scroll indicator */}
-      <div className="max-w-[1440px] mx-auto w-full pt-8 border-t border-border-subtle flex flex-col md:flex-row items-center justify-between gap-6 mt-12 text-xs font-bold uppercase tracking-widest text-text-secondary select-none">
+      <div className="max-w-[1440px] mx-auto w-full pt-8 border-t border-border-subtle grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-6 mt-12 text-xs font-bold uppercase tracking-widest text-text-secondary select-none">
         {/* Email */}
         <a
-          href="mailto:lashkaridarshil@gmail.com"
-          className="hover:text-accent transition-colors"
+          href="mailto:hey@dmctech.in"
+          className="justify-self-center md:justify-self-start hover:text-accent transition-colors"
         >
-          lashkaridarshil@gmail.com
+          hey@dmctech.in
         </a>
 
-        {/* Socials */}
+        {/* Social links hidden until official accounts are ready.
         <div className="flex items-center gap-6">
           <a href="#" className="hover:text-accent transition-colors">
             Instagram
@@ -244,9 +244,10 @@ export function Hero() {
             X
           </a>
         </div>
+        */}
 
         {/* Scroll down indicator */}
-        <div className="flex items-center gap-2 text-text-muted">
+        <div className="justify-self-center flex items-center gap-2 text-text-muted">
           <span>Scroll to explore</span>
           <svg
             className="w-3.5 h-3.5 animate-bounce"
@@ -262,6 +263,8 @@ export function Hero() {
             />
           </svg>
         </div>
+
+        <div className="hidden md:block" aria-hidden />
       </div>
     </section>
   );

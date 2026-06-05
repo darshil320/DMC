@@ -228,8 +228,8 @@ export function Navbar() {
                   {/* Email */}
                   <div className="flex min-w-0 flex-col gap-2">
                     <span className="font-pixel font-bold text-accent-lime uppercase tracking-widest">E-Mail</span>
-                    <a href="mailto:lashkaridarshil@gmail.com" className="inline-block w-max max-w-full whitespace-nowrap text-[clamp(10px,0.78vw,12px)] font-medium leading-none text-white hover:text-accent-lime uppercase tracking-[0.08em]">
-                      [LASHKARIDARSHIL@GMAIL.COM]
+                    <a href="mailto:hey@dmctech.in" className="inline-block w-max max-w-full whitespace-nowrap text-[clamp(10px,0.78vw,12px)] font-medium leading-none text-white hover:text-accent-lime uppercase tracking-[0.08em]">
+                      [HEY@DMCTECH.IN]
                     </a>
                   </div>
 
@@ -244,7 +244,7 @@ export function Navbar() {
                         <path id="menuCirclePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
                         <text className="text-[7.5px] font-bold fill-white/80 tracking-[0.14em] uppercase">
                           <textPath href="#menuCirclePath">
-                            • DMC DIGITAL • TAKE YOUR BUSINESS ONLINE
+                            • DMC TECH • TAKE YOUR BUSINESS ONLINE
                           </textPath>
                         </text>
                         <circle cx="50" cy="50" r="5" className="fill-accent-lime animate-pulse" />
@@ -252,7 +252,7 @@ export function Navbar() {
                     </motion.div>
                     <span className="font-pixel font-bold text-white/50 tracking-wider uppercase leading-snug">
                       ESTD 2026 // <br/>
-                      DMC DIGITAL
+                      DMC TECH
                     </span>
                   </div>
                 </div>

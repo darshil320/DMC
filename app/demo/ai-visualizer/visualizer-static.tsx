@@ -132,7 +132,7 @@ export function VisualizerHeader() {
         AI Room Visualizer
       </span>
       <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#2C2A26]/30 hidden sm:block">
-        by DMC Digital
+        by DMC Tech
       </span>
     </header>
   );
@@ -144,7 +144,7 @@ export function VisualizerIntro() {
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-16 md:pt-24 pb-16 border-b border-[#2C2A26]/10">
         <div>
           <p className="text-[10px] font-medium tracking-[0.25em] uppercase text-[#2C2A26]/40 mb-7">
-            Powered by AI &middot; Demo by DMC Digital
+            Powered by AI &middot; Demo by DMC Tech
           </p>
           <h1
             className="text-[clamp(2.2rem,6.5vw,5rem)] font-normal leading-[1.05] text-[#2C2A26] mb-6 max-w-3xl"
@@ -208,7 +208,7 @@ export function VisualizerMarketing() {
                 <span className="text-[#F4F1ED]/40">this experience.</span>
               </h2>
               <p className="text-[15px] leading-[1.85] text-[#F4F1ED]/50 max-w-lg">
-                DMC Digital builds AI-powered websites for furniture stores across Surat and Gujarat.
+                DMC Tech builds AI-powered websites for furniture stores across Surat and Gujarat.
                 This visualizer, product catalogue, WhatsApp integration, and premium brand experience can be live on your domain in weeks.
               </p>
             </div>
@@ -288,7 +288,7 @@ export function VisualizerMarketing() {
               className="shrink-0 inline-flex items-center gap-2.5 bg-[#C9A84C] text-[#1C1A17] text-[10px] font-bold tracking-[0.22em] uppercase px-8 py-4 hover:bg-[#d4af5a] transition-colors duration-200"
             >
               <WhatsAppIcon />
-              Talk to DMC Digital &rarr;
+              Talk to DMC Tech &rarr;
             </a>
           </div>
         </div>
@@ -305,18 +305,18 @@ export function VisualizerMarketing() {
           <div className="text-right">
             <p className="text-[9px] tracking-[0.25em] uppercase text-[#F4F1ED]/30 mb-2">A demo by</p>
             <a
-              href="https://dmcdigital.vercel.app"
+              href="https://www.dmctech.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[13px] font-medium tracking-[0.18em] uppercase text-[#F4F1ED] hover:text-[#C9A84C] transition-colors duration-200"
             >
-              DMC Digital
+              DMC Tech
             </a>
           </div>
         </div>
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-7 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-[10px] text-[#F4F1ED]/20 tracking-widest uppercase">
-            &copy; 2026 DMC Digital &mdash; AI Room Visualizer
+            &copy; 2026 DMC Tech &mdash; AI Room Visualizer
           </span>
           <Link
             href="/demo/furniture-concept-2.0"

@@ -2,6 +2,15 @@ import type { Metadata } from "next";
 import { Inter, DotGothic16, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { ClientChrome } from "@/components/layout/ClientChrome";
+import {
+  DEFAULT_ROBOTS,
+  OG_IMAGE_PATH,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+  getSiteVerification,
+} from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -35,10 +44,49 @@ try {
 `;
 
 export const metadata: Metadata = {
-  title: "DMC — Digital Market Creators | Brutalist Concept",
-  description:
-    "DMC helps local shops and service businesses build modern websites.",
-  metadataBase: new URL("https://dmcdigital.in"),
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: "technology",
+  robots: DEFAULT_ROBOTS,
+  verification: getSiteVerification(),
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: OG_IMAGE_PATH,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} website preview`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE_PATH],
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  other: {
+    "geo.region": "IN-GJ",
+    "geo.placename": "Ahmedabad, Gujarat",
+  },
 };
 
 export default function RootLayout({

@@ -5,12 +5,30 @@ import {
   VisualizerIntro,
   VisualizerMarketing,
 } from "./visualizer-static";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+  aiVisualizerJsonLd,
+  breadcrumbJsonLd,
+  createSeoMetadata,
+  organizationJsonLd,
+  webPageJsonLd,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "AI Room Visualizer — See Furniture in Your Home | DMC Digital",
-  description:
-    "Upload a photo of your room, pick a furniture piece, and see it placed in your space — instantly. A demo tool by DMC Digital.",
-};
+const title = "AI Room Visualizer Demo | Furniture Visualization by DMC Tech";
+const description =
+  "Try DMC Tech's AI room visualizer demo: upload a room photo, choose furniture, and preview products in your space with realistic AI placement.";
+
+export const metadata: Metadata = createSeoMetadata({
+  title,
+  description,
+  path: "/demo/ai-visualizer",
+  keywords: [
+    "AI room visualizer",
+    "furniture visualization app",
+    "AI furniture website",
+    "furniture store website demo",
+  ],
+});
 
 export default function AIVisualizerPage() {
   return (
@@ -18,6 +36,22 @@ export default function AIVisualizerPage() {
       className="bg-[#F4F1ED]"
       style={{ fontFamily: "var(--font-inter, sans-serif)", color: "#2C2A26" }}
     >
+      <JsonLd
+        id="ai-visualizer-json-ld"
+        data={[
+          organizationJsonLd(),
+          aiVisualizerJsonLd(),
+          webPageJsonLd({
+            path: "/demo/ai-visualizer",
+            name: title,
+            description,
+          }),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "AI Room Visualizer", path: "/demo/ai-visualizer" },
+          ]),
+        ]}
+      />
       <VisualizerHeader />
       <AIVisualizerClient intro={<VisualizerIntro />} />
       <VisualizerMarketing />

@@ -149,13 +149,14 @@ export function Header() {
               Get in Touch
             </span>
             <a
-              href="mailto:lashkaridarshil@gmail.com"
+              href="mailto:hey@dmctech.in"
               className="text-lg font-bold text-text-primary hover:text-accent transition-colors"
             >
-              lashkaridarshil@gmail.com
+              hey@dmctech.in
             </a>
           </div>
 
+          {/* Social links hidden until official accounts are ready.
           <div className="flex items-center gap-6">
             {["Instagram", "LinkedIn", "X"].map((soc) => (
               <a
@@ -167,6 +168,7 @@ export function Header() {
               </a>
             ))}
           </div>
+          */}
 
           <Button href="/contact" variant="primary" size="md" className="w-full mt-2" onClick={closeMenu}>
             Let’s Build Yours

@@ -14,9 +14,11 @@ export function BrutalistLoader() {
   useEffect(() => {
     // Skip entirely for reduced-motion — fire complete immediately
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setLoading(false);
-      signalLoaderComplete();
-      return;
+      const reducedMotionTimer = window.setTimeout(() => {
+        setLoading(false);
+        signalLoaderComplete();
+      }, 0);
+      return () => window.clearTimeout(reducedMotionTimer);
     }
 
     document.body.style.overflow = "hidden";
@@ -64,7 +66,7 @@ export function BrutalistLoader() {
         >
           {/* Top Row */}
           <div className="flex justify-between items-start text-[10px] font-bold tracking-widest uppercase">
-            <span>DMC DIGITAL</span>
+            <span>DMC TECH</span>
             <span>INITIALIZING...</span>
           </div>
 

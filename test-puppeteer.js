@@ -1,8 +1,8 @@
-const puppeteer = require('puppeteer');
 (async () => {
+  const { default: puppeteer } = await import("puppeteer");
   const browser = await puppeteer.launch({headless: "new"});
   const page = await browser.newPage();
-  await page.goto('https://www.devxlabs.ai/');
+  await page.goto('https://www.dmctech.in/');
   
   // find the scrolling text "Contact us"
   const elements = await page.$$eval('*', els => els.filter(e => e.textContent.includes('Contact us')).map(e => ({

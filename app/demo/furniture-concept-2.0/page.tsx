@@ -8,6 +8,13 @@ import { UWProductFeatureV2 } from "@/components/demo/uw-product-feature-v2";
 import { UWPreloader } from "@/components/demo/uw-preloader";
 import { UWCartDrawer } from "@/components/demo/uw-cart-drawer";
 import { PRODUCTS } from "@/lib/uw-content";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+  breadcrumbJsonLd,
+  createSeoMetadata,
+  organizationJsonLd,
+  webPageJsonLd,
+} from "@/lib/seo";
 
 const UWProductGridV2 = dynamic(() => import("@/components/demo/uw-product-grid-v2").then(mod => mod.UWProductGridV2));
 const UWBestsellersV2 = dynamic(() => import("@/components/demo/uw-bestsellers-v2").then(mod => mod.UWBestsellersV2));
@@ -16,11 +23,21 @@ const UWPartners = dynamic(() => import("@/components/demo/uw-partners").then(mo
 const UWShowroom = dynamic(() => import("@/components/demo/uw-showroom").then(mod => mod.UWShowroom));
 const UWFooterDark = dynamic(() => import("@/components/demo/uw-footer-dark").then(mod => mod.UWFooterDark));
 
-export const metadata: Metadata = {
-  title: "Furniture Concept 2.0 — Modern Office Furniture in Surat | Demo by DMC",
-  description:
-    "Premium office chairs, executive desks, and modular workstations for modern workspaces. A live demo for Furniture Concept 2.0 by DMC.",
-};
+const title = "Furniture Ecommerce Demo | Premium Furniture Website by DMC Tech";
+const description =
+  "Explore a premium furniture ecommerce website demo by DMC Tech with product storytelling, collections, showroom content, cart flow, and AI visualizer links.";
+
+export const metadata: Metadata = createSeoMetadata({
+  title,
+  description,
+  path: "/demo/furniture-concept-2.0",
+  keywords: [
+    "furniture ecommerce website demo",
+    "furniture store website design",
+    "premium product catalog website",
+    "office furniture ecommerce",
+  ],
+});
 
 export default function UrbanWoodDemo() {
   return (
@@ -28,6 +45,21 @@ export default function UrbanWoodDemo() {
       className="bg-uw-bg-page min-h-screen"
       style={{ fontFamily: "var(--font-inter, sans-serif)", color: "var(--uw-text-primary)" }}
     >
+      <JsonLd
+        id="furniture-demo-json-ld"
+        data={[
+          organizationJsonLd(),
+          webPageJsonLd({
+            path: "/demo/furniture-concept-2.0",
+            name: title,
+            description,
+          }),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Furniture Ecommerce Demo", path: "/demo/furniture-concept-2.0" },
+          ]),
+        ]}
+      />
       <UWPreloader />
       <UWHeaderV2 />
       <UWCartDrawer />

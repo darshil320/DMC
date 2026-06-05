@@ -305,20 +305,24 @@ export function HeroSection() {
       </div>
 
       {/* ── Bottom bar ── */}
-      <div data-hero-bottom className="w-full max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] md:text-[11px] font-medium uppercase tracking-[0.12em] text-text-primary z-10 relative">
+      <div data-hero-bottom className="w-full max-w-[1440px] mx-auto grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-4 text-[10px] md:text-[11px] font-medium uppercase tracking-[0.12em] text-text-primary z-10 relative">
+        <div className="hidden sm:block" aria-hidden />
+
+        {/* Social links hidden until official accounts are ready.
         <div className="flex items-center gap-1">
           <a href="#" className="hover:text-accent transition-colors">INSTAGRAM,</a>
           <a href="#" className="hover:text-accent transition-colors ml-1">LINKEDIN,</a>
         </div>
+        */}
         
-        <a href="#services" className="text-accent hover:text-text-primary transition-colors flex items-center gap-2 font-bold lowercase">
+        <a href="#services" className="justify-self-center text-accent hover:text-text-primary transition-colors flex items-center gap-2 font-bold lowercase">
           <svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" className="shrink-0">
             <path d="m204.24 148.24l-72 72a6 6 0 0 1-8.48 0l-72-72a6 6 0 0 1 8.48-8.48L122 201.51V40a6 6 0 0 1 12 0v161.51l61.76-61.75a6 6 0 0 1 8.48 8.48" />
           </svg>
           scroll down
         </a>
 
-        <a href={`mailto:${DMC.email}`} className="hover:text-accent transition-colors lowercase">
+        <a href={`mailto:${DMC.email}`} className="justify-self-center sm:justify-self-end hover:text-accent transition-colors lowercase">
           {DMC.email}
         </a>
       </div>

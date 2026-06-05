@@ -2,13 +2,30 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { ContactPageExperience } from "@/components/sections/contact-page";
 import dynamic from "next/dynamic";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+  breadcrumbJsonLd,
+  createSeoMetadata,
+  organizationJsonLd,
+  webPageJsonLd,
+} from "@/lib/seo";
 
 const Footer = dynamic(() => import("@/components/layout/footer").then(m => m.Footer));
 
-export const metadata: Metadata = {
-  title: "Contact DMC - Digital Market Creators",
-  description: "Start a website, catalog, ecommerce, or AI visualizer project with DMC.",
-};
+const title = "Contact DMC Tech | Start a Website, Ecommerce or AI Project";
+const description =
+  "Contact DMC Tech to build a custom website, ecommerce store, product catalog, WhatsApp system, or AI visualizer for your local business.";
+
+export const metadata: Metadata = createSeoMetadata({
+  title,
+  description,
+  path: "/contact",
+  keywords: [
+    "contact website developer Ahmedabad",
+    "website project enquiry India",
+    "ecommerce website quote",
+  ],
+});
 
 function ContactGridOverlay() {
   return (
@@ -31,6 +48,21 @@ export default function ContactPage() {
   return (
     <div className="bg-bg-page min-h-screen relative">
       <div className="relative z-10 min-h-screen bg-bg-page">
+        <JsonLd
+          id="contact-json-ld"
+          data={[
+            organizationJsonLd(),
+            webPageJsonLd({
+              path: "/contact",
+              name: title,
+              description,
+            }),
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Contact", path: "/contact" },
+            ]),
+          ]}
+        />
         <ContactGridOverlay />
         <Navbar />
         <ContactPageExperience />

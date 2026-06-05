@@ -93,11 +93,12 @@ export function Footer() {
               </span>
               <nav className="flex flex-col gap-3 text-xs font-semibold text-neutral-400">
                 <a
-                  href="mailto:lashkaridarshil@gmail.com"
+                  href="mailto:hey@dmctech.in"
                   className="hover:text-white transition-colors break-all"
                 >
-                  lashkaridarshil@gmail.com
+                  hey@dmctech.in
                 </a>
+                {/* Social links hidden until official accounts are ready.
                 <a href="#" className="hover:text-white transition-colors">
                   Instagram
                 </a>
@@ -107,6 +108,7 @@ export function Footer() {
                 <a href="#" className="hover:text-white transition-colors">
                   X / Twitter
                 </a>
+                */}
               </nav>
             </div>
           </div>

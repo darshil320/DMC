@@ -1,7 +1,30 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { HeroSection } from "@/components/sections/hero";
 import dynamic from "next/dynamic";
 import { BrutalistLoader } from "@/components/ui/brutalist-loader";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+  SITE_DESCRIPTION,
+  SITE_TITLE,
+  createSeoMetadata,
+  organizationJsonLd,
+  serviceCatalogJsonLd,
+  webPageJsonLd,
+  websiteJsonLd,
+} from "@/lib/seo";
+
+export const metadata: Metadata = createSeoMetadata({
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  path: "/",
+  keywords: [
+    "business website design",
+    "local business website India",
+    "AI website tools for furniture stores",
+    "ecommerce website for shops",
+  ],
+});
 
 function SectionPlaceholder({ minHeight = "60vh" }: { minHeight?: string }) {
   return <div style={{ minHeight }} aria-hidden />;
@@ -67,6 +90,19 @@ export default function Home() {
         <InlineGridOverlay />
         <Navbar />
         <main>
+          <JsonLd
+            id="home-json-ld"
+            data={[
+              organizationJsonLd(),
+              websiteJsonLd(),
+              serviceCatalogJsonLd(),
+              webPageJsonLd({
+                path: "/",
+                name: SITE_TITLE,
+                description: SITE_DESCRIPTION,
+              }),
+            ]}
+          />
           <HeroSection />
           <AboutUsSection />
           <OurWorkSection />

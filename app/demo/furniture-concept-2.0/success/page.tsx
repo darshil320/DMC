@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { UWHeaderV2 } from "@/components/demo/uw-header-v2";
 import { UWFooterDark } from "@/components/demo/uw-footer-dark";
+import { createSeoMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createSeoMetadata({
+  title: "Order Confirmed | Furniture Ecommerce Demo",
+  description: "Order confirmation page for the DMC Tech furniture ecommerce demo.",
+  path: "/demo/furniture-concept-2.0/success",
+  noIndex: true,
+});
 
 export default function SuccessPage() {
   return (
@@ -20,7 +29,7 @@ export default function SuccessPage() {
           Order Confirmed
         </h1>
         <p className="text-[15px] text-[#2C2A26]/60 max-w-md mx-auto mb-12">
-          Thank you for your purchase. We've sent a confirmation email with your order details and tracking information.
+          Thank you for your purchase. We&apos;ve sent a confirmation email with your order details and tracking information.
         </p>
         <Link 
           href="/demo/furniture-concept-2.0"
