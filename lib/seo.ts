@@ -117,7 +117,7 @@ export function organizationJsonLd() {
     "@type": "ProfessionalService",
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
-    alternateName: [DMC.name, DMC.fullName],
+    alternateName: [DMC.name],
     url: SITE_URL,
     sameAs: SOCIAL_LINKS.map((social) => social.href),
     logo: absoluteUrl("/icon.png"),
