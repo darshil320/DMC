@@ -32,10 +32,11 @@ export function AnimatedReveal({
       initial={{ opacity: 0, y: yOffset }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount }}
+      style={{ willChange: "transform, opacity" }}
       transition={{
-        duration,
+        duration: 0.5,
         delay,
-        ease: [0.215, 0.61, 0.355, 1], // easeOutCubic
+        ease: [0.16, 1, 0.3, 1], // easeOutExpo: starts incredibly fast, settles smoothly
       }}
     >
       {children}

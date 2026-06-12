@@ -88,6 +88,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -98,6 +99,7 @@ body {
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
 }
 
 /* Brutalist heading defaults */
