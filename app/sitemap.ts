@@ -26,6 +26,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ],
     },
     {
+      url: absoluteUrl("/services"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl("/work"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl("/about"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: absoluteUrl("/demo/ai-visualizer"),
       lastModified,
       changeFrequency: "monthly",

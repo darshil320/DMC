@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 export function ThinArrowRight({ className }: { className?: string }) {
   return (
     <svg 
-      className={cn("w-4 h-4", className)} 
+      className={cn("w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-1", className)} 
       viewBox="0 0 24 24" 
       fill="none" 
       stroke="currentColor" 
@@ -21,7 +21,7 @@ export function ThinArrowRight({ className }: { className?: string }) {
 export function ThinArrowUpRight({ className }: { className?: string }) {
   return (
     <svg 
-      className={cn("w-4 h-4", className)} 
+      className={cn("w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-1", className)} 
       viewBox="0 0 24 24" 
       fill="none" 
       stroke="currentColor" 
@@ -38,7 +38,7 @@ export function ThinArrowUpRight({ className }: { className?: string }) {
 export function ThinArrowDown({ className }: { className?: string }) {
   return (
     <svg 
-      className={cn("w-4 h-4", className)} 
+      className={cn("w-4 h-4 transition-transform duration-500 ease-out group-hover:translate-y-1", className)} 
       viewBox="0 0 24 24" 
       fill="none" 
       stroke="currentColor" 

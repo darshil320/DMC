@@ -11,9 +11,9 @@ import { SOCIAL_LINKS } from "@/lib/dmc-config";
 
 const NAV_LINKS = [
   { num: "01", label: "HOME", href: "/" },
-  { num: "02", label: "SERVICES", href: "/#services" },
-  { num: "03", label: "WORK", href: "/#work" },
-  { num: "04", label: "AI STUDIO", href: "/#ai" },
+  { num: "02", label: "SERVICES", href: "/services" },
+  { num: "03", label: "WORK", href: "/work" },
+  { num: "04", label: "ABOUT", href: "/about" },
   { num: "05", label: "CONTACT", href: "/contact" },
 ];
 
@@ -183,22 +183,30 @@ export function Navbar() {
             <button
               onClick={toggleTheme}
               aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-              className="size-[42px] flex items-center justify-center border border-accent text-accent cursor-pointer hover:bg-accent hover:text-white transition-colors"
+              className="group size-[42px] flex items-center justify-center border border-accent text-accent cursor-pointer hover:bg-accent hover:text-white transition-colors"
             >
-              {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+              {isDark ? (
+                <Sun className="size-4 transition-transform duration-500 group-hover:rotate-[90deg] group-hover:scale-110" />
+              ) : (
+                <Moon className="size-4 transition-transform duration-500 group-hover:-rotate-[15deg] group-hover:scale-110" />
+              )}
             </button>
 
             <button
               onClick={toggleMenu}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               className={cn(
-                "flex h-[42px] items-center justify-center gap-2 border px-3 font-pixel text-[12px] tracking-widest transition-colors cursor-pointer sm:px-6",
+                "group flex h-[42px] items-center justify-center gap-2 border px-3 font-pixel text-[12px] tracking-widest transition-colors cursor-pointer sm:px-6",
                 isMenuOpen
                   ? "bg-accent-lime text-accent border-accent hover:bg-white hover:text-accent"
                   : "bg-accent text-white border-accent hover:bg-white hover:text-accent"
               )}
             >
-              {isMenuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+              {isMenuOpen ? (
+                <X className="size-4 transition-transform duration-300 group-hover:rotate-90 group-hover:scale-110" />
+              ) : (
+                <Menu className="size-4 transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-110" />
+              )}
               <span className="hidden sm:inline">MENU</span>
             </button>
           </div>

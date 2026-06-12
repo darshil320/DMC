@@ -15,7 +15,7 @@ interface AnimatedRevealProps {
 export function AnimatedReveal({
   children,
   delay = 0,
-  duration = 0.6,
+  duration = 0.4,
   yOffset = 24,
   amount = 0.2, // trigger when 20% of section enters viewport
   className,

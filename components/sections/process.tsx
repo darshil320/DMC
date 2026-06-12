@@ -10,8 +10,8 @@ const STEPS = [
   {
     num: "01",
     title: "MAP",
-    subtitle: "Strategy // Structure",
-    desc: "We start by understanding your goals, your positioning, and what actually makes your brand valuable. This is where we figure out the story you're telling, who needs to hear it, and how to guide them from curious to ready to book.",
+    subtitle: "Audit // Architecture",
+    desc: "We start by analyzing your current operations to find the bottlenecks, leaky pipelines, and manual tasks draining your team. Then, we architect a custom system designed specifically for how your business actually runs.",
     graphic: (
       <div className="relative w-48 h-48 opacity-90 transition-opacity group-hover:opacity-100">
         <Image 
@@ -26,8 +26,8 @@ const STEPS = [
   {
     num: "02",
     title: "MAKE",
-    subtitle: "Design // Experience",
-    desc: "Your brand gets translated into a visual journey that feels intentional. Every click, scroll, and CTA has a purpose. We're building the experience that takes your leads from 'this looks interesting' to 'I need to work with them.'",
+    subtitle: "Develop // Automate",
+    desc: "Your custom infrastructure is built. We develop the CRM, configure the AI chatbots, set up the databases, and design the interfaces. Every component is rigorously tested to ensure data flows perfectly across your entire operation.",
     graphic: (
       <div className="relative w-48 h-48 opacity-90 transition-opacity group-hover:opacity-100">
         <Image 
@@ -42,8 +42,8 @@ const STEPS = [
   {
     num: "03",
     title: "MOVE",
-    subtitle: "Develop // Automate",
-    desc: "We build it fast, clean, and scalable. Then we plug in the tools, automate, and set up your systems. Your website becomes something that works for you, educating leads, filtering out, and delivering qualified clients ready to book.",
+    subtitle: "Deploy // Scale",
+    desc: "We don't just hand over software; we onboard your team. We plug the systems into your business, automate the tedious work, and give you the real-time dashboards you need to finally scale without operations breaking.",
     graphic: (
       <div className="relative w-48 h-48 opacity-90 transition-opacity group-hover:opacity-100">
         <Image 
@@ -81,7 +81,7 @@ export function ProcessSection() {
             How It Works
           </h2>
           <p className="text-text-secondary text-sm md:text-base font-sans font-light leading-relaxed mb-12 max-w-[280px]">
-            Here's how we build websites that actually work for local businesses:
+            Here&apos;s how we architect the systems that run your business:
           </p>
           <a href="#services" className="text-text-primary hover:text-accent transition-colors flex items-center justify-center size-14 rounded-full border border-border-harsh hover:border-accent">
             <ThinArrowUpRight className="size-5" />

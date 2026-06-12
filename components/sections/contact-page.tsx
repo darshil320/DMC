@@ -299,8 +299,11 @@ export function ContactPageExperience() {
                     <option>Starter website</option>
                     <option>Product catalog</option>
                     <option>Ecommerce store</option>
-                    <option>AI visualizer</option>
-                    <option>Not sure yet</option>
+                    <option>AI chatbot / WhatsApp automation</option>
+                    <option>CRM &amp; lead management</option>
+                    <option>Complete business system</option>
+                    <option>AI room visualizer</option>
+                    <option>Custom / not sure yet</option>
                   </select>
                 </label>
 

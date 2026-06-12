@@ -288,14 +288,14 @@ export function HeroSection() {
               </div>
             </div>
             
-            <div className="flex items-center justify-center h-[40px] w-[40px] md:h-[44px] md:w-[44px] border border-accent bg-accent text-white transition-all group-hover:bg-transparent group-hover:text-accent rounded-md">
+            <div className="relative overflow-hidden flex items-center justify-center h-[40px] w-[40px] md:h-[44px] md:w-[44px] border border-accent bg-accent text-white transition-all group-hover:bg-transparent group-hover:text-accent rounded-md">
               {/* Default Arrow (Diagonal) */}
-              <svg className="block group-hover:hidden size-5" viewBox="0 0 256 256" fill="none" stroke="currentColor" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="absolute size-5 transition-transform duration-500 ease-out group-hover:translate-x-8 group-hover:-translate-y-8" viewBox="0 0 256 256" fill="none" stroke="currentColor" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="64" y1="192" x2="192" y2="64"></line>
                 <polyline points="88 64 192 64 192 168"></polyline>
               </svg>
               {/* Hover Arrow (Right) */}
-              <svg className="hidden group-hover:block size-5" viewBox="0 0 256 256" fill="none" stroke="currentColor" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="absolute size-5 transition-transform duration-500 ease-out -translate-x-8 translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0" viewBox="0 0 256 256" fill="none" stroke="currentColor" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="40" y1="128" x2="216" y2="128"></line>
                 <polyline points="144 56 216 128 144 200"></polyline>
               </svg>

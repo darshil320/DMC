@@ -45,21 +45,14 @@ const AboutUsSection = dynamic(() => import("@/components/sections/about").then(
 const OurWorkSection = dynamic(() => import("@/components/sections/our-work").then(m => m.OurWorkSection), {
   loading: () => <SectionPlaceholder />,
 });
-const DemoPreviewSection = dynamic(() => import("@/components/sections/demo-preview").then(m => m.DemoPreviewSection), {
-  loading: () => <SectionPlaceholder />,
-});
-const AIVisualizerFeatureSection = dynamic(() => import("@/components/sections/ai-visualizer-feature").then(m => m.AIVisualizerFeatureSection), {
-  loading: () => <SectionPlaceholder />,
-});
+
 const ProblemSection = dynamic(() => import("@/components/sections/problem").then(m => m.ProblemSection), {
   loading: () => <SectionPlaceholder />,
 });
 const ServicesSection = dynamic(() => import("@/components/sections/services").then(m => m.ServicesSection), {
   loading: () => <SectionPlaceholder />,
 });
-const FeaturedOfferSection = dynamic(() => import("@/components/sections/featured-offer").then(m => m.FeaturedOfferSection), {
-  loading: () => <SectionPlaceholder />,
-});
+
 const ProcessSection = dynamic(() => import("@/components/sections/process").then(m => m.ProcessSection), {
   loading: () => <SectionPlaceholder />,
 });
@@ -116,10 +109,9 @@ export default function Home() {
           <HeroSection />
           <AboutUsSection />
           <OurWorkSection />
-          <DemoPreviewSection />
-          <AIVisualizerFeatureSection />
+
           <ServicesSection />
-          <FeaturedOfferSection />
+
           <ProcessSection />
           <PricingSection />
           <ProblemSection />

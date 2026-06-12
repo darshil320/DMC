@@ -170,7 +170,7 @@ export function ServicesSection() {
               >
                 {/* Icon + Subtitle row */}
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="size-11 border border-border-harsh flex items-center justify-center bg-bg-card group-hover:bg-accent-lime group-hover:text-accent group-hover:border-accent brutalist-shadow transition-none">
+                  <div className="size-11 border border-border-harsh flex items-center justify-center bg-bg-card group-hover:bg-accent-lime group-hover:text-accent group-hover:border-accent brutalist-shadow group-hover:shadow-none transition-none">
                     <Icon className="size-5" />
                   </div>
                   <span className="text-[9px] font-black tracking-[0.2em] uppercase text-text-muted group-hover:text-white/60">
@@ -218,7 +218,7 @@ export function ServicesSection() {
               >
                 <div className="flex items-start justify-between w-full mb-12">
                   <div
-                    className={`size-10 border border-border-harsh flex items-center justify-center bg-bg-card group-hover:border-accent brutalist-shadow transition-none ${
+                    className={`size-10 border border-border-harsh flex items-center justify-center bg-bg-card group-hover:border-accent brutalist-shadow group-hover:shadow-none transition-none ${
                       service.isNew
                         ? "group-hover:bg-accent group-hover:text-white"
                         : "group-hover:bg-accent-lime group-hover:text-accent"

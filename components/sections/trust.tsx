@@ -3,8 +3,8 @@
 import React from "react";
 
 const STATS = [
-  { value: "200+", label: "LOCAL SHOPS ONLINE" },
-  { value: "14", label: "DAYS TO LAUNCH" },
+  { value: "6+", label: "SYSTEMS SHIPPED" },
+  { value: "10k+", label: "PROCESSES AUTOMATED" },
   { value: "4.9", label: "AVERAGE RATING" },
   { value: "₹0", label: "HIDDEN FEES" },
 ];

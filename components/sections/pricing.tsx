@@ -16,11 +16,11 @@ const formatPrice = (num: number) => {
 const OPTIONS = [
   {
     num: "01",
-    title: "Starter Website",
-    time: "1 - 2 Weeks",
+    title: "Digital Presence",
+    time: "2 - 4 Weeks",
     price: formatPrice(DMC.pricing.starter) + "+",
-    desc: "A streamlined single-page site that tells your complete story, showcases your best work, and guides visitors straight to booking. Perfect for focused offers or launching fast.",
-    tags: ["5-Page Setup", "Mobile Responsive", "Contact Form", "Google Business"],
+    desc: "High-converting custom websites and online catalogs designed to generate leads and sell products. We don't use templates—every pixel is built to position you as the premium option.",
+    tags: ["Custom Website", "Ecommerce Store", "Google Business", "SEO Optimized"],
     graphic: (
       <div className="w-full h-full border border-border-harsh rounded-lg p-2 flex flex-col items-center justify-center relative bg-bg-card">
         <div className="w-px h-full bg-border-harsh absolute top-0" />
@@ -35,11 +35,11 @@ const OPTIONS = [
   },
   {
     num: "02",
-    title: "Online Catalog",
-    time: "2 - 3 Weeks",
-    price: formatPrice(DMC.pricing.catalog) + "+",
-    desc: "Multi-page custom build with strategic structure. Your complete brand experience - portfolio, process, services, and story - all connected to convert traffic into qualified leads.",
-    tags: ["Unlimited Products", "WhatsApp Enquiry", "Product Photos", "2 Revisions"],
+    title: "Business Intelligence",
+    time: "4 - 8 Weeks",
+    price: "Custom Scope",
+    desc: "Stop losing leads to manual follow-ups. We build centralized CRMs and connect them to autonomous WhatsApp AI agents that answer queries, qualify prospects, and book meetings for you 24/7.",
+    tags: ["WhatsApp AI", "Lead CRM", "Automated Follow-ups", "Analytics Dashboard"],
     graphic: (
       <div className="w-full h-full border border-border-harsh rounded-lg p-2 flex flex-col items-center justify-center relative bg-bg-card">
         <div className="w-px h-full bg-border-harsh absolute top-0" />
@@ -53,11 +53,11 @@ const OPTIONS = [
   },
   {
     num: "03",
-    title: "Ecommerce Store",
-    time: "3 - 5 Weeks",
-    price: formatPrice(DMC.pricing.ecommerce) + "+",
-    desc: "A fully functional online store. Accept payments, manage orders, and ship products directly to customers. Built for shops ready to scale their digital footprint.",
-    tags: ["Online Payments", "Order Dashboard", "Shipping Setup", "Customer Accounts"],
+    title: "Complete OS",
+    time: "12+ Weeks",
+    price: "Custom Scope",
+    desc: "The heavy-weight solution for scaling businesses. We architect complete digital operating systems that connect your inventory, staff, retail branches, and digital channels into one unified platform.",
+    tags: ["Custom ERP", "Face Recognition", "Multi-branch Sync", "Total Automation"],
     graphic: (
       <div className="w-full h-full border border-border-harsh rounded-lg p-2 flex items-center justify-center relative bg-bg-card">
         <div className="w-full h-px bg-border-harsh absolute" />
@@ -115,9 +115,9 @@ export function PricingSection() {
                 {/* Time & Graphic (Cols 10-12) */}
                 <div className="lg:col-span-3 flex flex-col items-end gap-6 pt-2 px-4 lg:px-6">
                   <div className="flex flex-col items-end gap-2 text-right">
-                    {/* <span className="font-serif text-2xl lg:text-3xl text-text-primary tracking-tight font-medium">
+                    <span className="font-serif text-2xl lg:text-3xl text-text-primary tracking-tight font-medium">
                       {opt.price}
-                    </span> */}
+                    </span>
                     <div className="flex items-center gap-2 text-text-primary/60 font-medium text-sm">
                       <Clock className="size-4" />
                       {opt.time}

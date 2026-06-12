@@ -6,27 +6,27 @@ import { ArrowRight } from "lucide-react";
 const PROBLEMS = [
   {
     num: "01",
-    issue: "Word of Mouth",
-    solution: "A digital storefront that captures local search traffic.",
-    stats: "78% of local searches lead to offline purchases."
+    issue: "Leaky Pipelines",
+    solution: "Automated WhatsApp flows and CRM that catch every lead.",
+    stats: "80% of sales require 5+ follow-ups."
   },
   {
     num: "02",
-    issue: "Scattered Info",
-    solution: "A centralized hub for your services, pricing, and contact.",
-    stats: "Customers leave if they can't find info in 10 seconds."
+    issue: "Blind Operations",
+    solution: "Centralized dashboards with real-time conversion data.",
+    stats: "You can't scale what you can't measure."
   },
   {
     num: "03",
-    issue: "Manual Enquiries",
-    solution: "Automated WhatsApp flows that qualify leads.",
-    stats: "Save 10+ hours a week on repetitive questions."
+    issue: "Manual Coordination",
+    solution: "ERP systems connecting inventory to sales instantly.",
+    stats: "Stop running your business on WhatsApp groups."
   },
   {
     num: "04",
-    issue: "Generic Templates",
-    solution: "Custom brutalist design that makes you stand out.",
-    stats: "First impressions are 94% design-related."
+    issue: "Disconnected Tools",
+    solution: "One unified operating system tailored to your exact workflow.",
+    stats: "Save hours previously lost to manual data entry."
   }
 ];
 
@@ -41,8 +41,8 @@ export function ProblemSection() {
           <div className="section-tag">
             THE REALITY
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter uppercase max-w-[800px]">
-            RELYING ON JUST WORD OF MOUTH IS A LEAKY BUCKET.
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter uppercase max-w-[900px]">
+            YOU CAN&apos;T SCALE A BUSINESS RUN  ON MANUAL PROCESSES.
           </h2>
         </div>
 
