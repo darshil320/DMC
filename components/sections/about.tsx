@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
 
-const PARAGRAPH = "Most websites just sit there, but yours is about to be the talk of the town. Right now? Your website might be the thing holding you back. It doesn't position you as the premium choice. And every dream client who lands on it... just walks away.";
+const PARAGRAPH = "Every missed DM, every lead that went cold, every customer your team forgot to follow up with — that's revenue walking out the door. Your business runs on relationships, but your systems can't keep up. We build the digital infrastructure that makes sure nothing falls through the cracks.";
 
 function Word({ children, progress, range }: { children: string; progress: any; range: [number, number] }) {
   const opacity = useTransform(progress, range, [0.2, 1]);
@@ -88,7 +88,7 @@ export function AboutUsSection() {
           <div className="lg:col-span-6 flex flex-col gap-4">
             <AnimatedReveal delay={0.1}>
               <p className="text-text-secondary text-base md:text-lg leading-relaxed font-medium">
-                At <span className="text-accent font-bold">DMC</span>, we build the website that captures the full weight of what you've built and tells your full story. We start by mapping your business goals, figuring out the flow, then building the strategy and systems that make it happen.
+                At <span className="text-accent font-bold">DMC</span>, we don&apos;t just build websites — we build the complete system that runs your business. From AI chatbots that answer your customers at 2 AM, to CRMs that track every lead, to dashboards that show you everything on one screen. We start by understanding how your operation actually works, then we digitize it.
               </p>
             </AnimatedReveal>
             <AnimatedReveal delay={0.2}>

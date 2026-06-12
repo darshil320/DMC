@@ -1,7 +1,7 @@
 export const DMC = {
   name: "DMC",
   fullName: "DMC Tech",
-  tagline: "We take local businesses online.",
+  tagline: "We build the systems that run your business.",
   email: "hey@dmctech.in",
   whatsappNumber: "+91 94265 29230",
   whatsappLink: "https://wa.me/919426529230",
