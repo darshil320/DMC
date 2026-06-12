@@ -8,11 +8,13 @@ import {
   SITE_DESCRIPTION,
   SITE_TITLE,
   createSeoMetadata,
+  faqJsonLd,
   organizationJsonLd,
   serviceCatalogJsonLd,
   webPageJsonLd,
   websiteJsonLd,
 } from "@/lib/seo";
+import { FAQ_ITEMS } from "@/lib/content";
 
 export const metadata: Metadata = createSeoMetadata({
   title: SITE_TITLE,
@@ -21,8 +23,12 @@ export const metadata: Metadata = createSeoMetadata({
   keywords: [
     "business website design",
     "local business website India",
-    "AI website tools for furniture stores",
+    "AI chatbot for business India",
+    "custom CRM for SMB",
+    "ERP solutions India",
     "ecommerce website for shops",
+    "WhatsApp AI assistant",
+    "business process automation",
   ],
 });
 
@@ -63,6 +69,9 @@ const PricingSection = dynamic(() => import("@/components/sections/pricing").the
 const TrustSection = dynamic(() => import("@/components/sections/trust").then(m => m.TrustSection), {
   loading: () => <SectionPlaceholder minHeight="30vh" />,
 });
+const FaqSection = dynamic(() => import("@/components/sections/faq").then(m => m.FaqSection), {
+  loading: () => <SectionPlaceholder />,
+});
 const FinalCtaSection = dynamic(() => import("@/components/sections/final-cta").then(m => m.FinalCtaSection), {
   loading: () => <SectionPlaceholder minHeight="30vh" />,
 });
@@ -101,6 +110,7 @@ export default function Home() {
                 name: SITE_TITLE,
                 description: SITE_DESCRIPTION,
               }),
+              faqJsonLd(FAQ_ITEMS),
             ]}
           />
           <HeroSection />
@@ -114,6 +124,7 @@ export default function Home() {
           <PricingSection />
           <ProblemSection />
           <TrustSection />
+          <FaqSection />
           <FinalCtaSection />
         </main>
       </div>

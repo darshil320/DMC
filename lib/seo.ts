@@ -4,9 +4,9 @@ import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
 export const SITE_URL = "https://www.dmctech.in";
 export const SITE_NAME = "DMC Tech";
 export const SITE_TITLE =
-  "DMC Tech | Websites, Ecommerce & AI Visualizers for Local Businesses";
+  "DMC Tech | Websites, AI Chatbots, CRM & Business Systems for SMBs";
 export const SITE_DESCRIPTION =
-  "DMC Tech builds custom websites, ecommerce stores, product catalogs, WhatsApp systems, and AI room visualizers for local businesses in India.";
+  "DMC Tech builds complete digital operating systems for businesses — websites, AI WhatsApp chatbots, CRM, ERP, lead automation, dashboards, and custom solutions across India.";
 export const OG_IMAGE_PATH = "/opengraph-image";
 
 const BASE_KEYWORDS = [
@@ -16,7 +16,12 @@ const BASE_KEYWORDS = [
   "product catalog website",
   "AI room visualizer",
   "WhatsApp automation",
-  "Google Business setup",
+  "AI chatbot for business",
+  "CRM for small business India",
+  "ERP custom solutions",
+  "business process automation",
+  "lead management system",
+  "custom business software India",
   "web design Ahmedabad",
   "web design Gujarat",
   "DMC Tech",
@@ -151,28 +156,42 @@ export function organizationJsonLd() {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Custom website development",
+          name: "Complete business systems and digital operations",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Ecommerce website development",
+          name: "AI WhatsApp chatbots and customer assistants",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "AI room visualizer for furniture stores",
+          name: "CRM and lead management systems",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "WhatsApp automation and product catalog systems",
+          name: "ERP and process automation",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Custom website and ecommerce development",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "AI room visualizer for furniture and décor stores",
         },
       },
     ],
@@ -221,21 +240,27 @@ export function webPageJsonLd({
 
 export function serviceCatalogJsonLd() {
   const services = [
+    "Complete business systems and digital operations",
+    "AI WhatsApp chatbots and customer assistants",
+    "CRM and lead management systems",
+    "ERP and process automation",
     "Business website design and development",
     "Product catalog websites",
     "Ecommerce stores",
     "AI room visualizers",
-    "WhatsApp enquiry systems",
+    "Smart recognition systems",
+    "Dashboards and business analytics",
+    "Custom integrations and API development",
     "Google Business profile setup",
     "Landing pages",
-    "Website maintenance",
+    "Ongoing maintenance and support",
   ];
 
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "@id": `${SITE_URL}/#services`,
-    name: "DMC Tech website and automation services",
+    name: "DMC Tech business systems, AI, and web development services",
     itemListElement: services.map((name, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -260,6 +285,21 @@ export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {
       position: index + 1,
       name: item.name,
       item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function faqJsonLd(items: Array<{ q: string; a: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: a,
+      },
     })),
   };
 }
