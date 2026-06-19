@@ -76,13 +76,14 @@ export function AboutPageContent() {
                 <div className="relative aspect-square w-full max-w-[300px] bg-neutral-200 overflow-hidden group">
                   {/* Placeholder for Darshil's Photo */}
                   <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
+                    src="/assets/darshil.jpg"
                     fill
                     sizes="(max-width: 768px) 100vw, 300px"
-                    className="object-cover grayscale mix-blend-luminosity opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                    quality={100}
+                    className="object-cover object-top scale-[1.2] opacity-100 group-hover:scale-[1.25] transition-all duration-500"
                     alt="Darshil Lashkari"
                   />
-                  <div className="absolute inset-0 bg-accent/10 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-accent/5 mix-blend-multiply group-hover:bg-transparent transition-all duration-500" />
                 </div>
               </div>
               <div className="lg:col-span-8 flex flex-col justify-center gap-6 border-l-0 lg:border-l border-border-harsh/30 lg:pl-12">

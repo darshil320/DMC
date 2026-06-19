@@ -42,7 +42,7 @@ export function ProblemSection() {
             THE REALITY
           </div>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter uppercase max-w-[900px]">
-            YOU CAN&apos;T SCALE A BUSINESS RUN  ON MANUAL PROCESSES.
+            YOU CAN&apos;T SCALE A BUSINESS RUN ON MANUAL PROCESSES.
           </h2>
         </div>
 

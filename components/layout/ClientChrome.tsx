@@ -79,7 +79,7 @@ export function ClientChrome({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
       <SessionProvider>
-        <ReactLenis root options={{ lerp: 0.08, duration: 1.2, smoothWheel: true }}>
+        <ReactLenis root options={{ lerp: 0.10, duration: 1.4, smoothWheel: true, syncTouch: true, touchMultiplier: 1.8, wheelMultiplier: 1.0, infinite: false }}>
           <LenisResizer />
           <SiteMotion />
           <RouteAnalytics />

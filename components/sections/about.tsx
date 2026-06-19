@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
@@ -77,10 +78,10 @@ export function AboutUsSection() {
         {/* Bottom Description */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start px-4 lg:px-6">
           <div className="lg:col-span-3 lg:col-start-3">
-            <img 
-              src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/691df85560dcfc6a761612b1_Finger%20Point%20Right.svg" 
-              loading="lazy" 
-              alt="Finger Point Right" 
+            <img
+              src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/691df85560dcfc6a761612b1_Finger%20Point%20Right.svg"
+              loading="lazy"
+              alt="Finger Point Right"
               className="w-12 h-12 md:w-16 md:h-16 text-text-primary"
               style={{ transform: "rotate(9.7068deg)" }}
             />
@@ -98,6 +99,44 @@ export function AboutUsSection() {
             </AnimatedReveal>
           </div>
         </div>
+
+        {/* Founder Block */}
+        
+        {/* <div className="mt-20 px-4 lg:px-6 border-t border-border-harsh pt-16">
+          <AnimatedReveal>
+            <div className="flex flex-col sm:flex-row items-start gap-8 max-w-[720px]">
+              <div className="relative shrink-0">
+                <div className="absolute -top-2 -left-2 w-full h-full border border-accent pointer-events-none" />
+                <Image
+                  src="/assets/darshil.jpg"
+                  alt="Darshil Lashkari — Founder, DMC Tech"
+                  width={160}
+                  height={213}
+                  className="relative z-10 block object-cover object-top grayscale brightness-90"
+                  style={{ width: 160, height: 213 }}
+                />
+              </div>
+
+              <div className="flex flex-col gap-3 pt-1">
+                <div className="section-tag">BUILT BY</div>
+                <div>
+                  <h3 className="font-display text-3xl md:text-4xl tracking-tighter uppercase text-text-primary leading-none">
+                    Darshil
+                  </h3>
+                  <h3 className="font-display text-3xl md:text-4xl tracking-tighter uppercase text-accent leading-none">
+                    Lashkari
+                  </h3>
+                </div>
+                <p className="text-text-secondary text-sm font-medium uppercase tracking-widest">
+                  Founder — DMC Tech
+                </p>
+                <p className="text-text-secondary text-sm leading-relaxed font-medium max-w-[380px] mt-1">
+                  Builder, systems thinker, and the person who picks up your call. Every project at DMC goes through me personally — from the first brief to the final launch.
+                </p>
+              </div>
+            </div>
+          </AnimatedReveal>
+        </div> */}
 
       </div>
     </section>
