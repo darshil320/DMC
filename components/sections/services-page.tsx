@@ -10,12 +10,13 @@ import {
   ScanFace,
   BarChart3,
   Blocks,
-  ShoppingCart,
   MessageCircle,
   ArrowRight,
   Check,
 } from "lucide-react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
+import { CornerTicks } from "@/components/ui/CornerTicks";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { DMC } from "@/lib/dmc-config";
 
 const SERVICE_BLOCKS = [
@@ -25,16 +26,17 @@ const SERVICE_BLOCKS = [
     num: "01",
     title: "Websites & Ecommerce",
     problem: "Your Instagram is doing the work, but there's nowhere for customers to land, browse, and buy.",
-    solution: "Clean, professional websites and full ecommerce stores — built mobile-first with catalog management, payment integration, and WhatsApp enquiry flows. From a focused 5-page site to a full store with UPI/card payments and order dashboards.",
+    solution: "World-class, professional websites and full ecommerce stores — built mobile-first with catalog management, payment integration, and WhatsApp enquiry flows. From a focused 5-page site to a full store with UPI/card payments and order dashboards.",
     includes: [
       "Business websites & landing pages",
+      "World-class visual design & copy flow",
       "Product catalog with filters & search",
       "Full ecommerce with payment gateway",
       "WhatsApp enquiry on every product",
       "Google Business Profile setup",
       "Mobile-first responsive design",
     ],
-    tags: ["Next.js", "Mobile-First", "UPI/Card Payments", "SEO"],
+    tags: ["World-Class UI", "Next.js", "Mobile-First", "UPI/Card Payments", "SEO"],
     timeline: "1–5 weeks",
     priceHint: "From ₹90,000",
   },
@@ -163,6 +165,9 @@ export function ServicesPageContent() {
             <p className="text-text-secondary text-base md:text-lg font-medium max-w-[560px] mt-8 leading-relaxed">
               From a single website to a complete operating system with AI chatbots, CRM, dashboards, and process automation. Every project is custom-built around how your business actually works.
             </p>
+            <div className="mt-8 inline-flex border border-accent bg-accent-lime px-4 py-2 font-pixel text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-accent brutalist-shadow">
+              Let&apos;s build you a world-class website.
+            </div>
           </AnimatedReveal>
 
           {/* Service Blocks */}
@@ -171,13 +176,14 @@ export function ServicesPageContent() {
               const Icon = service.icon;
               return (
                 <AnimatedReveal key={service.id} delay={idx * 0.05}>
-                  <div className="border-t border-border-harsh py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 group">
+                  <div className="group relative grid grid-cols-1 gap-8 overflow-hidden border-t border-border-harsh py-12 md:gap-12 md:py-16 lg:grid-cols-12">
+                    <CornerTicks tone="accent" />
 
                     {/* Left: Number, Icon, Title */}
                     <div className="lg:col-span-4 flex flex-col gap-4 px-4 lg:px-6">
                       <div className="flex items-center gap-3">
-                        <span className="font-display font-bold text-xs text-text-muted">{service.num}</span>
-                        <div className="size-10 border border-border-harsh bg-bg-card flex items-center justify-center group-hover:bg-accent group-hover:text-white group-hover:border-accent transition-colors duration-200">
+                        <span className="font-display text-xs font-bold text-text-muted transition-colors group-hover:text-accent">{service.num}</span>
+                        <div className="flex size-10 items-center justify-center border border-border-harsh bg-bg-card transition-colors duration-200 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
                           <Icon className="size-5" />
                         </div>
                       </div>
@@ -239,29 +245,33 @@ export function ServicesPageContent() {
           <AnimatedReveal className="mt-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 px-4 lg:px-6">
             <div>
               <h3 className="text-2xl md:text-3xl font-medium tracking-tighter text-text-primary uppercase">
-                Which system does your business need?
+                Let&apos;s build you a world-class website.
               </h3>
               <p className="text-text-secondary text-sm font-medium mt-2 max-w-[400px]">
-                Tell us what you&apos;re trying to solve. We&apos;ll scope the right system and give you a clear timeline and price.
+                Start with a sharp, premium website, then connect the systems your business needs to convert and scale.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={DMC.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-accent text-white border border-accent px-6 py-3.5 text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-accent-lime hover:text-accent hover:border-accent hover:shadow-none transition-colors brutalist-shadow"
-              >
-                <MessageCircle className="size-4" />
-                WhatsApp Us
-              </a>
-              <Link
-                href="/contact"
-                className="bg-transparent text-text-primary border border-border-harsh px-6 py-3.5 text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-accent hover:text-white hover:border-accent transition-colors"
-              >
-                Send a Message
-                <ArrowRight className="size-3.5" />
-              </Link>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <MagneticButton strength={8}>
+                <a
+                  href={DMC.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 border border-accent bg-accent px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-accent hover:bg-accent-lime hover:text-accent hover:shadow-none brutalist-shadow"
+                >
+                  <MessageCircle className="size-4 transition-transform group-hover:scale-110" />
+                  WhatsApp Us
+                </a>
+              </MagneticButton>
+              <MagneticButton strength={8}>
+                <Link
+                  href="/contact"
+                  className="group flex items-center gap-2 border border-border-harsh bg-transparent px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-text-primary transition-colors hover:border-accent hover:bg-accent hover:text-white"
+                >
+                  Send a Message
+                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </MagneticButton>
             </div>
           </AnimatedReveal>
 

@@ -62,7 +62,7 @@ export function UWHeroV2() {
       {/* Base image */}
       <Image
         ref={imageRef}
-        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1980&q=100"
+        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1280&q=80"
         alt="Modern Office Furniture Concept"
         fill
         priority

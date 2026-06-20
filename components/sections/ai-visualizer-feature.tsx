@@ -4,6 +4,7 @@ import React, { useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { Sparkles, ArrowRight } from "lucide-react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 const BEFORE_IMG = "/assets/before.jpeg";
 const AFTER_IMG  = "/assets/after.png";
@@ -177,9 +178,10 @@ export function AIVisualizerFeatureSection() {
                   data-premium-card="false"
                   className={`p-6 md:p-8 bg-bg-card flex flex-col gap-1 ${i < 2 ? "border-r border-black/20" : ""}`}
                 >
-                  <span className="text-3xl md:text-4xl font-black text-accent tracking-tighter leading-none font-display">
-                    {s.num}
-                  </span>
+                  <AnimatedCounter
+                    value={s.num}
+                    className="text-3xl md:text-4xl font-black text-accent tracking-tighter leading-none font-display"
+                  />
                   <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-text-muted">
                     {s.desc}
                   </span>

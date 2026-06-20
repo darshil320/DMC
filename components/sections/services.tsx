@@ -79,7 +79,7 @@ const SERVICES = [
     icon: Globe,
     title: "Business Websites",
     description:
-      "Clean, professional websites that represent your shop online and convert visitors into enquiries.",
+      "World-class, conversion-focused websites that make your business look premium and turn visitors into enquiries.",
   },
   {
     icon: LayoutGrid,
@@ -169,12 +169,15 @@ export function ServicesSection() {
                 className="group p-8 md:p-10 border-b border-r border-border-harsh flex flex-col items-start bg-bg-page hover:bg-accent transition-colors duration-0"
               >
                 {/* Icon + Subtitle row */}
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-6 w-full">
                   <div className="size-11 border border-border-harsh flex items-center justify-center bg-bg-card group-hover:bg-accent-lime group-hover:text-accent group-hover:border-accent brutalist-shadow group-hover:shadow-none transition-none">
                     <Icon className="size-5" />
                   </div>
                   <span className="text-[9px] font-black tracking-[0.2em] uppercase text-text-muted group-hover:text-white/60">
                     {service.subtitle}
+                  </span>
+                  <span className="ml-auto font-display text-2xl md:text-3xl font-black leading-none tabular-nums text-border-subtle group-hover:text-white/30 transition-none">
+                    0{idx + 1}
                   </span>
                 </div>
 

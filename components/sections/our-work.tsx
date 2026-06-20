@@ -5,7 +5,22 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { Bot, ScanFace, BarChart3, Users, Zap, MessageCircle } from "lucide-react";
+
+/** Accent corner ticks that scale in on card hover. */
+function CornerTicks() {
+  const base =
+    "absolute w-2.5 h-2.5 border-accent-lime opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-out pointer-events-none z-30";
+  return (
+    <>
+      <span className={`${base} top-3 left-3 border-t-2 border-l-2`} />
+      <span className={`${base} top-3 right-3 border-t-2 border-r-2`} />
+      <span className={`${base} bottom-3 left-3 border-b-2 border-l-2`} />
+      <span className={`${base} bottom-3 right-3 border-b-2 border-r-2`} />
+    </>
+  );
+}
 
 export function OurWorkSection() {
   return (
@@ -41,21 +56,25 @@ export function OurWorkSection() {
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 transition-opacity duration-500"
+                className="object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 transition-all duration-500 ease-out group-hover:scale-[1.025]"
                 alt="Furniture Concept 2.0 Showroom"
               />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
 
-              {/* Live Demo badge */}
-              <span className="absolute top-6 left-6 z-20 bg-accent-lime text-accent px-3 py-1.5 font-pixel font-bold uppercase tracking-widest text-[10px] brutalist-shadow border border-accent flex items-center gap-2 group-hover:bg-white group-hover:text-black transition-colors">
-                VIEW LIVE DEMO <ThinArrowUpRight />
-              </span>
+              <CornerTicks />
 
-              <span className="relative z-10 font-serif text-white text-2xl md:text-4xl font-medium tracking-tight">
+              {/* Live Demo badge */}
+              <MagneticButton strength={8} className="absolute top-6 left-6 z-20">
+                <span className="bg-accent-lime text-accent px-3 py-1.5 font-pixel font-bold uppercase tracking-widest text-[10px] brutalist-shadow border border-accent flex items-center gap-2 group-hover:bg-white group-hover:text-black transition-colors">
+                  VIEW LIVE DEMO <ThinArrowUpRight />
+                </span>
+              </MagneticButton>
+
+              <span className="relative z-10 font-serif text-white text-2xl md:text-4xl font-medium tracking-tight transition-transform duration-700 ease-out group-hover:-translate-y-1">
                 Furniture Concept 2.0
               </span>
 
-              <div className="absolute bottom-4 right-4 z-20 text-white/60 group-hover:text-white transition-colors">
+              <div className="absolute bottom-4 right-4 z-20 text-white/60 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
                 <ThinArrowUpRight className="size-5" />
               </div>
             </a>
@@ -87,6 +106,7 @@ export function OurWorkSection() {
           <div className="border-b border-r border-border-harsh flex flex-col">
             {/* Abstract visual area */}
             <div className="relative overflow-hidden bg-bg-dark min-h-[320px] md:min-h-[400px] flex flex-col items-center justify-center p-8 group">
+              <CornerTicks />
               {/* Grid pattern */}
               <div className="absolute inset-0 opacity-[0.08]" style={{
                 backgroundImage: "linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)",

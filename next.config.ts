@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
       "motion",
       "@tabler/icons-react",
       "lucide-react",
+      "@react-three/drei",
+      "@react-three/fiber",
+      "three",
     ],
   },
 
@@ -30,26 +33,44 @@ const nextConfig: NextConfig = {
   },
 
   async headers() {
+    const serviceWorkerCleanupHeaders = {
+      source: "/service-worker.js",
+      headers: [
+        { key: "Cache-Control", value: "no-store, no-cache, must-revalidate, proxy-revalidate" },
+        { key: "Service-Worker-Allowed", value: "/" },
+      ],
+    };
+
+    const securityHeaders = {
+      source: "/:path*",
+      headers: [
+        { key: "X-Content-Type-Options", value: "nosniff" },
+        { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      ],
+    };
+
+    if (process.env.NODE_ENV !== "production") {
+      return [
+        serviceWorkerCleanupHeaders,
+        {
+          ...securityHeaders,
+          headers: [
+            ...securityHeaders.headers,
+            { key: "Clear-Site-Data", value: '"cache"' },
+          ],
+        },
+      ];
+    }
+
     return [
-      {
-        source: "/_next/static/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
-      },
+      serviceWorkerCleanupHeaders,
       {
         source: "/:all*(woff2|woff|ttf|otf)",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
-      {
-        source: "/:path*",
-        headers: [
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-        ],
-      },
+      securityHeaders,
     ];
   },
 };

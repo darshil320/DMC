@@ -16,12 +16,12 @@ export function FeaturedOfferSection() {
           </div>
           
           <h2 className="text-4xl md:text-6xl font-medium uppercase tracking-tighter leading-none text-white mb-6">
-            THE ONLINE <br />
-            CATALOG.
+            THE WEBSITE <br />
+            THAT SELLS.
           </h2>
           
           <p className="text-white text-base md:text-lg max-w-[400px] font-medium mb-12">
-            The perfect starting point for retail stores and furniture shops. Get your entire inventory online with direct WhatsApp ordering in 14 days.
+            A world-class starting point for retail stores and furniture shops. Get a premium website with your inventory online and direct WhatsApp ordering in 14 days.
           </p>
 
           <div className="font-display text-5xl md:text-6xl text-accent-lime font-bold mb-2">
@@ -34,6 +34,7 @@ export function FeaturedOfferSection() {
         <div className="p-6 md:p-12 lg:p-20 bg-bg-page flex flex-col justify-center">
           <ul className="flex flex-col border-t border-border-harsh">
             {[
+              "World-Class Website Design",
               "Unlimited Products & Categories",
               "WhatsApp Enquiry on Every Product",
               "Custom Domain & Hosting Setup",

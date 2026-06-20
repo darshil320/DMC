@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { FAQ_ITEMS } from "@/lib/content";
 
@@ -16,6 +17,7 @@ function FaqItem({
   isOpen: boolean;
   onToggle: () => void;
 }) {
+  const reduceMotion = useReducedMotion();
   return (
     <AnimatedReveal delay={index * 0.04}>
       <div className="border-b border-border-harsh">
@@ -33,21 +35,32 @@ function FaqItem({
             </span>
           </div>
           <div className="shrink-0 size-7 border border-border-harsh flex items-center justify-center bg-bg-card group-hover:bg-accent group-hover:border-accent transition-colors mt-0.5">
-            {isOpen ? (
-              <Minus className="size-3.5 text-text-primary group-hover:text-white transition-colors" />
-            ) : (
-              <Plus className="size-3.5 text-text-primary group-hover:text-white transition-colors" />
-            )}
+            <Plus
+              className={`size-3.5 text-text-primary group-hover:text-white transition-transform duration-300 ${
+                isOpen ? "rotate-[135deg]" : "rotate-0"
+              }`}
+            />
           </div>
         </button>
 
-        {isOpen && (
-          <div className="pl-9 pb-6">
-            <p className="text-sm md:text-base text-text-secondary leading-relaxed font-medium max-w-[680px]">
-              {item.a}
-            </p>
-          </div>
-        )}
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              key="content"
+              initial={reduceMotion ? false : { height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={reduceMotion ? undefined : { height: 0, opacity: 0 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="overflow-hidden"
+            >
+              <div className="pl-9 pb-6">
+                <p className="text-sm md:text-base text-text-secondary leading-relaxed font-medium max-w-[680px]">
+                  {item.a}
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </AnimatedReveal>
   );

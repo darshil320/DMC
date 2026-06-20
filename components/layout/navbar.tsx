@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
@@ -8,6 +8,7 @@ import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/lib/theme";
 import { analytics } from "@/lib/analytics";
 import { SOCIAL_LINKS } from "@/lib/dmc-config";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 const NAV_LINKS = [
   { num: "01", label: "HOME", href: "/" },
@@ -49,7 +50,9 @@ export function Navbar() {
   const prefersReducedMotion = useReducedMotion();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // Kept in a ref so scrolling never triggers a navbar re-render — setVisible
+  // only fires on an actual show/hide flip (React bails out on equal values).
+  const lastScrollY = useRef(0);
   const [archiveName, setArchiveName] = useState("");
   const [archiveEmail, setArchiveEmail] = useState("");
   const [archiveError, setArchiveError] = useState("");
@@ -80,24 +83,18 @@ export function Navbar() {
       // Always show at the top of the page
       if (currentScrollY < 120) {
         setVisible(true);
-        setLastScrollY(currentScrollY);
+        lastScrollY.current = currentScrollY;
         return;
       }
 
-      if (currentScrollY > lastScrollY) {
-        // Scrolling down: hide navbar
-        setVisible(false);
-      } else {
-        // Scrolling up: show navbar
-        setVisible(true);
-      }
-
-      setLastScrollY(currentScrollY);
+      // Hide when scrolling down, show when scrolling up
+      setVisible(currentScrollY <= lastScrollY.current);
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, isMenuOpen]);
+  }, [isMenuOpen]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -161,13 +158,15 @@ export function Navbar() {
       >
         <div className="max-w-[1440px] mx-auto flex items-start justify-between pointer-events-auto">
           {/* Left - Logo (Lime green box, dotted text) */}
-          <Link
-            href="/"
-            onClick={closeMenu}
-            className="group bg-accent-lime border border-accent px-4 py-2 brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
-          >
-            <span className="font-display text-2xl tracking-widest text-accent font-bold">DMC</span>
-          </Link>
+          <MagneticButton strength={6}>
+            <Link
+              href="/"
+              onClick={closeMenu}
+              className="group inline-block bg-accent-lime border border-accent px-4 py-2 brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+            >
+              <span className="font-display text-2xl tracking-widest text-accent font-bold">DMC</span>
+            </Link>
+          </MagneticButton>
 
           {/* Right - Status, Dark Mode Toggle & Menu Button */}
           <div className="flex flex-row-reverse items-center gap-2 sm:translate-x-0 sm:flex-row sm:gap-4">
@@ -285,7 +284,7 @@ export function Navbar() {
                           href={social.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm font-medium text-white hover:text-accent-lime flex items-center gap-2 w-fit"
+                          className="link-underline text-sm font-medium text-white hover:text-accent-lime flex items-center gap-2 w-fit"
                         >
                           <span className="border border-white/40 px-1 py-0.5 text-[9px] font-bold">{social.shortLabel}</span>
                           {social.label.toUpperCase()}
@@ -297,7 +296,7 @@ export function Navbar() {
                   {/* Email */}
                   <div className="flex min-w-0 flex-col gap-2">
                     <span className="font-pixel font-bold text-accent-lime uppercase tracking-widest">E-Mail</span>
-                    <a href="mailto:hey@dmctech.in" className="inline-block w-max max-w-full whitespace-nowrap text-[clamp(10px,0.78vw,12px)] font-medium leading-none text-white hover:text-accent-lime uppercase tracking-[0.08em]">
+                    <a href="mailto:hey@dmctech.in" className="link-underline inline-block w-max max-w-full whitespace-nowrap text-[clamp(10px,0.78vw,12px)] font-medium leading-none text-white hover:text-accent-lime uppercase tracking-[0.08em]">
                       [HEY@DMCTECH.IN]
                     </a>
                   </div>

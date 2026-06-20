@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "motion/react";
 import { STYLES } from "@/lib/uw-content";
 
 const STYLE_IMAGES = [
-  "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=100",
-  "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=400&q=100",
-  "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&q=100",
-  "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=400&q=100",
-  "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&q=100",
+  "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80",
+  "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=400&q=80",
+  "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&q=80",
+  "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=400&q=80",
+  "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&q=80",
 ];
 
 const SIDE_OFFSETS = [0, -20, 10, -30, 15];
@@ -69,6 +69,8 @@ export function UWStyleList() {
               <img
                 src={STYLE_IMAGES[active]}
                 alt={STYLES[active]}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>

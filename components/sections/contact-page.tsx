@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ArrowUpRight, Mail, MessageCircle, Send, Sparkles } from "lucide-react";
+import { CornerTicks } from "@/components/ui/CornerTicks";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { DMC } from "@/lib/dmc-config";
 import { analytics } from "@/lib/analytics";
 
@@ -23,7 +25,7 @@ const initialFormState: ContactFormState = {
   email: "",
   company: "",
   project: "",
-  budget: "Starter website",
+  budget: "World-class business website",
 };
 
 function ContactMarquee() {
@@ -245,7 +247,8 @@ export function ContactPageExperience() {
 
         <div className="relative mx-auto grid min-h-[calc(100svh-7rem)] w-full max-w-[1440px] grid-cols-1 gap-10 lg:grid-cols-12 lg:pt-24">
           <div className="relative z-30 lg:col-span-5 lg:col-start-7 xl:col-span-5 xl:col-start-8 lg:mt-[260px] lg:pb-12">
-            <div data-contact-form className="bg-emerald-950 px-6 py-8 md:p-8 lg:p-12">
+            <div data-contact-form className="group relative overflow-hidden bg-emerald-950 px-6 py-8 md:p-8 lg:p-12">
+              <CornerTicks tone="white" />
               <div data-contact-field className="mb-10 flex items-start justify-between gap-4">
                 <h1
                   className="max-w-[480px] text-[44px] uppercase leading-[0.95] text-white md:text-[56px] lg:text-[56px] font-display tracking-tighter"
@@ -296,6 +299,7 @@ export function ContactPageExperience() {
                     onChange={updateField("budget")}
                     className="mt-3 w-full bg-transparent text-base text-white outline-none focus:text-emerald-100 [&>option]:bg-emerald-950"
                   >
+                    <option>World-class business website</option>
                     <option>Starter website</option>
                     <option>Product catalog</option>
                     <option>Ecommerce store</option>
@@ -320,38 +324,43 @@ export function ContactPageExperience() {
                 </label>
 
                 <div data-contact-field className="flex flex-col gap-3 pt-3 sm:flex-row">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting || isSuccess}
-                    className="inline-flex h-12 items-center justify-center gap-3 border border-[#f2e4d0] bg-[#f2e4d0] px-5 text-sm font-black uppercase tracking-[0.16em] text-[#123f36] transition-colors hover:bg-white disabled:opacity-70 disabled:cursor-not-allowed"
-                  >
-                    <Send className="size-4" />
-                    {isSubmitting ? "Sending..." : isSuccess ? "Sent Successfully" : "Send message"}
-                  </button>
-                  <a
-                    href={whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => analytics.whatsappClick()}
-                    className="inline-flex h-12 items-center justify-center gap-3 border border-white/30 px-5 text-sm font-black uppercase tracking-[0.16em] text-white transition-colors hover:border-[#f2e4d0] hover:text-[#f2e4d0]"
-                  >
-                    <MessageCircle className="size-4" />
-                    WhatsApp
-                  </a>
+                  <MagneticButton strength={8} className="w-full sm:w-auto">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting || isSuccess}
+                      className="group/submit inline-flex h-12 w-full items-center justify-center gap-3 border border-[#f2e4d0] bg-[#f2e4d0] px-5 text-sm font-black uppercase tracking-[0.16em] text-[#123f36] transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-70"
+                    >
+                      <Send className="size-4 transition-transform group-hover/submit:translate-x-0.5 group-hover/submit:-translate-y-0.5" />
+                      {isSubmitting ? "Sending..." : isSuccess ? "Sent Successfully" : "Send message"}
+                    </button>
+                  </MagneticButton>
+                  <MagneticButton strength={8} className="w-full sm:w-auto">
+                    <a
+                      href={whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => analytics.whatsappClick()}
+                      className="group/whatsapp inline-flex h-12 w-full items-center justify-center gap-3 border border-white/30 px-5 text-sm font-black uppercase tracking-[0.16em] text-white transition-colors hover:border-[#f2e4d0] hover:text-[#f2e4d0]"
+                    >
+                      <MessageCircle className="size-4 transition-transform group-hover/whatsapp:scale-110" />
+                      WhatsApp
+                    </a>
+                  </MagneticButton>
                 </div>
               </form>
             </div>
 
-            <div data-contact-footer className="mt-8 grid gap-4 border border-border-subtle bg-bg-card p-5 text-sm text-text-secondary sm:grid-cols-2">
+            <div data-contact-footer className="group relative mt-8 grid gap-4 overflow-hidden border border-border-subtle bg-bg-card p-5 text-sm text-text-secondary sm:grid-cols-2">
+              <CornerTicks tone="accent" />
               <a href={`mailto:${DMC.email}`} className="group flex items-center justify-between gap-4 hover:text-text-primary">
                 <span className="flex min-w-0 items-center gap-3">
                   <Mail className="size-4 shrink-0 text-accent" />
-                  <span className="truncate">{DMC.email}</span>
+                  <span className="link-underline truncate">{DMC.email}</span>
                 </span>
                 <ArrowUpRight className="size-4 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
               <Link href="/" className="group flex items-center justify-between gap-4 hover:text-text-primary">
-                <span>Back to home</span>
+                <span className="link-underline">Back to home</span>
                 <ArrowUpRight className="size-4 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>

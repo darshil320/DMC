@@ -83,6 +83,21 @@
   --font-body: var(--font-inter), sans-serif;
 }
 
+/* ─── Motion + Depth Design Tokens ─── */
+:root {
+  /* Brutalist easing curves */
+  --ease-brutal: cubic-bezier(0.16, 1, 0.3, 1);   /* expo-out, snappy settle */
+  --ease-power: cubic-bezier(0.65, 0, 0.35, 1);    /* in-out for transitions */
+  --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);  /* subtle overshoot */
+
+  /* Layered hard-shadow depth scale (sharp, on-brand) */
+  --shadow-brutal-xs: 2px 2px 0 var(--border-harsh);
+  --shadow-brutal-sm: 4px 4px 0 var(--border-harsh);
+  --shadow-brutal-md: 6px 6px 0 var(--border-harsh);
+  --shadow-brutal-lg: 8px 8px 0 var(--border-harsh);
+  --shadow-brutal-accent: 5px 5px 0 var(--accent);
+}
+
 /* ─── Base Styles ─── */
 html {
   scroll-behavior: auto; /* Lenis owns smooth scroll */
@@ -237,18 +252,20 @@ a, button, input, select, textarea,
     will-change: auto;
   }
 
+  /* NOTE: no persistent `will-change` here — these attributes are stamped onto
+     every link/button/card/image site-wide by SiteMotion, and a permanent
+     will-change would promote a compositor layer per element (large memory +
+     paint cost). The transforms are small and animate fine without the hint. */
   [data-premium-interaction="true"] {
     transition-property: color, background-color, border-color, box-shadow, opacity, filter, transform;
     transition-duration: 320ms;
     transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform;
   }
 
   [data-premium-card="true"] {
     transition-property: color, background-color, border-color, box-shadow, filter, transform;
     transition-duration: 420ms;
     transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform;
   }
 
   [data-premium-media="true"] {
@@ -256,7 +273,6 @@ a, button, input, select, textarea,
       filter 520ms cubic-bezier(0.16, 1, 0.3, 1),
       opacity 520ms cubic-bezier(0.16, 1, 0.3, 1),
       transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform;
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -287,4 +303,140 @@ a, button, input, select, textarea,
 [data-premium-interaction="true"]:focus-visible {
   outline: 1px solid var(--accent-lime);
   outline-offset: 4px;
+}
+
+/* ─── Film Grain Texture (brutalist tactility) ─── */
+/* No `mix-blend-mode`: a fixed full-viewport blended layer forces the compositor
+   to re-blend on every scroll frame. Plain low-opacity alpha keeps the texture
+   while compositing cheaply on the GPU. */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.04;
+  transform: translateZ(0);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+.dark .grain-overlay {
+  opacity: 0.06;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain-overlay { display: none; }
+}
+
+/* ─── Scroll Progress Bar ─── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: 0 50%;
+  background: var(--accent);
+  z-index: 9997;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ─── Animated Link Underline ─── */
+@media (prefers-reduced-motion: no-preference) {
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 380ms var(--ease-brutal);
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}
+
+/* ─── Accent Sweep (cards / buttons) ─── */
+@media (prefers-reduced-motion: no-preference) {
+  .hover-sweep {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hover-sweep::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--accent);
+    transform: translateY(101%);
+    transition: transform 420ms var(--ease-brutal);
+  }
+  .hover-sweep:hover::before {
+    transform: translateY(0);
+  }
+}
+
+/* ─── Tilt Card (CSS 3D, sharp edges preserved) ─── */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 200ms var(--ease-brutal);
+    will-change: transform;
+  }
+  .tilt-card__lift {
+    transform: translateZ(40px);
+    transform-style: preserve-3d;
+  }
+}
+
+/* ─── Generic fade-in (for lazy-mounted canvases / media) ─── */
+@keyframes dmc-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: dmc-fade-in 1000ms var(--ease-brutal) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in { animation: none; }
+}
+
+/* ─── Floating decor squares ─── */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes dmc-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-22px) rotate(8deg); }
+  }
+  .float-decor {
+    animation: dmc-float var(--float-duration, 9s) ease-in-out infinite;
+    will-change: transform;
+  }
+}
+
+/* ─── Marquee (reusable) ─── */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-duration, 28s) linear infinite;
+  will-change: transform;
+}
+.marquee-track[data-direction="reverse"] {
+  animation-direction: reverse;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
 }

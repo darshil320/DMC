@@ -57,16 +57,22 @@ export function UWAbout() {
             <img
               src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=300&q=80"
               alt="Showroom interior"
+              loading="lazy"
+              decoding="async"
               className="rounded-2xl object-cover w-full h-56"
             />
             <img
               src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=300&q=80"
               alt="Furniture craftsmanship"
+              loading="lazy"
+              decoding="async"
               className="rounded-2xl object-cover w-full h-56 mt-8"
             />
             <img
               src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
               alt="Woodworking workshop"
+              loading="lazy"
+              decoding="async"
               className="rounded-2xl object-cover w-full h-40 col-span-2"
             />
           </motion.div>

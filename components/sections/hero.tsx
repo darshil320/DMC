@@ -1,9 +1,18 @@
 "use client";
 
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import gsap from "gsap";
 import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
 import { EncryptedText } from "@/components/ui/encrypted-text";
+import { MagneticButton } from "@/components/ui/MagneticButton";
+import { usePremiumMotion } from "@/lib/hooks/use-environment";
+
+// Heavy WebGL scene — loaded only on desktop/fine-pointer/motion-allowed and
+// only after the intro, so it never touches the mobile bundle or first paint.
+const HeroBackdrop = dynamic(() => import("@/components/three/HeroBackdrop"), {
+  ssr: false,
+});
 
 const HEADING_STYLE = {
   fontSize: "clamp(48px, 11vw, 150px)",
@@ -15,7 +24,28 @@ const HEADING_CLASSNAME = "text-text-primary uppercase leading-[1.05] md:leading
 
 export function HeroSection() {
   const [hoverKey, setHoverKey] = useState(0);
+  const [show3D, setShow3D] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
+  const premiumMotion = usePremiumMotion();
+
+  // Defer mounting the 3D backdrop until the intro has played, so it never
+  // competes with the GSAP headline reveal or the loader hand-off.
+  useEffect(() => {
+    if (!premiumMotion) return;
+    const reveal = () => setShow3D(true);
+
+    if (document.querySelector("[data-brutalist-loader]")) {
+      window.addEventListener("dmc:loader-complete", reveal, { once: true });
+      const fallback = window.setTimeout(reveal, 1600);
+      return () => {
+        window.removeEventListener("dmc:loader-complete", reveal);
+        window.clearTimeout(fallback);
+      };
+    }
+
+    const timer = window.setTimeout(reveal, 500);
+    return () => window.clearTimeout(timer);
+  }, [premiumMotion]);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
@@ -214,6 +244,13 @@ export function HeroSection() {
   return (
     <section ref={sectionRef} id="home" className="relative min-h-[100svh] flex flex-col justify-between pt-28 lg:pt-32 pb-6 px-6 md:px-12 lg:px-16 bg-transparent select-none overflow-visible">
 
+      {/* ── 3D wireframe backdrop (desktop only, post-intro) ── */}
+      {show3D && (
+        <div className="absolute inset-0 -z-0 animate-fade-in pointer-events-none">
+          <HeroBackdrop />
+        </div>
+      )}
+
       {/* ── Centered headline block ── */}
       <div className="flex-1 flex flex-col items-center justify-center w-full max-w-[1440px] mx-auto relative z-10">
 
@@ -271,7 +308,11 @@ export function HeroSection() {
         </div>
 
         {/* ── CTA Button ── */}
-        <div data-hero-cta className="mt-10 md:mt-12 flex items-center justify-center relative z-20">
+        <div data-hero-cta className="mt-10 md:mt-12 flex flex-col items-center justify-center gap-4 relative z-20">
+          <span className="border border-accent bg-accent-lime px-4 py-2 font-pixel text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-accent brutalist-shadow">
+            Let&apos;s build you a world-class website.
+          </span>
+          <MagneticButton strength={10}>
           <a
             href="/contact"
             className="group flex items-center gap-2 cursor-pointer"
@@ -304,6 +345,7 @@ export function HeroSection() {
               </svg>
             </div>
           </a>
+          </MagneticButton>
         </div>
       </div>
 

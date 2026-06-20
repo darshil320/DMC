@@ -15,6 +15,9 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
+import { CornerTicks } from "@/components/ui/CornerTicks";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
 import { DMC } from "@/lib/dmc-config";
 
@@ -43,6 +46,7 @@ export function WorkPageContent() {
                 href="/demo/furniture-concept-2.0"
                 className="relative block overflow-hidden bg-neutral-200 min-h-[300px] md:min-h-[420px] group cursor-pointer"
               >
+                <CornerTicks tone="lime" />
                 <Image
                   src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80"
                   fill
@@ -52,11 +56,13 @@ export function WorkPageContent() {
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors duration-500" />
 
-                <span className="absolute top-6 left-6 z-20 bg-accent-lime text-accent px-3 py-1.5 font-pixel font-bold uppercase tracking-widest text-[10px] brutalist-shadow border border-accent flex items-center gap-2 group-hover:bg-white group-hover:text-black transition-colors">
-                  VIEW LIVE DEMO <ThinArrowUpRight />
-                </span>
+                <MagneticButton strength={8} className="absolute left-6 top-6 z-20">
+                  <span className="flex items-center gap-2 border border-accent bg-accent-lime px-3 py-1.5 font-pixel text-[10px] font-bold uppercase tracking-widest text-accent transition-colors group-hover:bg-white group-hover:text-black brutalist-shadow">
+                    VIEW LIVE DEMO <ThinArrowUpRight />
+                  </span>
+                </MagneticButton>
 
-                <div className="absolute bottom-6 left-6 z-10">
+                <div className="absolute bottom-6 left-6 z-10 transition-transform duration-700 ease-out group-hover:-translate-y-1">
                   <span className="text-white font-serif text-3xl md:text-5xl font-medium tracking-tight">
                     Furniture Concept 2.0
                   </span>
@@ -77,7 +83,7 @@ export function WorkPageContent() {
                   </div>
                   <div>
                     <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">TIMELINE</span>
-                    <span className="text-sm font-medium text-text-primary">3 Weeks</span>
+                    <AnimatedCounter value="3 Weeks" className="text-sm font-medium text-text-primary" />
                   </div>
                   <div>
                     <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">TYPE</span>
@@ -114,13 +120,15 @@ export function WorkPageContent() {
                     </div>
                   </div>
 
-                  <a
-                    href="/demo/furniture-concept-2.0"
-                    className="mt-auto bg-accent text-white border border-accent px-5 py-3 text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-accent-lime hover:text-accent transition-colors brutalist-shadow w-full md:w-fit"
-                  >
-                    <ExternalLink className="size-3.5" />
-                    View Live Demo
-                  </a>
+                  <MagneticButton strength={8} className="mt-auto w-full md:w-fit">
+                    <a
+                      href="/demo/furniture-concept-2.0"
+                      className="group flex w-full items-center justify-center gap-2 border border-accent bg-accent px-5 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-accent-lime hover:text-accent brutalist-shadow md:w-fit"
+                    >
+                      <ExternalLink className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      View Live Demo
+                    </a>
+                  </MagneticButton>
                 </div>
               </div>
             </article>
@@ -130,7 +138,8 @@ export function WorkPageContent() {
           <AnimatedReveal delay={0.1}>
             <article className="border border-border-harsh mb-16">
               {/* Abstract Visual */}
-              <div className="relative overflow-hidden bg-bg-dark min-h-[300px] md:min-h-[420px] flex flex-col items-center justify-center p-8">
+              <div className="group relative flex min-h-[300px] flex-col items-center justify-center overflow-hidden bg-bg-dark p-8 md:min-h-[420px]">
+                <CornerTicks tone="white" />
                 <div className="absolute inset-0 opacity-[0.06]" style={{
                   backgroundImage: "linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)",
                   backgroundSize: "40px 40px"
@@ -181,7 +190,9 @@ export function WorkPageContent() {
                   </div>
                   <div>
                     <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">SCOPE</span>
-                    <span className="text-sm font-medium text-text-primary">6 Modules · 22 Weeks</span>
+                    <span className="text-sm font-medium text-text-primary">
+                      <AnimatedCounter value="6 Modules" /> · <AnimatedCounter value="22 Weeks" />
+                    </span>
                   </div>
                   <div>
                     <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">TYPE</span>
@@ -242,29 +253,33 @@ export function WorkPageContent() {
             <div className="border border-accent bg-accent p-8 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div>
                 <h3 className="text-2xl md:text-4xl font-medium tracking-tighter text-white uppercase">
-                  Your project could be next.
+                  Let&apos;s build you a world-class website.
                 </h3>
                 <p className="text-white/80 text-sm md:text-base font-medium mt-3 max-w-[420px]">
-                  Whether it&apos;s a website, a chatbot, or a full business system — we scope, build, and ship. Tell us what you&apos;re trying to solve.
+                  Whether it&apos;s a premium website, a chatbot, or a full business system — we scope, build, and ship. Tell us what you&apos;re trying to solve.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href={DMC.whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-accent-lime text-accent border border-accent px-6 py-3.5 text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-white transition-colors brutalist-shadow"
-                >
-                  <MessageCircle className="size-4" />
-                  WhatsApp Us
-                </a>
-                <Link
-                  href="/contact"
-                  className="bg-transparent text-white border border-white/40 px-6 py-3.5 text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-white hover:text-accent hover:border-white transition-colors"
-                >
-                  Contact Form
-                  <ArrowRight className="size-3.5" />
-                </Link>
+                <MagneticButton strength={8}>
+                  <a
+                    href={DMC.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2 border border-accent bg-accent-lime px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-accent transition-colors hover:bg-white brutalist-shadow"
+                  >
+                    <MessageCircle className="size-4 transition-transform group-hover:scale-110" />
+                    WhatsApp Us
+                  </a>
+                </MagneticButton>
+                <MagneticButton strength={8}>
+                  <Link
+                    href="/contact"
+                    className="group flex items-center gap-2 border border-white/40 bg-transparent px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-white hover:bg-white hover:text-accent"
+                  >
+                    Contact Form
+                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </MagneticButton>
               </div>
             </div>
           </AnimatedReveal>

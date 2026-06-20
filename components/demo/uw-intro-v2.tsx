@@ -128,7 +128,7 @@ export function UWIntroV2() {
                 style={{ y: yImage, scale: scaleImage }}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=100"
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=80"
                   alt="Modern clean minimalist office workspace setup"
                   fill
                   priority
