@@ -3,6 +3,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import gsap from "gsap";
+import { motion, useScroll, useTransform } from "motion/react";
 import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
 import { EncryptedText } from "@/components/ui/encrypted-text";
 import { MagneticButton } from "@/components/ui/MagneticButton";
@@ -23,6 +24,13 @@ const HEADING_STYLE = {
 const HEADING_CLASSNAME = "text-text-primary uppercase leading-[1.05] md:leading-[0.9] font-black";
 
 export function HeroSection() {
+  const { scrollY } = useScroll();
+  const yHeadline = useTransform(scrollY, [0, 1000], [0, 300]);
+  const scaleHeadline = useTransform(scrollY, [0, 800], [1, 0.9]);
+  const yBackdrop = useTransform(scrollY, [0, 1000], [0, 450]);
+  const opacityMain = useTransform(scrollY, [0, 600], [1, 0]);
+  const opacityBottom = useTransform(scrollY, [0, 300], [1, 0]);
+
   const [hoverKey, setHoverKey] = useState(0);
   const [show3D, setShow3D] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -246,13 +254,19 @@ export function HeroSection() {
 
       {/* ── 3D wireframe backdrop (desktop only, post-intro) ── */}
       {show3D && (
-        <div className="absolute inset-0 -z-0 animate-fade-in pointer-events-none">
+        <motion.div 
+          className="absolute inset-0 -z-0 animate-fade-in pointer-events-none"
+          style={{ y: yBackdrop }}
+        >
           <HeroBackdrop />
-        </div>
+        </motion.div>
       )}
 
       {/* ── Centered headline block ── */}
-      <div className="flex-1 flex flex-col items-center justify-center w-full max-w-[1440px] mx-auto relative z-10">
+      <motion.div 
+        className="flex-1 flex flex-col items-center justify-center w-full max-w-[1440px] mx-auto relative z-10"
+        style={{ y: yHeadline, scale: scaleHeadline, opacity: opacityMain }}
+      >
 
         {/* Heading wrapper — relative so paragraph positions inside it */}
         <div className="w-full text-center relative">
@@ -347,10 +361,11 @@ export function HeroSection() {
           </a>
           </MagneticButton>
         </div>
-      </div>
+      </motion.div>
 
       {/* ── Bottom bar ── */}
-      <div data-hero-bottom className="w-full max-w-[1440px] mx-auto grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-4 text-[10px] md:text-[11px] font-medium uppercase tracking-[0.12em] text-text-primary z-10 relative">
+      <motion.div style={{ opacity: opacityBottom }} className="w-full max-w-[1440px] mx-auto relative z-10">
+        <div data-hero-bottom className="w-full grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-4 text-[10px] md:text-[11px] font-medium uppercase tracking-[0.12em] text-text-primary">
         <div className="justify-self-center sm:justify-self-start flex items-center gap-1">
           {SOCIAL_LINKS.map((social, index) => (
             <React.Fragment key={social.label}>
@@ -377,7 +392,8 @@ export function HeroSection() {
         <a href={`mailto:${DMC.email}`} className="justify-self-center sm:justify-self-end hover:text-accent transition-colors lowercase">
           {DMC.email}
         </a>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
