@@ -81,21 +81,16 @@ export function AboutUsSection() {
 
         {/* Bottom Description */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start px-4 lg:px-6">
-          <div className="lg:col-span-3 lg:col-start-3">
-            {/* Inline SVG replaces external CDN fetch */}
-            <svg
-              viewBox="0 0 64 64"
-              className="w-12 h-12 md:w-16 md:h-16 text-text-primary"
-              style={{ transform: "rotate(9.7068deg)" }}
-              aria-hidden="true"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M8 32h44M38 20l14 12-14 12" />
-            </svg>
+          <div className="lg:col-span-3 lg:col-start-3 flex justify-end pr-4 md:pr-8 pt-1">
+            <motion.img 
+              src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/691df85560dcfc6a761612b1_Finger%20Point%20Right.svg" 
+              loading="lazy" 
+              alt="" 
+              className="small-icon mobile-hidden w-8 h-8 md:w-12 md:h-12" 
+              animate={{ x: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              style={{ rotate: "8deg", opacity: 1 }}
+            />
           </div>
           <div className="lg:col-span-6 flex flex-col gap-4">
             <AnimatedReveal delay={0.1}>

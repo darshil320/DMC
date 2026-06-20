@@ -125,14 +125,19 @@ export const WebcamPixelGrid: React.FC<WebcamPixelGridProps> = ({
       });
 
       streamRef.current = stream;
+      onWebcamReady?.();
 
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
-        await videoRef.current.play();
+        try {
+          await videoRef.current.play();
+        } catch {
+          // Permission is already granted if we have a stream. Some browsers
+          // briefly reject play() while the media element is settling.
+        }
         setIsReady(true);
         setError(null);
         setShowErrorPopup(false);
-        onWebcamReady?.();
       }
     } catch (err) {
       const error =
@@ -144,9 +149,12 @@ export const WebcamPixelGrid: React.FC<WebcamPixelGridProps> = ({
 
   // Initialize webcam on mount
   useEffect(() => {
-    requestCameraAccess();
+    const timer = window.setTimeout(() => {
+      requestCameraAccess();
+    }, 0);
 
     return () => {
+      window.clearTimeout(timer);
       if (streamRef.current) {
         streamRef.current.getTracks().forEach((track) => track.stop());
       }
@@ -154,6 +162,8 @@ export const WebcamPixelGrid: React.FC<WebcamPixelGridProps> = ({
   }, [requestCameraAccess]);
 
   // Main render loop
+  // The canvas loop intentionally mutates refs outside React state.
+  /* eslint-disable react-hooks/immutability */
   const render = useCallback(() => {
     const video = videoRef.current;
     const processingCanvas = processingCanvasRef.current;
@@ -387,6 +397,7 @@ export const WebcamPixelGrid: React.FC<WebcamPixelGridProps> = ({
     borderRGB,
     borderOpacity,
   ]);
+  /* eslint-enable react-hooks/immutability */
 
   // Start render loop when ready
   useEffect(() => {

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { Camera, RefreshCw, ScanFace, ShieldCheck, X } from "lucide-react";
 import { useTheme } from "@/lib/theme";
@@ -22,6 +22,42 @@ export function LiveVisionSection() {
 
   // Brand "scanner" tint — lime in light mode, warm cream in dark.
   const scanColor = theme === "dark" ? "#F2E4D0" : "#CCFF00";
+
+  const startCamera = useCallback(() => {
+    setDenied(false);
+    setActive(true);
+  }, []);
+
+  useEffect(() => {
+    if (!denied || !navigator.permissions) return;
+
+    let permissionStatus: PermissionStatus | undefined;
+    let cancelled = false;
+
+    const syncPermission = () => {
+      if (permissionStatus?.state === "granted") {
+        setDenied(false);
+        setActive(true);
+      }
+    };
+
+    navigator.permissions
+      .query({ name: "camera" as PermissionName })
+      .then((status) => {
+        if (cancelled) return;
+        permissionStatus = status;
+        syncPermission();
+        status.addEventListener("change", syncPermission);
+      })
+      .catch(() => {
+        // Permission API support varies; the retry button remains the fallback.
+      });
+
+    return () => {
+      cancelled = true;
+      permissionStatus?.removeEventListener("change", syncPermission);
+    };
+  }, [denied]);
 
   return (
     <section
@@ -47,6 +83,7 @@ export function LiveVisionSection() {
             borderColor={scanColor}
             borderOpacity={0.05}
             className="h-full w-full"
+            onWebcamReady={() => setDenied(false)}
             onWebcamError={() => {
               setActive(false);
               setDenied(true);
@@ -107,10 +144,7 @@ export function LiveVisionSection() {
             <div className="flex flex-col gap-4">
               <MagneticButton strength={10} className="w-fit">
                 <button
-                  onClick={() => {
-                    setDenied(false);
-                    setActive(true);
-                  }}
+                  onClick={startCamera}
                   className="group inline-flex items-center gap-3 bg-accent-lime text-accent border-2 border-accent-lime px-7 py-4 text-xs font-black uppercase tracking-widest hover:bg-transparent hover:text-accent-lime transition-colors cursor-pointer"
                 >
                   <Camera className="size-4" />
@@ -141,10 +175,7 @@ export function LiveVisionSection() {
 
                     <button
                       type="button"
-                      onClick={() => {
-                        setDenied(false);
-                        setActive(true);
-                      }}
+                      onClick={startCamera}
                       className="group inline-flex h-10 shrink-0 items-center justify-center gap-2 border border-accent-lime px-4 text-[10px] font-black uppercase tracking-[0.18em] text-accent-lime transition-colors hover:bg-accent-lime hover:text-accent"
                     >
                       <RefreshCw className="size-3.5 transition-transform group-hover:rotate-90" />
