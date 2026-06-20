@@ -8,7 +8,7 @@ import { useEffect, useState, type RefObject } from "react";
  * Returns `false` on the server and first client paint to avoid hydration
  * mismatch, then resolves on mount.
  */
-function useMediaQuery(query: string): boolean {
+export function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(false);
 
   useEffect(() => {

@@ -220,7 +220,7 @@ export function Navbar() {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[90] bg-accent flex flex-col justify-between px-6 pt-24 pb-6 md:pb-8 select-none overflow-y-auto"
+            className="fixed inset-0 z-[90] bg-accent flex flex-col px-6 pt-24 pb-6 md:pb-8 select-none overflow-y-auto overscroll-contain"
           >
             {/* Vertical grid lines overlay in menu background */}
             <div className="absolute inset-0 pointer-events-none flex justify-between px-6 md:px-12 lg:px-16 max-w-[1440px] mx-auto w-full z-0 opacity-10">
@@ -245,7 +245,7 @@ export function Navbar() {
                 }}
                 initial="hidden"
                 animate="show"
-                className="flex flex-col gap-1 md:gap-2 relative border-l border-white/20 pl-6 md:pl-8 h-fit pb-8 md:pb-0"
+                className="flex flex-col gap-0 md:gap-2 relative border-l border-white/20 pl-6 md:pl-8 pb-4 md:pb-0"
               >
                 {/* Minimal crop marks */}
                 <div className="absolute top-0 -left-[5px] w-2.5 h-px bg-white/40" />
@@ -266,18 +266,18 @@ export function Navbar() {
                 ))}
               </motion.nav>
 
-              {/* Right: Socials & Form (Brutalist style) */}
+              {/* Right: Socials & Form — full content on md+, condensed inline on mobile */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.5 }}
-                className="grid grid-cols-1 xl:grid-cols-2 gap-12 md:pl-20 mt-12 md:mt-0 h-fit min-w-0"
+                className="grid grid-cols-1 xl:grid-cols-2 gap-8 md:pl-20 mt-4 md:mt-0 h-fit min-w-0"
               >
-                <div className="flex min-w-0 flex-col gap-12">
-                  {/* Socials */}
-                  <div className="flex flex-col gap-4">
+                {/* Socials — visible on all sizes */}
+                <div className="flex flex-col gap-8">
+                  <div className="flex flex-col gap-3">
                     <span className="text-[10px] font-bold text-accent-lime uppercase tracking-widest">Socials</span>
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-row flex-wrap gap-x-4 gap-y-2 md:flex-col md:gap-3">
                       {SOCIAL_LINKS.map((social) => (
                         <a
                           key={social.label}
@@ -301,8 +301,8 @@ export function Navbar() {
                     </a>
                   </div>
 
-                  {/* Rotating stamp badge */}
-                  <div className="mt-4 flex items-center justify-start gap-4">
+                  {/* Rotating stamp badge — hidden on small mobile to save space */}
+                  <div className="hidden sm:flex items-center justify-start gap-4">
                     <motion.div
                       animate={prefersReducedMotion ? {} : { rotate: 360 }}
                       transition={prefersReducedMotion ? {} : { repeat: Infinity, duration: 12, ease: "linear" }}
@@ -325,7 +325,8 @@ export function Navbar() {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-4">
+                {/* Newsletter form — hidden on mobile, shown md+ */}
+                <div className="hidden md:flex flex-col gap-4">
                   {/* Newsletter Box (Lime Green Focus) */}
                   <form onSubmit={handleArchiveSubmit} className="flex flex-col gap-3 max-w-[320px]">
                     <div className="bg-accent-lime text-accent font-pixel font-bold px-3 py-1 self-start border border-accent brutalist-shadow">
@@ -375,10 +376,6 @@ export function Navbar() {
                   </form>
                 </div>
               </motion.div>
-            </div>
-
-            <div className="w-full text-center text-[9px] font-bold text-white/50 uppercase tracking-widest mt-12 z-10">
-              | &nbsp; INSIGHTS &nbsp; |
             </div>
           </motion.div>
         )}

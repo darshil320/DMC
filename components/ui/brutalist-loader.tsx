@@ -62,39 +62,36 @@ export function BrutalistLoader() {
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[9999] bg-accent text-white flex flex-col justify-between p-6 md:p-12 font-display pointer-events-auto"
+          className="fixed inset-0 z-[9999] bg-accent text-white flex flex-col justify-between p-6 md:p-12 font-display pointer-events-auto overflow-hidden"
         >
           {/* Top Row */}
-          <div className="flex justify-between items-start text-[10px] font-bold tracking-widest uppercase">
+          <div className="flex justify-between items-start text-[10px] font-bold tracking-widest uppercase shrink-0">
             <span>DMC TECH</span>
             <span>INITIALIZING...</span>
           </div>
 
-          {/* Center Huge Counter */}
-          <div className="flex-1 flex items-center justify-center relative">
-            <div className="relative">
-              <div className="absolute -top-4 -left-4 w-4 h-4 border-t-2 border-l-2 border-white/20" />
-              <div className="absolute -top-4 -right-4 w-4 h-4 border-t-2 border-r-2 border-white/20" />
-              <div className="absolute -bottom-4 -left-4 w-4 h-4 border-b-2 border-l-2 border-white/20" />
-              <div className="absolute -bottom-4 -right-4 w-4 h-4 border-b-2 border-r-2 border-white/20" />
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="text-[120px] md:text-[200px] lg:text-[280px] font-black leading-none tracking-tighter tabular-nums flex items-end"
-              >
-                {progress}
-                <span className="text-accent-lime text-2xl md:text-5xl lg:text-8xl mb-4 md:mb-8 lg:mb-12 ml-2 md:ml-4">%</span>
-              </motion.div>
-            </div>
+          {/* Center counter — vh-based so it always fits on any device height */}
+          <div className="flex-1 flex items-center justify-center min-h-0">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="font-black leading-none tracking-tighter tabular-nums flex items-end"
+              style={{ fontSize: "clamp(56px, 28vh, 280px)" }}
+            >
+              {progress}
+              <span
+                className="text-accent-lime mb-[0.06em] ml-[0.1em]"
+                style={{ fontSize: "clamp(20px, 9vh, 128px)" }}
+              >%</span>
+            </motion.div>
           </div>
 
           {/* Bottom Row */}
-          <div className="flex justify-between items-end">
-            <div className="text-[10px] font-bold tracking-widest uppercase max-w-[200px] text-white/50">
+          <div className="flex justify-between items-end gap-4 shrink-0">
+            <div className="text-[10px] font-bold tracking-widest uppercase text-white/50 max-w-[160px] leading-snug">
               BUILDING DIGITAL ARCHITECTURES FOR TOMORROW
             </div>
-            <div className="w-1/2 md:w-1/3 h-1 bg-white/20 relative overflow-hidden">
+            <div className="w-1/2 md:w-1/3 h-1 bg-white/20 relative overflow-hidden shrink-0">
               <motion.div
                 className="absolute top-0 left-0 h-full bg-accent-lime"
                 initial={{ width: "0%" }}

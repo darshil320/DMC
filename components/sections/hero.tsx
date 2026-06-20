@@ -7,7 +7,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
 import { EncryptedText } from "@/components/ui/encrypted-text";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import { usePremiumMotion } from "@/lib/hooks/use-environment";
+import { usePremiumMotion, useMediaQuery } from "@/lib/hooks/use-environment";
 
 // Heavy WebGL scene — loaded only on desktop/fine-pointer/motion-allowed and
 // only after the intro, so it never touches the mobile bundle or first paint.
@@ -35,11 +35,11 @@ export function HeroSection() {
   const [show3D, setShow3D] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
   const premiumMotion = usePremiumMotion();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   // Defer mounting the 3D backdrop until the intro has played, so it never
   // competes with the GSAP headline reveal or the loader hand-off.
   useEffect(() => {
-    if (!premiumMotion) return;
     const reveal = () => setShow3D(true);
 
     if (document.querySelector("[data-brutalist-loader]")) {
@@ -252,11 +252,11 @@ export function HeroSection() {
   return (
     <section ref={sectionRef} id="home" className="relative min-h-[100svh] flex flex-col justify-between pt-28 lg:pt-32 pb-6 px-6 md:px-12 lg:px-16 bg-transparent select-none overflow-visible">
 
-      {/* ── 3D wireframe backdrop (desktop only, post-intro) ── */}
+      {/* ── 3D wireframe backdrop (post-intro) ── */}
       {show3D && (
         <motion.div 
           className="absolute inset-0 -z-0 animate-fade-in pointer-events-none"
-          style={{ y: yBackdrop }}
+          style={isMobile ? undefined : { y: yBackdrop }}
         >
           <HeroBackdrop />
         </motion.div>
@@ -265,7 +265,7 @@ export function HeroSection() {
       {/* ── Centered headline block ── */}
       <motion.div 
         className="flex-1 flex flex-col items-center justify-center w-full max-w-[1440px] mx-auto relative z-10"
-        style={{ y: yHeadline, scale: scaleHeadline, opacity: opacityMain }}
+        style={isMobile ? undefined : { y: yHeadline, scale: scaleHeadline, opacity: opacityMain }}
       >
 
         {/* Heading wrapper — relative so paragraph positions inside it */}
@@ -323,9 +323,6 @@ export function HeroSection() {
 
         {/* ── CTA Button ── */}
         <div data-hero-cta className="mt-10 md:mt-12 flex flex-col items-center justify-center gap-4 relative z-20">
-          <span className="border border-accent bg-accent-lime px-4 py-2 font-pixel text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-accent brutalist-shadow">
-            Let&apos;s build you a world-class website.
-          </span>
           <MagneticButton strength={10}>
           <a
             href="/contact"
@@ -364,7 +361,7 @@ export function HeroSection() {
       </motion.div>
 
       {/* ── Bottom bar ── */}
-      <motion.div style={{ opacity: opacityBottom }} className="w-full max-w-[1440px] mx-auto relative z-10">
+      <motion.div style={isMobile ? undefined : { opacity: opacityBottom }} className="w-full max-w-[1440px] mx-auto relative z-10">
         <div data-hero-bottom className="w-full grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-4 text-[10px] md:text-[11px] font-medium uppercase tracking-[0.12em] text-text-primary">
         <div className="justify-self-center sm:justify-self-start flex items-center gap-1">
           {SOCIAL_LINKS.map((social, index) => (
