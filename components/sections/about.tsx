@@ -1,20 +1,25 @@
 "use client";
 
 import React, { useRef } from "react";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
 
 const PARAGRAPH = "Every missed DM, every lead that went cold, every customer your team forgot to follow up with — that's revenue walking out the door. Your business runs on relationships, but your systems can't keep up. We build the digital infrastructure that makes sure nothing falls through the cracks.";
 
-function Word({ children, progress, range }: { children: string; progress: any; range: [number, number] }) {
+const BATCH = 3;
+
+function WordBatch({ words, progress, range }: { words: string[]; progress: any; range: [number, number] }) {
   const opacity = useTransform(progress, range, [0.2, 1]);
   return (
-    <span className="relative mr-[1.5vw] mt-2 inline-block">
-      <span className="absolute opacity-20">{children}</span>
-      <motion.span style={{ opacity: opacity }}>{children}</motion.span>
-    </span>
+    <>
+      {words.map((word, i) => (
+        <span key={i} className="relative mr-[1.5vw] mt-2 inline-block">
+          <span className="absolute opacity-20">{word}</span>
+          <motion.span style={{ opacity }}>{word}</motion.span>
+        </span>
+      ))}
+    </>
   );
 }
 
@@ -22,27 +27,28 @@ function ScrollTextReveal({ value }: { value: string }) {
   const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start 80%", "start 20%"]
+    offset: ["start 80%", "start 20%"],
   });
 
   const words = value.split(" ");
+  const batches: string[][] = [];
+  for (let i = 0; i < words.length; i += BATCH) {
+    batches.push(words.slice(i, i + BATCH));
+  }
+
   return (
-    <div 
-      ref={container} 
+    <div
+      ref={container}
       className="flex flex-wrap font-medium tracking-tight text-text-primary leading-[1.3] max-w-[1000px]"
       style={{
         fontFamily: "SF Pro Display, Arial, sans-serif",
-        fontSize: "34.4px"
+        fontSize: "clamp(18px, 2.4vw, 34.4px)",
       }}
     >
-      {words.map((word, i) => {
-        const start = i / words.length;
-        const end = start + (1 / words.length);
-        return (
-          <Word key={i} progress={scrollYProgress} range={[start, end]}>
-            {word}
-          </Word>
-        );
+      {batches.map((batch, i) => {
+        const start = i / batches.length;
+        const end = start + (1 / batches.length);
+        return <WordBatch key={i} words={batch} progress={scrollYProgress} range={[start, end]} />;
       })}
     </div>
   );
@@ -50,27 +56,25 @@ function ScrollTextReveal({ value }: { value: string }) {
 
 export function AboutUsSection() {
   return (
-    <section id="about" className="py-24 px-6 md:px-12 lg:px-16 w-full select-none relative z-10 border-t border-border-harsh bg-bg-page">
+    <section id="about" className="py-16 md:py-24 px-6 md:px-12 lg:px-16 w-full select-none relative z-10 border-t border-border-harsh bg-bg-page">
       <div className="max-w-[1440px] mx-auto w-full">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-24 px-4 lg:px-6">
-          {/* Blue Badge (Col 1-2) */}
-          <div className="lg:col-span-2">
-            <div className="section-tag">
-              ABOUT US
-            </div>
-          </div>
 
-          {/* Massive Faded Text (Col 3-12) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12 lg:mb-24 px-4 lg:px-6">
+          <div className="lg:col-span-2">
+            <div className="section-tag">ABOUT US</div>
+          </div>
           <div className="lg:col-span-10">
             <ScrollTextReveal value={PARAGRAPH} />
           </div>
         </div>
 
         {/* Divider with Link */}
-        <div className="w-full relative flex flex-col md:flex-row items-center justify-end mb-16">
+        <div className="w-full relative flex flex-col md:flex-row items-center justify-end mb-12 lg:mb-16">
           <div className="w-full h-px bg-border-harsh absolute top-1/2 -translate-y-1/2 left-0 right-0 z-0" />
-          <a href="#services" className="bg-bg-page pl-4 relative z-10 flex items-center gap-2 text-accent text-xs font-bold tracking-widest uppercase hover:text-text-primary transition-colors">
+          <a
+            href="#services"
+            className="bg-bg-page pl-4 relative z-10 flex items-center gap-2 text-accent text-xs font-bold tracking-widest uppercase hover:text-text-primary transition-colors"
+          >
             MORE ABOUT US <ThinArrowUpRight />
           </a>
         </div>
@@ -78,13 +82,20 @@ export function AboutUsSection() {
         {/* Bottom Description */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start px-4 lg:px-6">
           <div className="lg:col-span-3 lg:col-start-3">
-            <img
-              src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/691df85560dcfc6a761612b1_Finger%20Point%20Right.svg"
-              loading="lazy"
-              alt="Finger Point Right"
+            {/* Inline SVG replaces external CDN fetch */}
+            <svg
+              viewBox="0 0 64 64"
               className="w-12 h-12 md:w-16 md:h-16 text-text-primary"
               style={{ transform: "rotate(9.7068deg)" }}
-            />
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M8 32h44M38 20l14 12-14 12" />
+            </svg>
           </div>
           <div className="lg:col-span-6 flex flex-col gap-4">
             <AnimatedReveal delay={0.1}>
@@ -101,7 +112,7 @@ export function AboutUsSection() {
         </div>
 
         {/* Founder Block */}
-        
+
         {/* <div className="mt-20 px-4 lg:px-6 border-t border-border-harsh pt-16">
           <AnimatedReveal>
             <div className="flex flex-col sm:flex-row items-start gap-8 max-w-[720px]">

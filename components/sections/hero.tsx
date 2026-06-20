@@ -214,17 +214,10 @@ export function HeroSection() {
   return (
     <section ref={sectionRef} id="home" className="relative min-h-[100svh] flex flex-col justify-between pt-28 lg:pt-32 pb-6 px-6 md:px-12 lg:px-16 bg-transparent select-none overflow-visible">
 
-      {/* ── Corner paragraph — absolute to section, never touches the headline ── */}
-      <div data-hero-copy className="hidden md:block absolute top-32 lg:top-36 right-6 md:right-12 lg:right-16 max-w-[176px] lg:max-w-[200px] text-left z-20">
-        <p className="text-[12px] lg:text-[13px] text-text-secondary leading-[1.6]">
-          We architect custom digital operating systems for businesses that need to scale. From AI-driven lead capture to automated CRM pipelines—we turn your manual workflows into a seamless, high-converting engine.
-        </p>
-      </div>
-
       {/* ── Centered headline block ── */}
       <div className="flex-1 flex flex-col items-center justify-center w-full max-w-[1440px] mx-auto relative z-10">
 
-        {/* Heading wrapper */}
+        {/* Heading wrapper — relative so paragraph positions inside it */}
         <div className="w-full text-center relative">
 
           <div className="w-full text-center">
@@ -259,6 +252,15 @@ export function HeroSection() {
             </div>
           </div>
 
+          {/* ── Paragraph — corner, no data-hero-copy so GSAP never touches it ── */}
+          <div
+            className="hidden md:block text-left z-20"
+            style={{ position: "absolute", top: -8, right: 24, maxWidth: 220 }}
+          >
+            <p className="text-[12px] md:text-[14px] text-text-secondary leading-[1.5]">
+              We architect custom digital operating systems for businesses that need to scale. From AI-driven lead capture to automated CRM pipelines—we turn your manual workflows into a seamless, high-converting engine.
+            </p>
+          </div>
         </div>
 
         {/* Mobile-only paragraph */}
