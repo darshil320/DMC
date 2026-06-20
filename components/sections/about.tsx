@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
 
-const PARAGRAPH = "Every missed DM, every lead that went cold, every customer your team forgot to follow up with — that's revenue walking out the door. Your business runs on relationships, but your systems can't keep up. We build the digital infrastructure that makes sure nothing falls through the cracks.";
+const PARAGRAPH = "Every outdated process, every disconnected tool, every manual task your team has to handle — that's growth being left on the table. Your business needs a strong foundation to scale effectively. We build the robust digital infrastructure that ensures your operations run flawlessly from start to finish.";
 
 const BATCH = 3;
 
