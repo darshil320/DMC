@@ -252,10 +252,11 @@ export function HeroSection() {
   return (
     <section ref={sectionRef} id="home" className="relative min-h-[100svh] flex flex-col justify-between pt-28 lg:pt-32 pb-6 px-6 md:px-12 lg:px-16 bg-transparent select-none overflow-visible">
 
-      {/* ── 3D wireframe backdrop (post-intro) ── */}
+      {/* ── 3D wireframe backdrop (parallax wrapper; the materialize entrance
+          lives inside HeroBackdrop, tied to the canvas actually being ready) ── */}
       {show3D && (
-        <motion.div 
-          className="absolute inset-0 -z-0 animate-fade-in pointer-events-none"
+        <motion.div
+          className="absolute inset-0 -z-0 pointer-events-none"
           style={isMobile ? undefined : { y: yBackdrop }}
         >
           <HeroBackdrop />

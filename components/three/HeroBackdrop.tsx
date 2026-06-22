@@ -72,6 +72,14 @@ export default function HeroBackdrop() {
   const wrapRef = useRef<HTMLDivElement>(null);
   // Pause the render loop once the hero scrolls away to save battery/GPU.
   const [active, setActive] = useState(true);
+  // Materialize the grid in once the WebGL scene is actually ready to paint —
+  // tying the entrance to onCreated (not the wrapper mount) means the animation
+  // plays when there's something to see, regardless of chunk-load timing.
+  const [ready, setReady] = useState(false);
+  const reduce =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealed = ready || reduce;
 
   React.useEffect(() => {
     const node = wrapRef.current;
@@ -103,6 +111,15 @@ export default function HeroBackdrop() {
         dpr={[1, 1.5]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         camera={{ position: [0, 0, 7], fov: 55 }}
+        onCreated={() => setReady(true)}
+        style={{
+          opacity: revealed ? 1 : 0,
+          transform: revealed ? "scale(1)" : "scale(1.06)",
+          transformOrigin: "50% 45%",
+          transition: reduce
+            ? undefined
+            : "opacity 1300ms cubic-bezier(0.16,1,0.3,1), transform 1300ms cubic-bezier(0.16,1,0.3,1)",
+        }}
       >
         <Scene color={color} />
       </Canvas>
