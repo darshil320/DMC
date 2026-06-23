@@ -45,7 +45,13 @@ const AboutUsSection = dynamic(() => import("@/components/sections/about").then(
 const OurWorkSection = dynamic(() => import("@/components/sections/our-work").then(m => m.OurWorkSection), {
   loading: () => <SectionPlaceholder />,
 });
+const ProofSection = dynamic(() => import("@/components/sections/proof").then(m => m.ProofSection), {
+  loading: () => <SectionPlaceholder />,
+});
 const LiveVisionSection = dynamic(() => import("@/components/sections/live-vision").then(m => m.LiveVisionSection), {
+  loading: () => <SectionPlaceholder />,
+});
+const PrinciplesSection = dynamic(() => import("@/components/sections/principles").then(m => m.PrinciplesSection), {
   loading: () => <SectionPlaceholder />,
 });
 
@@ -113,11 +119,14 @@ export default function Home() {
           <AboutUsSection />
           <OurWorkSection />
 
+          <ProofSection />
+
           <LiveVisionSection />
 
           <ServicesSection />
 
           <ProcessSection />
+          <PrinciplesSection />
           <PricingSection />
           <ProblemSection />
           <TrustSection />

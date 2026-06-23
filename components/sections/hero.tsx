@@ -304,6 +304,14 @@ export function HeroSection() {
             </div>
           </div>
 
+          {/* ── POV line — the sharp positioning hook under the headline ── */}
+          <div data-hero-copy className="mt-6 md:mt-8 max-w-[680px] mx-auto px-4">
+            <p className="text-center text-[13px] md:text-base font-bold uppercase tracking-tight leading-snug text-text-primary">
+              Most businesses don&apos;t need a prettier website.
+              <span className="text-accent"> They need the system behind it.</span>
+            </p>
+          </div>
+
           {/* ── Paragraph — corner, no data-hero-copy so GSAP never touches it ── */}
           <div
             className="hidden md:block text-left z-20"

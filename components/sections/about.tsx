@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
 
-const PARAGRAPH = "Every outdated process, every disconnected tool, every manual task your team has to handle — that's growth being left on the table. Your business needs a strong foundation to scale effectively. We build the robust digital infrastructure that ensures your operations run flawlessly from start to finish.";
+const PARAGRAPH = "We're an AI-native systems studio. We don't hand you a website and walk away — we re-architect how your business runs from first principles, with AI in the loop at every step, so it sells, follows up, and scales without you in the room.";
 
 const BATCH = 3;
 
@@ -79,70 +81,74 @@ export function AboutUsSection() {
           </a>
         </div>
 
-        {/* Bottom Description */}
+        {/* ── Why we exist — the belief behind the work ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start px-4 lg:px-6">
-          <div className="lg:col-span-3 lg:col-start-3 flex justify-end pr-4 md:pr-8 pt-1">
-            <motion.img 
-              src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/691df85560dcfc6a761612b1_Finger%20Point%20Right.svg" 
-              loading="lazy" 
-              alt="" 
-              className="small-icon mobile-hidden w-8 h-8 md:w-12 md:h-12" 
+          <div className="lg:col-span-3">
+            <div className="section-tag">OUR APPROACH</div>
+            <motion.img
+              src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/691df85560dcfc6a761612b1_Finger%20Point%20Right.svg"
+              loading="lazy"
+              alt=""
+              className="small-icon mobile-hidden w-8 h-8 md:w-12 md:h-12 mt-6"
               animate={{ x: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
               style={{ rotate: "8deg", opacity: 1 }}
             />
           </div>
-          <div className="lg:col-span-6 flex flex-col gap-4">
-            <AnimatedReveal delay={0.1}>
-              <p className="text-text-secondary text-base md:text-lg leading-relaxed font-medium">
-                At <span className="text-accent font-bold">DMC</span>, we don&apos;t just build websites — we build the complete system that runs your business. From AI chatbots that answer your customers at 2 AM, to CRMs that track every lead, to dashboards that show you everything on one screen. We start by understanding how your operation actually works, then we digitize it.
+          <div className="lg:col-span-9 flex flex-col gap-6 max-w-[760px]">
+            <AnimatedReveal delay={0.05}>
+              <p className="text-text-primary text-xl md:text-3xl leading-snug font-medium tracking-tight">
+                We don&apos;t just build websites — we build the system that runs your business. AI
+                assistants that answer customers at 2 AM,{" "}
+                <span className="text-accent font-bold">CRMs that catch every lead the second it lands</span>,
+                and dashboards that put your whole operation on one screen.
               </p>
             </AnimatedReveal>
-            <AnimatedReveal delay={0.2}>
-              <p className="text-text-primary text-base md:text-lg leading-relaxed font-bold italic">
-                Then we make it look fire!!
+            <AnimatedReveal delay={0.12}>
+              <p className="text-text-secondary text-base md:text-lg leading-relaxed font-medium">
+                Every process with a human touchpoint gets AI in the loop — sales, support, ops,
+                follow-up. We map how your business actually works, rebuild it from first principles,
+                then ship the system that runs it. Same playbook whether you&apos;re a single
+                showroom or a multi-location brand.
               </p>
+            </AnimatedReveal>
+            <AnimatedReveal delay={0.18}>
+              <p className="text-text-primary text-base md:text-lg leading-relaxed font-bold italic">
+                Then we make it look unmistakably yours.
+              </p>
+            </AnimatedReveal>
+
+            {/* Founder signature */}
+            <AnimatedReveal delay={0.24}>
+              <div className="mt-4 flex items-center gap-4 border-t border-border-harsh pt-6">
+                <div className="relative size-14 shrink-0 overflow-hidden border border-border-harsh bg-neutral-200">
+                  <Image
+                    src="/assets/darshil.jpg"
+                    fill
+                    sizes="56px"
+                    quality={85}
+                    className="object-cover object-top scale-[1.15]"
+                    alt="Darshil Lashkari — Founder, DMC"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-bold tracking-tight text-text-primary">
+                    Darshil Lashkari
+                  </span>
+                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
+                    Founder &amp; Lead Engineer
+                  </span>
+                </div>
+                <Link
+                  href="/about"
+                  className="ml-auto hidden sm:flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-accent hover:text-text-primary transition-colors"
+                >
+                  Read the full story <ThinArrowUpRight />
+                </Link>
+              </div>
             </AnimatedReveal>
           </div>
         </div>
-
-        {/* Founder Block */}
-
-        {/* <div className="mt-20 px-4 lg:px-6 border-t border-border-harsh pt-16">
-          <AnimatedReveal>
-            <div className="flex flex-col sm:flex-row items-start gap-8 max-w-[720px]">
-              <div className="relative shrink-0">
-                <div className="absolute -top-2 -left-2 w-full h-full border border-accent pointer-events-none" />
-                <Image
-                  src="/assets/darshil.jpg"
-                  alt="Darshil Lashkari — Founder, DMC Tech"
-                  width={160}
-                  height={213}
-                  className="relative z-10 block object-cover object-top grayscale brightness-90"
-                  style={{ width: 160, height: 213 }}
-                />
-              </div>
-
-              <div className="flex flex-col gap-3 pt-1">
-                <div className="section-tag">BUILT BY</div>
-                <div>
-                  <h3 className="font-display text-3xl md:text-4xl tracking-tighter uppercase text-text-primary leading-none">
-                    Darshil
-                  </h3>
-                  <h3 className="font-display text-3xl md:text-4xl tracking-tighter uppercase text-accent leading-none">
-                    Lashkari
-                  </h3>
-                </div>
-                <p className="text-text-secondary text-sm font-medium uppercase tracking-widest">
-                  Founder — DMC Tech
-                </p>
-                <p className="text-text-secondary text-sm leading-relaxed font-medium max-w-[380px] mt-1">
-                  Builder, systems thinker, and the person who picks up your call. Every project at DMC goes through me personally — from the first brief to the final launch.
-                </p>
-              </div>
-            </div>
-          </AnimatedReveal>
-        </div> */}
 
       </div>
     </section>

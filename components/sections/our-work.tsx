@@ -86,12 +86,37 @@ export function OurWorkSection() {
                   PREMIUM WEBSITE · ECOMMERCE · 3D
                 </span>
               </div>
-              <h3 className="text-xl font-bold tracking-tight text-text-primary mb-3">
+              <h3 className="text-xl font-bold tracking-tight text-text-primary mb-4">
                 Premium Digital Storefront
               </h3>
-              <p className="text-sm font-medium text-text-secondary leading-relaxed mb-6 max-w-[400px]">
-                A premium, editorial-style digital storefront for a leading furniture manufacturer. Complete with immersive 3D product interactions, catalog, and a high-performance Next.js build.
-              </p>
+
+              <div className="mb-5 max-w-[420px]">
+                <span className="block text-[9px] font-black tracking-[0.2em] uppercase text-text-muted mb-1.5">
+                  The challenge
+                </span>
+                <p className="text-sm font-medium text-text-secondary leading-relaxed">
+                  A flat catalog can&apos;t sell premium furniture — customers need to feel the product before they&apos;ll trust the price.
+                </p>
+              </div>
+
+              <div className="mb-5 max-w-[420px]">
+                <span className="block text-[9px] font-black tracking-[0.2em] uppercase text-text-muted mb-1.5">
+                  What we built
+                </span>
+                <p className="text-sm font-medium text-text-primary leading-relaxed">
+                  An editorial storefront with immersive 3D product views, a full catalog and cart, and a high-performance Next.js build.
+                </p>
+              </div>
+
+              <ul className="flex flex-col gap-2 mb-6">
+                {["Immersive 3D product views", "Catalog → cart → checkout", "Sub-second, mobile-first"].map((r) => (
+                  <li key={r} className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-text-primary">
+                    <span className="size-1.5 bg-accent shrink-0" />
+                    {r}
+                  </li>
+                ))}
+              </ul>
+
               <div className="flex flex-wrap gap-2">
                 {["Next.js", "3D Product Views", "Catalog System", "Mobile-First"].map((tag) => (
                   <span key={tag} className="text-[9px] font-bold tracking-[0.15em] uppercase px-2.5 py-1.5 border border-border-harsh bg-bg-card text-text-muted">
@@ -153,12 +178,37 @@ export function OurWorkSection() {
                   AI · CRM · FACE RECOGNITION · WHATSAPP
                 </span>
               </div>
-              <h3 className="text-xl font-bold tracking-tight text-text-primary mb-3">
+              <h3 className="text-xl font-bold tracking-tight text-text-primary mb-4">
                 Complete Business Operating System
               </h3>
-              <p className="text-sm font-medium text-text-secondary leading-relaxed mb-6 max-w-[400px]">
-                A six-module intelligence system for a furniture showroom — face recognition at entry, customer CRM, AI WhatsApp assistant, omnichannel lead capture, automated salesperson assignment, and a real-time sales pipeline dashboard.
-              </p>
+
+              <div className="mb-5 max-w-[420px]">
+                <span className="block text-[9px] font-black tracking-[0.2em] uppercase text-text-muted mb-1.5">
+                  The challenge
+                </span>
+                <p className="text-sm font-medium text-text-secondary leading-relaxed">
+                  A showroom loses the walk-ins it never captures and the regulars it never recognises — and the owner can&apos;t see any of it.
+                </p>
+              </div>
+
+              <div className="mb-5 max-w-[420px]">
+                <span className="block text-[9px] font-black tracking-[0.2em] uppercase text-text-muted mb-1.5">
+                  What we&apos;re building
+                </span>
+                <p className="text-sm font-medium text-text-primary leading-relaxed">
+                  A six-module system — face recognition at entry, customer CRM, AI WhatsApp assistant, omnichannel lead capture, automated salesperson assignment, and a real-time sales pipeline.
+                </p>
+              </div>
+
+              <ul className="flex flex-col gap-2 mb-6">
+                {["Every walk-in recognised", "No lead left uncontacted", "One dashboard, whole showroom"].map((r) => (
+                  <li key={r} className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-text-primary">
+                    <span className="size-1.5 bg-accent shrink-0" />
+                    {r}
+                  </li>
+                ))}
+              </ul>
+
               <div className="flex flex-wrap gap-2">
                 {["Face Recognition", "AI Chatbot", "CRM", "Lead Pipeline", "WhatsApp API", "Real-time Dashboard"].map((tag) => (
                   <span key={tag} className="text-[9px] font-bold tracking-[0.15em] uppercase px-2.5 py-1.5 border border-border-harsh bg-bg-card text-text-muted">

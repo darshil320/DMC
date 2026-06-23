@@ -11,6 +11,7 @@ const STEPS = [
     num: "01",
     title: "MAP",
     subtitle: "Audit // Architecture",
+    phase: "Days 1–2",
     desc: "We start by analyzing your current operations to find the bottlenecks, leaky pipelines, and manual tasks draining your team. Then, we architect a custom system designed specifically for how your business actually runs.",
     graphic: (
       <div className="relative w-48 h-48 opacity-90 transition-opacity group-hover:opacity-100">
@@ -27,6 +28,7 @@ const STEPS = [
     num: "02",
     title: "MAKE",
     subtitle: "Develop // Automate",
+    phase: "Days 3–10",
     desc: "Your custom infrastructure is built. We develop the CRM, configure the AI chatbots, set up the databases, and design the interfaces. Every component is rigorously tested to ensure data flows perfectly across your entire operation.",
     graphic: (
       <div className="relative w-48 h-48 opacity-90 transition-opacity group-hover:opacity-100">
@@ -43,6 +45,7 @@ const STEPS = [
     num: "03",
     title: "MOVE",
     subtitle: "Deploy // Scale",
+    phase: "Days 11–14",
     desc: "We don't just hand over software; we onboard your team. We plug the systems into your business, automate the tedious work, and give you the real-time dashboards you need to finally scale without operations breaking.",
     graphic: (
       <div className="relative w-48 h-48 opacity-90 transition-opacity group-hover:opacity-100">
@@ -80,9 +83,18 @@ export function ProcessSection() {
           <h2 className="text-4xl md:text-5xl font-display font-medium tracking-tight text-text-primary mb-6">
             How It Works
           </h2>
-          <p className="text-text-secondary text-sm md:text-base font-sans font-light leading-relaxed mb-12 max-w-[280px]">
+          <p className="text-text-secondary text-sm md:text-base font-sans font-light leading-relaxed mb-8 max-w-[280px]">
             Here&apos;s how we architect the systems that run your business:
           </p>
+
+          {/* Time-bound promise */}
+          <div className="mb-4 inline-flex border border-accent bg-accent px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-white">
+            Websites live in 14 days
+          </div>
+          <p className="text-text-muted text-[11px] font-medium leading-relaxed mb-10 max-w-[280px]">
+            Timeline shown is for a starter website. Full business systems are scoped and dated before we begin — no surprises.
+          </p>
+
           <a href="#services" className="text-text-primary hover:text-accent transition-colors flex items-center justify-center size-14 rounded-full border border-border-harsh hover:border-accent">
             <ThinArrowUpRight className="size-5" />
           </a>
@@ -105,6 +117,9 @@ export function ProcessSection() {
                 </h3>
                 <span className="text-sm font-sans font-medium text-text-primary tracking-wide mt-2">
                   {step.subtitle}
+                </span>
+                <span className="mt-3 inline-flex border border-border-harsh bg-bg-card px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-text-primary group-hover:border-accent group-hover:text-accent transition-colors">
+                  {step.phase}
                 </span>
               </div>
 
