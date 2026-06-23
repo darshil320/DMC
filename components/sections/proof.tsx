@@ -16,7 +16,7 @@ const PROOFS = [
     tag: "AI · LIVE",
     icon: Sparkles,
     title: "AI Room Visualizer",
-    gap: "Customers can't picture your product in their own space — so they hesitate, and the sale stalls.",
+    gap: "Customers can't picture your product in their own space, so they hesitate and the sale stalls.",
     build:
       "A browser-based AI tool that drops any product into a photo of the customer's room with realistic lighting and scale.",
     results: ["Preview in ~30 seconds", "Runs 100% in-browser", "No app, no download"],
@@ -31,7 +31,7 @@ const PROOFS = [
     title: "UrbanWood Storefront",
     gap: "A catalog isn't a store. Browsing without a checkout leaves the money on the table.",
     build:
-      "A full ecommerce build — product pages, cart, UPI & card checkout, and an order-confirmation flow.",
+      "A full ecommerce build: product pages, cart, UPI and card checkout, and an order-confirmation flow.",
     results: ["Cart → payment → confirmation", "Mobile-first, tested everywhere", "Live, working demo"],
     href: "/demo/furniture-concept-2.0",
     cta: "Open the live store",
@@ -42,9 +42,9 @@ const PROOFS = [
     tag: "COMPUTER VISION · LIVE",
     icon: ScanFace,
     title: "Live Recognition",
-    gap: "Showrooms have no idea who walks in — or when their best customers come back.",
+    gap: "Showrooms have no idea who walks in, or when their best customers come back.",
     build:
-      "Real-time, in-browser computer vision — the same pipeline behind our face-recognition entry and footfall systems.",
+      "Real-time, in-browser computer vision. The same pipeline behind our face-recognition entry and footfall systems.",
     results: ["Real-time, on-device", "No video leaves your browser", "Scroll down to try it"],
     href: "#vision",
     cta: "See it react",
@@ -68,7 +68,7 @@ export function ProofSection() {
             </h2>
           </div>
           <p className="text-text-secondary text-sm md:text-base font-medium max-w-[360px]">
-            These are real, working systems — built by us, live right now. Click in and use them yourself.
+            These are real, working systems. Built by us, live right now. Click in and use them yourself.
           </p>
         </div>
 

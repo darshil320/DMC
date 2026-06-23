@@ -10,7 +10,7 @@ const BEFORE_IMG = "/assets/before.jpeg";
 const AFTER_IMG  = "/assets/after.png";
 
 const FEATURES = [
-  { label: "Upload any room photo",       detail: "Customer snaps their bedroom, living room, or office — any photo works." },
+  { label: "Upload any room photo",       detail: "Customer snaps their bedroom, living room, or office. Any photo works." },
   { label: "Pick any product",            detail: "Select from your full catalogue. The AI reads the exact product image." },
   { label: "AI places it in 30 seconds",  detail: "FLUX Kontext Pro composites the exact product with matching light and scale." },
   { label: "WhatsApp enquiry in one tap", detail: "The product name pre-fills the message. Enquiry lands in your inbox instantly." },
@@ -154,8 +154,8 @@ export function AIVisualizerFeatureSection() {
 
               <p className="text-text-secondary text-sm md:text-base leading-relaxed max-w-md font-medium">
                 Our AI Room Visualizer lets your customers upload a photo of their
-                room and see any product placed inside it — with accurate lighting,
-                scale, and shadows — in under 30 seconds.
+                room and see any product placed inside it, with accurate lighting,
+                scale, and shadows. In under 30 seconds.
               </p>
             </div>
 

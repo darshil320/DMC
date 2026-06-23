@@ -26,7 +26,7 @@ export function DemoPreviewSection() {
             </h2>
           </div>
           <p className="text-text-secondary text-sm md:text-base font-medium max-w-[320px]">
-            Furniture Concepts 2.0 — a demo of exactly what we build. Designed for mobile, built for WhatsApp.
+            Furniture Concepts 2.0: a demo of exactly what we build. Designed for mobile, built for WhatsApp.
           </p>
         </div>
 

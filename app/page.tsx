@@ -45,9 +45,9 @@ const AboutUsSection = dynamic(() => import("@/components/sections/about").then(
 const OurWorkSection = dynamic(() => import("@/components/sections/our-work").then(m => m.OurWorkSection), {
   loading: () => <SectionPlaceholder />,
 });
-const ProofSection = dynamic(() => import("@/components/sections/proof").then(m => m.ProofSection), {
-  loading: () => <SectionPlaceholder />,
-});
+// const ProofSection = dynamic(() => import("@/components/sections/proof").then(m => m.ProofSection), {
+//   loading: () => <SectionPlaceholder />,
+// });
 const LiveVisionSection = dynamic(() => import("@/components/sections/live-vision").then(m => m.LiveVisionSection), {
   loading: () => <SectionPlaceholder />,
 });
@@ -118,8 +118,6 @@ export default function Home() {
           <HeroSection />
           <AboutUsSection />
           <OurWorkSection />
-
-          <ProofSection />
 
           <LiveVisionSection />
 

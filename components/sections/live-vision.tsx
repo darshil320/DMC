@@ -134,7 +134,7 @@ export function LiveVisionSection() {
           </h2>
 
           <p className="text-white/60 text-sm md:text-base leading-relaxed font-medium max-w-[520px] mb-8">
-            We build real-time recognition systems — face detection at entry,
+            We build real-time recognition systems: face detection at entry,
             motion tracking, and footfall analytics. This is a live, in-browser
             demo of the same computer-vision pipeline that powers our Showroom
             Intelligence builds. Move around and watch the grid react.
@@ -153,7 +153,7 @@ export function LiveVisionSection() {
               </MagneticButton>
               <p className="text-white/40 text-[11px] font-medium tracking-wide max-w-[420px]">
                 Runs 100% in your browser. No video is recorded, stored, or
-                uploaded — the feed never leaves your device.
+                uploaded. The feed never leaves your device.
               </p>
               {denied && (
                 <div

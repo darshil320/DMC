@@ -92,7 +92,7 @@ export function ProcessSection() {
             Websites live in 14 days
           </div>
           <p className="text-text-muted text-[11px] font-medium leading-relaxed mb-10 max-w-[280px]">
-            Timeline shown is for a starter website. Full business systems are scoped and dated before we begin — no surprises.
+            Timeline shown is for a starter website. Full business systems are scoped and dated before we begin. No surprises.
           </p>
 
           <a href="#services" className="text-text-primary hover:text-accent transition-colors flex items-center justify-center size-14 rounded-full border border-border-harsh hover:border-accent">

@@ -1,17 +1,17 @@
 export const FAQ_ITEMS = [
-  { q: "Do you build websites for small and local businesses?", a: "Yes — that's one of our core offerings. We build professional websites for shops, studios, clinics, restaurants, and service businesses across Ahmedabad and Gujarat. Most websites are up and running within 14 days." },
-  { q: "What else do you build besides websites?", a: "We build complete business systems — CRM, AI WhatsApp chatbots, lead management pipelines, ERP modules, staff dashboards, face recognition entry systems, order management, and custom integrations. We take entire business operations online." },
-  { q: "What is the AI WhatsApp chatbot?", a: "It's an intelligent WhatsApp assistant trained on your actual catalog, pricing, and customer history. It answers customer questions in Hindi, Hinglish, or Gujarati — sends product images with prices, handles enquiries 24/7, and escalates to your team when needed. All through the official WhatsApp Business API." },
-  { q: "Can you build a custom CRM for my business?", a: "Yes. We build CRMs tailored to how your business actually runs — capturing leads from Instagram, Facebook, Google, walk-ins, and WhatsApp into one dashboard. Every lead gets auto-assigned to a salesperson with follow-up triggers and conversion tracking." },
-  { q: "What do you mean by complete business systems?", a: "We digitize your entire operation — from customer-facing systems like websites and chatbots, to internal tools like order management, workshop tracking, supplier POs, delivery scheduling, staff dashboards, and automated alerts. Think of it as a custom ERP built for your specific workflows." },
-  { q: "How much does a project cost?", a: "A focused website starts at ₹90,000. Product catalogs from ₹1,50,000. Full ecommerce at ₹3,00,000. Complete business systems — CRM, AI chatbots, lead automation, dashboards — are scoped and quoted after we understand your operation. Every price is transparent, no hidden fees." },
+  { q: "Do you build websites for small and local businesses?", a: "Yes, that's one of our core offerings. We build professional websites for shops, studios, clinics, restaurants, and service businesses across Ahmedabad and Gujarat. Most websites are up and running within 14 days." },
+  { q: "What else do you build besides websites?", a: "We build complete business systems: CRM, AI WhatsApp chatbots, lead management pipelines, ERP modules, staff dashboards, face recognition entry systems, order management, and custom integrations. We take entire business operations online." },
+  { q: "What is the AI WhatsApp chatbot?", a: "It's an intelligent WhatsApp assistant trained on your actual catalog, pricing, and customer history. It answers customer questions in Hindi, Hinglish, or Gujarati, sends product images with prices, handles enquiries 24/7, and escalates to your team when needed. All through the official WhatsApp Business API." },
+  { q: "Can you build a custom CRM for my business?", a: "Yes. We build CRMs tailored to how your business actually runs, capturing leads from Instagram, Facebook, Google, walk-ins, and WhatsApp into one dashboard. Every lead gets auto-assigned to a salesperson with follow-up triggers and conversion tracking." },
+  { q: "What do you mean by complete business systems?", a: "We digitize your entire operation. That includes customer-facing systems like websites and chatbots, plus internal tools like order management, workshop tracking, supplier POs, delivery scheduling, staff dashboards, and automated alerts. Think of it as a custom ERP built for your specific workflows." },
+  { q: "How much does a project cost?", a: "A focused website starts at ₹90,000. Product catalogs from ₹1,50,000. Full ecommerce at ₹3,00,000. Complete business systems with CRM, AI chatbots, lead automation, and dashboards are scoped and quoted after we understand your operation. Every price is transparent, no hidden fees." },
   { q: "Do you build ecommerce stores that accept online payments?", a: "Yes. We integrate payment gateways so your customers can pay by UPI, cards, or net banking. You get an order dashboard, inventory management, and automated order confirmation emails." },
-  { q: "What is the AI Room Visualizer?", a: "It's a web tool we build for furniture, flooring, and interior décor businesses. Customers upload a photo of their room and the AI places your product inside it — helping them visualize before they buy. It runs entirely in the browser, no app download needed." },
-  { q: "Will my website work on mobile phones?", a: "Every site and dashboard we build is mobile-first and tested across all screen sizes. Over 75% of local business traffic in India comes from mobile — we make sure everything performs perfectly on every device." },
+  { q: "What is the AI Room Visualizer?", a: "It's a web tool we build for furniture, flooring, and interior décor businesses. Customers upload a photo of their room and the AI places your product inside it, helping them visualize before they buy. It runs entirely in the browser, no app download needed." },
+  { q: "Will my website work on mobile phones?", a: "Every site and dashboard we build is mobile-first and tested across all screen sizes. Over 75% of local business traffic in India comes from mobile. We make sure everything performs perfectly on every device." },
   { q: "Can you help us show up on Google and Google Maps?", a: "Yes. We handle Google Business Profile setup, on-page SEO, structured data markup, and sitemap submission so your business appears in local search results and on Google Maps." },
   { q: "How long does it take to launch?", a: "A starter website typically goes live in 7–14 days. Ecommerce projects take 3–5 weeks. Complete business systems with AI chatbots, CRM, and automation are typically 8–12 weeks. We give you a clear timeline before work begins." },
   { q: "Do you offer ongoing support after launch?", a: "Yes. Our maintenance plans cover content updates, performance monitoring, bug fixes, system health checks, and priority WhatsApp support. You'll never be left handling technical issues alone." },
-  { q: "We're based in Ahmedabad — can we meet in person?", a: "Absolutely. We're based in Ahmedabad and work with businesses across Gujarat. We prefer meeting local clients in person before we start. Reach us on WhatsApp or email and we'll set up a time." },
+  { q: "We're based in Ahmedabad, can we meet in person?", a: "Absolutely. We're based in Ahmedabad and work with businesses across Gujarat. We prefer meeting local clients in person before we start. Reach us on WhatsApp or email and we'll set up a time." },
 ];
 
 export const navItems = [
@@ -86,7 +86,7 @@ export const services = [
     name: "Website Growth System",
     timeline: "4–8 Weeks",
     description:
-      "A complete website plus the systems behind it — automations, CRM flow, onboarding, email sequences, and optimization support.",
+      "A complete website plus the systems behind it: automations, CRM flow, onboarding, email sequences, and optimization support.",
     bestFor: [
       "Scaling agencies",
       "High-ticket services",

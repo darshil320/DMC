@@ -4,9 +4,9 @@ import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
 export const SITE_URL = "https://www.dmctech.in";
 export const SITE_NAME = "DMC Tech";
 export const SITE_TITLE =
-  "DMC Tech | Websites, AI Chatbots, CRM & Business Systems for SMBs";
+  "DMC Tech | AI-Native Business Systems — Websites, Chatbots, CRM & Automation";
 export const SITE_DESCRIPTION =
-  "DMC Tech builds complete digital operating systems for businesses — websites, AI WhatsApp chatbots, CRM, ERP, lead automation, dashboards, and custom solutions across India.";
+  "DMC Tech builds AI-native systems that run your business — websites, AI WhatsApp chatbots, CRM, ERP, lead automation, and dashboards. Enterprise-grade engineering, built direct, transparent pricing. Ahmedabad, India.";
 export const OG_IMAGE_PATH = "/opengraph-image";
 
 const BASE_KEYWORDS = [

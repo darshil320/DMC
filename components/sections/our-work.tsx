@@ -95,7 +95,7 @@ export function OurWorkSection() {
                   The challenge
                 </span>
                 <p className="text-sm font-medium text-text-secondary leading-relaxed">
-                  A flat catalog can&apos;t sell premium furniture — customers need to feel the product before they&apos;ll trust the price.
+                  A flat catalog can&apos;t sell premium furniture. Customers need to feel the product before they&apos;ll trust the price.
                 </p>
               </div>
 
@@ -187,7 +187,7 @@ export function OurWorkSection() {
                   The challenge
                 </span>
                 <p className="text-sm font-medium text-text-secondary leading-relaxed">
-                  A showroom loses the walk-ins it never captures and the regulars it never recognises — and the owner can&apos;t see any of it.
+                  A showroom loses the walk-ins it never captures and the regulars it never recognises. The owner can&apos;t see any of it.
                 </p>
               </div>
 
@@ -196,7 +196,7 @@ export function OurWorkSection() {
                   What we&apos;re building
                 </span>
                 <p className="text-sm font-medium text-text-primary leading-relaxed">
-                  A six-module system — face recognition at entry, customer CRM, AI WhatsApp assistant, omnichannel lead capture, automated salesperson assignment, and a real-time sales pipeline.
+                  A six-module system: face recognition at entry, customer CRM, AI WhatsApp assistant, omnichannel lead capture, automated salesperson assignment, and a real-time sales pipeline.
                 </p>
               </div>
 

@@ -12,22 +12,22 @@ const PRINCIPLES = [
   {
     num: "01",
     title: "Outcome-obsessed",
-    body: "We measure success by what your business gains — more leads, less manual work, faster launches — not by how many pages we shipped.",
+    body: "We measure success by what your business gains: more leads, less manual work, faster launches. Not by how many pages we shipped.",
   },
   {
     num: "02",
     title: "Only ever honest",
-    body: "Transparent pricing, zero hidden fees. We tell you what you actually need — even when that's less than you came to buy.",
+    body: "Transparent pricing, zero hidden fees. We tell you what you actually need, even when that's less than you came to buy.",
   },
   {
     num: "03",
     title: "AI-native by default",
-    body: "Every system we build assumes AI in the loop — chatbots, lead scoring, automation — so your operation runs leaner from day one.",
+    body: "Every system we build has AI in the loop: chatbots, lead scoring, automation. Your operation runs leaner from day one.",
   },
   {
     num: "04",
     title: "We pick up the phone",
-    body: "Ahmedabad-based. You talk to the people who build your system — in person when it matters, never a faceless ticket queue.",
+    body: "Ahmedabad-based. You talk to the people who build your system. In person when it matters, never a faceless ticket queue.",
   },
 ] as const;
 
@@ -47,7 +47,7 @@ export function PrinciplesSection() {
             </h2>
           </div>
           <p className="text-text-secondary text-sm md:text-base font-medium max-w-[360px]">
-            The same four principles run through every project — from a one-page site to a full business system.
+            The same four principles run through every project, from a one-page site to a full business system.
           </p>
         </div>
 

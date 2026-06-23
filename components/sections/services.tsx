@@ -29,7 +29,7 @@ const FLAGSHIP_SERVICES = [
     title: "Complete Business Systems",
     subtitle: "End-to-end digital operations",
     description:
-      "We take offline businesses online — not just a website, but the entire operating system. CRM, lead pipeline, sales automation, staff dashboards, and real-time reporting — built custom for how your business actually runs.",
+      "We take offline businesses online. Not just a website, but the entire operating system: CRM, lead pipeline, sales automation, staff dashboards, and real-time reporting. All built custom for how your business actually runs.",
     tags: ["SMB Operations", "Digital Transformation", "Custom-Built"],
   },
   {
@@ -37,7 +37,7 @@ const FLAGSHIP_SERVICES = [
     title: "AI Chatbots & Assistants",
     subtitle: "Intelligent, 24/7 customer engagement",
     description:
-      "WhatsApp and web chatbots trained on your real catalog, pricing, and customer history. They answer in Hindi, Gujarati, or English — send product images, handle enquiries, and escalate to your team when needed.",
+      "WhatsApp and web chatbots trained on your real catalog, pricing, and customer history. They answer in Hindi, Gujarati, or English, send product images, handle enquiries, and escalate to your team when needed.",
     tags: ["WhatsApp AI", "Multilingual", "Catalog-Aware"],
   },
   {
@@ -45,15 +45,15 @@ const FLAGSHIP_SERVICES = [
     title: "CRM & Lead Management",
     subtitle: "Every customer, every interaction, one place",
     description:
-      "Custom CRMs that capture leads from Instagram, Facebook, Google, and walk-ins — assign them to salespeople, trigger follow-ups, and show you conversion rates on a live dashboard. No lead ever lost.",
+      "Custom CRMs that capture leads from Instagram, Facebook, Google, and walk-ins. Each lead gets assigned to a salesperson, follow-ups trigger automatically, and conversion rates show live on the dashboard. No lead ever lost.",
     tags: ["Omnichannel Leads", "Auto-Assignment", "Pipeline Tracking"],
   },
   {
     icon: Workflow,
     title: "ERP & Process Automation",
-    subtitle: "Production, supply chain, delivery — automated",
+    subtitle: "Production, supply chain, delivery: automated",
     description:
-      "Order management, workshop tracking, supplier POs, delivery scheduling, deadline alerts — the back-office systems that let you scale without drowning in WhatsApp groups and spreadsheets.",
+      "Order management, workshop tracking, supplier POs, delivery scheduling, deadline alerts. These are the back-office systems that let you scale without drowning in WhatsApp groups and spreadsheets.",
     tags: ["Order Management", "Workshop Tracking", "Supplier Integration"],
   },
 ];
@@ -64,7 +64,7 @@ const SERVICES = [
     icon: Sparkles,
     title: "AI Room Visualizer",
     description:
-      "Customers see any product in their own room — AI places it with accurate lighting and scale in 30 seconds.",
+      "Customers see any product in their own room. AI places it with accurate lighting and scale in 30 seconds.",
     isNew: true,
     href: "/demo/ai-visualizer",
   },
@@ -72,7 +72,7 @@ const SERVICES = [
     icon: ScanFace,
     title: "Smart Recognition Systems",
     description:
-      "Face recognition entry, repeat-customer alerts, visit history — your showroom remembers every customer who walks in.",
+      "Face recognition entry, repeat-customer alerts, visit history. Your showroom remembers every customer who walks in.",
     isNew: true,
   },
   {
@@ -85,7 +85,7 @@ const SERVICES = [
     icon: LayoutGrid,
     title: "Product Catalogs",
     description:
-      "Show all products with prices, photos, filters, and enquiry buttons — searchable by your customers.",
+      "Show all products with prices, photos, filters, and enquiry buttons. Fully searchable by your customers.",
   },
   {
     icon: ShoppingCart,
@@ -97,13 +97,13 @@ const SERVICES = [
     icon: MessageCircle,
     title: "WhatsApp Automation",
     description:
-      "Auto-replies, template messages, follow-up sequences, lead alerts — all through official WhatsApp Business API.",
+      "Auto-replies, template messages, follow-up sequences, lead alerts. All through the official WhatsApp Business API.",
   },
   {
     icon: BarChart3,
     title: "Dashboards & Analytics",
     description:
-      "Real-time business dashboards — sales pipeline, staff performance, lead sources, conversion funnels — all on one screen.",
+      "Real-time business dashboards: sales pipeline, staff performance, lead sources, conversion funnels. All on one screen.",
   },
   {
     icon: Blocks,
@@ -133,7 +133,7 @@ const SERVICES = [
     icon: Wrench,
     title: "Maintenance & Support",
     description:
-      "Monthly updates, monitoring, bug fixes, and priority WhatsApp support — you're never left on your own.",
+      "Monthly updates, monitoring, bug fixes, and priority WhatsApp support. You're never left on your own.",
   },
 ];
 
@@ -154,7 +154,7 @@ export function ServicesSection() {
             </h2>
           </div>
           <p className="text-text-secondary text-sm md:text-base font-medium max-w-[360px]">
-            From a single landing page to a complete digital operating system — we handle the technology so you can focus on growth.
+            From a single landing page to a complete AI-native operating system. Enterprise-grade engineering, built direct and priced transparent.
           </p>
         </div>
 

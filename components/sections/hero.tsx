@@ -273,26 +273,26 @@ export function HeroSection() {
         <div className="w-full text-center relative">
 
           <div className="w-full text-center">
-            {/* Line 1: TAKE YOUR */}
+            {/* Line 1: AI SYSTEMS */}
             <div data-hero-line className="relative">
               <h1 data-hero-base className={`${HEADING_CLASSNAME} relative z-10`} style={HEADING_STYLE}>
-                Take Your
+                AI Systems
               </h1>
             </div>
 
-            {/* Line 2: LOCAL BUSINESS */}
+            {/* Line 2: THAT RUN YOUR */}
             <div data-hero-line className="relative">
               <h1 data-hero-base className={`${HEADING_CLASSNAME} relative z-10`} style={HEADING_STYLE}>
-                Local Business
+                That Run Your
               </h1>
             </div>
 
-            {/* Line 3: ONLINE. in border box */}
+            {/* Line 3: BUSINESS. in border box */}
             <div data-hero-line data-hero-highlight className="inline-block relative mt-2 md:mt-[-0.05em]">
               <div className="relative px-[0.2em] py-[0.08em]">
                 <div className="relative">
                   <h1 data-hero-base className={`${HEADING_CLASSNAME} relative z-10`} style={HEADING_STYLE}>
-                    Online.
+                    Business.
                   </h1>
                 </div>
                 <div data-hero-highlight-detail className="absolute inset-0 border border-accent pointer-events-none" />
@@ -305,20 +305,21 @@ export function HeroSection() {
           </div>
 
           {/* ── POV line — the sharp positioning hook under the headline ── */}
-          <div data-hero-copy className="mt-6 md:mt-8 max-w-[680px] mx-auto px-4">
+          {/* <div data-hero-copy className="mt-6 md:mt-8 max-w-[720px] mx-auto px-4">
             <p className="text-center text-[13px] md:text-base font-bold uppercase tracking-tight leading-snug text-text-primary">
-              Most businesses don&apos;t need a prettier website.
-              <span className="text-accent"> They need the system behind it.</span>
+              Enterprise-grade AI systems —
+              <span className="text-accent"> built direct, priced transparent, zero lock-in.</span>
             </p>
-          </div>
+          </div> */}
 
           {/* ── Paragraph — corner, no data-hero-copy so GSAP never touches it ── */}
           <div
             className="hidden md:block text-left z-20"
-            style={{ position: "absolute", top: -8, right: 24, maxWidth: 220 }}
+            style={{ position: "absolute", top: -8, right: 10, maxWidth: 220 }}
           >
             <p className="text-[12px] md:text-[14px] text-text-secondary leading-[1.5]">
-              We architect custom digital operating systems for businesses that need to scale. From AI-driven lead capture to automated CRM pipelines—we turn your manual workflows into a seamless, high-converting engine.
+              We architect custom digital operating systems for businesses that need to scale. From AI-driven lead capture to automated CRM pipelines, we turn your manual workflows into a seamless, high-converting engine.
+
             </p>
           </div>
         </div>
@@ -326,7 +327,8 @@ export function HeroSection() {
         {/* Mobile-only paragraph */}
         <div data-hero-copy className="md:hidden mt-8 max-w-xs mx-auto">
           <p className="text-[12px] text-text-secondary leading-[1.5] text-center">
-            We architect custom digital operating systems for businesses that need to scale. From AI-driven lead capture to automated CRM pipelines—we turn your manual workflows into a seamless, high-converting engine.
+            We architect custom digital operating systems for businesses that need to scale. From AI-driven lead capture to automated CRM pipelines, we turn your manual workflows into a seamless, high-converting engine.
+
           </p>
         </div>
 
