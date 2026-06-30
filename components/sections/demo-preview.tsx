@@ -26,7 +26,7 @@ export function DemoPreviewSection() {
             </h2>
           </div>
           <p className="text-text-secondary text-sm md:text-base font-medium max-w-[320px]">
-            Furniture Concepts 2.0: a demo of exactly what we build. Designed for mobile, built for WhatsApp.
+            Topaz Furniture: a demo of exactly what we build. Designed for mobile, built for WhatsApp.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export function DemoPreviewSection() {
 
         <div className="flex justify-center">
           <a
-            href="/demo/furniture-concept-2.0"
+            href="https://topazfurniture.in"
             className="group flex items-center gap-2 bg-bg-page border-2 border-accent text-accent px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-white transition-colors"
           >
             Visit the Full Demo

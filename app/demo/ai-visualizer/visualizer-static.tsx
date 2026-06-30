@@ -123,10 +123,10 @@ export function VisualizerHeader() {
   return (
     <header className="px-6 md:px-12 lg:px-16 py-5 flex items-center justify-between border-b border-[#2C2A26]/10">
       <Link
-        href="/demo/furniture-concept-2.0"
+        href="https://topazfurniture.in"
         className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#2C2A26]/40 hover:text-[#2C2A26] transition-colors duration-200"
       >
-        &larr; Furniture Concept 2.0
+        &larr; Topaz Furniture
       </Link>
       <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#2C2A26]">
         AI Room Visualizer
@@ -223,7 +223,7 @@ export function VisualizerMarketing() {
                 Get this for my store
               </a>
               <Link
-                href="/demo/furniture-concept-2.0"
+                href="https://topazfurniture.in"
                 className="inline-flex items-center justify-center gap-2 border border-[#F4F1ED]/15 text-[#F4F1ED]/60 text-[10px] font-medium tracking-[0.18em] uppercase px-8 py-4 hover:border-[#F4F1ED]/35 hover:text-[#F4F1ED]/90 transition-colors duration-200"
               >
                 See full website demo
@@ -319,10 +319,10 @@ export function VisualizerMarketing() {
             &copy; 2026 DMC Tech &mdash; AI Room Visualizer
           </span>
           <Link
-            href="/demo/furniture-concept-2.0"
+            href="https://topazfurniture.in"
             className="text-[10px] text-[#F4F1ED]/25 tracking-[0.18em] uppercase hover:text-[#F4F1ED]/50 transition-colors duration-200"
           >
-            &larr; Back to Furniture Concept 2.0
+            &larr; Back to Topaz Furniture
           </Link>
         </div>
       </footer>

@@ -28,14 +28,14 @@ const PROOFS = [
     index: "02",
     tag: "ECOMMERCE · LIVE",
     icon: ShoppingCart,
-    title: "UrbanWood Storefront",
+    title: "Topaz Furniture Storefront",
     gap: "A catalog isn't a store. Browsing without a checkout leaves the money on the table.",
     build:
       "A full ecommerce build: product pages, cart, UPI and card checkout, and an order-confirmation flow.",
     results: ["Cart → payment → confirmation", "Mobile-first, tested everywhere", "Live, working demo"],
-    href: "/demo/furniture-concept-2.0",
+    href: "https://topazfurniture.in",
     cta: "Open the live store",
-    internal: true,
+    internal: false,
   },
   {
     index: "03",

@@ -45,19 +45,19 @@ export function OurWorkSection() {
         {/* ── Project Grid ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-l border-border-harsh">
 
-          {/* ── Project 1: Furniture Concept 2.0 ── */}
+          {/* ── Project 1: Topaz Furniture ── */}
           <div className="border-b border-r border-border-harsh flex flex-col">
             {/* Image area */}
             <a
-              href="/demo/furniture-concept-2.0"
+              href="https://topazfurniture.in"
               className="relative overflow-hidden bg-neutral-200 min-h-[320px] md:min-h-[400px] flex items-center justify-center group cursor-pointer"
             >
               <Image
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
+                src="/topaz-bg.jpg"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 transition-all duration-500 ease-out group-hover:scale-[1.025]"
-                alt="Furniture Concept 2.0 Showroom"
+                alt="Topaz Furniture Showroom"
               />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
 
@@ -71,7 +71,7 @@ export function OurWorkSection() {
               </MagneticButton>
 
               <span className="relative z-10 font-serif text-white text-2xl md:text-4xl font-medium tracking-tight transition-transform duration-700 ease-out group-hover:-translate-y-1">
-                Furniture Concept 2.0
+                Topaz Furniture
               </span>
 
               <div className="absolute bottom-4 right-4 z-20 text-white/60 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">

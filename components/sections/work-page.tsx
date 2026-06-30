@@ -38,21 +38,21 @@ export function WorkPageContent() {
             </p>
           </AnimatedReveal>
 
-          {/* ═══ Case Study 1: Furniture Concept 2.0 ═══ */}
+          {/* ═══ Case Study 1: Topaz Furniture ═══ */}
           <AnimatedReveal>
             <article className="border border-border-harsh mb-16">
               {/* Image Band */}
               <a
-                href="/demo/furniture-concept-2.0"
+                href="https://topazfurniture.in"
                 className="relative block overflow-hidden bg-neutral-200 min-h-[300px] md:min-h-[420px] group cursor-pointer"
               >
                 <CornerTicks tone="lime" />
                 <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80"
+                  src="/topaz-bg.jpg"
                   fill
                   sizes="(max-width: 768px) 100vw, 1200px"
                   className="object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 transition-opacity duration-500"
-                  alt="Furniture Concept 2.0 showroom"
+                  alt="Topaz Furniture showroom"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors duration-500" />
 
@@ -64,7 +64,7 @@ export function WorkPageContent() {
 
                 <div className="absolute bottom-6 left-6 z-10 transition-transform duration-700 ease-out group-hover:-translate-y-1">
                   <span className="text-white font-serif text-3xl md:text-5xl font-medium tracking-tight">
-                    Furniture Concept 2.0
+                    Topaz Furniture
                   </span>
                 </div>
               </a>
@@ -122,11 +122,11 @@ export function WorkPageContent() {
 
                   <MagneticButton strength={8} className="mt-auto w-full md:w-fit">
                     <a
-                      href="/demo/furniture-concept-2.0"
+                      href="https://topazfurniture.in"
                       className="group flex w-full items-center justify-center gap-2 border border-accent bg-accent px-5 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-accent-lime hover:text-accent brutalist-shadow md:w-fit"
                     >
                       <ExternalLink className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      View Live Demo
+                      View Live Website
                     </a>
                   </MagneticButton>
                 </div>
