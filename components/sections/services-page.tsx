@@ -15,6 +15,7 @@ import {
   Check,
 } from "lucide-react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
+import { AuroraHero } from "@/components/ui/aurora-hero";
 import { CornerTicks } from "@/components/ui/CornerTicks";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { DMC } from "@/lib/dmc-config";
@@ -153,8 +154,12 @@ const SERVICE_BLOCKS = [
 export function ServicesPageContent() {
   return (
     <main className="relative z-10 min-h-screen bg-bg-page text-text-primary">
-      <section className="pt-32 pb-20 px-6 md:px-12 lg:px-16">
-        <div className="max-w-[1440px] mx-auto">
+      <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-16 overflow-hidden">
+        <AuroraHero
+          aria-hidden="true"
+          className="!absolute !inset-0 !h-full !min-h-0 pointer-events-none opacity-[0.35] dark:opacity-[0.4]"
+        />
+        <div className="max-w-[1440px] mx-auto relative z-10">
 
           {/* Hero */}
           <AnimatedReveal className="mb-20">

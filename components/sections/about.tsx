@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
+import { LiquidOcean } from "@/components/ui/liquid-ocean";
 
 const PARAGRAPH = "Most businesses don't have a website problem. They have a system problem. Leads go cold, regulars get forgotten, and the same work gets done by hand every single day. We're an AI-native systems studio that rebuilds how you attract, sell, and follow up. Then we automate everything around the moments that actually make money. Enterprise-grade engineering, built direct, priced in the open. One showroom or fifty.";
 
@@ -60,8 +61,21 @@ function ScrollTextReveal({ value }: { value: string }) {
 
 export function AboutUsSection() {
   return (
-    <section id="about" className="py-16 md:py-24 px-6 md:px-12 lg:px-16 w-full select-none relative z-10 border-t border-border-harsh bg-bg-page">
-      <div className="max-w-[1440px] mx-auto w-full">
+    <section id="about" className="py-16 md:py-24 px-6 md:px-12 lg:px-16 w-full select-none relative z-10 border-t border-border-harsh bg-bg-page overflow-hidden">
+      {/* Liquid Ocean background effect */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.12] dark:opacity-[0.28]" aria-hidden="true">
+        <LiquidOcean
+          accentColor={0xc4622d}
+          backgroundColor={0x0c0a08}
+          showBoats={false}
+          showGrid={false}
+          rotationSpeed={0.0005}
+          waveAmplitude={0.3}
+          className="w-full h-full"
+        />
+      </div>
+
+      <div className="max-w-[1440px] mx-auto w-full relative z-10">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-10 lg:mb-14 px-4 lg:px-6">
           <div className="lg:col-span-2">
