@@ -5,6 +5,7 @@ import { Plus } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { FAQ_ITEMS } from "@/lib/content";
+import { DMC } from "@/lib/dmc-config";
 
 function FaqItem({
   item,
@@ -88,7 +89,16 @@ export function FaqSection() {
                 Questions<br />we get<br />asked a lot.
               </h2>
               <p className="text-text-secondary text-sm font-medium leading-relaxed max-w-[280px]">
-                Still have something on your mind? Drop us a message on WhatsApp — we reply fast.
+                Still have something on your mind?{" "}
+                <a
+                  href={DMC.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline font-bold text-accent hover:text-text-primary transition-colors"
+                >
+                  Drop us a message on WhatsApp
+                </a>{" "}
+                — we reply fast.
               </p>
             </AnimatedReveal>
           </div>

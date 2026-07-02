@@ -4,6 +4,15 @@ import React from "react";
 import { MessageCircle, Mail } from "lucide-react";
 import { DMC } from "@/lib/dmc-config";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { VelocityMarquee } from "@/components/ui/VelocityMarquee";
+
+const MARQUEE_ITEMS = [
+  "AI SYSTEMS",
+  "ECOMMERCE",
+  "AUTOMATION",
+  "CUSTOM CRM",
+  "ZERO LOCK-IN",
+] as const;
 
 export function FinalCtaSection() {
   return (
@@ -14,6 +23,14 @@ export function FinalCtaSection() {
         <span className="float-decor absolute top-[58%] left-[18%] size-10 border border-accent-lime/25" style={{ ["--float-duration" as string]: "8s" }} />
         <span className="float-decor absolute top-[24%] right-[14%] size-24 border border-white/10" style={{ ["--float-duration" as string]: "13s" }} />
         <span className="float-decor absolute bottom-[14%] right-[26%] size-8 border border-accent-lime/20" style={{ ["--float-duration" as string]: "9.5s" }} />
+      </div>
+
+      {/* Scroll-velocity display band — accelerates as the visitor scrolls */}
+      <div className="relative z-10 border-b border-white/20 py-5 md:py-7">
+        <VelocityMarquee
+          items={MARQUEE_ITEMS}
+          itemClassName="font-display text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wider text-white/90"
+        />
       </div>
 
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 relative z-10 min-h-[70vh]">
@@ -29,7 +46,7 @@ export function FinalCtaSection() {
             BUILD?
           </h2>
           
-          <div className="mb-5 inline-flex border border-accent-lime bg-accent-lime px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.22em] text-accent">
+          <div className="mb-5 inline-flex self-start border border-accent-lime bg-accent-lime px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.22em] text-accent">
             World-class website
           </div>
 

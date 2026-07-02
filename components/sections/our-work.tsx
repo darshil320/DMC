@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { ParallaxFrame } from "@/components/ui/ParallaxFrame";
 import { Bot, ScanFace, BarChart3, Users, Zap, MessageCircle } from "lucide-react";
 import { AnimatedRays } from "@/components/ui/animated-rays";
 
@@ -57,13 +58,15 @@ export function OurWorkSection() {
               href="https://topazfurniture.in"
               className="relative overflow-hidden bg-neutral-200 min-h-[320px] md:min-h-[400px] flex items-center justify-center group cursor-pointer"
             >
-              <Image
-                src="/topaz-bg.jpg"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 transition-all duration-500 ease-out group-hover:scale-[1.025]"
-                alt="Topaz Furniture Showroom"
-              />
+              <ParallaxFrame strength={8}>
+                <Image
+                  src="/topaz-bg.jpg"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 transition-all duration-500 ease-out group-hover:scale-[1.025]"
+                  alt="Topaz Furniture Showroom"
+                />
+              </ParallaxFrame>
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
 
               <CornerTicks />

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
+import { FooterWordmark } from "@/components/ui/FooterWordmark";
 
 export function Footer() {
   return (
@@ -58,9 +59,7 @@ export function Footer() {
 
         {/* Massive Logo */}
         <div className="flex w-full items-center justify-center overflow-hidden py-10 md:py-16">
-          <span className="font-display font-bold text-text-primary leading-none tracking-tight text-[100px] sm:text-[160px] md:text-[220px] lg:text-[300px] uppercase block w-full text-center transition-colors duration-500 cursor-default">
-            DMC
-          </span>
+          <FooterWordmark />
         </div>
 
         {/* Copyright */}

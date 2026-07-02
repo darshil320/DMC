@@ -3,6 +3,7 @@
 import React from "react";
 import { Clock } from "lucide-react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { DMC } from "@/lib/dmc-config";
 
 const formatPrice = (num: number) => {
@@ -117,9 +118,10 @@ export function PricingSection() {
                 {/* Time & Graphic (Cols 10-12) */}
                 <div className="lg:col-span-3 flex flex-col items-end gap-6 pt-2 px-4 lg:px-6">
                   <div className="flex flex-col items-end gap-2 text-right">
-                    <span className="font-serif text-2xl lg:text-3xl text-text-primary tracking-tight font-medium">
-                      {opt.price}
-                    </span>
+                    <AnimatedCounter
+                      value={opt.price}
+                      className="font-serif text-2xl lg:text-3xl text-text-primary tracking-tight font-medium"
+                    />
                     <div className="flex items-center gap-2 text-text-primary/60 font-medium text-sm">
                       <Clock className="size-4" />
                       {opt.time}
@@ -128,6 +130,13 @@ export function PricingSection() {
                   <div className="w-[140px] h-[100px] mt-4">
                     {opt.graphic}
                   </div>
+                  <a
+                    href="/contact"
+                    className="group/cta inline-flex items-center gap-2 border border-border-harsh px-4 py-2.5 text-[11px] font-black uppercase tracking-[0.18em] text-text-primary hover:bg-accent hover:text-white hover:border-accent transition-colors"
+                  >
+                    Discuss this scope
+                    <span className="transition-transform group-hover/cta:translate-x-1">→</span>
+                  </a>
                 </div>
               </div>
 
@@ -135,6 +144,20 @@ export function PricingSection() {
           ))}
           <div className="w-full h-px bg-border-harsh" />
         </div>
+
+        {/* Escape hatch for undecided visitors */}
+        <p className="mt-10 text-center text-sm font-medium text-text-secondary">
+          Not sure which fits?{" "}
+          <a
+            href={DMC.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-underline font-bold text-accent hover:text-text-primary transition-colors"
+          >
+            Tell us how your business runs on WhatsApp
+          </a>{" "}
+          — we&apos;ll tell you what to build.
+        </p>
 
       </div>
     </section>

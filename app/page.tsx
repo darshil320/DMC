@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { HeroSection } from "@/components/sections/hero";
 import dynamic from "next/dynamic";
 import { BrutalistLoader } from "@/components/ui/brutalist-loader";
+import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   SITE_DESCRIPTION,
@@ -136,6 +137,8 @@ export default function Home() {
       <div className="sticky bottom-0 z-0">
         <Footer />
       </div>
+
+      <StickyMobileCta />
     </div>
   );
 }

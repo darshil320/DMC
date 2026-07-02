@@ -305,12 +305,12 @@ export function HeroSection() {
           </div>
 
           {/* ── POV line — the sharp positioning hook under the headline ── */}
-          {/* <div data-hero-copy className="mt-6 md:mt-8 max-w-[720px] mx-auto px-4">
+          <div data-hero-copy className="mt-6 md:mt-8 max-w-[720px] mx-auto px-4">
             <p className="text-center text-[13px] md:text-base font-bold uppercase tracking-tight leading-snug text-text-primary">
               Enterprise-grade AI systems —
               <span className="text-accent"> built direct, priced transparent, zero lock-in.</span>
             </p>
-          </div> */}
+          </div>
 
           {/* ── Paragraph — corner, no data-hero-copy so GSAP never touches it ── */}
           <div
@@ -368,6 +368,23 @@ export function HeroSection() {
             </div>
           </a>
           </MagneticButton>
+
+          {/* Secondary path — proof before contact */}
+          <a
+            href="#work"
+            className="group/work flex items-center gap-2 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-text-secondary hover:text-accent transition-colors"
+          >
+            or see the live work
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+              className="shrink-0 transition-transform group-hover/work:translate-y-0.5"
+            >
+              <path d="m204.24 148.24l-72 72a6 6 0 0 1-8.48 0l-72-72a6 6 0 0 1 8.48-8.48L122 201.51V40a6 6 0 0 1 12 0v161.51l61.76-61.75a6 6 0 0 1 8.48 8.48" />
+            </svg>
+          </a>
         </div>
       </motion.div>
 

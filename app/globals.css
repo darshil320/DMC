@@ -233,10 +233,32 @@ a, button, input, select, textarea,
     will-change: transform, opacity;
   }
 
+  /* Section tags stamp in with a stepped clip — pixel-reveal to match DotGothic.
+     The hidden state is opacity-only: a self clip-path of inset(0 100% 0 0)
+     zeroes the element's intersection area, so IntersectionObserver would
+     never fire the reveal. The clip runs as a keyframe once visible. */
   [data-premium-motion="reveal"][data-motion-kind="tag"] {
-    transform: translate3d(0, 8px, 0) scaleX(0.92);
-    transform-origin: left center;
+    transform: none;
+    transition: none;
   }
+
+  [data-premium-motion="reveal"][data-motion-kind="tag"][data-motion-visible="true"] {
+    animation: dmc-tag-stamp 520ms steps(12, end) both;
+    animation-delay: var(--motion-delay, 0ms);
+  }
+}
+
+@keyframes dmc-tag-stamp {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
 
   [data-premium-motion="reveal"][data-motion-kind="heading"] {
     transform: translate3d(0, 26px, 0);
@@ -250,6 +272,17 @@ a, button, input, select, textarea,
     opacity: 1;
     transform: translate3d(0, 0, 0);
     will-change: auto;
+  }
+
+  /* Masked line-split headings: hidden until GSAP takes over (it sets inline
+     opacity). The visible rule is the no-JS/import-failure safety net. */
+  [data-premium-motion="split"] {
+    opacity: 0;
+  }
+
+  [data-premium-motion="split"][data-motion-visible="true"] {
+    opacity: 1;
+    transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   /* NOTE: no persistent `will-change` here — these attributes are stamped onto

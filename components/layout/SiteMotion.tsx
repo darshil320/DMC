@@ -35,6 +35,24 @@ function getRevealKind(element: HTMLElement) {
   return "text";
 }
 
+/** h2s get the GSAP masked line-split entrance; opt out via data-no-split. */
+function isSplitHeading(element: HTMLElement) {
+  return (
+    element.tagName === "H2" &&
+    !element.hasAttribute("data-no-split") &&
+    !element.closest("[data-no-split]")
+  );
+}
+
+function revealSplitHeading(target: HTMLElement) {
+  import("@/lib/motion/split-heading")
+    .then(({ animateSplitHeading }) => animateSplitHeading(target))
+    .catch(() => {
+      // CSS fallback rule unhides [data-motion-visible="true"].
+      target.dataset.motionVisible = "true";
+    });
+}
+
 function isCardWrapperLink(element: HTMLElement) {
   return (
     element.tagName === "A" &&
@@ -58,7 +76,11 @@ export function SiteMotion() {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           const target = entry.target as HTMLElement;
-          target.dataset.motionVisible = "true";
+          if (target.dataset.premiumMotion === "split") {
+            revealSplitHeading(target);
+          } else {
+            target.dataset.motionVisible = "true";
+          }
           revealObserver.unobserve(target);
         });
       },
@@ -74,9 +96,13 @@ export function SiteMotion() {
       document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR).forEach((element, index) => {
         if (observed.has(element)) return;
         observed.add(element);
-        element.dataset.premiumMotion = "reveal";
-        element.dataset.motionKind = getRevealKind(element);
-        element.style.setProperty("--motion-delay", `${Math.min(index % 8, 7) * 34}ms`);
+        if (isSplitHeading(element)) {
+          element.dataset.premiumMotion = "split";
+        } else {
+          element.dataset.premiumMotion = "reveal";
+          element.dataset.motionKind = getRevealKind(element);
+          element.style.setProperty("--motion-delay", `${Math.min(index % 8, 7) * 34}ms`);
+        }
         revealObserver.observe(element);
       });
 

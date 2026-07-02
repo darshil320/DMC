@@ -178,6 +178,20 @@ export function Navbar() {
               SLOTS OPEN - AUG &apos;26
             </div>
 
+            {/* Primary conversion CTA — always one click away */}
+            <Link
+              href="/contact"
+              onClick={closeMenu}
+              className={cn(
+                "hidden md:flex h-[42px] items-center border px-5 font-pixel text-[12px] tracking-widest transition-colors",
+                isMenuOpen
+                  ? "border-accent-lime bg-accent-lime text-accent hover:bg-white"
+                  : "border-accent bg-accent-lime text-accent hover:bg-accent hover:text-white"
+              )}
+            >
+              START A PROJECT
+            </Link>
+
             {/* Dark / light toggle */}
             <button
               onClick={toggleTheme}
