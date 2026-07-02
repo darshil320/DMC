@@ -63,10 +63,10 @@ export function CustomCursor() {
           x: springX,
           y: springY,
         }}
-        initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+        initial={{ backgroundColor: "rgba(255, 255, 255, 0)" }}
         animate={{
           scale: isHovering ? 1.5 : 1,
-          backgroundColor: isHovering ? "white" : "rgba(0, 0, 0, 0)",
+          backgroundColor: isHovering ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0)",
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       />

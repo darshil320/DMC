@@ -8,7 +8,6 @@ import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ParallaxFrame } from "@/components/ui/ParallaxFrame";
 import { Bot, ScanFace, BarChart3, Users, Zap, MessageCircle } from "lucide-react";
-import { AnimatedRays } from "@/components/ui/animated-rays";
 
 /** Accent corner ticks that scale in on card hover. */
 function CornerTicks() {
@@ -27,10 +26,6 @@ function CornerTicks() {
 export function OurWorkSection() {
   return (
     <section id="work" className="py-24 px-6 md:px-12 lg:px-16 w-full select-none relative z-10 border-t border-border-harsh bg-bg-page overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none opacity-[0.15] dark:opacity-[0.2]" aria-hidden="true">
-        <AnimatedRays className="w-full h-full" />
-      </div>
-
       <div className="max-w-[1440px] mx-auto w-full relative z-10">
 
         {/* Header */}

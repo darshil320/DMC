@@ -7,6 +7,13 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
 import { LiquidOcean } from "@/components/ui/liquid-ocean";
+import { useTheme } from "@/lib/theme";
+
+/** Mirrors the CSS accent tokens: brutalist blue in light mode, terracotta in dark. */
+function useAccentHex() {
+  const { theme } = useTheme();
+  return theme === "dark" ? 0xc4622d : 0x0000ff;
+}
 
 const PARAGRAPH = "Most businesses don't have a website problem. They have a system problem. Leads go cold, regulars get forgotten, and the same work gets done by hand every single day. We're an AI-native systems studio that rebuilds how you attract, sell, and follow up. Then we automate everything around the moments that actually make money. Enterprise-grade engineering, built direct, priced in the open. One showroom or fifty.";
 
@@ -60,17 +67,30 @@ function ScrollTextReveal({ value }: { value: string }) {
 }
 
 export function AboutUsSection() {
+  const accentHex = useAccentHex();
+
   return (
     <section id="about" className="py-16 md:py-24 px-6 md:px-12 lg:px-16 w-full select-none relative z-10 border-t border-border-harsh bg-bg-page overflow-hidden">
-      {/* Liquid Ocean background effect */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.12] dark:opacity-[0.28]" aria-hidden="true">
+      {/* Liquid Ocean background effect — vignette-masked so it reads as an
+          ambient watermark rather than a pasted-in rectangle, wireframe-forward
+          to match the blueprint aesthetic used in the hero backdrop. */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.16] dark:opacity-[0.32]"
+        style={{
+          WebkitMaskImage: "radial-gradient(ellipse 70% 65% at 50% 45%, #000 35%, transparent 82%)",
+          maskImage: "radial-gradient(ellipse 70% 65% at 50% 45%, #000 35%, transparent 82%)",
+        }}
+        aria-hidden="true"
+      >
         <LiquidOcean
-          accentColor={0xc4622d}
+          accentColor={accentHex}
           backgroundColor={0x0c0a08}
           showBoats={false}
           showGrid={false}
-          rotationSpeed={0.0005}
-          waveAmplitude={0.3}
+          rotationSpeed={0.0004}
+          waveAmplitude={0.32}
+          oceanFragments={36}
+          oceanOpacity={0.55}
           className="w-full h-full"
         />
       </div>
