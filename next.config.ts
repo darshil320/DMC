@@ -10,7 +10,6 @@ const nextConfig: NextConfig = {
       "motion",
       "@tabler/icons-react",
       "lucide-react",
-      "@react-three/drei",
       "@react-three/fiber",
       "three",
     ],
@@ -68,6 +67,12 @@ const nextConfig: NextConfig = {
         source: "/:all*(woff2|woff|ttf|otf)",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        source: "/:all*(jpg|jpeg|png|webp|avif|gif|svg|ico)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" },
         ],
       },
       securityHeaders,

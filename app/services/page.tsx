@@ -6,10 +6,19 @@ import { JsonLd } from "@/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
   createSeoMetadata,
+  faqJsonLd,
   organizationJsonLd,
   serviceCatalogJsonLd,
   webPageJsonLd,
 } from "@/lib/seo";
+import { FAQ_ITEMS } from "@/lib/content";
+
+// Service-specific questions only — the full list stays on the homepage so the
+// two pages don't publish duplicate FAQ markup.
+const SERVICE_FAQ_KEYWORDS = ["besides websites", "WhatsApp chatbot", "custom CRM", "complete business systems", "ecommerce stores", "Room Visualizer", "take to launch"];
+const SERVICE_FAQ_ITEMS = FAQ_ITEMS.filter((item) =>
+  SERVICE_FAQ_KEYWORDS.some((keyword) => item.q.includes(keyword))
+);
 
 const Footer = dynamic(() => import("@/components/layout/footer").then(m => m.Footer));
 
@@ -51,6 +60,7 @@ export default function ServicesPage() {
               { name: "Home", path: "/" },
               { name: "Services", path: "/services" },
             ]),
+            faqJsonLd(SERVICE_FAQ_ITEMS),
           ]}
         />
         <Navbar />

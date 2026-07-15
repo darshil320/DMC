@@ -7,7 +7,7 @@ import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 const BEFORE_IMG = "/assets/before.jpeg";
-const AFTER_IMG  = "/assets/after.png";
+const AFTER_IMG  = "/assets/after.jpg";
 
 const FEATURES = [
   { label: "Upload any room photo",       detail: "Customer snaps their bedroom, living room, or office. Any photo works." },

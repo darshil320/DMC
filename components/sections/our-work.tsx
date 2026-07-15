@@ -168,9 +168,9 @@ export function OurWorkSection() {
                 </span>
               </AnimatedReveal>
 
-              {/* In-progress badge */}
+              {/* Phase badge */}
               <span className="absolute top-6 left-6 z-20 bg-white/10 text-white/80 px-3 py-1.5 font-pixel font-bold uppercase tracking-widest text-[10px] border border-white/20 flex items-center gap-2">
-                IN DEVELOPMENT
+                PHASE 1 LIVE · PHASE 2 IN BUILD
               </span>
             </div>
 
@@ -178,7 +178,7 @@ export function OurWorkSection() {
             <div className="p-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-[9px] font-black tracking-[0.25em] uppercase text-text-muted">
-                  AI · CRM · FACE RECOGNITION · WHATSAPP
+                  AI · CRM · WHATSAPP · GST BILLING · PRODUCTION
                 </span>
               </div>
               <h3 className="text-xl font-bold tracking-tight text-text-primary mb-4">
@@ -190,21 +190,30 @@ export function OurWorkSection() {
                   The challenge
                 </span>
                 <p className="text-sm font-medium text-text-secondary leading-relaxed">
-                  A showroom loses the walk-ins it never captures and the regulars it never recognises. The owner can&apos;t see any of it.
+                  A showroom loses the walk-ins it never captures and the regulars it never recognises. After the sale, quotes, payments, and production live in notebooks. The owner can&apos;t see any of it.
                 </p>
               </div>
 
               <div className="mb-5 max-w-[420px]">
                 <span className="block text-[9px] font-black tracking-[0.2em] uppercase text-text-muted mb-1.5">
-                  What we&apos;re building
+                  Phase 1 — shipped
                 </span>
                 <p className="text-sm font-medium text-text-primary leading-relaxed">
-                  A six-module system: face recognition at entry, customer CRM, AI WhatsApp assistant, omnichannel lead capture, automated salesperson assignment, and a real-time sales pipeline.
+                  Consent-based face recognition at entry, customer CRM, AI WhatsApp assistant, omnichannel lead capture, salesperson assignment, and a real-time pipeline dashboard.
+                </p>
+              </div>
+
+              <div className="mb-5 max-w-[420px]">
+                <span className="block text-[9px] font-black tracking-[0.2em] uppercase text-text-muted mb-1.5">
+                  Phase 2 — in build
+                </span>
+                <p className="text-sm font-medium text-text-primary leading-relaxed">
+                  Quote-to-cash and production: GST-compliant quotations delivered as PDFs on WhatsApp with one-tap customer approval, order pipeline, payment schedules with automated reminders, and workshop production tracking via a bilingual Gujarati–English PWA.
                 </p>
               </div>
 
               <ul className="flex flex-col gap-2 mb-6">
-                {["Every walk-in recognised", "No lead left uncontacted", "One dashboard, whole showroom"].map((r) => (
+                {["Every walk-in recognised", "Quote to payment, all on WhatsApp", "Factory floor to dashboard, live"].map((r) => (
                   <li key={r} className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-text-primary">
                     <span className="size-1.5 bg-accent shrink-0" />
                     {r}
@@ -213,7 +222,7 @@ export function OurWorkSection() {
               </ul>
 
               <div className="flex flex-wrap gap-2">
-                {["Face Recognition", "AI Chatbot", "CRM", "Lead Pipeline", "WhatsApp API", "Real-time Dashboard"].map((tag) => (
+                {["Face Recognition", "AI Chatbot", "CRM", "WhatsApp API", "GST Quotations", "Payment Tracking", "Production Tracking", "Real-time Dashboard"].map((tag) => (
                   <span key={tag} className="text-[9px] font-bold tracking-[0.15em] uppercase px-2.5 py-1.5 border border-border-harsh bg-bg-card text-text-muted">
                     {tag}
                   </span>

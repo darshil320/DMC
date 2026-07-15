@@ -18,7 +18,16 @@ type ContactFormState = {
   company: string;
   project: string;
   budget: string;
+  budgetRange: string;
 };
+
+const BUDGET_RANGES = [
+  "Under ₹1,00,000",
+  "₹1,00,000 – ₹3,00,000",
+  "₹3,00,000 – ₹6,00,000",
+  "₹6,00,000+",
+  "Not sure yet",
+] as const;
 
 const initialFormState: ContactFormState = {
   name: "",
@@ -26,6 +35,7 @@ const initialFormState: ContactFormState = {
   company: "",
   project: "",
   budget: "World-class business website",
+  budgetRange: "Not sure yet",
 };
 
 function ContactMarquee() {
@@ -84,6 +94,7 @@ function composeMessage(form: ContactFormState) {
     `Email: ${form.email || "-"}`,
     `Business: ${form.company || "-"}`,
     `Project type: ${form.budget || "-"}`,
+    `Budget range: ${form.budgetRange || "-"}`,
     "",
     "Project details:",
     form.project || "-",
@@ -308,6 +319,19 @@ export function ContactPageExperience() {
                     <option>Complete business system</option>
                     <option>AI room visualizer</option>
                     <option>Custom / not sure yet</option>
+                  </select>
+                </label>
+
+                <label data-contact-field className="block border-b border-white/28 pb-3">
+                  <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/62">Budget range</span>
+                  <select
+                    value={form.budgetRange}
+                    onChange={updateField("budgetRange")}
+                    className="mt-3 w-full bg-transparent text-base text-white outline-none focus:text-emerald-100 [&>option]:bg-emerald-950"
+                  >
+                    {BUDGET_RANGES.map((range) => (
+                      <option key={range}>{range}</option>
+                    ))}
                   </select>
                 </label>
 

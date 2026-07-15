@@ -11,9 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
       images: [
-        absoluteUrl("/assets/after.png"),
-        absoluteUrl("/assets/before.jpeg"),
-        absoluteUrl("/assets/contact-union.webp"),
+        absoluteUrl("/topaz-bg.jpg"),
+        absoluteUrl("/opengraph-image"),
       ],
     },
     {
@@ -50,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       images: [
         absoluteUrl("/assets/before.jpeg"),
-        absoluteUrl("/assets/after.png"),
+        absoluteUrl("/assets/after.jpg"),
       ],
     },
     {

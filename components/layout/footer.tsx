@@ -13,7 +13,7 @@ export function Footer() {
           {/* Quick Links */}
           <div className="flex flex-col gap-4">
             <span className="text-[11px] text-text-secondary uppercase tracking-widest mb-1">Quick Links</span>
-            <div className="flex flex-wrap gap-x-2 gap-y-1 text-sm font-medium uppercase tracking-wide">
+            <nav aria-label="Footer" className="flex flex-wrap gap-x-2 gap-y-1 text-sm font-medium uppercase tracking-wide">
               <Link href="/#home" className="link-underline hover:text-accent transition-colors">HOME</Link>
               <span className="text-text-primary/30">,</span>
               <Link href="/#about" className="link-underline hover:text-accent transition-colors">ABOUT</Link>
@@ -21,12 +21,12 @@ export function Footer() {
               <Link href="/#work" className="link-underline hover:text-accent transition-colors">WORK</Link>
               <span className="text-text-primary/30">,</span>
               <Link href="/contact" className="link-underline hover:text-accent transition-colors">CONTACT</Link>
-            </div>
+            </nav>
             <Link
               href="/contact"
               className="link-underline group inline-flex w-fit items-center gap-2 text-[11px] font-black uppercase tracking-[0.18em] text-accent transition-colors hover:text-text-primary"
             >
-              Let&apos;s build you a world-class website
+              Book a free strategy call
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>

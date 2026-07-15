@@ -22,7 +22,11 @@ URBANWOOD = { name: "UrbanWood Furniture", tagline: "Premium Furniture for Moder
 | Route | File | Purpose |
 |---|---|---|
 | `/` | `app/page.tsx` | Main marketing homepage |
-| `/contact` | `app/contact/page.tsx` | Contact form |
+| `/about` | `app/about/page.tsx` | About page |
+| `/services` | `app/services/page.tsx` | Services page (has FAQPage JSON-LD subset) |
+| `/work` | `app/work/page.tsx` | Case studies (Topaz Furniture + Showroom Intelligence, phased) |
+| `/contact` | `app/contact/page.tsx` | Contact form (qualified: project type + budget range) |
+| `/llms.txt` | `app/llms.txt/route.ts` | GEO: plain-text site summary for AI crawlers |
 | `/demo/ai-visualizer` | `app/demo/ai-visualizer/page.tsx` | AI room visualizer demo |
 | `/demo/furniture-concept-2.0` | `app/demo/furniture-concept-2.0/page.tsx` | Full furniture ecommerce demo (UrbanWood) |
 | `/demo/furniture-concept-2.0/success` | `app/demo/furniture-concept-2.0/success/page.tsx` | Post-purchase success |
@@ -35,20 +39,21 @@ URBANWOOD = { name: "UrbanWood Furniture", tagline: "Premium Furniture for Moder
 ---
 
 ## Homepage Section Order (`app/page.tsx`)
-1. `HeroSection` → `components/sections/hero.tsx`
-2. `AboutUsSection` → `components/sections/about.tsx`
+1. `HeroSection` → `components/sections/hero.tsx` (single sr-only `<h1>`; animated lines are spans)
+2. `AboutUsSection` → `components/sections/about.tsx` (LiquidOcean three.js — lazy + premium-motion gated)
 3. `OurWorkSection` → `components/sections/our-work.tsx`
-4. `DemoPreviewSection` → `components/sections/demo-preview.tsx`
-5. `AIVisualizerFeatureSection` → `components/sections/ai-visualizer-feature.tsx`
-6. `ServicesSection` → `components/sections/services.tsx`
-7. `FeaturedOfferSection` → `components/sections/featured-offer.tsx`
-8. `ProcessSection` → `components/sections/process.tsx`
-9. `PricingSection` → `components/sections/pricing.tsx`
-10. `ProblemSection` → `components/sections/problem.tsx`
-11. `TrustSection` → `components/sections/trust.tsx`
-12. `FinalCtaSection` → `components/sections/final-cta.tsx`
+4. `LiveVisionSection` → `components/sections/live-vision.tsx`
+5. `ServicesSection` → `components/sections/services.tsx`
+6. `ProcessSection` → `components/sections/process.tsx`
+7. `PrinciplesSection` → `components/sections/principles.tsx`
+8. `PricingSection` → `components/sections/pricing.tsx`
+9. `ProblemSection` → `components/sections/problem.tsx`
+10. `TrustSection` → `components/sections/trust.tsx`
+11. `FaqSection` → `components/sections/faq.tsx` (FAQ_ITEMS also feed FAQPage JSON-LD + /llms.txt)
+12. `FinalCtaSection` → `components/sections/final-cta.tsx` (strategy-call CTA)
 
 All sections below Hero are loaded via `next/dynamic` with `SectionPlaceholder` skeletons.
+`ai-visualizer-feature.tsx`, `demo-preview.tsx`, `featured-offer.tsx`, `proof.tsx` exist but are not currently routed.
 
 ---
 

@@ -53,8 +53,10 @@ export default function AIVisualizerPage() {
         ]}
       />
       <VisualizerHeader />
-      <AIVisualizerClient intro={<VisualizerIntro />} />
-      <VisualizerMarketing />
+      <main>
+        <AIVisualizerClient intro={<VisualizerIntro />} />
+        <VisualizerMarketing />
+      </main>
     </div>
   );
 }

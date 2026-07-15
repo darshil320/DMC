@@ -167,12 +167,12 @@ export function WorkPageContent() {
                   </span>
 
                   <span className="text-[9px] font-black tracking-[0.3em] uppercase text-white/40 mt-4">
-                    6-MODULE BUSINESS SYSTEM
+                    MULTI-PHASE BUSINESS SYSTEM
                   </span>
                 </div>
 
                 <span className="absolute top-6 left-6 z-20 bg-white/10 text-white/80 px-3 py-1.5 font-pixel font-bold uppercase tracking-widest text-[10px] border border-white/20 flex items-center gap-2">
-                  IN DEVELOPMENT
+                  PHASE 1 LIVE · PHASE 2 IN BUILD
                 </span>
               </div>
 
@@ -191,7 +191,7 @@ export function WorkPageContent() {
                   <div>
                     <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">SCOPE</span>
                     <span className="text-sm font-medium text-text-primary">
-                      <AnimatedCounter value="6 Modules" /> · <AnimatedCounter value="22 Weeks" />
+                      <AnimatedCounter value="2 Phases" /> · <AnimatedCounter value="19 Modules" />
                     </span>
                   </div>
                   <div>
@@ -209,9 +209,15 @@ export function WorkPageContent() {
                     </p>
                   </div>
                   <div>
-                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-accent block mb-2">WHAT WE&apos;RE BUILDING</span>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-accent block mb-2">PHASE 1 — SHIPPED</span>
                     <p className="text-text-secondary text-sm md:text-base leading-relaxed">
-                      A six-module intelligence system: face recognition cameras at showroom entries that identify returning customers and alert staff via WhatsApp. A custom CRM with omnichannel lead capture (Instagram, Facebook, Google, walk-in). An AI WhatsApp assistant that speaks Hindi, Gujarati, and Hinglish — trained on the actual catalog with live pricing. Automatic salesperson assignment. A full sales pipeline dashboard with conversion analytics. And an ERP layer for order and delivery management.
+                      Consent-based face recognition at showroom entries that identifies returning customers and alerts staff on WhatsApp. A custom CRM with omnichannel lead capture (Instagram, Facebook, Google, walk-in). An AI WhatsApp assistant that speaks Hindi, Gujarati, and Hinglish — grounded on the live catalog with real pricing. Automatic salesperson assignment and a real-time sales pipeline dashboard.
+                    </p>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-accent block mb-2">PHASE 2 — IN BUILD</span>
+                    <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+                      The quote-to-cash and production layer. Salespeople generate GST-compliant quotations that land in the customer&apos;s WhatsApp as PDFs with one-tap approval. Approved quotes become orders on a pipeline kanban. Payment schedules track advances and dues with automated WhatsApp reminders. On the factory side, every order item is assigned to a workshop and tracked stage-by-stage through a bilingual Gujarati–English PWA — with delay watchdogs and customer notifications the moment production starts, completes, or is ready for dispatch.
                     </p>
                   </div>
                 </div>
@@ -219,7 +225,7 @@ export function WorkPageContent() {
                 {/* Tags */}
                 <div className="lg:col-span-4 flex flex-col gap-6 border-l-0 lg:border-l border-border-harsh/30 lg:pl-8">
                   <div>
-                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-3">MODULES</span>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-3">PHASE 1 — LIVE</span>
                     <ul className="flex flex-col gap-2">
                       {[
                         "M1 — Showroom Intelligence (Face Recognition)",
@@ -227,7 +233,6 @@ export function WorkPageContent() {
                         "M3 — AI WhatsApp Assistant",
                         "M4 — Sales Pipeline & Dashboard",
                         "M5 — Salesperson Assignment Engine",
-                        "M6 — Order & Delivery Management",
                       ].map((mod) => (
                         <li key={mod} className="text-xs font-medium text-text-secondary flex items-start gap-2">
                           <span className="text-accent mt-0.5">▪</span>
@@ -236,8 +241,25 @@ export function WorkPageContent() {
                       ))}
                     </ul>
                   </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-3">PHASE 2 — IN BUILD</span>
+                    <ul className="flex flex-col gap-2">
+                      {[
+                        "2A — GST Quotations, PDF Documents & One-Tap Approval",
+                        "2A — Orders, Pipeline Kanban & Payment Tracking",
+                        "2B — Workshop & Production Stage Engine",
+                        "2B — Bilingual Workshop PWA (Gujarati + English)",
+                        "2B — Production Board, Notifications & Delay Watchdog",
+                      ].map((mod) => (
+                        <li key={mod} className="text-xs font-medium text-text-secondary flex items-start gap-2">
+                          <span className="text-accent-lime mt-0.5">▪</span>
+                          {mod}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                   <div className="flex flex-wrap gap-1.5">
-                    {["Face Recognition", "Claude AI", "WhatsApp API", "Supabase", "Next.js", "Edge AI", "DPDPA Compliant"].map((tag) => (
+                    {["Face Recognition", "Claude AI", "WhatsApp API", "Supabase", "Next.js", "FastAPI", "GST Billing", "Edge AI", "DPDPA Compliant"].map((tag) => (
                       <span key={tag} className="text-[8px] font-bold tracking-[0.15em] uppercase px-2 py-1 border border-border-harsh bg-bg-card text-text-muted">
                         {tag}
                       </span>
@@ -253,10 +275,10 @@ export function WorkPageContent() {
             <div className="border border-accent bg-accent p-8 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div>
                 <h3 className="text-2xl md:text-4xl font-medium tracking-tighter text-white uppercase">
-                  Let&apos;s build you a world-class website.
+                  Let&apos;s build the system your business runs on.
                 </h3>
                 <p className="text-white/80 text-sm md:text-base font-medium mt-3 max-w-[420px]">
-                  Whether it&apos;s a premium website, a chatbot, or a full business system — we scope, build, and ship. Tell us what you&apos;re trying to solve.
+                  Whether it&apos;s a premium website, a chatbot, or a full business system — we scope it with you on a strategy call, put the price in writing, then build and ship.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">

@@ -4,15 +4,16 @@ import React from "react";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 const STATS = [
-  { value: "6+", label: "SYSTEMS SHIPPED" },
-  { value: "10k+", label: "PROCESSES AUTOMATED" },
-  { value: "4.9", label: "AVERAGE RATING" },
+  { value: "100%", label: "ENGINEERED IN-HOUSE" },
+  { value: "24h", label: "REPLY TIME, EVERY TIME" },
   { value: "₹0", label: "HIDDEN FEES" },
+  { value: "0", label: "VENDOR LOCK-IN" },
 ];
 
 export function TrustSection() {
   return (
     <section className="w-full bg-bg-page select-none relative z-10">
+      <h2 className="sr-only">Why businesses work with DMC Tech</h2>
       {/* Same padding as GridOverlay for alignment */}
       <div className="max-w-[1440px] mx-auto w-full px-6 md:px-12 lg:px-16">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">

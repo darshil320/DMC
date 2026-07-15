@@ -33,6 +33,9 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
+  // Serif accents render below the fold — keep its 2 files out of the
+  // preload set so they never compete with the LCP headline fonts.
+  preload: false,
 });
 
 const themeInitScript = `
@@ -116,10 +119,10 @@ export default function RootLayout({
     >
       <head suppressHydrationWarning>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-        <GTMScript />
       </head>
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         <GTMNoScript />
+        <GTMScript />
         <WebVitalsReporter />
         <ClientChrome>{children}</ClientChrome>
       </body>

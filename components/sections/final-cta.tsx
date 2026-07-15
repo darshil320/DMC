@@ -47,11 +47,11 @@ export function FinalCtaSection() {
           </h2>
           
           <div className="mb-5 inline-flex self-start border border-accent-lime bg-accent-lime px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.22em] text-accent">
-            World-class website
+            Scope, price &amp; timeline in writing
           </div>
 
           <p className="text-white/80 text-base md:text-lg max-w-[400px] font-medium">
-            Let&apos;s build you a website that looks premium, earns trust fast, and turns visitors into enquiries.
+            Tell us how your business runs today. On a free strategy call we map the system that should run it — and you get the scope, price, and timeline in writing before committing a rupee.
           </p>
         </div>
 
@@ -61,22 +61,25 @@ export function FinalCtaSection() {
           {/* WhatsApp CTA */}
           <div className="flex flex-col gap-4">
             <span className="font-pixel font-bold text-white uppercase tracking-widest">
-              Primary Contact
+              Book a strategy call
             </span>
             <MagneticButton strength={10} className="w-full max-w-[400px]">
               <a
-                href={DMC.whatsappLink}
+                href={`${DMC.whatsappLink}?text=${encodeURIComponent("Hi DMC — I'd like to book a strategy call about my business.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-accent-lime border-2 border-accent text-accent px-6 py-4 flex items-center justify-between brutalist-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all w-full"
               >
                 <div className="flex items-center gap-3">
                   <MessageCircle className="size-5" />
-                  <span className="font-bold text-sm uppercase tracking-widest">Chat on WhatsApp</span>
+                  <span className="font-bold text-sm uppercase tracking-widest">Book via WhatsApp</span>
                 </div>
                 <span className="font-display text-lg group-hover:translate-x-1 transition-transform">→</span>
               </a>
             </MagneticButton>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">
+              We reply within 24 hours
+            </span>
           </div>
 
           {/* Email CTA */}

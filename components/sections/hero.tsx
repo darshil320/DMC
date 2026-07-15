@@ -272,28 +272,34 @@ export function HeroSection() {
         {/* Heading wrapper — relative so paragraph positions inside it */}
         <div className="w-full text-center relative">
 
-          <div className="w-full text-center">
+          {/* Single crawlable h1; the animated lines below are presentational
+              spans so the page keeps exactly one heading level 1. */}
+          <h1 className="sr-only">
+            AI systems that run your business — websites, AI chatbots, CRM &amp; automation
+          </h1>
+
+          <div className="w-full text-center" aria-hidden="true">
             {/* Line 1: AI SYSTEMS */}
             <div data-hero-line className="relative">
-              <h1 data-hero-base className={`${HEADING_CLASSNAME} relative z-10`} style={HEADING_STYLE}>
+              <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10`} style={HEADING_STYLE}>
                 AI Systems
-              </h1>
+              </span>
             </div>
 
             {/* Line 2: THAT RUN YOUR */}
             <div data-hero-line className="relative">
-              <h1 data-hero-base className={`${HEADING_CLASSNAME} relative z-10`} style={HEADING_STYLE}>
+              <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10`} style={HEADING_STYLE}>
                 That Run Your
-              </h1>
+              </span>
             </div>
 
             {/* Line 3: BUSINESS. in border box */}
             <div data-hero-line data-hero-highlight className="inline-block relative mt-2 md:mt-[-0.05em]">
               <div className="relative px-[0.2em] py-[0.08em]">
                 <div className="relative">
-                  <h1 data-hero-base className={`${HEADING_CLASSNAME} relative z-10`} style={HEADING_STYLE}>
+                  <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10`} style={HEADING_STYLE}>
                     Business.
-                  </h1>
+                  </span>
                 </div>
                 <div data-hero-highlight-detail className="absolute inset-0 border border-accent pointer-events-none" />
                 <div data-hero-highlight-detail className="absolute -top-[4px] -left-[4px] w-[8px] h-[8px] bg-accent" />

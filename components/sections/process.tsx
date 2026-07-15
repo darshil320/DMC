@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import Image from "next/image";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { ThinArrowUpRight } from "@/components/ui/ThinArrow";
 import { motion, useScroll, useTransform } from "motion/react";
@@ -15,11 +14,13 @@ const STEPS = [
     desc: "We start by analyzing your current operations to find the bottlenecks, leaky pipelines, and manual tasks draining your team. Then, we architect a custom system designed specifically for how your business actually runs.",
     graphic: (
       <div className="relative w-48 h-48 opacity-90 transition-opacity group-hover:opacity-100">
-        <Image 
-          src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/6974cbc80c8fcd560c92026c_map.svg" 
-          fill 
-          alt="Map Strategy" 
-          className="object-contain transition-all duration-500 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
+        <img
+          src="/assets/process-map.svg"
+          width={192}
+          height={192}
+          loading="lazy"
+          alt="Map Strategy"
+          className="w-full h-full object-contain transition-all duration-500 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
         />
       </div>
     ),
@@ -32,11 +33,13 @@ const STEPS = [
     desc: "Your custom infrastructure is built. We develop the CRM, configure the AI chatbots, set up the databases, and design the interfaces. Every component is rigorously tested to ensure data flows perfectly across your entire operation.",
     graphic: (
       <div className="relative w-48 h-48 opacity-90 transition-opacity group-hover:opacity-100">
-        <Image 
-          src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/6974cbc8861fbf07e229e1cb_make.svg" 
-          fill 
-          alt="Make Design" 
-          className="object-contain transition-all duration-500 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
+        <img
+          src="/assets/process-make.svg"
+          width={192}
+          height={192}
+          loading="lazy"
+          alt="Make Design"
+          className="w-full h-full object-contain transition-all duration-500 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
         />
       </div>
     ),
@@ -49,11 +52,13 @@ const STEPS = [
     desc: "We don't just hand over software; we onboard your team. We plug the systems into your business, automate the tedious work, and give you the real-time dashboards you need to finally scale without operations breaking.",
     graphic: (
       <div className="relative w-48 h-48 opacity-90 transition-opacity group-hover:opacity-100">
-        <Image 
-          src="https://cdn.prod.website-files.com/6918922cb5d769cc072f9e9e/6974cbc8367ce36cd627e7cf_move.svg" 
-          fill 
-          alt="Move Develop" 
-          className="object-contain transition-all duration-500 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
+        <img
+          src="/assets/process-move.svg"
+          width={192}
+          height={192}
+          loading="lazy"
+          alt="Move Develop"
+          className="w-full h-full object-contain transition-all duration-500 [filter:brightness(0)] dark:[filter:brightness(0)_invert(1)] group-hover:[filter:invert(12%)_sepia(98%)_saturate(7042%)_hue-rotate(243deg)_brightness(112%)_contrast(143%)]"
         />
       </div>
     ),

@@ -15,27 +15,42 @@ export function ScrollProgress() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    // Cache the scrollable range so scroll ticks never force a layout read;
+    // recompute only when the document actually resizes.
+    let max = 0;
+    const measure = () => {
+      const doc = document.documentElement;
+      max = doc.scrollHeight - doc.clientHeight;
+    };
+
     const update = () => {
       const bar = barRef.current;
       if (!bar) return;
-      const doc = document.documentElement;
-      const max = doc.scrollHeight - doc.clientHeight;
       const progress = max > 0 ? Math.min(1, window.scrollY / max) : 0;
       bar.style.transform = `scaleX(${progress})`;
     };
 
+    measure();
     update();
+
+    const resizeObserver = new ResizeObserver(() => {
+      measure();
+      update();
+    });
+    resizeObserver.observe(document.documentElement);
 
     if (lenis) {
       lenis.on("scroll", update);
-      return () => lenis.off("scroll", update);
+      return () => {
+        lenis.off("scroll", update);
+        resizeObserver.disconnect();
+      };
     }
 
     window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
     return () => {
       window.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
+      resizeObserver.disconnect();
     };
   }, [lenis]);
 

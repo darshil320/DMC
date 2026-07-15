@@ -246,7 +246,8 @@ export function Navbar() {
 
             <div className="max-w-[1440px] mx-auto w-full flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-4 md:mt-8 overflow-y-auto z-10 relative">
               {/* Left: Huge Dotted Navigation */}
-              <motion.nav 
+              <motion.nav
+                aria-label="Primary"
                 variants={{
                   hidden: { opacity: 0 },
                   show: {
