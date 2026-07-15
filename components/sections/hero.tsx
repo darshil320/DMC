@@ -21,7 +21,11 @@ const HEADING_STYLE = {
   fontFamily: "var(--font-body)",
 } as const;
 
-const HEADING_CLASSNAME = "text-text-primary uppercase leading-[1.05] md:leading-[0.9] font-black";
+// font-medium (500), not font-black: the old <h1> markup rendered at 500
+// because the un-layered `h1..h6 { font-weight: 500 }` rule in globals.css
+// beat the layered Tailwind utility. Spans don't get that rule, so the
+// weight must be explicit to keep the original look.
+const HEADING_CLASSNAME = "text-text-primary uppercase leading-[1.05] md:leading-[0.9] font-medium";
 
 export function HeroSection() {
   const { scrollY } = useScroll();

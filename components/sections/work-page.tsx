@@ -13,6 +13,11 @@ import {
   BarChart3,
   Zap,
   ExternalLink,
+  FileText,
+  Activity,
+  HeartPulse,
+  Stethoscope,
+  ShieldCheck,
 } from "lucide-react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
@@ -134,19 +139,125 @@ export function WorkPageContent() {
             </article>
           </AnimatedReveal>
 
-          {/* ═══ Case Study 2: Showroom Intelligence System ═══ */}
+          {/* ═══ Case Study 2: Welcome Palace ═══ */}
+          <AnimatedReveal delay={0.05}>
+            <article className="border border-border-harsh mb-16">
+              {/* Image Band */}
+              <a
+                href="https://www.welcomepalace.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block overflow-hidden bg-neutral-200 min-h-[300px] md:min-h-[420px] group cursor-pointer"
+              >
+                <CornerTicks tone="lime" />
+                <Image
+                  src="https://res.cloudinary.com/joyzym6w/image/upload/welcome-palace/images/banquet-haldi.jpg"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 1200px"
+                  className="object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 transition-opacity duration-500"
+                  alt="Welcome Palace banquet hall event"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors duration-500" />
+
+                <MagneticButton strength={8} className="absolute left-6 top-6 z-20">
+                  <span className="flex items-center gap-2 border border-accent bg-accent-lime px-3 py-1.5 font-pixel text-[10px] font-bold uppercase tracking-widest text-accent transition-colors group-hover:bg-white group-hover:text-black brutalist-shadow">
+                    VIEW LIVE SITE <ThinArrowUpRight />
+                  </span>
+                </MagneticButton>
+
+                <div className="absolute bottom-6 left-6 z-10 transition-transform duration-700 ease-out group-hover:-translate-y-1">
+                  <span className="text-white font-serif text-3xl md:text-5xl font-medium tracking-tight">
+                    Welcome Palace
+                  </span>
+                </div>
+              </a>
+
+              {/* Details Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 p-8 md:p-12">
+                {/* Meta */}
+                <div className="lg:col-span-3 flex flex-col gap-4">
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">CLIENT</span>
+                    <span className="text-sm font-bold text-text-primary">Hotel, Banquet &amp; Catering Venue</span>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">LOCATION</span>
+                    <span className="text-sm font-medium text-text-primary">Piplod, Surat, Gujarat</span>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">SCOPE</span>
+                    <span className="text-sm font-medium text-text-primary">
+                      <AnimatedCounter value="6 Pages" />
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">TYPE</span>
+                    <span className="text-sm font-medium text-text-primary">Website · Local SEO</span>
+                  </div>
+                </div>
+
+                {/* Story */}
+                <div className="lg:col-span-5 flex flex-col gap-6 border-l-0 lg:border-l border-border-harsh/30 lg:pl-8">
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-accent block mb-2">THE CHALLENGE</span>
+                    <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+                      Welcome Palace runs three distinct businesses under one roof in Piplod, Surat — 15 luxury rooms, a private banquet hall for 125–175 guests, and in-house Chandni Chowk Chaat &amp; Catering. All of it lived behind one generic enquiry form, with no way for a bride booking a wedding hall to find the same urgency as a couple booking a honeymoon suite.
+                    </p>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-accent block mb-2">WHAT WE BUILT</span>
+                    <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+                      A fast, local-SEO-optimized Next.js site with dedicated journeys for rooms, the banquet hall, the &quot;Shadi Wala Ghar&quot; family wedding-stay offer, and catering — each card routing straight into a pre-filled WhatsApp enquiry so every space converts on its own terms.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Tags + CTA */}
+                <div className="lg:col-span-4 flex flex-col gap-6 border-l-0 lg:border-l border-border-harsh/30 lg:pl-8">
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-3">TECH STACK</span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {["Next.js", "WhatsApp Booking", "Local SEO", "Cloudinary Media", "Google Tag Manager", "llms.txt"].map((tag) => (
+                        <span key={tag} className="text-[8px] font-bold tracking-[0.15em] uppercase px-2 py-1 border border-border-harsh bg-bg-card text-text-muted">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <MagneticButton strength={8} className="mt-auto w-full md:w-fit">
+                    <a
+                      href="https://www.welcomepalace.in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex w-full items-center justify-center gap-2 border border-accent bg-accent px-5 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-accent-lime hover:text-accent brutalist-shadow md:w-fit"
+                    >
+                      <ExternalLink className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      View Live Website
+                    </a>
+                  </MagneticButton>
+                </div>
+              </div>
+            </article>
+          </AnimatedReveal>
+
+          {/* ═══ Case Study 3: Showroom Intelligence System ═══ */}
           <AnimatedReveal delay={0.1}>
             <article className="border border-border-harsh mb-16">
               {/* Abstract Visual */}
-              <div className="group relative flex min-h-[300px] flex-col items-center justify-center overflow-hidden bg-bg-dark p-8 md:min-h-[420px]">
+              <div className="group relative flex min-h-[300px] flex-col items-center justify-center overflow-hidden bg-bg-dark p-6 sm:p-8 md:min-h-[420px]">
                 <CornerTicks tone="white" />
                 <div className="absolute inset-0 opacity-[0.06]" style={{
                   backgroundImage: "linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)",
                   backgroundSize: "40px 40px"
                 }} />
 
-                <div className="relative z-10 flex flex-col items-center">
-                  <div className="flex items-center gap-3 mb-8">
+                <div className="relative z-10 flex flex-col items-center max-w-full">
+                  <span className="static sm:absolute sm:top-6 sm:left-6 z-20 mb-6 sm:mb-0 inline-flex max-w-[92%] flex-wrap items-center justify-center gap-2 self-center text-center bg-white/10 text-white/80 px-3 py-1.5 font-pixel font-bold uppercase tracking-wider sm:tracking-widest text-[9px] sm:text-[10px] border border-white/20">
+                    PHASE 1 LIVE · PHASE 2 IN BUILD
+                  </span>
+
+                  <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 max-w-full">
                     {[ScanFace, Bot, Users, BarChart3, Zap].map((Icon, i) => (
                       <motion.div
                         key={i}
@@ -154,26 +265,22 @@ export function WorkPageContent() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 + i * 0.08, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="size-10 md:size-14 border border-white/20 bg-white/5 flex items-center justify-center text-white/70"
+                        className="size-9 sm:size-10 md:size-14 border border-white/20 bg-white/5 flex items-center justify-center text-white/70 shrink-0"
                       >
-                        <Icon className="size-5 md:size-6" />
+                        <Icon className="size-4 sm:size-5 md:size-6" />
                       </motion.div>
                     ))}
                   </div>
 
-                  <span className="text-white text-3xl md:text-5xl font-bold tracking-tight text-center leading-tight">
+                  <span className="text-white text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-center leading-tight px-2 break-words">
                     Showroom Intelligence<br />
                     <span className="text-accent-lime">& Sales Conversion</span>
                   </span>
 
-                  <span className="text-[9px] font-black tracking-[0.3em] uppercase text-white/40 mt-4">
+                  <span className="text-[8px] sm:text-[9px] font-black tracking-[0.2em] sm:tracking-[0.3em] uppercase text-white/40 mt-3 sm:mt-4 text-center px-2">
                     MULTI-PHASE BUSINESS SYSTEM
                   </span>
                 </div>
-
-                <span className="absolute top-6 left-6 z-20 bg-white/10 text-white/80 px-3 py-1.5 font-pixel font-bold uppercase tracking-widest text-[10px] border border-white/20 flex items-center gap-2">
-                  PHASE 1 LIVE · PHASE 2 IN BUILD
-                </span>
               </div>
 
               {/* Details Grid */}
@@ -260,6 +367,119 @@ export function WorkPageContent() {
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {["Face Recognition", "Claude AI", "WhatsApp API", "Supabase", "Next.js", "FastAPI", "GST Billing", "Edge AI", "DPDPA Compliant"].map((tag) => (
+                      <span key={tag} className="text-[8px] font-bold tracking-[0.15em] uppercase px-2 py-1 border border-border-harsh bg-bg-card text-text-muted">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </article>
+          </AnimatedReveal>
+
+          {/* ═══ Case Study 4: Lyfe9 AI ═══ */}
+          <AnimatedReveal delay={0.05}>
+            <article className="border border-border-harsh mb-16">
+              {/* Abstract Visual */}
+              <div className="group relative flex min-h-[300px] flex-col items-center justify-center overflow-hidden bg-bg-dark p-6 sm:p-8 md:min-h-[420px]">
+                <CornerTicks tone="white" />
+                <div className="absolute inset-0 opacity-[0.06]" style={{
+                  backgroundImage: "linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)",
+                  backgroundSize: "40px 40px"
+                }} />
+
+                <div className="relative z-10 flex flex-col items-center max-w-full">
+                  <span className="static sm:absolute sm:top-6 sm:left-6 z-20 mb-6 sm:mb-0 inline-flex max-w-[92%] flex-wrap items-center justify-center gap-2 self-center text-center bg-white/10 text-white/80 px-3 py-1.5 font-pixel font-bold uppercase tracking-wider sm:tracking-widest text-[9px] sm:text-[10px] border border-white/20">
+                    PRIVATE BETA · IN DEVELOPMENT
+                  </span>
+
+                  <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 max-w-full">
+                    {[FileText, Activity, HeartPulse, Stethoscope, ShieldCheck].map((Icon, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 + i * 0.08, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                        className="size-9 sm:size-10 md:size-14 border border-white/20 bg-white/5 flex items-center justify-center text-white/70 shrink-0"
+                      >
+                        <Icon className="size-4 sm:size-5 md:size-6" />
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  <span className="text-white text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-center leading-tight px-2 break-words">
+                    lyfe9.ai<br />
+                    <span className="text-accent-lime">Your Health, Decoded Over Time</span>
+                  </span>
+
+                  <span className="text-[8px] sm:text-[9px] font-black tracking-[0.2em] sm:tracking-[0.3em] uppercase text-white/40 mt-3 sm:mt-4 text-center px-2">
+                    AI HEALTH INTELLIGENCE PLATFORM
+                  </span>
+                </div>
+              </div>
+
+              {/* Details Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 p-8 md:p-12">
+                {/* Meta */}
+                <div className="lg:col-span-3 flex flex-col gap-4">
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">CLIENT</span>
+                    <span className="text-sm font-bold text-text-primary">lyfe9.ai — Independent Health-Tech Venture</span>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">LOCATION</span>
+                    <span className="text-sm font-medium text-text-primary">India</span>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">SCOPE</span>
+                    <span className="text-sm font-medium text-text-primary">
+                      <AnimatedCounter value="Private Beta" />
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">TYPE</span>
+                    <span className="text-sm font-medium text-text-primary">AI Health Platform</span>
+                  </div>
+                </div>
+
+                {/* Story */}
+                <div className="lg:col-span-5 flex flex-col gap-6 border-l-0 lg:border-l border-border-harsh/30 lg:pl-8">
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-accent block mb-2">THE CHALLENGE</span>
+                    <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+                      Every year, urban Indians collect blood test after blood test, but the reports sit as unread PDFs. Nobody tracks what changed since last time, generic AI summarizers overstep into diagnosis, and doctors still receive raw numbers instead of a clear story of what&apos;s trending and what needs attention.
+                    </p>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-accent block mb-2">WHAT WE&apos;RE BUILDING</span>
+                    <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+                      A private, doctor-reviewed personal health graph. Users upload a lab report and get source-linked biomarkers explained in plain language, tracked across a timeline, with retest reminders and an optional doctor review workflow. Every explanation ships under strict medical-safety guardrails — the AI explains and organizes, doctors diagnose and prescribe, never the reverse.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Tags */}
+                <div className="lg:col-span-4 flex flex-col gap-6 border-l-0 lg:border-l border-border-harsh/30 lg:pl-8">
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-3">CORE FLOW</span>
+                    <ul className="flex flex-col gap-2">
+                      {[
+                        "Report Upload → Private Storage → Processing Job",
+                        "Schema-First Biomarker Extraction",
+                        "AI-Assisted, Safety-Gated Explanation",
+                        "Health Timeline & Retest Reminders",
+                        "Optional Doctor Review Workflow",
+                      ].map((mod) => (
+                        <li key={mod} className="text-xs font-medium text-text-secondary flex items-start gap-2">
+                          <span className="text-accent mt-0.5">▪</span>
+                          {mod}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {["Next.js", "FastAPI", "Supabase", "OpenAI Structured Outputs", "Biomarker Extraction", "Medical Safety Rules"].map((tag) => (
                       <span key={tag} className="text-[8px] font-bold tracking-[0.15em] uppercase px-2 py-1 border border-border-harsh bg-bg-card text-text-muted">
                         {tag}
                       </span>
