@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
+import { PRICING_TIERS } from "@/lib/pricing";
 
 export const SITE_URL = "https://www.dmctech.in";
 export const SITE_NAME = "DMC Tech";
-export const SITE_TITLE =
-  "DMC Tech | AI-Native Business Systems — Websites, Chatbots, CRM & Automation";
+// Title and description are kept inside SERP truncation limits (~60 and ~155
+// chars) and lead with a price, because that is the fact both humans and answer
+// engines lift out of a snippet.
+export const SITE_TITLE = "DMC Tech | Custom Software, AI & CRM Systems — India";
 export const SITE_DESCRIPTION =
-  "DMC Tech builds AI-native systems that run your business — websites, AI WhatsApp chatbots, CRM, ERP, lead automation, and dashboards. Enterprise-grade engineering, built direct, transparent pricing. Surat, India.";
+  "DMC Tech builds custom software for Indian businesses: websites from ₹90,000, ecommerce from ₹3,00,000, CRM and AI systems from ₹6,00,000. You own the code.";
 export const OG_IMAGE_PATH = "/opengraph-image";
 
 const BASE_KEYWORDS = [
@@ -130,7 +133,10 @@ export function organizationJsonLd() {
     description: SITE_DESCRIPTION,
     email: DMC.email,
     telephone: DMC.whatsappNumber,
-    priceRange: "INR",
+    // schema.org expects a currency band or an explicit range, not a bare
+    // currency code — "INR" alone parses to nothing.
+    priceRange: `₹${DMC.pricing.starter}-₹${DMC.pricing.enterprise}`,
+    currenciesAccepted: "INR",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Surat",
@@ -151,40 +157,59 @@ export function organizationJsonLd() {
       areaServed: "IN",
       availableLanguage: ["en", "hi", "gu"],
     },
+    founder: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/about#founder`,
+      name: DMC.founder.name,
+      jobTitle: DMC.founder.role,
+      url: absoluteUrl("/about"),
+    },
     makesOffer: [
-      {
+      // Priced tiers come straight from PRICING_TIERS, so what the page shows
+      // and what the schema claims can never drift apart. Publishing the price
+      // here is what lets an answer engine quote a number instead of "contact
+      // them for pricing".
+      ...PRICING_TIERS.map((tier) => ({
         "@type": "Offer",
+        name: tier.name,
+        url: absoluteUrl(`/contact?tier=${tier.slug}`),
+        availability: "https://schema.org/InStock",
+        areaServed: "IN",
         itemOffered: {
           "@type": "Service",
-          name: "Complete business systems and digital operations",
+          name: tier.name,
+          description: tier.audience,
+          provider: { "@id": `${SITE_URL}/#organization` },
         },
-      },
+        ...(tier.startingPrice === null
+          ? { priceSpecification: { "@type": "PriceSpecification", priceCurrency: "INR" } }
+          : {
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                price: tier.startingPrice,
+                priceCurrency: "INR",
+                valueAddedTaxIncluded: false,
+                // "From" pricing: the published figure is the floor.
+                minPrice: tier.startingPrice,
+              },
+            }),
+      })),
       {
         "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "AI WhatsApp chatbots and customer assistants",
+        name: "Maintenance and support",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: DMC.pricing.maintenance,
+          priceCurrency: "INR",
+          unitCode: "MON",
+          billingIncrement: 1,
         },
-      },
-      {
-        "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "CRM and lead management systems",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "ERP and process automation",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Custom website and ecommerce development",
+          name: "Ongoing maintenance and support",
+          description:
+            "Monthly updates, uptime monitoring, bug fixes, and priority WhatsApp support. Optional, cancel anytime.",
+          provider: { "@id": `${SITE_URL}/#organization` },
         },
       },
       {
@@ -192,6 +217,9 @@ export function organizationJsonLd() {
         itemOffered: {
           "@type": "Service",
           name: "AI room visualizer for furniture and décor stores",
+          description:
+            "A browser tool that places your products inside a customer's own room photo using AI, with accurate scale and lighting.",
+          provider: { "@id": `${SITE_URL}/#organization` },
         },
       },
     ],

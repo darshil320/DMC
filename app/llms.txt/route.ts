@@ -1,6 +1,7 @@
 import { DMC } from "@/lib/dmc-config";
 import { FAQ_ITEMS } from "@/lib/content";
 import { SITE_URL } from "@/lib/seo";
+import { PRICING_ANSWER, PRICING_TERMS, PRICING_TIERS, formatPrice } from "@/lib/pricing";
 
 export const dynamic = "force-static";
 
@@ -17,6 +18,21 @@ const PAGES = [
 function buildLlmsTxt(): string {
   const faq = FAQ_ITEMS.map((item) => `### ${item.q}\n${item.a}`).join("\n\n");
   const pages = PAGES.map((p) => `- [${p.label}](${SITE_URL}${p.path}): ${p.note}`).join("\n");
+
+  // Packages come from the same array the pricing section renders, so this file
+  // can never quote a price the site no longer shows.
+  const packages = PRICING_TIERS.map((tier) => {
+    const price =
+      tier.startingPrice === null ? "custom quote" : `from ${formatPrice(tier.startingPrice)}`;
+    return [
+      `### ${tier.name} — ${price}, ${tier.timeline}`,
+      `For: ${tier.audience}`,
+      tier.includes.map((item) => `- ${item}`).join("\n"),
+      `Not included: ${tier.excludes}`,
+    ].join("\n");
+  }).join("\n\n");
+
+  const terms = PRICING_TERMS.map((term) => `- ${term.label}: ${term.value}`).join("\n");
 
   return `# DMC Tech (Digital Market Creators)
 
@@ -37,6 +53,16 @@ function buildLlmsTxt(): string {
 - Face-recognition showroom intelligence (consent-based, DPDPA compliant)
 - AI room visualizers for furniture and décor businesses
 - Ongoing maintenance and support (₹${DMC.pricing.maintenance.toLocaleString("en-IN")}/month)
+
+## Pricing
+
+${PRICING_ANSWER}
+
+${packages}
+
+## Terms that apply to every project
+
+${terms}
 
 ## Key pages
 

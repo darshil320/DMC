@@ -11,7 +11,26 @@ export const FAQ_ITEMS = [
   { q: "Can you help us show up on Google and Google Maps?", a: "Yes. We handle Google Business Profile setup, on-page SEO, structured data markup, and sitemap submission so your business appears in local search results and on Google Maps." },
   { q: "How long does it take to launch?", a: "A starter website typically goes live in 7–14 days. Ecommerce projects take 3–5 weeks. Complete business systems with AI chatbots, CRM, and automation are typically 8–12 weeks. We give you a clear timeline before work begins." },
   { q: "Do you offer ongoing support after launch?", a: "Yes. Our maintenance plans cover content updates, performance monitoring, bug fixes, system health checks, and priority WhatsApp support. You'll never be left handling technical issues alone." },
-  { q: "We're based in Ahmedabad, can we meet in person?", a: "Absolutely. We're based in Ahmedabad and work with businesses across Gujarat. We prefer meeting local clients in person before we start. Reach us on WhatsApp or email and we'll set up a time." },
+  { q: "We're based in Ahmedabad, can we meet in person?", a: "Absolutely. We're based in Surat and work with businesses across Gujarat, including Ahmedabad. We prefer meeting local clients in person before we start. Reach us on WhatsApp or email and we'll set up a time." },
+
+  /* ── Buyer-tier questions ──────────────────────────────────────────────
+     Written answer-first: the opening sentence answers the question outright,
+     with a number in it, and the rest explains. These feed FAQPage JSON-LD on
+     `/` and `/services` and the FAQ block in `/llms.txt` automatically, which
+     makes them the cheapest citable surface on the site.                     */
+
+  { q: "How much does custom software development cost in India?", a: "Between ₹90,000 and ₹30,00,000+ depending on scope. A business website is ₹90,000–₹2,00,000. An ecommerce store with payments and inventory is ₹3,00,000–₹6,00,000. A custom CRM with AI automation is ₹6,00,000–₹15,00,000. Multi-branch ERP work is quoted after a scoping engagement. We publish these ranges because most agencies won't." },
+  { q: "How long does it take to build an MVP?", a: "Six to twelve weeks for a working MVP with real users on it. A simple one — a single core workflow and one user type — ships in 4–6 weeks. Anything involving payments, multi-role permissions, or third-party integrations lands at 10–12 weeks. You get a written timeline before work begins." },
+  { q: "Do I own the code you write?", a: "Yes, entirely. Source code, database, domain, and cloud accounts are in your name from day one. 100% IP and code ownership, with no recurring platform fee. If you stop working with us, nothing breaks and nothing needs rebuilding." },
+  { q: "Should I hire an agency, a freelancer, or build in-house?", a: "It depends on how continuous the work is. A freelancer is cheapest and fine for a single small build. An in-house team costs ₹15–40 lakh a year before you ship anything and only makes sense with a permanent roadmap. An agency fits when you need a working system in weeks and don't want to hire for it. We'll tell you honestly if your project doesn't need us." },
+  { q: "Do you work with businesses outside Gujarat?", a: "Yes. We're based in Surat and deliver across India. Local clients we meet in person; everyone else we run remotely with weekly demos and a shared project board, so you can see progress without chasing us for updates." },
+  { q: "Can you integrate with the software we already use?", a: "Yes, and on mid-size projects that's most of the work. We integrate Tally, payment gateways, the WhatsApp Business API, Meta lead ads, Google Workspace, Shopify, and most tools that expose an API. Where there's no API, we build the connector." },
+  { q: "What happens to my data? Is it secure?", a: "Your data stays in infrastructure you own. We use role-based access, encrypted connections, and audited logins. Face-recognition deployments are consent-based and built to India's DPDPA rules. We do not resell your data, train models on it, or move it into our own systems." },
+  { q: "How do payments and project terms work?", a: "40% to start, 40% at the build milestone, and 20% on launch. You get the scope, price, and timeline in writing before anything is paid. Maintenance afterwards is ₹15,000/month and entirely optional." },
+  { q: "What if we need changes after launch?", a: "Thirty days of fixes are included with every project. After that, the ₹15,000/month maintenance plan covers updates, monitoring, bug fixes, and priority WhatsApp support. Larger changes are scoped and quoted separately, never billed by surprise." },
+  { q: "Do you build for enterprises or only small businesses?", a: "Both. Our smallest project is a ₹90,000 website; our largest are multi-module systems covering showroom, workshop, and supply chain across branches. Enterprise engagements start with a scoping phase that produces an architecture document you keep, regardless of who builds it." },
+  { q: "Who actually writes the code?", a: "We do. Every project is engineered in-house — no white-labelling and no subcontracting to a body shop. You talk directly to the people building your system." },
+  { q: "What do you need from us to start?", a: "About an hour of your time and a look at how your business runs today: how leads arrive, how orders move, and what tools you already pay for. That's the strategy call. You leave it with a scope, a price, and a timeline whether or not you build with us." },
 ];
 
 export const navItems = [
@@ -22,35 +41,12 @@ export const navItems = [
   { label: "Contact", href: "#contact" },
 ] as const;
 
-export const work = [
-  {
-    id: "northline-education",
-    title: "Northline Education",
-    industry: "Education / Consulting",
-    year: "2026",
-    description:
-      "A strategic website system for an education consultancy helping international students understand options, build trust, and book qualified calls.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&auto=format&fit=crop&q=80",
-  },
-  {
-    id: "rebel-copy-co",
-    title: "Rebel Copy Co.",
-    industry: "Copywriting Studio",
-    year: "2026",
-    description:
-      "A bold editorial website for a personal-brand copy studio built to showcase authority, process, results, and premium positioning.",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=900&auto=format&fit=crop&q=80",
-  },
-  {
-    id: "forma-creative",
-    title: "Forma Creative",
-    industry: "Creative Agency",
-    year: "2025",
-    description:
-      "A portfolio-led digital presence with stronger case-study storytelling, clearer service architecture, and conversion-focused inquiry paths.",
-    image: "https://images.unsplash.com/photo-1542744094-3a31f103e35f?w=900&auto=format&fit=crop&q=80",
-  },
-] as const;
+/* NOTE: the former `work` and `testimonials` arrays were removed. They held
+   placeholder clients (Northline Education, Rebel Copy Co., Forma Creative) and
+   invented quotes, illustrated with stock photography. Nothing rendered them,
+   but shipping fabricated client claims is an E-E-A-T liability and would have
+   poisoned any Review schema built on top. Real, named, permissioned clients
+   go on `/work` — see components/sections/work-page.tsx. */
 
 export const services = [
   {
@@ -94,33 +90,6 @@ export const services = [
       "Businesses ready to automate",
     ],
     cta: "Scale the System",
-  },
-] as const;
-
-export const testimonials = [
-  {
-    quote:
-      "They helped us say what we were trying to say for months. The site finally feels like the level of work we actually deliver.",
-    name: "Aarav Mehta",
-    role: "Founder",
-    company: "Northline Education",
-    initials: "AM",
-  },
-  {
-    quote:
-      "This was not just design. It clarified our offer, our story, and the entire path from first impression to inquiry.",
-    name: "Maya Kapoor",
-    role: "Creative Director",
-    company: "Forma Creative",
-    initials: "MK",
-  },
-  {
-    quote:
-      "We went from explaining everything manually to sending people to a site that does the heavy lifting before the first call.",
-    name: "Rhea Shah",
-    role: "Consultant",
-    company: "Independent Strategy Studio",
-    initials: "RS",
   },
 ] as const;
 

@@ -42,7 +42,7 @@ That Run Your
 
 **POV line (replaces the current one — keep the accent split):**
 
-> Websites, CRM, and AI assistants — built direct in Ahmedabad,
+> Websites, CRM, and AI assistants — built direct in Surat,
 > **priced in the open, and yours to keep.**
 
 **Answer-first paragraph** — replace both the corner paragraph and the mobile paragraph with the
@@ -105,7 +105,7 @@ it's for.** Prepend to each description:
 
 Current stats are process claims — honest, on-brand, keep them. Add one factual row underneath:
 
-> Built and delivered from Ahmedabad. Working systems live today in furniture retail, hospitality,
+> Built and delivered from Surat. Working systems live today in furniture retail, hospitality,
 > and health. `[verify client naming permission before adding names]`
 
 ---
@@ -141,7 +141,7 @@ Written answer-first: the first sentence answers, the rest explains.
    if your project doesn't need us.
 
 5. **Do you work with businesses outside Gujarat?**
-   Yes. We're based in Ahmedabad and deliver across India. Local clients we meet in person; for
+   Yes. We're based in Surat and deliver across India. Local clients we meet in person; for
    everyone else we run the project remotely with weekly demos. Timezone-wise we work with clients
    in the Gulf, UK, and US `[CONFIRM if true]`.
 
@@ -189,7 +189,7 @@ Written answer-first: the first sentence answers, the rest explains.
 
 > DMC Tech builds custom software for businesses of every size — websites and ecommerce stores from
 > ₹90,000, CRM and lead-automation systems from ₹6,00,000 `[CONFIRM]`, and multi-branch ERP built
-> to scope. We're an in-house engineering team in Ahmedabad. Every project ships with a written
+> to scope. We're an in-house engineering team in Surat. Every project ships with a written
 > scope, price, and timeline, and you own everything we build.
 
 **Then a three-tier "who we build for" block** — this is what makes the page work for all three

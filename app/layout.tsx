@@ -112,8 +112,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // lang matches `inLanguage: "en-IN"` in the JSON-LD and the en_IN OG locale.
     <html
-      lang="en"
+      lang="en-IN"
       className={`${inter.variable} ${dotGothic.variable} ${instrumentSerif.variable} h-full antialiased`}
       suppressHydrationWarning
     >

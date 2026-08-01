@@ -1,164 +1,158 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Clock } from "lucide-react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
-import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
-import { DMC } from "@/lib/dmc-config";
+import { analytics } from "@/lib/analytics";
+import {
+  PRICING_ANSWER,
+  PRICING_TERMS,
+  PRICING_TIERS,
+  formatPrice,
+  type PricingTier,
+} from "@/lib/pricing";
 
-const formatPrice = (num: number) => {
-  return new Intl.NumberFormat('en-IN', {
-    style: 'currency',
-    currency: 'INR',
-    maximumFractionDigits: 0,
-  }).format(num);
-};
+function priceLabel(tier: PricingTier) {
+  return tier.startingPrice === null ? "Custom quote" : `${formatPrice(tier.startingPrice)}+`;
+}
 
-const OPTIONS = [
-  {
-    num: "01",
-    title: "Digital Presence",
-    time: "2 - 4 Weeks",
-    price: formatPrice(DMC.pricing.starter) + "+",
-    desc: "High-converting custom websites and online catalogs designed to generate leads and sell products. We don't use templates—every pixel is built to position you as the premium option.",
-    tags: ["Custom Website", "Ecommerce Store", "Google Business", "SEO Optimized"],
-    graphic: (
-      <div className="w-full h-full border border-border-harsh rounded-lg p-2 flex flex-col items-center justify-center relative bg-bg-card">
-        <div className="w-px h-full bg-border-harsh absolute top-0" />
-        <div className="w-12 h-px bg-border-harsh my-1" />
-        <div className="w-16 h-px bg-border-harsh my-1" />
-        <div className="size-1.5 bg-black rounded-full my-1 z-10" />
-        <div className="w-20 h-px bg-border-harsh my-1" />
-        <div className="size-1 bg-black rounded-full absolute bottom-2" />
-        <div className="size-1 bg-black rounded-full absolute top-2" />
-      </div>
-    ),
-  },
-  {
-    num: "02",
-    title: "Business Intelligence",
-    time: "4 - 8 Weeks",
-    price: "Custom Scope",
-    desc: "Stop losing leads to manual follow-ups. We build centralized CRMs and connect them to autonomous WhatsApp AI agents that answer queries, qualify prospects, and book meetings for you 24/7.",
-    tags: ["WhatsApp AI", "Lead CRM", "Automated Follow-ups", "Analytics Dashboard"],
-    graphic: (
-      <div className="w-full h-full border border-border-harsh rounded-lg p-2 flex flex-col items-center justify-center relative bg-bg-card">
-        <div className="w-px h-full bg-border-harsh absolute top-0" />
-        <div className="absolute top-2 w-full flex justify-center"><div className="size-1 bg-black rounded-full" /></div>
-        <div className="w-16 h-px bg-border-harsh my-1.5" />
-        <div className="w-16 h-px bg-border-harsh my-1.5" />
-        <div className="w-16 h-px bg-border-harsh my-1.5" />
-        <div className="w-16 h-px bg-border-harsh my-1.5" />
-      </div>
-    ),
-  },
-  {
-    num: "03",
-    title: "Complete OS",
-    time: "12+ Weeks",
-    price: "Custom Scope",
-    desc: "The heavy-weight solution for scaling businesses. We architect complete digital operating systems that connect your inventory, staff, retail branches, and digital channels into one unified platform.",
-    tags: ["Custom ERP", "Face Recognition", "Multi-branch Sync", "Total Automation"],
-    graphic: (
-      <div className="w-full h-full border border-border-harsh rounded-lg p-2 flex items-center justify-center relative bg-bg-card">
-        <div className="w-full h-px bg-border-harsh absolute" />
-        <div className="h-full w-px bg-border-harsh absolute" />
-        <div className="size-8 border border-border-harsh rounded-full flex items-center justify-center bg-white z-10">
-          <div className="size-2 bg-accent rounded-full" />
+function TierCard({ tier, index }: { tier: PricingTier; index: number }) {
+  const cardRef = useRef<HTMLDivElement | null>(null);
+
+  // Report the tier as viewed once. `pricing_tier_view` has been declared in
+  // lib/analytics.ts since launch but was never fired — this is what tells you
+  // which package people actually consider.
+  useEffect(() => {
+    const node = cardRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          analytics.pricingTierView(tier.slug);
+          observer.disconnect();
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [tier.slug]);
+
+  return (
+    <AnimatedReveal
+      delay={index * 0.08}
+      className="group relative flex flex-col border-b border-r border-border-harsh bg-bg-page p-6 lg:p-8"
+    >
+      <div ref={cardRef} className="flex h-full flex-col">
+        {/* Accent rail grows from the top edge on hover */}
+        <span className="absolute left-0 top-0 h-px w-0 bg-accent transition-[width] duration-500 ease-out group-hover:w-full" />
+
+        <div className="mb-5 flex items-baseline gap-3">
+          <span className="font-display text-xs font-bold text-text-muted transition-colors group-hover:text-accent">
+            {tier.num}
+          </span>
+          <h3 className="text-2xl font-medium tracking-tighter text-text-primary lg:text-3xl">
+            {tier.name}
+          </h3>
         </div>
+
+        <div className="mb-1 font-serif text-3xl font-medium tracking-tight text-text-primary">
+          {priceLabel(tier)}
+        </div>
+        {tier.priceNote && (
+          <p className="mb-2 text-[11px] font-medium text-text-muted">{tier.priceNote}</p>
+        )}
+        <div className="mb-6 flex items-center gap-2 text-sm font-medium text-text-primary/60">
+          <Clock className="size-4" />
+          {tier.timeline}
+        </div>
+
+        <p className="mb-6 border-l-2 border-accent pl-3 text-sm font-medium leading-relaxed text-text-primary">
+          <span className="font-bold uppercase tracking-[0.14em] text-[10px] block mb-1 text-text-muted">
+            For
+          </span>
+          {tier.audience}
+        </p>
+
+        <ul className="mb-6 flex flex-col gap-2">
+          {tier.includes.map((item) => (
+            <li key={item} className="flex gap-2 text-sm leading-snug text-text-secondary">
+              <span aria-hidden className="mt-[7px] size-1 shrink-0 bg-accent" />
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <p className="mb-8 text-xs leading-relaxed text-text-muted">
+          <span className="font-bold uppercase tracking-[0.14em]">Not included: </span>
+          {tier.excludes}
+        </p>
+
+        <a
+          href={`/contact?tier=${tier.slug}`}
+          className="group/cta mt-auto inline-flex items-center justify-between gap-2 border border-border-harsh px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] text-text-primary transition-colors hover:border-accent hover:bg-accent hover:text-white"
+        >
+          {tier.cta}
+          <span className="transition-transform group-hover/cta:translate-x-1">→</span>
+        </a>
       </div>
-    ),
-  },
-];
+    </AnimatedReveal>
+  );
+}
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-24 px-6 md:px-12 lg:px-16 w-full select-none bg-bg-page relative z-10">
-      <div className="max-w-[1440px] mx-auto w-full flex flex-col items-center">
-        
-        {/* Header (Screenshot 4) */}
-        <div className="section-tag">
-          OUR SERVICES
+    <section
+      id="pricing"
+      className="relative z-10 w-full select-none bg-bg-page px-6 py-24 md:px-12 lg:px-16"
+    >
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col">
+        {/* Header — answer-first, so the section states facts before it sells */}
+        <div className="mb-16 flex flex-col gap-6 px-4 lg:flex-row lg:items-end lg:justify-between lg:px-6">
+          <div>
+            <div className="section-tag">PRICING</div>
+            <h2 className="max-w-[720px] text-3xl font-medium uppercase tracking-tighter text-text-primary md:text-5xl">
+              What custom software costs with us
+            </h2>
+          </div>
+          <p className="max-w-[460px] text-sm font-medium leading-relaxed text-text-secondary md:text-base">
+            {PRICING_ANSWER}
+          </p>
         </div>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium text-text-primary tracking-tighter text-center max-w-[800px] mb-20">
-          THREE OPTIONS. ONE GOAL.
-        </h2>
 
-        {/* Options List */}
-        <div className="w-full flex flex-col">
-          {OPTIONS.map((opt, idx) => (
-            <AnimatedReveal key={opt.num} delay={idx * 0.1} className="group w-full relative border-t border-border-harsh pt-6 pb-20">
-              {/* Accent rail that grows from the top border on hover */}
-              <span className="absolute top-0 left-0 h-px w-0 bg-accent group-hover:w-full transition-[width] duration-500 ease-out" />
-
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-                {/* Number & Title (Cols 1-4) */}
-                <div className="lg:col-span-4 flex gap-3 px-4 lg:px-6">
-                  <span className="font-display font-bold text-xs mt-1.5 text-text-muted group-hover:text-accent transition-colors">{opt.num}</span>
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl tracking-tighter font-medium text-text-primary group-hover:translate-x-1 transition-transform duration-300">
-                    {opt.title}
-                  </h3>
-                </div>
-
-                {/* Description & Tags (Cols 5-9) */}
-                <div className="lg:col-span-5 flex flex-col gap-6 pt-2 px-4 lg:px-8 border-l-0 lg:border-l border-border-harsh/30 h-full">
-                  <p className="text-text-secondary text-sm md:text-base leading-relaxed">
-                    {opt.desc}
-                  </p>
-                  <div className="flex flex-col gap-1">
-                    {opt.tags.map((tag) => (
-                      <span key={tag} className="text-accent text-sm tracking-tight font-medium cursor-default">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Time & Graphic (Cols 10-12) */}
-                <div className="lg:col-span-3 flex flex-col items-end gap-6 pt-2 px-4 lg:px-6">
-                  <div className="flex flex-col items-end gap-2 text-right">
-                    <AnimatedCounter
-                      value={opt.price}
-                      className="font-serif text-2xl lg:text-3xl text-text-primary tracking-tight font-medium"
-                    />
-                    <div className="flex items-center gap-2 text-text-primary/60 font-medium text-sm">
-                      <Clock className="size-4" />
-                      {opt.time}
-                    </div>
-                  </div>
-                  <div className="w-[140px] h-[100px] mt-4">
-                    {opt.graphic}
-                  </div>
-                  <a
-                    href="/contact"
-                    className="group/cta inline-flex items-center gap-2 border border-border-harsh px-4 py-2.5 text-[11px] font-black uppercase tracking-[0.18em] text-text-primary hover:bg-accent hover:text-white hover:border-accent transition-colors"
-                  >
-                    Discuss this scope
-                    <span className="transition-transform group-hover/cta:translate-x-1">→</span>
-                  </a>
-                </div>
-              </div>
-
-            </AnimatedReveal>
+        {/* Four tiers — a visitor should place themselves in under ten seconds */}
+        <div className="grid grid-cols-1 border-l border-t border-border-harsh md:grid-cols-2 xl:grid-cols-4">
+          {PRICING_TIERS.map((tier, index) => (
+            <TierCard key={tier.slug} tier={tier} index={index} />
           ))}
-          <div className="w-full h-px bg-border-harsh" />
         </div>
 
-        {/* Escape hatch for undecided visitors */}
+        {/* Cross-tier terms — the densest, most quotable block on the site */}
+        <dl className="grid grid-cols-1 border-b border-l border-border-harsh sm:grid-cols-2 lg:grid-cols-3">
+          {PRICING_TERMS.map((term) => (
+            <div key={term.label} className="border-r border-t border-border-harsh p-5">
+              <dt className="mb-2 font-pixel text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
+                {term.label}
+              </dt>
+              <dd className="text-sm leading-relaxed text-text-secondary">{term.value}</dd>
+            </div>
+          ))}
+        </dl>
+
+        {/* Escape hatch — routes to self-qualification, not into a sales chat */}
         <p className="mt-10 text-center text-sm font-medium text-text-secondary">
           Not sure which fits?{" "}
           <a
-            href={DMC.whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-underline font-bold text-accent hover:text-text-primary transition-colors"
+            href="/contact"
+            className="link-underline font-bold text-accent transition-colors hover:text-text-primary"
           >
-            Tell us how your business runs on WhatsApp
+            Tell us how your business runs
           </a>{" "}
-          — we&apos;ll tell you what to build.
+          — we&apos;ll tell you what to build, and say so if you don&apos;t need us.
         </p>
-
       </div>
     </section>
   );

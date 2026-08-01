@@ -7,6 +7,8 @@ type GtmEventName =
   | "ai_visualizer_generate"
   | "checkout_initiated"
   | "nav_link_click"
+  | "enquiry_form_start"
+  | "enquiry_submit_failure"
   | "web_vitals";
 
 interface GtmEvent {
@@ -26,6 +28,17 @@ export const analytics = {
 
   contactFormSubmit: () =>
     pushGtmEvent({ event: "contact_form_submit", method: "email" }),
+
+  /** First keystroke in the enquiry form — the denominator for form drop-off. */
+  enquiryFormStart: () => pushGtmEvent({ event: "enquiry_form_start" }),
+
+  /**
+   * Fired when the server did not confirm the enquiry. This is the alarm: a
+   * rising count here means leads are being lost, which the previous
+   * always-succeeds submit path could never surface.
+   */
+  enquirySubmitFailure: (status: number) =>
+    pushGtmEvent({ event: "enquiry_submit_failure", status }),
 
   whatsappClick: () =>
     pushGtmEvent({ event: "whatsapp_click", method: "whatsapp" }),

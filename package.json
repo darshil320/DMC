@@ -28,6 +28,7 @@
     "stripe": "^22.2.0",
     "tailwind-merge": "^3.6.0",
     "three": "^0.176.0",
+    "zod": "^4.4.3",
     "zustand": "^5.0.14"
   },
   "devDependencies": {

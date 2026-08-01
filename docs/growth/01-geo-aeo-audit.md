@@ -134,6 +134,42 @@ Severity: **P0** ship this week · **P1** this month · **P2** backlog.
 
 ---
 
+## Shipped (2026-08-01)
+
+The P0 list above is implemented. Verified against a running dev server, a clean `next build`, and
+lint on the changed files.
+
+| Finding | What changed |
+|---|---|
+| E1, E2, E3, E6 | New [app/api/enquiry/route.ts](app/api/enquiry/route.ts): Zod validation, honeypot, per-IP rate limit (5 / 10 min), 8s sink timeout, readable status codes, full server-side error logging. The form now claims success only when the server confirms storage, and fires `enquiry_submit_failure` when it doesn't. Webhook URL moved to the server-only `ENQUIRY_WEBHOOK_URL`. Verified: bad payload → 422 with field errors, honeypot → 200 without reaching the sink, 6th request in the window → 429. |
+| A1 | `priceRange` is now `₹90000-₹1500000`, plus `currenciesAccepted: "INR"`. |
+| A2 | Every `makesOffer` entry carries a `priceSpecification`, generated from `PRICING_TIERS`. Maintenance is a `UnitPriceSpecification` at ₹15,000/MON. |
+| A4 | `founder` Person entity added, sourced from `DMC.founder`. |
+| B1 | Hero now carries a 50-word answer-first paragraph with two prices and a timeline. Pricing section leads with `PRICING_ANSWER`. |
+| B3 | 12 buyer-tier FAQ items added — 25 questions now flow into FAQPage schema and `/llms.txt`. |
+| B6 | Pricing section rebuilt: tag `PRICING`, H2 "What custom software costs with us". |
+| C1 | [app/topaz-crm/layout.tsx](app/topaz-crm/layout.tsx) gives the route real metadata and `noindex, nofollow`. **Decision needed:** it reads as a client pitch page, so it is excluded from search. If it's meant to be public, drop `noIndex` and add it to `app/sitemap.ts`. |
+| C2 | `SITE_TITLE` 76 → 52 chars, `SITE_DESCRIPTION` 267 → ~155 chars and now leads with prices. |
+| C3 | `lang="en-IN"`. |
+| C4 | `/llms.txt` now carries the full package breakdown, cross-tier terms, and the pricing answer paragraph, all generated from `PRICING_TIERS`. |
+| D1 | Fabricated `work` and `testimonials` arrays deleted from `lib/content.ts`, along with their only consumers (`components/WorkShowcase.tsx`, `components/Testimonials.tsx` — both already unreferenced). |
+| E4 (partial) | Every pricing tier deep-links `/contact?tier=<slug>`; the form reads the param and preselects the project type. |
+| E7 (partial) | "Not sure which fits?" no longer dumps the visitor into WhatsApp. |
+| — | New [lib/pricing.ts](lib/pricing.ts) is the single source of truth feeding the section, the Offer JSON-LD, and `/llms.txt`. New [lib/enquiry.ts](lib/enquiry.ts) is the shared client/server form contract. |
+| — | Form shortened to 4 visible fields with budget and company collapsed, trust line under the submit button, per-field errors, error banner with a mailto fallback, and a persistent success panel replacing the 5-second toast. |
+| — | `pricing_tier_view` now actually fires (it had been declared and never called). Added `enquiry_form_start` and `enquiry_submit_failure`. |
+
+**Prices published:** ₹6,00,000 (Business System) and ₹15,00,000 (Enterprise reference point), plus
+40/40/20 payment terms, all now live in `lib/dmc-config.ts`. These were the `[CONFIRM]` proposals —
+they are on the site, in the schema, and in `/llms.txt`. Change them in one place if the margins
+don't hold.
+
+Still open: A3 (Review schema — blocked on real permissioned client quotes), A5, A6, B2 (the guide
+pages), B4, B5, C5–C7, D2–D4, E5 (desktop sticky CTA), E4 (inline form on `/services`), and the
+`/start` quiz.
+
+---
+
 ## What I did not verify
 
 - **No live crawl.** Everything above is read from source. Core Web Vitals, real SERP truncation,

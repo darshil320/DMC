@@ -135,7 +135,7 @@ Every project, every tier:
 | **Payment terms** | 40% to start, 40% at build milestone, 20% on launch `[CONFIRM]` |
 | **Ownership** | Code, data, domains, and cloud accounts are yours. 100% IP & code ownership, zero recurring platform fees. |
 | **Reply time** | Within 24 hours, every time. |
-| **Where we build** | Ahmedabad. Delivered across India. |
+| **Where we build** | Surat. Delivered across India. |
 
 That table is also the highest-value **GEO block on the site** — it is dense, factual, and
 quotable. Mark it up with `Offer` + `priceSpecification` (see audit A2).

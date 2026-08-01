@@ -7,10 +7,14 @@ What follows is a strategically grouped target list with intent classification a
 Semrush, or free-tier Google Keyword Planner; the process is at the bottom of this doc.
 
 **Positioning note:** the brief says "businesses of all sizes and industries", but the site
-currently reads as *Ahmedabad SMB / local business*. Do not throw that away — local intent is where
+currently reads as *Gujarat SMB / local business*. Do not throw that away — local intent is where
 you can actually rank now. The strategy below is **defend local, expand upward**: keep the Gujarat
 SMB terms as the ranking base, and build the mid-market/enterprise tiers as new pages rather than
 by diluting the homepage.
+
+Base city is **Surat** (`DMC.location`), with Ahmedabad served as a second market. Build
+`/locations/surat` first — it matches your registered address, which is what carries local-pack
+weight — then Ahmedabad, then Gujarat.
 
 ---
 

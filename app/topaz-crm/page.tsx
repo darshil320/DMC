@@ -182,28 +182,44 @@ export default function TopazCrmLandingPage() {
 
           {/* Operational Metrics Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/10 pt-12 text-left">
-            <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-              <div className="text-2xl sm:text-3xl font-bold text-[#E1E0CC] font-serif mb-1">85–95%</div>
-              <div className="text-[11px] text-gray-400 uppercase tracking-wider">Face Match Accuracy</div>
-              <div className="text-xs text-gray-500 mt-1">NEW/REPEAT/UNCERTAIN bands</div>
+            <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#E1E0CC] font-serif mb-1.5 tracking-tight">85–95%</div>
+                <div className="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wider leading-tight">Face Match Accuracy</div>
+              </div>
+              <div className="text-[10px] sm:text-xs text-gray-400/80 mt-2 leading-relaxed break-words">
+                New, repeat &amp; uncertain bands
+              </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-              <div className="text-2xl sm:text-3xl font-bold text-[#E1E0CC] font-serif mb-1">&lt; 3 Seconds</div>
-              <div className="text-[11px] text-gray-400 uppercase tracking-wider">Entrance Alert Speed</div>
-              <div className="text-xs text-gray-500 mt-1">Direct WhatsApp ping to assigned rep</div>
+            <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#E1E0CC] font-serif mb-1.5 tracking-tight">&lt; 3 Seconds</div>
+                <div className="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wider leading-tight">Entrance Alert Speed</div>
+              </div>
+              <div className="text-[10px] sm:text-xs text-gray-400/80 mt-2 leading-relaxed break-words">
+                Direct WhatsApp ping to assigned rep
+              </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-              <div className="text-2xl sm:text-3xl font-bold text-[#E1E0CC] font-serif mb-1">100%</div>
-              <div className="text-[11px] text-gray-400 uppercase tracking-wider">DPDPA Compliant</div>
-              <div className="text-xs text-gray-500 mt-1">Explicit consent FK security gate</div>
+            <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#E1E0CC] font-serif mb-1.5 tracking-tight">100%</div>
+                <div className="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wider leading-tight">DPDPA Compliant</div>
+              </div>
+              <div className="text-[10px] sm:text-xs text-gray-400/80 mt-2 leading-relaxed break-words">
+                Explicit consent FK security gate
+              </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-              <div className="text-2xl sm:text-3xl font-bold text-[#E1E0CC] font-serif mb-1">0 Rupee</div>
-              <div className="text-[11px] text-gray-400 uppercase tracking-wider">Price Leakage</div>
-              <div className="text-xs text-gray-500 mt-1">Privacy-filtered workshop job cards</div>
+            <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors overflow-hidden flex flex-col justify-between">
+              <div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#E1E0CC] font-serif mb-1.5 tracking-tight">0 Rupee</div>
+                <div className="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wider leading-tight">Price Leakage</div>
+              </div>
+              <div className="text-[10px] sm:text-xs text-gray-400/80 mt-2 leading-relaxed break-words">
+                Privacy-filtered workshop job cards
+              </div>
             </div>
           </div>
 

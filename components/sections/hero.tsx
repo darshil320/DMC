@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import gsap from "gsap";
 import { motion, useScroll, useTransform } from "motion/react";
 import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
+import { formatPrice } from "@/lib/pricing";
 import { EncryptedText } from "@/components/ui/encrypted-text";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { usePremiumMotion, useMediaQuery } from "@/lib/hooks/use-environment";
@@ -14,6 +15,16 @@ import { usePremiumMotion, useMediaQuery } from "@/lib/hooks/use-environment";
 const HeroBackdrop = dynamic(() => import("@/components/three/HeroBackdrop"), {
   ssr: false,
 });
+
+// The answer-first paragraph: what we build, for whom, at what price, in what
+// timeline, in ~50 words. Answer engines extract a paragraph like this whole,
+// which is why it carries numbers instead of adjectives. Rendered identically
+// in the desktop corner slot and the mobile block below the CTA.
+const HERO_ANSWER = `${DMC.fullName} builds custom software for businesses websites, ecommerce stores, CRMs, automations and AI agents. Websites start at ${formatPrice(
+  DMC.pricing.starter
+)} and ship in 3 weeks. Full business systems start at ${formatPrice(
+  DMC.pricing.businessSystem
+)} in 10 weeks. You own the code. We reply within ${DMC.replyWindowHours} hours.`;
 
 const HEADING_STYLE = {
   fontSize: "clamp(48px, 11vw, 150px)",
@@ -254,83 +265,75 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="home" className="relative min-h-[100svh] flex flex-col justify-between pt-28 lg:pt-32 pb-6 px-6 md:px-12 lg:px-16 bg-transparent select-none overflow-visible">
-
-      {/* ── 3D wireframe backdrop (parallax wrapper; the materialize entrance
-          lives inside HeroBackdrop, tied to the canvas actually being ready) ── */}
-      {show3D && (
-        <motion.div
-          className="absolute inset-0 -z-0 pointer-events-none"
-          style={isMobile ? undefined : { y: yBackdrop }}
-        >
-          <HeroBackdrop />
-        </motion.div>
-      )}
-
-      {/* ── Centered headline block ── */}
-      <motion.div 
-        className="flex-1 flex flex-col items-center justify-center w-full max-w-[1440px] mx-auto relative z-10"
-        style={isMobile ? undefined : { y: yHeadline, scale: scaleHeadline, opacity: opacityMain }}
-      >
-
-        {/* Heading wrapper — relative so paragraph positions inside it */}
-        <div className="w-full text-center relative">
-
-          {/* Single crawlable h1; the animated lines below are presentational
-              spans so the page keeps exactly one heading level 1. */}
-          <h1 className="sr-only">
-            AI systems that run your business — websites, AI chatbots, CRM &amp; automation
-          </h1>
-
-          <div className="w-full text-center" aria-hidden="true">
-            {/* Line 1: AI SYSTEMS */}
-            <div data-hero-line className="relative">
-              <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10`} style={HEADING_STYLE}>
-                AI Systems
-              </span>
-            </div>
-
-            {/* Line 2: THAT RUN YOUR */}
-            <div data-hero-line className="relative">
-              <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10`} style={HEADING_STYLE}>
-                That Run Your
-              </span>
-            </div>
-
-            {/* Line 3: BUSINESS. in border box */}
-            <div data-hero-line data-hero-highlight className="inline-block relative mt-2 md:mt-[-0.05em]">
-              <div className="relative px-[0.2em] py-[0.08em]">
-                <div className="relative">
-                  <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10`} style={HEADING_STYLE}>
-                    Business.
-                  </span>
-                </div>
-                <div data-hero-highlight-detail className="absolute inset-0 border border-accent pointer-events-none" />
-                <div data-hero-highlight-detail className="absolute -top-[4px] -left-[4px] w-[8px] h-[8px] bg-accent" />
-                <div data-hero-highlight-detail className="absolute -top-[4px] -right-[4px] w-[8px] h-[8px] bg-accent" />
-                <div data-hero-highlight-detail className="absolute -bottom-[4px] -left-[4px] w-[8px] h-[8px] bg-accent" />
-                <div data-hero-highlight-detail className="absolute -bottom-[4px] -right-[4px] w-[8px] h-[8px] bg-accent" />
-              </div>
-            </div>
-          </div>
-
-          {/* ── POV line — visible on sm/md+ to keep mobile uncluttered ── */}
-          <div data-hero-copy className="hidden sm:block mt-6 md:mt-8 max-w-[720px] mx-auto px-4">
-            <p className="text-center text-[13px] md:text-base font-bold uppercase tracking-tight leading-snug text-text-primary">
-              Enterprise-grade AI systems —
-              <span className="text-accent"> built direct, priced transparent, 100% code ownership.</span>
-            </p>
-          </div>
-
-          {/* ── Paragraph — corner ── */}
-          <div
-            className="hidden md:block text-left z-20"
-            style={{ position: "absolute", top: -8, right: 10, maxWidth: 220 }}
-          >
-            <p className="text-[12px] md:text-[14px] text-text-secondary leading-[1.5]">
-              We architect custom digital operating systems for businesses that need to scale. From AI-driven lead capture to automated CRM pipelines, we turn your manual workflows into a seamless, high-converting engine.
-            </p>
-          </div>
+    <section ref={sectionRef} id="home" className="relative min-h-[100svh] flex flex-col justify-between pt-20 lg:pt-24 pb-6 px-6 md:px-12 lg:px-16 bg-transparent select-none overflow-visible">
+ 
+       {/* ── 3D wireframe backdrop (parallax wrapper; the materialize entrance
+           lives inside HeroBackdrop, tied to the canvas actually being ready) ── */}
+       {show3D && (
+         <motion.div
+           className="absolute inset-0 -z-0 pointer-events-none"
+           style={isMobile ? undefined : { y: yBackdrop }}
+         >
+           <HeroBackdrop />
+         </motion.div>
+       )}
+ 
+       {/* ── Centered headline block ── */}
+       <motion.div 
+         className="flex-1 flex flex-col items-center justify-center w-full max-w-[1440px] mx-auto relative z-10"
+         style={isMobile ? undefined : { y: yHeadline, scale: scaleHeadline, opacity: opacityMain }}
+       >
+ 
+         {/* Heading wrapper — relative so paragraph positions inside it */}
+         <div className="w-full text-center relative">
+ 
+           {/* Single crawlable h1; the animated lines below are presentational
+               spans so the page keeps exactly one heading level 1. */}
+           <h1 className="sr-only">AI systems that run your business.</h1>
+ 
+           <div className="w-full text-center" aria-hidden="true">
+             {/* Line 1: AI SYSTEMS */}
+             <div data-hero-line className="relative">
+               <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10`} style={HEADING_STYLE}>
+                 AI Systems
+               </span>
+             </div>
+ 
+             {/* Line 2: THAT RUN YOUR */}
+             <div data-hero-line className="relative">
+               <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10`} style={HEADING_STYLE}>
+                 That Run Your
+               </span>
+             </div>
+ 
+             {/* Line 3: BUSINESS. */}
+             <div data-hero-line className="inline-block relative mt-2 md:mt-[-0.05em]">
+               <div className="relative px-[0.2em] py-[0.08em]">
+                 <div className="relative">
+                   <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10`} style={HEADING_STYLE}>
+                     Business.
+                   </span>
+                 </div>
+               </div>
+             </div>
+           </div>
+ 
+           {/* ── POV line — visible on sm/md+ to keep mobile uncluttered ── */}
+           <div data-hero-copy className="hidden sm:block mt-6 md:mt-8 max-w-[720px] mx-auto px-4">
+             <p className="text-center text-[13px] md:text-base font-bold uppercase tracking-tight leading-snug text-text-primary">
+               Enterprise-grade AI systems —
+               <span className="text-accent"> built direct, priced transparent, 100% code ownership.</span>
+             </p>
+           </div>
+ 
+           {/* ── Paragraph — corner shifted right & higher up ── */}
+           <div
+             className="hidden lg:block text-left z-20 absolute top-[-36px] -right-8 lg:-right-8 xl:-right-2 max-w-[220px]"
+           >
+             <p className="text-[12px] md:text-[13px] text-text-secondary leading-[1.5]">
+               {HERO_ANSWER}
+             </p>
+           </div>
         </div>
 
         {/* ── CTA Button ── */}
@@ -370,12 +373,13 @@ export function HeroSection() {
           </a>
           </MagneticButton>
 
-          {/* Secondary path — proof before contact */}
+          {/* Secondary path — price before contact. Cost is the question that
+              sends people off the site to go looking; answer it in one click. */}
           <a
-            href="#work"
+            href="#pricing"
             className="group/work flex items-center gap-2 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.18em] text-text-secondary hover:text-accent transition-colors"
           >
-            or see the live work
+            or see what it costs
             <svg
               width="10"
               height="10"
