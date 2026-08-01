@@ -71,7 +71,7 @@ export function CaseStudiesMetricsSection() {
         <div className="mb-10 md:mb-14">
           <div className="section-tag">CASE STUDIES</div>
           <h2 className="text-3xl md:text-5xl font-medium tracking-tighter text-text-primary uppercase">
-            CO-DELIVERED, <span className="font-serif italic font-normal text-[#0000FF] dark:text-blue-400">WITH METRICS.</span>
+            CO-DELIVERED, <span className="font-serif italic font-normal text-accent">WITH METRICS.</span>
           </h2>
         </div>
 
@@ -88,14 +88,14 @@ export function CaseStudiesMetricsSection() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               className={`group block p-6 sm:p-8 md:p-10 transition-colors duration-300 relative bg-bg-card hover:bg-black/5 dark:hover:bg-white/5 ${
-                item.isFlagship ? "border-l-4 border-l-[#0000FF]" : ""
+                item.isFlagship ? "border-l-4 border-l-accent" : ""
               }`}
             >
               {/* Tag Header */}
               <div className="flex items-center justify-between gap-4 mb-4">
                 <div className="flex items-center gap-2.5">
                   {item.isFlagship && (
-                    <span className="px-2 py-0.5 text-[9px] font-bold bg-[#0000FF] text-white uppercase tracking-wider font-mono">
+                    <span className="px-2 py-0.5 text-[9px] font-bold bg-accent text-white dark:text-black uppercase tracking-wider font-mono">
                       FLAGSHIP
                     </span>
                   )}
@@ -103,7 +103,7 @@ export function CaseStudiesMetricsSection() {
                     {item.tag}
                   </span>
                 </div>
-                <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#0000FF] dark:text-blue-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all font-mono">
+                <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all font-mono">
                   VIEW <ThinArrowUpRight className="size-3.5" />
                 </span>
               </div>
@@ -112,7 +112,7 @@ export function CaseStudiesMetricsSection() {
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-6">
                 <div className="max-w-3xl">
                   <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-tight mb-3 font-sans transition-colors ${
-                    item.titleAccent ? "text-[#0000FF] dark:text-blue-400" : "text-text-primary group-hover:text-[#0000FF] dark:group-hover:text-blue-400"
+                    item.titleAccent ? "text-accent" : "text-text-primary group-hover:text-accent"
                   }`}>
                     {item.title}
                   </h3>
@@ -126,10 +126,10 @@ export function CaseStudiesMetricsSection() {
                 )}
               </div>
 
-              {/* Metric Big Callout (Font weight reduced from heavy bold to elegant font-normal) */}
+              {/* Metric Big Callout */}
               {item.metric && (
                 <div className="mb-6">
-                  <div className="font-sans text-4xl sm:text-5xl md:text-6xl font-normal tracking-tighter leading-none text-[#0000FF] dark:text-blue-400 mb-2">
+                  <div className="font-sans text-4xl sm:text-5xl md:text-6xl font-normal tracking-tighter leading-none text-accent mb-2">
                     {item.metric}
                   </div>
                   <div className="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-text-muted font-mono">

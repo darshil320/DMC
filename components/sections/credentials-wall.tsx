@@ -33,12 +33,12 @@ export function CredentialsWallSection() {
   return (
     <section className="py-16 md:py-24 px-6 md:px-12 lg:px-16 w-full select-none relative z-10 border-t border-border-harsh bg-bg-page text-text-primary overflow-hidden">
       <div className="max-w-[1440px] mx-auto w-full">
-        {/* Section Header - Aligned with Our Work section */}
+        {/* Section Header */}
         <div className="mb-10 md:mb-14 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <div className="section-tag">CREDENTIALS</div>
             <h2 className="text-3xl md:text-5xl font-medium tracking-tighter text-text-primary uppercase">
-              THE TEAM, <span className="font-serif italic font-normal text-[#0000FF] dark:text-blue-400">BY THE NUMBERS.</span>
+              THE TEAM, <span className="font-serif italic font-normal text-accent">BY THE NUMBERS.</span>
             </h2>
           </div>
           <span className="text-[11px] font-bold text-text-muted uppercase tracking-widest font-mono self-start md:self-end pb-1">
@@ -58,12 +58,12 @@ export function CredentialsWallSection() {
               className="p-8 sm:p-10 hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 flex flex-col justify-between min-h-[220px]"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="font-sans text-4xl sm:text-5xl lg:text-6xl font-normal text-[#0000FF] dark:text-blue-400 tracking-tighter leading-none">
+                <div className="font-sans text-4xl sm:text-5xl lg:text-6xl font-normal text-accent tracking-tighter leading-none">
                   {m.number}
                 </div>
                 {m.hasIconBox && (
                   <div className="size-5 border border-border-harsh bg-bg-page flex items-center justify-center shrink-0">
-                    <div className="size-1.5 bg-[#CCFF00]" />
+                    <div className="size-1.5 bg-accent-lime" />
                   </div>
                 )}
               </div>
