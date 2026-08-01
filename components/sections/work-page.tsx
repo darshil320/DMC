@@ -43,7 +43,110 @@ export function WorkPageContent() {
             </p>
           </AnimatedReveal>
 
-          {/* ═══ Case Study 1: Topaz Furniture ═══ */}
+          {/* ═══ Case Study 1: Cohuman ═══ */}
+          <AnimatedReveal>
+            <article className="border border-border-harsh mb-16">
+              {/* Image Band */}
+              <a
+                href="https://cohuman-website-sandy.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block overflow-hidden bg-neutral-200 min-h-[300px] md:min-h-[420px] group cursor-pointer"
+              >
+                <CornerTicks tone="lime" />
+                <Image
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 1200px"
+                  className="object-cover opacity-50 mix-blend-luminosity group-hover:opacity-75 transition-opacity duration-500"
+                  alt="Cohuman Lifestyle Office Furniture Showroom"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors duration-500" />
+
+                <MagneticButton strength={8} className="absolute left-6 top-6 z-20">
+                  <span className="flex items-center gap-2 border border-accent bg-accent-lime px-3 py-1.5 font-pixel text-[10px] font-bold uppercase tracking-widest text-accent transition-colors group-hover:bg-white group-hover:text-black brutalist-shadow">
+                    VIEW LIVE SITE <ThinArrowUpRight />
+                  </span>
+                </MagneticButton>
+
+                <div className="absolute bottom-6 left-6 z-10 transition-transform duration-700 ease-out group-hover:-translate-y-1">
+                  <span className="text-white font-serif text-3xl md:text-5xl font-medium tracking-tight block">
+                    Cohuman
+                  </span>
+                  <span className="text-accent-lime text-xs font-mono font-bold uppercase tracking-widest mt-1 block">
+                    Lifestyle Office Furniture Experience
+                  </span>
+                </div>
+              </a>
+
+              {/* Details Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 p-8 md:p-12">
+                {/* Meta */}
+                <div className="lg:col-span-3 flex flex-col gap-4">
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">CLIENT</span>
+                    <span className="text-sm font-bold text-text-primary">Cohuman (Furniture Concepts 2.0)</span>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">LOCATION</span>
+                    <span className="text-sm font-medium text-text-primary">Surat, Gujarat (Est. 1989)</span>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">TIMELINE</span>
+                    <AnimatedCounter value="4 Weeks" className="text-sm font-medium text-text-primary" />
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">TYPE</span>
+                    <span className="text-sm font-medium text-text-primary">Digital Showroom · B2B Specifier · Lead-Gen</span>
+                  </div>
+                </div>
+
+                {/* Story */}
+                <div className="lg:col-span-5 flex flex-col gap-6 border-l-0 lg:border-l border-border-harsh/30 lg:pl-8">
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-accent block mb-2">THE CHALLENGE</span>
+                    <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+                      Furniture Concepts 2.0 needed to rebrand into Cohuman—a modern, high-end office furniture manufacturer for architects, interior designers, and corporate offices. Their previous site was structured like a consumer e-commerce store, creating friction for corporate B2B buyers who order in bulk and require custom specification quotes rather than instant checkout.
+                    </p>
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-accent block mb-2">WHAT WE BUILT</span>
+                    <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+                      Rebuilt the entire digital architecture into a high-converting digital showroom & specifier engine. Created a Next.js 16 catalog repository, 3 specialized lead capture pipelines (Product Enquiry, B2B Bulk Order, Showroom Visit), pre-filled quote dialog context, Zod API validation, Resend email routing, and sub-second mobile page performance.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Tags + CTA */}
+                <div className="lg:col-span-4 flex flex-col gap-6 border-l-0 lg:border-l border-border-harsh/30 lg:pl-8">
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-3">TECH STACK</span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {["Next.js 16", "React 19", "Tailwind CSS v4", "Specifier Engine", "Zod Validation", "Resend API", "B2B Lead Pipeline"].map((tag) => (
+                        <span key={tag} className="text-[8px] font-bold tracking-[0.15em] uppercase px-2 py-1 border border-border-harsh bg-bg-card text-text-muted">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <MagneticButton strength={8} className="mt-auto w-full md:w-fit">
+                    <a
+                      href="https://cohuman-website-sandy.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex w-full items-center justify-center gap-2 border border-accent bg-accent px-5 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-accent-lime hover:text-accent brutalist-shadow md:w-fit"
+                    >
+                      <ExternalLink className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      View Live Website
+                    </a>
+                  </MagneticButton>
+                </div>
+              </div>
+            </article>
+          </AnimatedReveal>
+
+          {/* ═══ Case Study 2: Topaz Furniture ═══ */}
           <AnimatedReveal>
             <article className="border border-border-harsh mb-16">
               {/* Image Band */}
