@@ -14,7 +14,7 @@ const VALUES = [
   {
     icon: Anchor,
     title: "You Own It",
-    desc: "We custom build systems that you control. No endless SaaS subscriptions, no platform lock-in. It's your business, your data, your infrastructure.",
+    desc: "We custom build systems that you control. No endless SaaS subscriptions, no platform dependency. It's your business, your data, your infrastructure.",
   },
   {
     icon: PhoneCall,
@@ -36,7 +36,7 @@ const VALUES = [
 const ABOUT_STATS = [
   { value: "1", label: "Direct builder" },
   { value: "4", label: "Operating principles" },
-  { value: "0", label: "Platform lock-in" },
+  { value: "100%", label: "Code & data ownership" },
 ];
 
 export function AboutPageContent() {

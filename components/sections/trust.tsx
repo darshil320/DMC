@@ -7,7 +7,7 @@ const STATS = [
   { value: "100%", label: "ENGINEERED IN-HOUSE" },
   { value: "24h", label: "REPLY TIME, EVERY TIME" },
   { value: "₹0", label: "HIDDEN FEES" },
-  { value: "0", label: "VENDOR LOCK-IN" },
+  { value: "100%", label: "CODE OWNERSHIP" },
 ];
 
 export function TrustSection() {

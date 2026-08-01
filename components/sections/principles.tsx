@@ -24,11 +24,6 @@ const PRINCIPLES = [
     title: "AI-native by default",
     body: "Every system we build has AI in the loop: chatbots, lead scoring, automation. Your operation runs leaner from day one.",
   },
-  {
-    num: "04",
-    title: "We pick up the phone",
-    body: "Ahmedabad-based. You talk to the people who build your system. In person when it matters, never a faceless ticket queue.",
-  },
 ] as const;
 
 export function PrinciplesSection() {
@@ -47,12 +42,12 @@ export function PrinciplesSection() {
             </h2>
           </div>
           <p className="text-text-secondary text-sm md:text-base font-medium max-w-[360px]">
-            The same four principles run through every project, from a one-page site to a full business system.
+            The same three principles run through every project, from a one-page site to a full business system.
           </p>
         </div>
 
         {/* Principles grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border-harsh">
+        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-border-harsh">
           {PRINCIPLES.map((p, idx) => (
             <AnimatedReveal
               key={p.num}

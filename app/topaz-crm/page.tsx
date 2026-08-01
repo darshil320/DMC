@@ -2,18 +2,42 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Check } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  Camera,
+  MessageSquare,
+  Hammer,
+  ShieldCheck,
+  TrendingUp,
+  Clock,
+  Layers,
+  Smartphone,
+  Cpu,
+  Receipt,
+  Truck,
+  Users,
+} from "lucide-react";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 import { WordsPullUp } from "@/components/topaz/WordsPullUp";
 import { WordsPullUpMultiStyle } from "@/components/topaz/WordsPullUpMultiStyle";
 import { ScrollRevealText } from "@/components/topaz/ScrollRevealText";
 
 export default function TopazCrmLandingPage() {
   const [activeNav, setActiveNav] = useState("Our story");
+  const [activeTab, setActiveTab] = useState<"biometrics" | "whatsapp" | "billing" | "workshops" | "dashboard">("biometrics");
 
-  // Navigation Items
-  const navItems = ["Our story", "Collective", "Workshops", "Programs", "Inquiries"];
+  // In-page Section Nav Items
+  const navItems = [
+    { label: "Our story", href: "#story" },
+    { label: "Architecture", href: "#architecture" },
+    { label: "Modules", href: "#modules" },
+    { label: "Workshops", href: "#workshops" },
+    { label: "Features", href: "#features" },
+  ];
 
-  // Feature Cards Animation Container Reference
+  // Feature Cards Animation Reference
   const featuresRef = useRef<HTMLDivElement>(null);
   const isFeaturesInView = useInView(featuresRef, { once: true, margin: "-100px" });
 
@@ -22,14 +46,17 @@ export default function TopazCrmLandingPage() {
 
   return (
     <div className="topaz-landing bg-black text-[#E1E0CC] min-h-screen w-full selection:bg-[#DEDBC8] selection:text-black overflow-x-hidden">
+      {/* Site-wide Main Navbar */}
+      <Navbar />
+
       {/* 
         ========================================================================
         SECTION 1: HERO SECTION
         ========================================================================
       */}
-      <section className="relative h-screen w-full p-4 md:p-6 box-border">
+      <section id="story" className="relative h-screen w-full p-4 md:p-6 box-border pt-20 md:pt-24">
         {/* Rounded Inset Container */}
-        <div className="relative h-full w-full rounded-2xl md:rounded-[2rem] overflow-hidden bg-black flex flex-col justify-between">
+        <div className="relative h-full w-full rounded-2xl md:rounded-[2rem] overflow-hidden bg-black flex flex-col justify-between border border-white/10 shadow-2xl">
           
           {/* Background Video */}
           <video
@@ -45,24 +72,25 @@ export default function TopazCrmLandingPage() {
           <div className="noise-overlay absolute inset-0 opacity-[0.7] mix-blend-overlay pointer-events-none" />
 
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none" />
 
-          {/* Navbar: Hanging Black Pill */}
-          <header className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
-            <nav className="bg-black rounded-b-2xl md:rounded-b-3xl px-4 py-2.5 md:px-8 flex items-center gap-3 sm:gap-6 md:gap-12 lg:gap-14 shadow-2xl border-x border-b border-white/10">
+          {/* Hanging Black Pill Navbar (In-Page Jump Anchors) */}
+          <header className="absolute top-4 left-1/2 -translate-x-1/2 z-20">
+            <nav className="bg-black/90 backdrop-blur-md rounded-full px-5 py-2.5 md:px-8 flex items-center gap-3 sm:gap-6 md:gap-10 shadow-2xl border border-white/15">
               {navItems.map((item) => {
-                const isActive = activeNav === item;
+                const isActive = activeNav === item.label;
                 return (
-                  <button
-                    key={item}
-                    onClick={() => setActiveNav(item)}
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setActiveNav(item.label)}
                     style={{
-                      color: isActive ? "#E1E0CC" : "rgba(225, 224, 204, 0.8)",
+                      color: isActive ? "#E1E0CC" : "rgba(225, 224, 204, 0.7)",
                     }}
                     className="text-[10px] sm:text-xs md:text-sm font-medium transition-colors hover:text-[#E1E0CC] whitespace-nowrap cursor-pointer"
                   >
-                    {item}
-                  </button>
+                    {item.label}
+                  </a>
                 );
               })}
             </nav>
@@ -89,22 +117,22 @@ export default function TopazCrmLandingPage() {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.5, ease: easeCustom }}
-                  className="text-[#DEDBC8]/70 text-xs sm:text-sm md:text-base leading-[1.2] font-normal"
+                  className="text-[#DEDBC8]/80 text-xs sm:text-sm md:text-base leading-[1.3] font-normal"
                 >
-                  Topaz is a worldwide intelligence network for luxury furniture showrooms, bound not by manual entry or status but by real-time customer recognition, automated WhatsApp concierge, and workshop craftsmanship.
+                  Topaz is a custom sales conversion engine built for Surat’s premier luxury furniture showroom. Uniting DPDPA-compliant face recognition, automated WhatsApp AI concierge, instant mobile quotes, and multi-workshop tracking into one unified platform.
                 </motion.p>
 
-                {/* CTA Button "Join the lab" */}
+                {/* CTA Button "Explore Platform" */}
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.7, ease: easeCustom }}
                 >
                   <a
-                    href="#features"
+                    href="#architecture"
                     className="group inline-flex items-center gap-2 hover:gap-3 bg-[#DEDBC8] text-black rounded-full px-5 py-2.5 sm:px-6 sm:py-3 font-medium text-sm sm:text-base transition-all duration-300 w-fit cursor-pointer shadow-lg"
                   >
-                    <span>Join the lab</span>
+                    <span>Explore Architecture</span>
                     <span className="bg-black rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#E1E0CC]" />
                     </span>
@@ -119,47 +147,451 @@ export default function TopazCrmLandingPage() {
 
       {/* 
         ========================================================================
-        SECTION 2: ABOUT SECTION
+        SECTION 2: ABOUT & OPERATIONAL PHILOSOPHY
         ========================================================================
       */}
       <section className="bg-black py-24 md:py-36 px-4 md:px-8 w-full">
-        <div className="bg-[#101010] rounded-3xl p-8 sm:p-12 md:p-16 lg:p-20 text-center max-w-6xl mx-auto relative overflow-hidden border border-white/5 shadow-2xl">
+        <div className="bg-[#101010] rounded-3xl p-8 sm:p-12 md:p-16 lg:p-20 text-center max-w-6xl mx-auto relative overflow-hidden border border-white/10 shadow-2xl">
           
           {/* Top Label */}
           <div className="mb-8 sm:mb-12">
-            <span className="text-[#DEDBC8] text-[10px] sm:text-xs tracking-widest uppercase font-medium bg-white/5 px-3.5 py-1.5 rounded-full border border-white/10">
-              Visual arts & Showroom Intelligence
+            <span className="text-[#DEDBC8] text-[10px] sm:text-xs tracking-widest uppercase font-medium bg-white/5 px-4 py-2 rounded-full border border-white/10">
+              Showroom Intelligence & Sales Engine
             </span>
           </div>
 
           {/* Main Heading with Multi-Style WordsPullUp */}
-          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-3xl mx-auto leading-[0.95] sm:leading-[0.9] text-[#E1E0CC] mb-10 sm:mb-14">
+          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl mx-auto leading-[0.95] sm:leading-[0.9] text-[#E1E0CC] mb-10 sm:mb-14">
             <WordsPullUpMultiStyle
               segments={[
                 { text: "Built for Topaz Furniture,", className: "font-normal" },
                 { text: "a bespoke sales engine.", className: "italic font-serif text-[#DEDBC8]" },
-                { text: "We integrate facial recognition, catalog intelligence, and workshop lifecycle.", className: "font-normal" },
+                { text: "We integrate facial recognition, live DB catalog chat, and workshop lifecycle.", className: "font-normal" },
               ]}
               staggerDelay={0.08}
             />
           </div>
 
           {/* Body Paragraph with Scroll-Linked Character Opacity Reveal */}
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-3xl mx-auto mb-16">
             <ScrollRevealText
-              text="Over the last seven years, we have crafted intelligence systems with DMC Digital, bringing luxury showroom operations into a connected digital future. Together, we have built technology that recognizes every guest and tracks every custom piece from craft to client."
+              text="Over the last seven years, we have crafted intelligence systems with DMC Digital, bringing luxury showroom operations into a connected digital future. Topaz ensures that nothing about a customer, a custom order, or a piece of handcrafted furniture relies on human memory alone."
               className="text-[#DEDBC8] text-xs sm:text-sm md:text-base leading-relaxed"
             />
           </div>
+
+          {/* Operational Metrics Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/10 pt-12 text-left">
+            <div className="p-4 rounded-xl bg-white/5 border border-white/5">
+              <div className="text-2xl sm:text-3xl font-bold text-[#E1E0CC] font-serif mb-1">85–95%</div>
+              <div className="text-[11px] text-gray-400 uppercase tracking-wider">Face Match Accuracy</div>
+              <div className="text-xs text-gray-500 mt-1">NEW/REPEAT/UNCERTAIN bands</div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-white/5 border border-white/5">
+              <div className="text-2xl sm:text-3xl font-bold text-[#E1E0CC] font-serif mb-1">&lt; 3 Seconds</div>
+              <div className="text-[11px] text-gray-400 uppercase tracking-wider">Entrance Alert Speed</div>
+              <div className="text-xs text-gray-500 mt-1">Direct WhatsApp ping to assigned rep</div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-white/5 border border-white/5">
+              <div className="text-2xl sm:text-3xl font-bold text-[#E1E0CC] font-serif mb-1">100%</div>
+              <div className="text-[11px] text-gray-400 uppercase tracking-wider">DPDPA Compliant</div>
+              <div className="text-xs text-gray-500 mt-1">Explicit consent FK security gate</div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-white/5 border border-white/5">
+              <div className="text-2xl sm:text-3xl font-bold text-[#E1E0CC] font-serif mb-1">0 Rupee</div>
+              <div className="text-[11px] text-gray-400 uppercase tracking-wider">Price Leakage</div>
+              <div className="text-xs text-gray-500 mt-1">Privacy-filtered workshop job cards</div>
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* 
         ========================================================================
-        SECTION 3: FEATURES SECTION
+        SECTION 3: SYSTEM ARCHITECTURE & DATA PIPELINE
         ========================================================================
       */}
-      <section id="features" className="min-h-screen bg-black relative py-24 md:py-36 px-4 md:px-8 w-full overflow-hidden">
+      <section id="architecture" className="py-24 md:py-36 px-4 md:px-8 max-w-7xl mx-auto border-t border-white/10">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span className="text-[#DEDBC8] text-xs uppercase tracking-widest font-mono">System Architecture</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#E1E0CC]">
+            How Topaz Transforms Showroom Sales
+          </h2>
+          <p className="text-gray-400 text-sm sm:text-base">
+            From the moment a customer enters the showroom to the final polishing step in Surat workshops, every interaction is synchronized in real time.
+          </p>
+        </div>
+
+        {/* 5-Step Pipeline Card Sequence */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          {[
+            {
+              step: "01",
+              title: "Entrance Biometrics",
+              icon: Camera,
+              desc: "Door camera captures face embedding vector via ArcFace. Explicit DPDPA consent gate checks database permission.",
+            },
+            {
+              step: "02",
+              title: "Rep Notification",
+              icon: Users,
+              desc: "Primary salesperson receives instant WhatsApp alert with visitor profile, past purchases, and pending inquiries.",
+            },
+            {
+              step: "03",
+              title: "AI WhatsApp Concierge",
+              icon: MessageSquare,
+              desc: "Meta Cloud API grounded AI answers catalog questions, calculates pricing via live DB, and sends digital quotes.",
+            },
+            {
+              step: "04",
+              title: "Mobile Quote & GST",
+              icon: Receipt,
+              desc: "Salesperson builds custom quote on phone. Automatic GST calculation & single-tap customer WhatsApp approval.",
+            },
+            {
+              step: "05",
+              title: "Workshop & Logistics",
+              icon: Truck,
+              desc: "Automated routing through cutting, polish & finish workshops with mandatory milestone photos and driver dispatch.",
+            },
+          ].map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={index}
+                className="bg-[#141414] rounded-2xl p-6 border border-white/5 hover:border-white/20 transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-xs font-mono text-gray-500 font-bold">{item.step}</span>
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#DEDBC8] transition-colors duration-300">
+                      <Icon className="w-5 h-5 text-[#E1E0CC] group-hover:text-black transition-colors duration-300" />
+                    </div>
+                  </div>
+                  <h3 className="text-[#E1E0CC] font-medium text-base mb-2">{item.title}</h3>
+                  <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+                <div className="w-full h-1 bg-white/5 mt-6 rounded-full overflow-hidden">
+                  <div className="w-full h-full bg-[#DEDBC8]/40 group-hover:bg-[#DEDBC8] transition-colors duration-300" />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 
+        ========================================================================
+        SECTION 4: DEEP DIVE MODULES (Interactive Tabbed Showcase)
+        ========================================================================
+      */}
+      <section id="modules" className="py-24 md:py-36 px-4 md:px-8 bg-[#0C0C0C] border-t border-white/10">
+        <div className="max-w-7xl mx-auto">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <span className="text-[#DEDBC8] text-xs uppercase tracking-widest font-mono block mb-2">Core Platform Modules</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#E1E0CC]">
+                Engineered for High-End Showroom Operations
+              </h2>
+            </div>
+
+            {/* Module Switcher Tabs */}
+            <div className="flex flex-wrap gap-2 bg-black/60 p-1.5 rounded-full border border-white/10 w-fit">
+              {[
+                { id: "biometrics", label: "01. Biometrics" },
+                { id: "whatsapp", label: "02. WhatsApp AI" },
+                { id: "billing", label: "03. GST Billing" },
+                { id: "workshops", label: "04. Workshop Lifecycle" },
+                { id: "dashboard", label: "05. Owner Control" },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as any)}
+                  className={`px-4 py-2 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                    activeTab === tab.id
+                      ? "bg-[#DEDBC8] text-black shadow-md"
+                      : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Tab Content Display */}
+          <div className="bg-[#141414] rounded-3xl p-8 sm:p-12 border border-white/10 min-h-[420px] flex flex-col justify-between">
+            {activeTab === "biometrics" && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-xs text-[#DEDBC8] border border-white/10 font-mono">
+                    <ShieldCheck className="w-3.5 h-3.5" /> DPDPA Consent-First Engine
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-medium text-[#E1E0CC]">
+                    Facial Recognition & Visitor Intelligence
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Recognises returning clients at the entrance camera in under 3 seconds. The system evaluates identity across NEW, REPEAT, and UNCERTAIN confidence bands without ever auto-asserting identity or gatekeeping access.
+                  </p>
+                  <ul className="space-y-3">
+                    {[
+                      "Consent FK gate ensures biometric embeddings are stored strictly with explicit opt-in.",
+                      "Sends private WhatsApp notification to designated salesperson with past preferences.",
+                      "Tracks visit frequency, preferred sofa styles, and open quotes automatically.",
+                      "Automatic DPDPA consent withdrawal cascade purges embeddings instantly.",
+                    ].map((bullet, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300">
+                        <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bg-black/60 rounded-2xl p-6 border border-white/10 space-y-4 font-mono text-xs">
+                  <div className="text-gray-500 border-b border-white/10 pb-3 flex justify-between">
+                    <span>LIVE_ENTRANCE_FEED // CAM_01</span>
+                    <span className="text-emerald-400 animate-pulse">● LIVE</span>
+                  </div>
+                  <div className="space-y-2 text-gray-300">
+                    <div>[EVENT] Face detected at main entrance</div>
+                    <div>[MATCH] Embedding matched: <span className="text-[#DEDBC8]">Hemant Patel</span> (Confidence: 94.2%)</div>
+                    <div>[ASSIGNMENT] Primary Rep: <span className="text-[#DEDBC8]">Rajesh V.</span></div>
+                    <div>[HISTORY] 2 Previous visits | Interest: <span className="text-[#DEDBC8]">7-Seater Velvet Sofa</span></div>
+                    <div className="p-3 bg-white/5 rounded-lg border border-white/5 text-[#E1E0CC] font-sans text-xs">
+                      💬 <span className="font-bold">WhatsApp Alert Sent to Rajesh:</span> "Hemant Patel is at the entrance! Last visited 14 days ago. Preferred fabric: Royal Velvet #42."
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === "whatsapp" && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-xs text-[#DEDBC8] border border-white/10 font-mono">
+                    <MessageSquare className="w-3.5 h-3.5" /> Meta Cloud API (Official Token)
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-medium text-[#E1E0CC]">
+                    AI WhatsApp Concierge & Lead Nurture
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Answers customer inquiries 24/7 on WhatsApp, Instagram, and Facebook. Grounded strictly on live database catalog tables — prices and stock availability are pulled directly from DB tool calls, never hallucinated by embeddings.
+                  </p>
+                  <ul className="space-y-3">
+                    {[
+                      "Sends pre-approved WhatsApp templates outside 24h customer service window.",
+                      "Seamless human agent takeover — salesperson can jump into any live chat.",
+                      "Captures Instagram/Facebook/Google ad leads directly into pipeline.",
+                      "Automated follow-up messages signed in the salesperson's exact voice.",
+                    ].map((bullet, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300">
+                        <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bg-black/60 rounded-2xl p-6 border border-white/10 space-y-3 font-sans text-xs">
+                  <div className="text-gray-400 border-b border-white/10 pb-2 text-[11px] font-mono">
+                    WHATSAPP CONVERSATION // CUSTOMER #4082
+                  </div>
+                  <div className="bg-white/5 p-3 rounded-xl max-w-[85%] text-gray-300">
+                    Hi, do you have the Italian Leather Sectional in Tan brown in stock?
+                  </div>
+                  <div className="bg-[#DEDBC8]/10 text-[#E1E0CC] p-3 rounded-xl max-w-[85%] ml-auto border border-[#DEDBC8]/20">
+                    Hello! Yes, the Italian Leather Sectional (8-seater) is in stock at our Surat showroom. Current price is ₹1,85,000 + GST. Would you like me to send custom dimensions or reserve a viewing?
+                  </div>
+                  <div className="text-[10px] text-gray-500 text-right font-mono">
+                    ✓ Tool call executed: catalog_db.query_stock(item_id='SKU-802')
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === "billing" && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-xs text-[#DEDBC8] border border-white/10 font-mono">
+                    <Receipt className="w-3.5 h-3.5" /> Mobile Quote & GST Engine
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-medium text-[#E1E0CC]">
+                    Instant Quotations & Automated Receivables
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Sales reps build detailed price quotes on their phone floor-side — selecting item, dimensions, fabric options, and discounts. GST taxes and payment installments are calculated automatically, eliminating manual math errors.
+                  </p>
+                  <ul className="space-y-3">
+                    {[
+                      "One-tap customer approval links sent directly via WhatsApp.",
+                      "Automatic conversion from approved quote into active production order.",
+                      "Tracks advances, pending installments, and issues automated digital receipts.",
+                      "Owner and accounting dashboard surfaces total outstanding balances instantly.",
+                    ].map((bullet, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300">
+                        <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bg-black/60 rounded-2xl p-6 border border-white/10 space-y-3 font-mono text-xs">
+                  <div className="text-gray-400 border-b border-white/10 pb-2 text-[11px]">
+                    MOBILE_QUOTE_BUILDER // ORDER #TPZ-904
+                  </div>
+                  <div className="space-y-1.5 text-gray-300">
+                    <div className="flex justify-between">
+                      <span>1x Teak Dining Table (8-Seater)</span>
+                      <span>₹1,20,000</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>8x Premium Upholstered Chairs</span>
+                      <span>₹96,000</span>
+                    </div>
+                    <div className="flex justify-between text-gray-500">
+                      <span>Showroom Discount (5%)</span>
+                      <span>-₹10,800</span>
+                    </div>
+                    <div className="flex justify-between text-[#DEDBC8] pt-2 border-t border-white/10 font-bold">
+                      <span>Subtotal + GST (18%)</span>
+                      <span>₹2,42,064</span>
+                    </div>
+                  </div>
+                  <div className="pt-2">
+                    <span className="px-2.5 py-1 bg-emerald-500/20 text-emerald-300 rounded text-[10px] uppercase font-bold">
+                      Status: Advance Paid (₹1,00,000)
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === "workshops" && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-xs text-[#DEDBC8] border border-white/10 font-mono">
+                    <Hammer className="w-3.5 h-3.5" /> Multi-Workshop Lifecycle
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-medium text-[#E1E0CC]">
+                    Workshop Progress & Driver Logistics
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Tracks every piece of furniture through specialized Surat workshops — design approval, wood cutting, frame construction, polishing, and upholstery. Drivers receive simple phone screens detailing exact pickups and drops down to the hour.
+                  </p>
+                  <ul className="space-y-3">
+                    {[
+                      "Mandatory milestone photo checkpoints at key production steps.",
+                      "Privacy-filtered job cards route to workshops with zero price leakage.",
+                      "Automated driver dispatch screens show pickup & drop locations.",
+                      "Flags delayed items automatically to prevent broken delivery promises.",
+                    ].map((bullet, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300">
+                        <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bg-black/60 rounded-2xl p-6 border border-white/10 space-y-3 font-mono text-xs">
+                  <div className="text-gray-400 border-b border-white/10 pb-2 text-[11px]">
+                    WORKSHOP_JOURNEY // ITEM #JOB-402 (POLISHING → FINISHING)
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-emerald-400">
+                      <span>1. Wood Cutting (Sharma's)</span>
+                      <span>✓ PASSED</span>
+                    </div>
+                    <div className="flex items-center justify-between text-emerald-400">
+                      <span>2. Frame Assembly</span>
+                      <span>✓ PASSED</span>
+                    </div>
+                    <div className="flex items-center justify-between text-[#DEDBC8]">
+                      <span>3. Polishing Workshop</span>
+                      <span className="animate-pulse">● IN PROGRESS (Photo Uploaded)</span>
+                    </div>
+                    <div className="flex items-center justify-between text-gray-600">
+                      <span>4. Upholstery & Dispatch</span>
+                      <span>QUEUED</span>
+                    </div>
+                  </div>
+                  <div className="p-3 bg-white/5 rounded-lg border border-white/5 text-gray-300 text-[11px]">
+                    🚚 <span className="font-bold">Driver Dispatch Manifest:</span> Collect frame #JOB-402 from Sharma Polish Unit (Ring Road) by 4:00 PM → Deliver to City Upholstery Studio.
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === "dashboard" && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-xs text-[#DEDBC8] border border-white/10 font-mono">
+                    <TrendingUp className="w-3.5 h-3.5" /> Owner Floor Control
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-medium text-[#E1E0CC]">
+                    Single-Screen Showroom Management
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Designed for showroom owners (Hemant) to view the entire business on one screen. Monitor live walk-ins, sales rep assignments, pipeline revenue, and workshop bottlenecks without calling five different managers.
+                  </p>
+                  <ul className="space-y-3">
+                    {[
+                      "Real-time walk-in feed showing active guests on the showroom floor.",
+                      "Salesperson claim management & collaborator permission controls.",
+                      "Omnichannel lead pipeline from Instagram, Facebook & Google ads.",
+                      "Complete historical view of every customer visit, order, and payment.",
+                    ].map((bullet, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300">
+                        <Check className="w-4 h-4 text-[#DEDBC8] shrink-0 mt-0.5" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bg-black/60 rounded-2xl p-6 border border-white/10 space-y-4 font-mono text-xs">
+                  <div className="text-gray-400 border-b border-white/10 pb-2 text-[11px] flex justify-between">
+                    <span>EXECUTIVE_DASHBOARD // TOPAZ SURAT</span>
+                    <span className="text-[#DEDBC8]">LIVE METRICS</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 text-center">
+                    <div className="p-3 bg-white/5 rounded-xl border border-white/5">
+                      <div className="text-gray-400 text-[10px]">ACTIVE WALK-INS</div>
+                      <div className="text-xl font-bold text-[#E1E0CC] mt-1">6 Parties</div>
+                    </div>
+                    <div className="p-3 bg-white/5 rounded-xl border border-white/5">
+                      <div className="text-gray-400 text-[10px]">OPEN PIPELINE</div>
+                      <div className="text-xl font-bold text-[#E1E0CC] mt-1">₹42.8 Lakhs</div>
+                    </div>
+                  </div>
+                  <div className="p-3 bg-white/5 rounded-xl border border-white/5 space-y-1.5 text-left text-[11px] text-gray-300">
+                    <div className="font-bold text-[#DEDBC8]">Live Floor Status:</div>
+                    <div>• Floor 1: Rajesh V. serving Mr. Kapoor (7-Seater Sofa)</div>
+                    <div>• Floor 2: Amit Shah serving Repeat Guest (Teak Bed)</div>
+                    <div>• Unclaimed: Walk-in guest at Door #2 → <span className="text-emerald-400">Claim Prompt Sent</span></div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 
+        ========================================================================
+        SECTION 5: FEATURES SECTION (Prompt Section 3 Requirement)
+        ========================================================================
+      */}
+      <section id="features" className="min-h-screen bg-black relative py-24 md:py-36 px-4 md:px-8 w-full overflow-hidden border-t border-white/10">
         {/* Subtle Background Noise */}
         <div className="bg-noise absolute inset-0 opacity-[0.15] pointer-events-none" />
 
@@ -247,7 +679,8 @@ export default function TopazCrmLandingPage() {
 
               {/* Bottom Link */}
               <a
-                href="#learn-more-01"
+                href="#modules"
+                onClick={() => setActiveTab("biometrics")}
                 className="text-[#DEDBC8] text-xs font-medium inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-300 pt-4 cursor-pointer"
               >
                 <span>Learn more</span>
@@ -292,7 +725,8 @@ export default function TopazCrmLandingPage() {
 
               {/* Bottom Link */}
               <a
-                href="#learn-more-02"
+                href="#modules"
+                onClick={() => setActiveTab("whatsapp")}
                 className="text-[#DEDBC8] text-xs font-medium inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-300 pt-4 cursor-pointer"
               >
                 <span>Learn more</span>
@@ -337,7 +771,8 @@ export default function TopazCrmLandingPage() {
 
               {/* Bottom Link */}
               <a
-                href="#learn-more-03"
+                href="#modules"
+                onClick={() => setActiveTab("workshops")}
                 className="text-[#DEDBC8] text-xs font-medium inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-300 pt-4 cursor-pointer"
               >
                 <span>Learn more</span>
@@ -347,6 +782,9 @@ export default function TopazCrmLandingPage() {
           </div>
         </div>
       </section>
+
+      {/* Site-wide Footer */}
+      <Footer />
     </div>
   );
 }

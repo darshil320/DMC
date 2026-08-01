@@ -11,7 +11,7 @@ const MARQUEE_ITEMS = [
   "ECOMMERCE",
   "AUTOMATION",
   "CUSTOM CRM",
-  "ZERO LOCK-IN",
+  "100% OWNERSHIP",
 ] as const;
 
 export function FinalCtaSection() {

@@ -253,9 +253,13 @@ export function WorkPageContent() {
                 }} />
 
                 <div className="relative z-10 flex flex-col items-center max-w-full">
-                  <span className="static sm:absolute sm:top-6 sm:left-6 z-20 mb-6 sm:mb-0 inline-flex max-w-[92%] flex-wrap items-center justify-center gap-2 self-center text-center bg-white/10 text-white/80 px-3 py-1.5 font-pixel font-bold uppercase tracking-wider sm:tracking-widest text-[9px] sm:text-[10px] border border-white/20">
-                    PHASE 1 LIVE · PHASE 2 IN BUILD
-                  </span>
+                  <Link
+                    href="/topaz-crm"
+                    className="static sm:absolute sm:top-6 sm:left-6 z-20 mb-6 sm:mb-0 inline-flex max-w-[92%] flex-wrap items-center justify-center gap-1.5 self-center text-center bg-accent-lime text-accent hover:bg-white hover:text-black px-3.5 py-1.5 font-pixel font-bold uppercase tracking-wider sm:tracking-widest text-[9px] sm:text-[10px] border border-accent brutalist-shadow transition-colors"
+                  >
+                    <span>EXPLORE TOPAZ CRM SHOWCASE</span>
+                    <ExternalLink className="size-3" />
+                  </Link>
 
                   <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 max-w-full">
                     {[ScanFace, Bot, Users, BarChart3, Zap].map((Icon, i) => (
@@ -272,10 +276,12 @@ export function WorkPageContent() {
                     ))}
                   </div>
 
-                  <span className="text-white text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-center leading-tight px-2 break-words">
-                    Showroom Intelligence<br />
-                    <span className="text-accent-lime">& Sales Conversion</span>
-                  </span>
+                  <Link href="/topaz-crm" className="group text-center">
+                    <span className="text-white text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-center leading-tight px-2 break-words group-hover:text-accent-lime transition-colors block">
+                      Showroom Intelligence<br />
+                      <span className="text-accent-lime group-hover:text-white">& Sales Conversion</span>
+                    </span>
+                  </Link>
 
                   <span className="text-[8px] sm:text-[9px] font-black tracking-[0.2em] sm:tracking-[0.3em] uppercase text-white/40 mt-3 sm:mt-4 text-center px-2">
                     MULTI-PHASE BUSINESS SYSTEM
@@ -304,6 +310,15 @@ export function WorkPageContent() {
                   <div>
                     <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-text-muted block mb-1">TYPE</span>
                     <span className="text-sm font-medium text-text-primary">Complete Business System</span>
+                  </div>
+                  <div className="pt-2">
+                    <Link
+                      href="/topaz-crm"
+                      className="inline-flex items-center gap-2 bg-accent text-white hover:bg-accent-lime hover:text-accent font-bold uppercase tracking-widest text-[10px] px-4 py-2.5 transition-colors border border-border-harsh w-full justify-center"
+                    >
+                      <span>Explore System Showcase</span>
+                      <ExternalLink className="size-3.5" />
+                    </Link>
                   </div>
                 </div>
 

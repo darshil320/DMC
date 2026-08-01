@@ -314,32 +314,23 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* ── POV line — the sharp positioning hook under the headline ── */}
-          <div data-hero-copy className="mt-6 md:mt-8 max-w-[720px] mx-auto px-4">
+          {/* ── POV line — visible on sm/md+ to keep mobile uncluttered ── */}
+          <div data-hero-copy className="hidden sm:block mt-6 md:mt-8 max-w-[720px] mx-auto px-4">
             <p className="text-center text-[13px] md:text-base font-bold uppercase tracking-tight leading-snug text-text-primary">
               Enterprise-grade AI systems —
-              <span className="text-accent"> built direct, priced transparent, zero lock-in.</span>
+              <span className="text-accent"> built direct, priced transparent, 100% code ownership.</span>
             </p>
           </div>
 
-          {/* ── Paragraph — corner, no data-hero-copy so GSAP never touches it ── */}
+          {/* ── Paragraph — corner ── */}
           <div
             className="hidden md:block text-left z-20"
             style={{ position: "absolute", top: -8, right: 10, maxWidth: 220 }}
           >
             <p className="text-[12px] md:text-[14px] text-text-secondary leading-[1.5]">
               We architect custom digital operating systems for businesses that need to scale. From AI-driven lead capture to automated CRM pipelines, we turn your manual workflows into a seamless, high-converting engine.
-
             </p>
           </div>
-        </div>
-
-        {/* Mobile-only paragraph */}
-        <div data-hero-copy className="md:hidden mt-8 max-w-xs mx-auto">
-          <p className="text-[12px] text-text-secondary leading-[1.5] text-center">
-            We architect custom digital operating systems for businesses that need to scale. From AI-driven lead capture to automated CRM pipelines, we turn your manual workflows into a seamless, high-converting engine.
-
-          </p>
         </div>
 
         {/* ── CTA Button ── */}

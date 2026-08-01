@@ -6,7 +6,7 @@ export const DMC = {
   whatsappNumber: "+91 94265 29230",
   whatsappLink: "https://wa.me/919426529230",
   domain: "www.dmctech.in",
-  location: "Ahmedabad, India",
+  location: "Surat, India",
   pricing: {
     starter: 90000,
     catalog: 150000,
@@ -31,6 +31,6 @@ export const SOCIAL_LINKS = [
 export const URBANWOOD = {
   name: "UrbanWood Furniture",
   tagline: "Premium Furniture for Modern Homes",
-  location: "Ahmedabad",
+  location: "Surat",
   whatsappLink: "https://wa.me/919426529230",
 } as const;

@@ -38,6 +38,19 @@ function TagRow({ tags }: { tags: string[] }) {
 
 const PROJECTS = [
   {
+    key: "cohuman",
+    kind: "photo" as const,
+    href: "https://cohuman-website-sandy.vercel.app/",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
+    imageAlt: "Cohuman Lifestyle Office Furniture Showroom",
+    badge: "VIEW LIVE SITE",
+    title: "Cohuman",
+    category: "LIFESTYLE · ECOMMERCE · SHOWROOM",
+    heading: "Lifestyle Office Furniture Experience",
+    description: "Full digital showroom, high-converting catalog browser, interactive quotation specifier engine, and sub-second Next.js 16 build.",
+    tags: ["Next.js 16", "Digital Showroom", "Specifier Engine"],
+  },
+  {
     key: "topaz",
     kind: "photo" as const,
     href: "https://topazfurniture.in",
@@ -66,24 +79,14 @@ const PROJECTS = [
   {
     key: "crm",
     kind: "dark" as const,
+    href: "/topaz-crm",
     icons: [ScanFace, Bot, BarChart3, MessageCircle],
-    badge: "PHASE 1 LIVE · PHASE 2 IN BUILD",
+    badge: "EXPLORE TOPAZ CRM SYSTEM",
     title: "Showroom Intelligence",
     category: "AI · CRM · WHATSAPP · GST",
     heading: "Complete Business Operating System",
-    description: "Face recognition, AI WhatsApp assistant, and a live pipeline — now shipping GST quotations, payments, and production tracking.",
+    description: "Face recognition, AI WhatsApp assistant, and a live pipeline — shipping GST quotations, payments, and multi-workshop tracking.",
     tags: ["CRM", "WhatsApp API", "GST Billing"],
-  },
-  {
-    key: "lyfe9",
-    kind: "dark" as const,
-    icons: [FileText, Activity, HeartPulse, ShieldCheck],
-    badge: "PRIVATE BETA · IN DEVELOPMENT",
-    title: "lyfe9.ai",
-    category: "AI · HEALTH TECH",
-    heading: "Doctor-Reviewed Health Graph",
-    description: "Source-linked biomarker explanations tracked over time, with optional doctor review under strict medical-safety rules.",
-    tags: ["Next.js", "OpenAI", "Doctor Review"],
   },
 ];
 
@@ -143,40 +146,58 @@ function PhotoTile({ project }: { project: (typeof PROJECTS)[number] & { kind: "
 }
 
 function DarkTile({ project }: { project: (typeof PROJECTS)[number] & { kind: "dark" } }) {
+  const TileContent = (
+    <div className="relative overflow-hidden bg-bg-dark min-h-[180px] sm:min-h-[220px] flex flex-col items-center justify-center p-5 sm:p-6 group cursor-pointer">
+      <CornerTicks />
+      <div className="absolute inset-0 opacity-[0.08]" style={{
+        backgroundImage: "linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)",
+        backgroundSize: "40px 40px"
+      }} />
+
+      <MagneticButton strength={8} className="static sm:absolute sm:top-4 sm:left-4 z-20 mb-4 sm:mb-0">
+        <span className="inline-flex items-center gap-1.5 bg-accent-lime text-accent px-2.5 py-1 font-pixel font-bold uppercase tracking-wider text-[8px] border border-accent brutalist-shadow group-hover:bg-white group-hover:text-black transition-colors">
+          {project.badge} {"href" in project && project.href && <ThinArrowUpRight className="size-3" />}
+        </span>
+      </MagneticButton>
+
+      <div className="relative z-10 flex flex-col items-center max-w-full">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 mb-4 max-w-full">
+          {project.icons.map((Icon, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 + i * 0.06, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="size-8 border border-white/20 bg-white/5 flex items-center justify-center text-white/70 shrink-0"
+            >
+              <Icon className="size-4" />
+            </motion.div>
+          ))}
+        </div>
+
+        <span className="text-white text-lg sm:text-xl font-bold tracking-tight text-center leading-tight px-2 break-words group-hover:text-accent-lime transition-colors">
+          {project.title}
+        </span>
+      </div>
+
+      {"href" in project && project.href && (
+        <div className="absolute bottom-3 right-3 z-20 text-white/60 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
+          <ThinArrowUpRight className="size-4" />
+        </div>
+      )}
+    </div>
+  );
+
   return (
     <div className="border-b border-r border-border-harsh flex flex-col">
-      <div className="relative overflow-hidden bg-bg-dark min-h-[180px] sm:min-h-[220px] flex flex-col items-center justify-center p-5 sm:p-6 group">
-        <CornerTicks />
-        <div className="absolute inset-0 opacity-[0.08]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)",
-          backgroundSize: "40px 40px"
-        }} />
-
-        <span className="static sm:absolute sm:top-4 sm:left-4 z-20 mb-4 sm:mb-0 inline-flex max-w-[92%] flex-wrap items-center justify-center gap-1.5 self-center text-center bg-white/10 text-white/80 px-2.5 py-1 font-pixel font-bold uppercase tracking-wider text-[8px] border border-white/20">
-          {project.badge}
-        </span>
-
-        <div className="relative z-10 flex flex-col items-center max-w-full">
-          <div className="flex flex-wrap items-center justify-center gap-1.5 mb-4 max-w-full">
-            {project.icons.map((Icon, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 + i * 0.06, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="size-8 border border-white/20 bg-white/5 flex items-center justify-center text-white/70 shrink-0"
-              >
-                <Icon className="size-4" />
-              </motion.div>
-            ))}
-          </div>
-
-          <span className="text-white text-lg sm:text-xl font-bold tracking-tight text-center leading-tight px-2 break-words">
-            {project.title}
-          </span>
-        </div>
-      </div>
+      {"href" in project && project.href ? (
+        <Link href={project.href} className="block">
+          {TileContent}
+        </Link>
+      ) : (
+        TileContent
+      )}
 
       <div className="p-5 sm:p-6 flex flex-col flex-1">
         <span className="text-[8px] font-black tracking-[0.2em] uppercase text-text-muted mb-2">
@@ -188,8 +209,17 @@ function DarkTile({ project }: { project: (typeof PROJECTS)[number] & { kind: "d
         <p className="text-xs sm:text-sm font-medium text-text-secondary leading-relaxed mb-4">
           {project.description}
         </p>
-        <div className="mt-auto">
+        <div className="mt-auto flex items-center justify-between gap-4">
           <TagRow tags={project.tags} />
+          {"href" in project && project.href && (
+            <Link
+              href={project.href}
+              className="text-[10px] font-bold text-accent hover:text-text-primary uppercase tracking-widest inline-flex items-center gap-1 shrink-0"
+            >
+              <span>View System</span>
+              <ThinArrowUpRight className="size-3" />
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -46,6 +46,12 @@ const AboutUsSection = dynamic(() => import("@/components/sections/about").then(
 const OurWorkSection = dynamic(() => import("@/components/sections/our-work").then(m => m.OurWorkSection), {
   loading: () => <SectionPlaceholder />,
 });
+const CaseStudiesMetricsSection = dynamic(() => import("@/components/sections/case-studies-metrics").then(m => m.CaseStudiesMetricsSection), {
+  loading: () => <SectionPlaceholder />,
+});
+const CredentialsWallSection = dynamic(() => import("@/components/sections/credentials-wall").then(m => m.CredentialsWallSection), {
+  loading: () => <SectionPlaceholder />,
+});
 // const ProofSection = dynamic(() => import("@/components/sections/proof").then(m => m.ProofSection), {
 //   loading: () => <SectionPlaceholder />,
 // });
@@ -120,7 +126,10 @@ export default function Home() {
           <AboutUsSection />
           <OurWorkSection />
 
-          <LiveVisionSection />
+          <CaseStudiesMetricsSection />
+          <CredentialsWallSection />
+
+          {/* <LiveVisionSection /> */}
 
           <ServicesSection />
 

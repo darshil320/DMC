@@ -20,7 +20,7 @@ function buildLlmsTxt(): string {
 
   return `# DMC Tech (Digital Market Creators)
 
-> DMC Tech is a web and AI systems agency in ${DMC.location}. We build websites, ecommerce stores, AI WhatsApp chatbots, custom CRMs, ERP modules, and business automation for Indian businesses — engineered in-house, with transparent pricing and no lock-in.
+> DMC Tech is a web and AI systems agency in ${DMC.location}. We build websites, ecommerce stores, AI WhatsApp chatbots, custom CRMs, ERP modules, and business automation for Indian businesses — engineered in-house, with transparent pricing and 100% code ownership.
 
 - Contact: ${DMC.email} · WhatsApp ${DMC.whatsappNumber}
 - Location: ${DMC.location} (working across Gujarat and India)

@@ -146,7 +146,7 @@ const SERVICE_BLOCKS = [
       "Meta / Google lead ad bridges",
       "Payment gateway integrations",
     ],
-    tags: ["Custom-Built", "API Integrations", "Workflow Automation", "No Lock-in"],
+    tags: ["Custom-Built", "API Integrations", "Workflow Automation", "100% Ownership"],
     timeline: "Scoped per project",
   },
 ];

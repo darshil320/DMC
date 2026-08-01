@@ -27,7 +27,7 @@ export default function FeaturesSectionDemo() {
     {
       title: "Pricing like no other",
       description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
+        "Our prices are best in the market. Full code ownership, transparent pricing, no hidden fees.",
       icon: <IconCurrencyDollar />,
     },
     {

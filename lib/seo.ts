@@ -6,7 +6,7 @@ export const SITE_NAME = "DMC Tech";
 export const SITE_TITLE =
   "DMC Tech | AI-Native Business Systems — Websites, Chatbots, CRM & Automation";
 export const SITE_DESCRIPTION =
-  "DMC Tech builds AI-native systems that run your business — websites, AI WhatsApp chatbots, CRM, ERP, lead automation, and dashboards. Enterprise-grade engineering, built direct, transparent pricing. Ahmedabad, India.";
+  "DMC Tech builds AI-native systems that run your business — websites, AI WhatsApp chatbots, CRM, ERP, lead automation, and dashboards. Enterprise-grade engineering, built direct, transparent pricing. Surat, India.";
 export const OG_IMAGE_PATH = "/opengraph-image";
 
 const BASE_KEYWORDS = [
@@ -22,7 +22,7 @@ const BASE_KEYWORDS = [
   "business process automation",
   "lead management system",
   "custom business software India",
-  "web design Ahmedabad",
+  "web design Surat",
   "web design Gujarat",
   "DMC Tech",
 ];
@@ -133,7 +133,7 @@ export function organizationJsonLd() {
     priceRange: "INR",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Ahmedabad",
+      addressLocality: "Surat",
       addressRegion: "Gujarat",
       addressCountry: "IN",
     },
