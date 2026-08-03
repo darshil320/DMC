@@ -146,10 +146,10 @@ export function PricingSection() {
         <p className="mt-10 text-center text-sm font-medium text-text-secondary">
           Not sure which fits?{" "}
           <a
-            href="/contact"
+            href="/start"
             className="link-underline font-bold text-accent transition-colors hover:text-text-primary"
           >
-            Tell us how your business runs
+            Answer three questions
           </a>{" "}
           — we&apos;ll tell you what to build, and say so if you don&apos;t need us.
         </p>

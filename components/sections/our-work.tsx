@@ -41,7 +41,7 @@ const PROJECTS = [
     key: "cohuman",
     kind: "photo" as const,
     href: "https://cohuman-website-sandy.vercel.app/",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop",
     imageAlt: "Cohuman Lifestyle Office Furniture Showroom",
     badge: "VIEW LIVE SITE",
     title: "Cohuman",
@@ -54,7 +54,7 @@ const PROJECTS = [
     key: "topaz",
     kind: "photo" as const,
     href: "https://topazfurniture.in",
-    image: "/topaz-bg.jpg",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop",
     imageAlt: "Topaz Furniture Showroom",
     badge: "VIEW LIVE DEMO",
     title: "Topaz Furniture",
@@ -67,7 +67,7 @@ const PROJECTS = [
     key: "welcome-palace",
     kind: "photo" as const,
     href: "https://www.welcomepalace.in",
-    image: "https://res.cloudinary.com/joyzym6w/image/upload/welcome-palace/images/banquet-haldi.jpg",
+    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1600&auto=format&fit=crop",
     imageAlt: "Welcome Palace banquet hall event",
     badge: "VIEW LIVE SITE",
     title: "Welcome Palace",
@@ -97,18 +97,18 @@ function PhotoTile({ project }: { project: (typeof PROJECTS)[number] & { kind: "
         href={project.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative overflow-hidden bg-neutral-200 min-h-[180px] sm:min-h-[220px] flex items-center justify-center group cursor-pointer"
+        className="relative overflow-hidden bg-neutral-900 min-h-[200px] sm:min-h-[250px] flex items-center justify-center group cursor-pointer"
       >
         <ParallaxFrame strength={6}>
           <Image
             src={project.image}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover opacity-40 mix-blend-luminosity group-hover:opacity-60 transition-all duration-500 ease-out group-hover:scale-[1.025]"
+            className="object-cover opacity-75 group-hover:opacity-95 transition-all duration-700 ease-out group-hover:scale-[1.04]"
             alt={project.imageAlt}
           />
         </ParallaxFrame>
-        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 group-hover:from-black/65 group-hover:via-black/15 transition-colors duration-500" />
 
         <CornerTicks />
 
@@ -118,11 +118,11 @@ function PhotoTile({ project }: { project: (typeof PROJECTS)[number] & { kind: "
           </span>
         </MagneticButton>
 
-        <span className="relative z-10 font-serif text-white text-xl sm:text-2xl font-medium tracking-tight transition-transform duration-700 ease-out group-hover:-translate-y-1">
+        <span className="relative z-10 font-serif text-white text-2xl sm:text-3xl font-medium tracking-tight transition-transform duration-700 ease-out group-hover:-translate-y-1 drop-shadow-md">
           {project.title}
         </span>
 
-        <div className="absolute bottom-3 right-3 z-20 text-white/60 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
+        <div className="absolute bottom-3 right-3 z-20 text-white/70 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
           <ThinArrowUpRight className="size-4" />
         </div>
       </a>

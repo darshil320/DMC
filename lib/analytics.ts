@@ -9,6 +9,8 @@ type GtmEventName =
   | "nav_link_click"
   | "enquiry_form_start"
   | "enquiry_submit_failure"
+  | "quiz_start"
+  | "quiz_complete"
   | "web_vitals";
 
 interface GtmEvent {
@@ -26,19 +28,24 @@ export const analytics = {
   pageView: (pagePath: string, pageSearch?: string) =>
     pushGtmEvent({ event: "page_view", page_path: pagePath, page_search: pageSearch ?? "" }),
 
-  contactFormSubmit: () =>
-    pushGtmEvent({ event: "contact_form_submit", method: "email" }),
+  contactFormSubmit: (source = "contact-page") =>
+    pushGtmEvent({ event: "contact_form_submit", method: "email", source }),
 
   /** First keystroke in the enquiry form — the denominator for form drop-off. */
-  enquiryFormStart: () => pushGtmEvent({ event: "enquiry_form_start" }),
+  enquiryFormStart: (source: string) => pushGtmEvent({ event: "enquiry_form_start", source }),
 
   /**
    * Fired when the server did not confirm the enquiry. This is the alarm: a
    * rising count here means leads are being lost, which the previous
    * always-succeeds submit path could never surface.
    */
-  enquirySubmitFailure: (status: number) =>
-    pushGtmEvent({ event: "enquiry_submit_failure", status }),
+  enquirySubmitFailure: (status: number, source = "contact-page") =>
+    pushGtmEvent({ event: "enquiry_submit_failure", status, source }),
+
+  /** Intent quiz on /start — which tier visitors route themselves into. */
+  quizStart: () => pushGtmEvent({ event: "quiz_start" }),
+
+  quizComplete: (tier: string) => pushGtmEvent({ event: "quiz_complete", tier }),
 
   whatsappClick: () =>
     pushGtmEvent({ event: "whatsapp_click", method: "whatsapp" }),

@@ -164,9 +164,82 @@ lint on the changed files.
 they are on the site, in the schema, and in `/llms.txt`. Change them in one place if the margins
 don't hold.
 
-Still open: A3 (Review schema — blocked on real permissioned client quotes), A5, A6, B2 (the guide
-pages), B4, B5, C5–C7, D2–D4, E5 (desktop sticky CTA), E4 (inline form on `/services`), and the
-`/start` quiz.
+## Shipped, round two (2026-08-01)
+
+The P1 and P2 lists are now implemented, except where noted.
+
+| Finding | What changed |
+|---|---|
+| B2 | **Three guide pages built** — `/guides/custom-software-cost-india`, `/guides/mvp-timeline`, `/guides/agency-vs-freelancer-vs-inhouse`, plus a `/guides` index. Content lives in [lib/guides.ts](lib/guides.ts); [components/sections/guide-page.tsx](components/sections/guide-page.tsx) is a server component, so the prose is in the initial HTML. Each follows the format spec: question as H1, 40–60 word answer paragraph, H2 per sub-question, a table of real figures, FAQPage schema, visible last-updated date. |
+| A5 | `caseStudyJsonLd()` emits `CreativeWork` entries for Topaz Furniture, Welcome Palace, and Lyfe9, with client, location, and project type. Only real, live projects — the list is deliberately short. |
+| A6 | `serviceCatalogJsonLd()` now carries a description and a `serviceOutput` per service instead of 12 bare names. |
+| B5 | **The finding was wrong as written.** The `<h3>` tags in `our-work.tsx` render *after* its `<h2>` in the DOM; the source-order reading was a false positive. There was a real defect nearby though: `about.tsx` had no `<h2>` at all — its only heading was an `<h3>`, which put an h3 before the page's first h2. Fixed with an `sr-only` h2. Verified against rendered HTML: the homepage now goes h1 → h2 → h3. |
+| C5 | Explicit allow block in `robots.ts` for GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Applebot-Extended, Bingbot, and cohere-ai. `/topaz-crm` disallowed for all of them. |
+| E4 | `EnquiryForm` extracted to [components/ui/EnquiryForm.tsx](components/ui/EnquiryForm.tsx) with `light`/`dark` tones, and embedded inline on `/services`, on all three guides, and on the quiz result. `/contact` now uses the same component — one implementation, `source` recorded per surface. |
+| E5 | Desktop sticky CTA added: a bottom-right pill alongside the existing mobile bar. The label is context-aware — while `#pricing` is in view the primary action becomes the quiz. Mounted on `/`, `/services`, `/work`, and the guides. |
+| E7 | **`/start` quiz built.** Three questions, pure client state, no library. Q1 picks the tier, Q2 escalates it on team size, Q3 records urgency. Routing table in [lib/quiz.ts](lib/quiz.ts). The result page shows the tier, price, timeline, what's included, a plain-language reason, and a pre-filled enquiry form. Fires `quiz_start` and `quiz_complete`. |
+| — | `/guides` added to the navbar (now 6 items), the sitemap, and `/llms.txt`. Guide sitemap entries are generated from `GUIDES`, so a new guide can't be left out. |
+| — | Hero answer paragraph punctuation fixed — it had lost its em-dash in an edit, which mattered because that exact sentence is what gets quoted. |
+
+---
+
+## Shipped, round three — reviews and ratings (2026-08-01)
+
+Built at your request with placeholder content, structured so the real data drops straight in.
+
+| Finding | What changed |
+|---|---|
+| A3 | `reviewJsonLd()` in [lib/seo.ts](lib/seo.ts) emits `Review` entries plus a computed `AggregateRating`, wired into the homepage JSON-LD. |
+| — | [data/reviews.ts](data/reviews.ts) gained `verified: boolean` and `datePublished` on all 8 entries, plus `verifiedReviews()` and `aggregateRating()` helpers. |
+| — | The Reviews section's rating badge now reads from `aggregateRating()` and falls back to named placeholder constants, so the visible number and the schema number cannot drift once real reviews land. |
+| D4 | [data/logos.ts](data/logos.ts) gained `permissioned: boolean` on all 31 entries — see the warning below. |
+
+### The `verified` gate
+
+`verified` controls **structured data only**:
+
+- `false` → renders on the page, emits **no** Review or AggregateRating markup
+- `true` → renders on the page **and** publishes as schema.org `Review`
+
+The split is deliberate. A placeholder quote on a page is a copy problem you fix in a minute.
+Fabricated `Review`/`AggregateRating` markup is a structured-data spam violation that Google
+penalises at the domain level — so the gate is code, not memory.
+
+All 8 entries are currently `false`. Verified behaviour both ways on a running server: zero
+`Review` nodes in the HTML as shipped; flip two entries to `true` and the markup appears with
+`"ratingValue":5,"reviewCount":2`. Reverted after testing.
+
+**To go live:** replace the quote, name, role, and company; set `verified: true`; set a real
+`datePublished`; keep the written permission somewhere findable.
+
+### One thing to fix before this ships
+
+[data/logos.ts](data/logos.ts) lists **real, identifiable third-party brands** — Nykaa, SUGAR,
+Cetaphil, Raymond, Innisfree, mokobara, Wonderla, Beardo and others — under a "trusted by" heading.
+That is a different category of risk from an invented testimonial name: it is a false claim about
+identifiable companies, which is trademark and passing-off exposure, and an instant credibility
+loss if a prospect checks even one.
+
+Every entry is now flagged `permissioned: false`. Filter the wall before launch:
+
+```tsx
+items={LOGO_ITEMS.filter((logo) => logo.permissioned)}
+```
+
+If that leaves too few to fill a wall, the honest alternatives are a smaller wall, an
+industries-served strip ("furniture · hospitality · health"), or dropping the section until there
+are enough real names. Your call — the flag is there either way.
+
+**Still open — and why:**
+
+- **D2 (outcome statements on case studies).** Needs numbers only you have — enquiries before and
+  after, time saved, conversion change. The `+45%` / `+38%` / `-63%` figures in
+  [case-studies-metrics.tsx](components/sections/case-studies-metrics.tsx) are placeholders you
+  added; they are not in any schema, so they are page copy to correct rather than a markup risk.
+- **B4 (visible H1).** Left as-is deliberately. The `sr-only` H1 plus `aria-hidden` animated lines is
+  a legitimate pattern and the hero design depends on it. Revisit only if Search Console shows a
+  problem.
+- **C6, C7 (sitemap `changeFrequency`, `<meta keywords>`).** Genuinely harmless. Not worth a diff.
 
 ---
 

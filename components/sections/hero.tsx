@@ -20,7 +20,7 @@ const HeroBackdrop = dynamic(() => import("@/components/three/HeroBackdrop"), {
 // timeline, in ~50 words. Answer engines extract a paragraph like this whole,
 // which is why it carries numbers instead of adjectives. Rendered identically
 // in the desktop corner slot and the mobile block below the CTA.
-const HERO_ANSWER = `${DMC.fullName} builds custom software for businesses websites, ecommerce stores, CRMs, automations and AI agents. Websites start at ${formatPrice(
+const HERO_ANSWER = `${DMC.fullName} builds custom software for businesses — websites, ecommerce stores, CRMs, automations, and AI agents. Websites start at ${formatPrice(
   DMC.pricing.starter
 )} and ship in 3 weeks. Full business systems start at ${formatPrice(
   DMC.pricing.businessSystem
@@ -294,18 +294,18 @@ export function HeroSection() {
            <div className="w-full text-center" aria-hidden="true">
              {/* Line 1: AI SYSTEMS */}
              <div data-hero-line className="relative">
-               <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10`} style={HEADING_STYLE}>
+               <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10 whitespace-nowrap`} style={HEADING_STYLE}>
                  AI Systems
                </span>
              </div>
- 
+
              {/* Line 2: THAT RUN YOUR */}
              <div data-hero-line className="relative">
                <span data-hero-base className={`${HEADING_CLASSNAME} block relative z-10`} style={HEADING_STYLE}>
                  That Run Your
                </span>
              </div>
- 
+
              {/* Line 3: BUSINESS. */}
              <div data-hero-line className="inline-block relative mt-2 md:mt-[-0.05em]">
                <div className="relative px-[0.2em] py-[0.08em]">
@@ -334,6 +334,15 @@ export function HeroSection() {
                {HERO_ANSWER}
              </p>
            </div>
+        </div>
+
+        {/* Same answer paragraph as the corner slot above, for viewports
+            too narrow to carry it in the corner. One source of text, so the
+            two can never drift apart. */}
+        <div data-hero-copy className="lg:hidden mt-8 max-w-[340px] mx-auto px-2">
+          <p className="text-[12px] md:text-[13px] text-text-secondary leading-[1.5] text-center">
+            {HERO_ANSWER}
+          </p>
         </div>
 
         {/* ── CTA Button ── */}

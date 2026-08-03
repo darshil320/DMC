@@ -17,6 +17,7 @@ import {
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { AuroraHero } from "@/components/ui/aurora-hero";
 import { CornerTicks } from "@/components/ui/CornerTicks";
+import { EnquiryForm } from "@/components/ui/EnquiryForm";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { DMC } from "@/lib/dmc-config";
 
@@ -246,37 +247,50 @@ export function ServicesPageContent() {
             <div className="w-full h-px bg-border-harsh" />
           </div>
 
-          {/* Bottom CTA */}
-          <AnimatedReveal className="mt-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 px-4 lg:px-6">
-            <div>
-              <h3 className="text-2xl md:text-3xl font-medium tracking-tighter text-text-primary uppercase">
-                Let&apos;s build you a world-class website.
+          {/* Bottom CTA — the form is inline rather than a link to /contact.
+              Sending someone who has just read the whole services page off to
+              another page to restate what they want is the largest avoidable
+              drop in the funnel. */}
+          <AnimatedReveal className="mt-24 grid grid-cols-1 gap-12 border-t border-border-harsh px-4 pt-16 lg:grid-cols-12 lg:px-6">
+            <div className="lg:col-span-6">
+              <div className="section-tag">START HERE</div>
+              <h3 className="text-2xl md:text-4xl font-medium tracking-tighter text-text-primary uppercase">
+                Tell us what you&apos;re trying to build
               </h3>
-              <p className="text-text-secondary text-sm font-medium mt-2 max-w-[400px]">
-                Start with a sharp, premium website, then connect the systems your business needs to convert and scale.
+              <p className="text-text-secondary text-sm font-medium mt-4 max-w-[460px] leading-relaxed">
+                You get scope, price, and timeline in writing before committing a rupee — and
+                we&apos;ll say so if your project doesn&apos;t need us.
               </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <MagneticButton strength={8}>
+                  <a
+                    href={DMC.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2 border border-accent bg-accent px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-accent hover:bg-accent-lime hover:text-accent hover:shadow-none brutalist-shadow"
+                  >
+                    <MessageCircle className="size-4 transition-transform group-hover:scale-110" />
+                    WhatsApp Us
+                  </a>
+                </MagneticButton>
+                <MagneticButton strength={8}>
+                  <Link
+                    href="/start"
+                    className="group flex items-center gap-2 border border-border-harsh bg-transparent px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-text-primary transition-colors hover:border-accent hover:bg-accent hover:text-white"
+                  >
+                    Not sure? Answer 3 questions
+                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </MagneticButton>
+              </div>
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <MagneticButton strength={8}>
-                <a
-                  href={DMC.whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 border border-accent bg-accent px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:border-accent hover:bg-accent-lime hover:text-accent hover:shadow-none brutalist-shadow"
-                >
-                  <MessageCircle className="size-4 transition-transform group-hover:scale-110" />
-                  WhatsApp Us
-                </a>
-              </MagneticButton>
-              <MagneticButton strength={8}>
-                <Link
-                  href="/contact"
-                  className="group flex items-center gap-2 border border-border-harsh bg-transparent px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-text-primary transition-colors hover:border-accent hover:bg-accent hover:text-white"
-                >
-                  Send a Message
-                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </MagneticButton>
+
+            <div className="lg:col-span-6">
+              <div className="relative border border-border-harsh p-6 md:p-8">
+                <CornerTicks tone="accent" />
+                <EnquiryForm source="services-page" tone="light" />
+              </div>
             </div>
           </AnimatedReveal>
 

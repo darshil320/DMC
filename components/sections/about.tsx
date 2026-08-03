@@ -80,6 +80,10 @@ export function AboutUsSection() {
 
   return (
     <section id="about" className="py-16 md:py-24 px-6 md:px-12 lg:px-16 w-full select-none relative z-10 border-t border-border-harsh bg-bg-page overflow-hidden">
+      {/* The section's visible label is a styled div, and its only heading was
+          an h3 — which put an h3 before the page's first h2 in the DOM. This
+          gives the section a real level-2 heading without changing the design. */}
+      <h2 className="sr-only">About DMC Tech</h2>
       {/* Liquid Ocean background effect — vignette-masked so it reads as an
           ambient watermark rather than a pasted-in rectangle, wireframe-forward
           to match the blueprint aesthetic used in the hero backdrop. Only

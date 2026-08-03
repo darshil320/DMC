@@ -1,8 +1,18 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/seo";
+import { GUIDES } from "@/lib/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
+
+  // Guides are generated from the same array that renders them, so a new guide
+  // is never left out of the sitemap.
+  const guidePages: MetadataRoute.Sitemap = GUIDES.map((guide) => ({
+    url: absoluteUrl(`/guides/${guide.slug}`),
+    lastModified: new Date(guide.updated),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
 
   return [
     {
@@ -29,6 +39,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: absoluteUrl("/guides"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    ...guidePages,
+    {
+      url: absoluteUrl("/start"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: absoluteUrl("/work"),

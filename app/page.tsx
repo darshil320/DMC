@@ -11,6 +11,7 @@ import {
   createSeoMetadata,
   faqJsonLd,
   organizationJsonLd,
+  reviewJsonLd,
   serviceCatalogJsonLd,
   webPageJsonLd,
   websiteJsonLd,
@@ -50,6 +51,12 @@ const CaseStudiesMetricsSection = dynamic(() => import("@/components/sections/ca
   loading: () => <SectionPlaceholder />,
 });
 const CredentialsWallSection = dynamic(() => import("@/components/sections/credentials-wall").then(m => m.CredentialsWallSection), {
+  loading: () => <SectionPlaceholder />,
+});
+const LogoWallSection = dynamic(() => import("@/components/sections/logo-wall").then(m => m.LogoWall), {
+  loading: () => <SectionPlaceholder />,
+});
+const ReviewsSection = dynamic(() => import("@/components/sections/reviews").then(m => m.Reviews), {
   loading: () => <SectionPlaceholder />,
 });
 // const ProofSection = dynamic(() => import("@/components/sections/proof").then(m => m.ProofSection), {
@@ -120,14 +127,19 @@ export default function Home() {
                 description: SITE_DESCRIPTION,
               }),
               faqJsonLd(FAQ_ITEMS),
+              // Empty until a testimonial in lib/testimonials.ts is marked
+              // `verified` — placeholder reviews never reach the markup.
+              ...reviewJsonLd(),
             ]}
           />
           <HeroSection />
           <AboutUsSection />
-          <OurWorkSection />
-
           <CaseStudiesMetricsSection />
+          <OurWorkSection />
+          <LogoWallSection />
+
           <CredentialsWallSection />
+          <ReviewsSection />
 
           {/* <LiveVisionSection /> */}
 

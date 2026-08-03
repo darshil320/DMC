@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DMC, SOCIAL_LINKS } from "@/lib/dmc-config";
 import { PRICING_TIERS } from "@/lib/pricing";
+import { aggregateRating, verifiedReviews } from "@/data/reviews";
 
 export const SITE_URL = "https://www.dmctech.in";
 export const SITE_NAME = "DMC Tech";
@@ -267,21 +268,81 @@ export function webPageJsonLd({
 }
 
 export function serviceCatalogJsonLd() {
+  // Each service carries a description and what it produces. A bare list of
+  // names is not something an answer engine can quote — a sentence explaining
+  // what the service does and who it is for is.
   const services = [
-    "Complete business systems and digital operations",
-    "AI WhatsApp chatbots and customer assistants",
-    "CRM and lead management systems",
-    "ERP and process automation",
-    "Business website design and development",
-    "Product catalog websites",
-    "Ecommerce stores",
-    "AI room visualizers",
-    "Smart recognition systems",
-    "Dashboards and business analytics",
-    "Custom integrations and API development",
-    "Google Business profile setup",
-    "Landing pages",
-    "Ongoing maintenance and support",
+    {
+      name: "Complete business systems and digital operations",
+      description:
+        "End-to-end digitisation of an operation: CRM, lead pipeline, sales automation, staff dashboards, and real-time reporting, built around how the business already runs.",
+      output: "A single system replacing spreadsheets and WhatsApp groups",
+    },
+    {
+      name: "AI WhatsApp chatbots and customer assistants",
+      description:
+        "WhatsApp and web assistants grounded on a live product catalog and pricing, answering in English, Hindi, or Gujarati through the official WhatsApp Business API, and escalating to a human when needed.",
+      output: "24/7 customer answers without adding headcount",
+    },
+    {
+      name: "CRM and lead management systems",
+      description:
+        "Custom CRMs that capture leads from Instagram, Facebook, Google, WhatsApp, and walk-ins into one pipeline, auto-assign them to salespeople, and trigger follow-ups automatically.",
+      output: "Every lead assigned, followed up, and attributed to a source",
+    },
+    {
+      name: "ERP and process automation",
+      description:
+        "Order management, workshop tracking, supplier purchase orders, GST billing, delivery scheduling, and deadline alerts for manufacturers and multi-branch retailers.",
+      output: "Production and supply chain visible in one place",
+    },
+    {
+      name: "Business website design and development",
+      description:
+        "Custom-designed, mobile-first websites built for enquiries rather than decoration, with Google Business Profile setup and on-page SEO included.",
+      output: "A site that turns visitors into enquiries",
+    },
+    {
+      name: "Product catalog websites",
+      description:
+        "Searchable, filterable product catalogs with live pricing, variants, and per-product enquiry buttons, for businesses that sell but don't yet transact online.",
+      output: "Customers who can browse and price without calling",
+    },
+    {
+      name: "Ecommerce stores",
+      description:
+        "Storefronts that accept UPI, cards, and net banking, with inventory management, an order dashboard, and automated confirmations and delivery updates.",
+      output: "Online orders with payments and inventory handled",
+    },
+    {
+      name: "AI room visualizers",
+      description:
+        "A browser tool that places a product inside a customer's own room photo with accurate scale and lighting, for furniture, flooring, and interior décor businesses.",
+      output: "Customers who can see a product in their space before buying",
+    },
+    {
+      name: "Smart recognition systems",
+      description:
+        "Consent-based face recognition for showroom entry, repeat-customer alerts, and visit history, built to India's DPDPA requirements.",
+      output: "Staff who know a returning customer before they speak",
+    },
+    {
+      name: "Dashboards and business analytics",
+      description:
+        "Real-time dashboards covering the sales pipeline, staff performance, lead sources, and conversion funnels, on one screen.",
+      output: "Answers to which branch, salesperson, or ad actually converted",
+    },
+    {
+      name: "Custom integrations and API development",
+      description:
+        "Connecting Meta lead ads, payment gateways, Tally, WhatsApp Business Solution Providers, and third-party tools into one system — including building the API when a tool doesn't expose one.",
+      output: "Systems that talk to each other instead of being re-keyed",
+    },
+    {
+      name: "Ongoing maintenance and support",
+      description: `Monthly updates, uptime monitoring, bug fixes, and priority WhatsApp support at ${DMC.pricing.maintenance.toLocaleString("en-IN")} rupees per month. Optional, cancel anytime.`,
+      output: "Software that keeps matching the business as it changes",
+    },
   ];
 
   return {
@@ -289,16 +350,20 @@ export function serviceCatalogJsonLd() {
     "@type": "ItemList",
     "@id": `${SITE_URL}/#services`,
     name: "DMC Tech business systems, AI, and web development services",
-    itemListElement: services.map((name, index) => ({
+    itemListElement: services.map((service, index) => ({
       "@type": "ListItem",
       position: index + 1,
       item: {
         "@type": "Service",
-        name,
+        name: service.name,
+        description: service.description,
+        serviceOutput: service.output,
+        serviceType: service.name,
         provider: {
           "@id": `${SITE_URL}/#organization`,
         },
         areaServed: "India",
+        url: absoluteUrl("/services"),
       },
     })),
   };
@@ -313,6 +378,144 @@ export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {
       position: index + 1,
       name: item.name,
       item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+/**
+ * Article markup for the guides. Carries the author and publisher entities so
+ * the prose has a named human behind it — the expertise half of E-E-A-T, which
+ * a page of anonymous text cannot claim.
+ */
+export function articleJsonLd({
+  path,
+  headline,
+  description,
+  datePublished,
+  dateModified,
+}: {
+  path: string;
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${absoluteUrl(path)}#article`,
+    headline,
+    description,
+    url: absoluteUrl(path),
+    datePublished,
+    dateModified,
+    inLanguage: "en-IN",
+    author: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/about#founder`,
+      name: DMC.founder.name,
+      jobTitle: DMC.founder.role,
+    },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${absoluteUrl(path)}#webpage` },
+  };
+}
+
+/**
+ * Review and AggregateRating markup.
+ *
+ * Emits only reviews flagged `verified` in `data/reviews.ts`. With no verified
+ * entries this returns an empty array and nothing reaches the page — the
+ * intended state until real, permissioned quotes replace the placeholders.
+ * Publishing invented reviews as structured data is a Google spam policy
+ * violation that costs the whole domain, so the gate is code, not memory.
+ */
+export function reviewJsonLd() {
+  const verified = verifiedReviews();
+  if (verified.length === 0) return [];
+
+  const rating = aggregateRating();
+
+  const reviews = verified.map((review) => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "@id": `${SITE_URL}/#review-${review.id}`,
+    itemReviewed: { "@id": `${SITE_URL}/#organization` },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: review.rating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    author: {
+      "@type": "Person",
+      name: review.name,
+      ...(review.company
+        ? { worksFor: { "@type": "Organization", name: review.company } }
+        : {}),
+    },
+    datePublished: review.datePublished,
+    reviewBody: review.quote,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  }));
+
+  if (!rating) return reviews;
+
+  return [
+    ...reviews,
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}/#organization`,
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: rating.ratingValue,
+        reviewCount: rating.reviewCount,
+        bestRating: rating.bestRating,
+        worstRating: rating.worstRating,
+      },
+    },
+  ];
+}
+
+/**
+ * Case-study markup for /work.
+ *
+ * The richest proof content on the site was previously invisible to structured
+ * parsers. Named clients (with permission) are the strongest E-E-A-T signal
+ * available — stronger than any stat tile.
+ */
+export function caseStudyJsonLd(
+  studies: Array<{
+    name: string;
+    description: string;
+    client: string;
+    location: string;
+    projectType: string;
+    url?: string;
+  }>
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${absoluteUrl("/work")}#case-studies`,
+    name: `${SITE_NAME} case studies`,
+    itemListElement: studies.map((study, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "CreativeWork",
+        "@id": `${absoluteUrl("/work")}#${study.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+        name: study.name,
+        description: study.description,
+        about: study.projectType,
+        creator: { "@id": `${SITE_URL}/#organization` },
+        locationCreated: {
+          "@type": "Place",
+          name: study.location,
+        },
+        ...(study.url ? { url: study.url } : {}),
+      },
     })),
   };
 }

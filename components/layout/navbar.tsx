@@ -14,8 +14,9 @@ const NAV_LINKS = [
   { num: "01", label: "HOME", href: "/" },
   { num: "02", label: "SERVICES", href: "/services" },
   { num: "03", label: "WORK", href: "/work" },
-  { num: "04", label: "ABOUT", href: "/about" },
-  { num: "05", label: "CONTACT", href: "/contact" },
+  { num: "04", label: "GUIDES", href: "/guides" },
+  { num: "05", label: "ABOUT", href: "/about" },
+  { num: "06", label: "CONTACT", href: "/contact" },
 ];
 
 const ARCHIVE_ENDPOINT =

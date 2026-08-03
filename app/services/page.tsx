@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { ServicesPageContent } from "@/components/sections/services-page";
 import dynamic from "next/dynamic";
 import { JsonLd } from "@/components/seo/json-ld";
+import { StickyMobileCta } from "@/components/ui/StickyMobileCta";
 import {
   breadcrumbJsonLd,
   createSeoMetadata,
@@ -70,6 +71,8 @@ export default function ServicesPage() {
       <div className="sticky bottom-0 z-0">
         <Footer />
       </div>
+
+      <StickyMobileCta />
     </div>
   );
 }
