@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView } from "motion/react";
 import { ArrowRight, Check } from "lucide-react";
 import { WordsPullUp } from "@/components/topaz/WordsPullUp";
 import { WordsPullUpMultiStyle } from "@/components/topaz/WordsPullUpMultiStyle";

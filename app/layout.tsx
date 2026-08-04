@@ -119,12 +119,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head suppressHydrationWarning>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Instrument+Serif:ital@1&display=swap"
-        />
+        {/* No Google Fonts <link> here on purpose. It was render-blocking on a
+            third-party origin for every page, and served two fonts that did not
+            need it: Instrument Serif is already self-hosted through next/font
+            above, and Almarai is only used by `.topaz-landing *` — so it now
+            loads from the /topaz-crm layout instead of site-wide. */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>

@@ -167,6 +167,7 @@ export function LogoWall({
     );
     const remaining = 1 - eased;
     const uniformScale = 1 + UNIFORM_SCALE_BOOST * remaining;
+    const settled = remaining < 0.001;
     const opacity = FADE_IN_END <= 0 ? 1 : clamp01(rawProgress / FADE_IN_END);
 
     for (let index = 0; index < geometry.length; index += 1) {
@@ -196,6 +197,9 @@ export function LogoWall({
 
       node.style.transform = transform;
       node.style.opacity = String(opacity);
+      // Promote to its own layer only while the card is actually moving.
+      // Left on permanently this pins 30 compositor layers for the whole page.
+      node.style.willChange = settled ? "" : "transform, opacity";
     }
   }, []);
 
@@ -300,7 +304,7 @@ function LogoCard({ logo, animated }: { logo: LogoItem; animated: boolean }) {
     <div
       className="group relative cursor-pointer"
       // Rotation and the radial stretch both key off the card's centre.
-      style={animated ? { transformOrigin: "50% 50%", willChange: "transform, opacity" } : undefined}
+      style={animated ? { transformOrigin: "50% 50%" } : undefined}
     >
       <div className="flex aspect-square flex-col items-center justify-center rounded-sm border border-neutral-200 bg-white p-2 shadow-md transition-shadow duration-300 group-hover:shadow-2xl sm:p-3 dark:border-neutral-700/80 dark:bg-neutral-900">
         <div

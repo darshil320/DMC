@@ -55,6 +55,14 @@ export function HeroSection() {
   // Defer mounting the 3D backdrop until the intro has played, so it never
   // competes with the GSAP headline reveal or the loader hand-off.
   useEffect(() => {
+    // The gate is here, not just on the render: without it the dynamic import
+    // still fires and every device pays for three.js (~220 KB over the wire)
+    // to render a decorative backdrop it will never show.
+    if (!premiumMotion) {
+      setShow3D(false);
+      return;
+    }
+
     const reveal = () => setShow3D(true);
 
     if (document.querySelector("[data-brutalist-loader]")) {

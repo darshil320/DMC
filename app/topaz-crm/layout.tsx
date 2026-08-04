@@ -1,5 +1,19 @@
 import type { Metadata } from "next";
+import { Almarai } from "next/font/google";
 import { createSeoMetadata } from "@/lib/seo";
+
+/**
+ * `.topaz-landing *` in globals.css is the only rule that asks for Almarai.
+ * Loading it here rather than in the root layout keeps a font that one noindex
+ * page needs off the critical path of every other page — and self-hosting it
+ * removes a render-blocking request to a third-party origin.
+ */
+const almarai = Almarai({
+  weight: ["300", "400", "700", "800"],
+  subsets: ["arabic", "latin"],
+  display: "swap",
+  variable: "--font-almarai",
+});
 
 /**
  * The page itself is a client component, so its metadata lives here.
@@ -21,5 +35,5 @@ export const metadata: Metadata = createSeoMetadata({
 });
 
 export default function TopazCrmLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return <div className={almarai.className}>{children}</div>;
 }
