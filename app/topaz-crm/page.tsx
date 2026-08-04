@@ -612,23 +612,6 @@ export default function TopazCrmLandingPage() {
         <div className="bg-noise absolute inset-0 opacity-[0.15] pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          {/* Header Text */}
-          <div className="text-center mb-16 sm:mb-20 max-w-4xl mx-auto space-y-2">
-            <WordsPullUpMultiStyle
-              segments={[
-                {
-                  text: "Studio-grade workflows for visionary creators.",
-                  className: "text-[#E1E0CC] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal block w-full",
-                },
-                {
-                  text: "Built for pure vision. Powered by intelligence.",
-                  className: "text-gray-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal block w-full mt-2",
-                },
-              ]}
-              staggerDelay={0.06}
-            />
-          </div>
-
           {/* 4-Column Card Grid */}
           <div
             ref={featuresRef}
