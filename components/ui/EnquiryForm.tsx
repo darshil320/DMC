@@ -6,6 +6,7 @@ import { DMC } from "@/lib/dmc-config";
 import { analytics } from "@/lib/analytics";
 import {
   BUDGET_RANGES,
+  CALL_WINDOWS,
   PROJECT_TYPES,
   TIER_TO_PROJECT_TYPE,
   type EnquiryInput,
@@ -51,6 +52,8 @@ const TONES = {
     trust: "text-white/62",
     error: "border-[#ffb4a2]/50 bg-[#ffb4a2]/10 text-[#ffd7cc]",
     fieldError: "text-[#ffb4a2]",
+    chip: "border border-white/25 text-white/70 hover:border-[#f2e4d0] hover:text-[#f2e4d0]",
+    chipActive: "border border-[#f2e4d0] bg-[#f2e4d0] text-[#123f36]",
     successBox: "border border-[#f2e4d0]/40 bg-white/5",
     successTitle: "text-[#f2e4d0]",
     successBody: "text-white/80",
@@ -66,6 +69,8 @@ const TONES = {
     trust: "text-text-muted",
     error: "border-accent/50 bg-accent/5 text-text-primary",
     fieldError: "text-accent",
+    chip: "border border-border-harsh text-text-secondary hover:border-accent hover:text-accent",
+    chipActive: "border border-accent bg-accent text-white",
     successBox: "border border-border-harsh bg-bg-card",
     successTitle: "text-text-primary",
     successBody: "text-text-secondary",
@@ -81,6 +86,7 @@ function composeWhatsappMessage(form: FormState) {
     `Business: ${form.company || "-"}`,
     `Project type: ${form.projectType || "-"}`,
     `Budget range: ${form.budgetRange || "-"}`,
+    `Best time to call: ${form.callWindow || "-"}`,
     "",
     "Project details:",
     form.message || "-",
@@ -101,6 +107,7 @@ export function EnquiryForm({
     company: "",
     projectType: defaultProjectType,
     budgetRange: "Not sure yet",
+    callWindow: "Anytime",
     message: "",
     tier: "",
     website: "",
@@ -319,6 +326,32 @@ export function EnquiryForm({
           </span>
         )}
       </label>
+
+      {/* One tap, never typed, and already answered by default — so it adds a
+          booked-call signal without adding a decision the visitor has to make. */}
+      <div {...fieldProps}>
+        <span className={`text-xs font-bold uppercase tracking-[0.22em] ${t.label}`}>
+          Best time to call
+        </span>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {CALL_WINDOWS.map((window) => {
+            const selected = form.callWindow === window;
+            return (
+              <button
+                key={window}
+                type="button"
+                aria-pressed={selected}
+                onClick={() => setForm((current) => ({ ...current, callWindow: window }))}
+                className={`px-3 py-2 text-[11px] font-bold uppercase tracking-[0.12em] transition-colors ${
+                  selected ? t.chipActive : t.chip
+                }`}
+              >
+                {window}
+              </button>
+            );
+          })}
+        </div>
+      </div>
 
       {/* Company and budget stay collapsed. Asking about money up front is the
           single biggest drop-off on a first enquiry; the people willing to

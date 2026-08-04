@@ -15,7 +15,9 @@ import { TIER_TO_PROJECT_TYPE } from "@/lib/enquiry";
  * doesn't know what they need can find out without talking to anyone — and
  * lands on a pre-filled enquiry form rather than a WhatsApp thread.
  */
-export function StartQuiz() {
+export function StartQuiz({ headingLevel = "h2" }: { headingLevel?: "h2" | "h3" } = {}) {
+  const Heading = headingLevel;
+
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<QuizAnswers>({});
   const [hasStarted, setHasStarted] = useState(false);
@@ -55,9 +57,9 @@ export function StartQuiz() {
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <div className="section-tag">YOUR MATCH</div>
-          <h2 className="mb-4 text-3xl font-medium uppercase tracking-tighter text-text-primary md:text-5xl">
+          <Heading className="mb-4 text-3xl font-medium uppercase tracking-tighter text-text-primary md:text-5xl">
             {tier.name}
-          </h2>
+          </Heading>
           <p className="mb-6 font-serif text-2xl font-medium text-text-primary md:text-3xl">
             {price} · {tier.timeline}
           </p>
@@ -66,9 +68,9 @@ export function StartQuiz() {
             {reason}
           </p>
 
-          <h3 className="mb-4 font-pixel text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
+          <p className="mb-4 font-pixel text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
             What&apos;s included
-          </h3>
+          </p>
           <ul className="mb-8 flex flex-col gap-3">
             {tier.includes.map((item) => (
               <li key={item} className="flex gap-3 leading-relaxed text-text-secondary">
@@ -102,9 +104,9 @@ export function StartQuiz() {
 
         <div className="lg:col-span-5">
           <div className="border border-border-harsh p-6 lg:sticky lg:top-28">
-            <h3 className="mb-2 text-xl font-medium uppercase tracking-tighter text-text-primary">
+            <p className="mb-2 text-xl font-medium uppercase tracking-tighter text-text-primary">
               Get it scoped
-            </h3>
+            </p>
             <p className="mb-6 text-sm leading-relaxed text-text-secondary">
               We&apos;ve filled in what you told us. Add your details and you&apos;ll get scope,
               price, and timeline in writing.
@@ -138,9 +140,9 @@ export function StartQuiz() {
         ))}
       </div>
 
-      <h2 className="mb-10 text-3xl font-medium uppercase leading-[1.05] tracking-tighter text-text-primary md:text-5xl">
+      <Heading className="mb-10 text-3xl font-medium uppercase leading-[1.05] tracking-tighter text-text-primary md:text-5xl">
         {current.question}
-      </h2>
+      </Heading>
 
       <div className="flex flex-col border-t border-border-harsh">
         {current.options.map((option) => (

@@ -82,6 +82,9 @@ const ProcessSection = dynamic(() => import("@/components/sections/process").the
 const PricingSection = dynamic(() => import("@/components/sections/pricing").then(m => m.PricingSection), {
   loading: () => <SectionPlaceholder />,
 });
+const FindYourFitSection = dynamic(() => import("@/components/sections/find-your-fit").then(m => m.FindYourFitSection), {
+  loading: () => <SectionPlaceholder />,
+});
 const TrustSection = dynamic(() => import("@/components/sections/trust").then(m => m.TrustSection), {
   loading: () => <SectionPlaceholder minHeight="30vh" />,
 });
@@ -132,26 +135,57 @@ export default function Home() {
               ...reviewJsonLd(),
             ]}
           />
+          {/* Section order is a narrative, not a list. It runs:
+              pain → offer → proof → story → mechanism → reassurance →
+              price → convert → objections → ask.
+
+              Two rules worth keeping if this ever gets shuffled again:
+                1. Problem must precede Pricing. A price the visitor cannot
+                   measure against a cost they feel is just a number.
+                2. Proof must precede nothing. It answers a claim, so it only
+                   lands after Services has made one.
+
+              Formats also alternate on purpose — stats, case cards, project
+              grid, logo wall, quotes — so a long page never reads as the same
+              block five times running. */}
+
+          {/* ── Hook: what we do, for whom, at what price ── */}
           <HeroSection />
+
+          {/* ── Pain: the visitor recognises themselves before we sell ── */}
           <AboutUsSection />
+          <ProblemSection />
+          <TrustSection />
+
+          {/* ── Offer: what we build, as the direct answer to that pain ── */}
+          <ServicesSection />
+
+          {/* ── Proof: the claim, delivered ── */}
           <CaseStudiesMetricsSection />
           <OurWorkSection />
           <LogoWallSection />
 
-          <CredentialsWallSection />
-          <ReviewsSection />
+          {/* ── Who is behind it — now that they have a reason to care ── */}
 
-          {/* <LiveVisionSection /> */}
-
-          <ServicesSection />
-
+          {/* ── De-risk: how the work actually runs ── */}
           <ProcessSection />
           <PrinciplesSection />
+          <CredentialsWallSection />
+
+          {/* ── Human voices, immediately before the money question ── */}
+          <ReviewsSection />
+
+          {/* ── Reassurance: reply time, in-house, ownership, no hidden fees ── */}
+
+          {/* ── The number, then self-qualification straight into a form ── */}
           <PricingSection />
-          <ProblemSection />
-          <TrustSection />
+          <FindYourFitSection />
+
+          {/* ── Last objections, then the ask ── */}
           <FaqSection />
           <FinalCtaSection />
+
+          {/* <LiveVisionSection /> */}
         </main>
       </div>
 

@@ -13,6 +13,11 @@ export type TierSlug = PricingTier["slug"];
 export type QuizOption = {
   value: string;
   label: string;
+  /**
+   * Short noun phrase used when explaining the result back to the visitor.
+   * The full `label` is a sentence and reads as garbage when interpolated.
+   */
+  phrase?: string;
   /** Only on Q1: the tier this symptom maps to. */
   tier?: TierSlug;
   /** Only on Q2: team-size rank, used to escalate. */
@@ -33,21 +38,25 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
       {
         value: "presence",
         label: "We don't have a proper website — we look smaller online than we are",
+        phrase: "looking smaller online than you are",
         tier: "launch",
       },
       {
         value: "selling",
         label: "We can't sell online, and customers can't see prices without calling",
+        phrase: "customers who can't browse or buy without calling you",
         tier: "commerce",
       },
       {
         value: "leads",
         label: "We're losing leads — follow-ups happen on WhatsApp and from memory",
+        phrase: "leads leaking between the enquiry and the sale",
         tier: "business-system",
       },
       {
         value: "systems",
         label: "Our systems don't talk to each other across branches or teams",
+        phrase: "systems that don't talk to each other",
         tier: "business-system",
       },
     ],
@@ -56,10 +65,10 @@ export const QUIZ_QUESTIONS: readonly QuizQuestion[] = [
     id: "size",
     question: "How many people will this system touch?",
     options: [
-      { value: "solo", label: "Just me, or under 5", rank: 1 },
-      { value: "small", label: "5 – 25", rank: 2 },
-      { value: "mid", label: "25 – 100", rank: 3 },
-      { value: "large", label: "100+", rank: 4 },
+      { value: "solo", label: "Just me, or under 5", phrase: "under 5 people", rank: 1 },
+      { value: "small", label: "5 – 25", phrase: "5 to 25 people", rank: 2 },
+      { value: "mid", label: "25 – 100", phrase: "25 to 100 people", rank: 3 },
+      { value: "large", label: "100+", phrase: "over 100 people", rank: 4 },
     ],
   },
   {
@@ -108,11 +117,14 @@ export function resolveQuiz(answers: QuizAnswers): QuizResult | null {
   const tier = PRICING_TIERS.find((t) => t.slug === slug);
   if (!tier) return null;
 
+  const problemPhrase = problemOption.phrase ?? problemOption.label.toLowerCase();
+  const sizePhrase = sizeOption.phrase ?? sizeOption.label.toLowerCase();
+
   return {
     tier,
     escalated,
     reason: escalated
-      ? `At ${sizeOption.label.toLowerCase()} people, what you described stops being one system and becomes several that have to agree with each other. That's the Enterprise track.`
-      : `You described a ${problemOption.label.toLowerCase().replace(/^we /, "")} problem, at ${sizeOption.label.toLowerCase()} people. ${tier.name} is scoped for exactly that.`,
+      ? `Across ${sizePhrase}, ${problemPhrase} stops being one system and becomes several that have to agree with each other. That's the Enterprise track.`
+      : `You described ${problemPhrase}, across ${sizePhrase}. ${tier.name} is scoped for exactly that.`,
   };
 }

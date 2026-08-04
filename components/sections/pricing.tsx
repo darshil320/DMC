@@ -146,7 +146,7 @@ export function PricingSection() {
         <p className="mt-10 text-center text-sm font-medium text-text-secondary">
           Not sure which fits?{" "}
           <a
-            href="/start"
+            href="#find-your-fit"
             className="link-underline font-bold text-accent transition-colors hover:text-text-primary"
           >
             Answer three questions

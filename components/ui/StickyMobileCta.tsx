@@ -62,7 +62,7 @@ export function StickyMobileCta() {
   const visible = pastHero && !finalCtaInView;
 
   const primary = pricingInView
-    ? { href: "/start", label: "See which package fits" }
+    ? { href: "#find-your-fit", label: "See which package fits" }
     : { href: "/contact", label: "Start a project" };
 
   return (
